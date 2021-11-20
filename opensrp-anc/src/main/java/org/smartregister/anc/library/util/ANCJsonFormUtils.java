@@ -994,7 +994,7 @@ public class ANCJsonFormUtils extends org.smartregister.util.JsonFormUtils {
     public ConstraintLayout createListViewItems(List<YamlConfigWrapper> data, Facts facts, int position, Context context) {
         YamlConfigItem yamlConfigItem = data.get(position).getYamlConfigItem();
 
-        Template template = getTemplate(yamlConfigItem.getTemplate());
+        ANCJsonFormUtils.Template template = getTemplate(yamlConfigItem.getTemplate());
         String output = "";
         if (!TextUtils.isEmpty(template.detail)) {
             output = Utils.fillTemplate(template.detail, facts);
