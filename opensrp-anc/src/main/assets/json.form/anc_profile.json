@@ -55,6 +55,19 @@
     }
   },
   "editable_fields": [
+    "husband_name",
+    "catchment_area",
+    "newborn_dirths",
+    "children_live",
+    "perfect_births",
+    "date_last_born",
+    "last_born_status",
+    "date_tt1_received",
+    "date_tt2_received",
+    "date_tt3_received",
+    "date_tt4_received",
+    "date_tt5_received",
+    "itbn_use",
     "educ_level",
     "marital_status",
     "occupation",
@@ -139,7 +152,20 @@
     "ultrasound_gest_age_selection",
     "sfh_gest_age_selection",
     "lmp_ultrasound_gest_age_selection",
-    "sfh_ultrasound_gest_age_selection"
+    "sfh_ultrasound_gest_age_selection",
+    "husband_name",
+    "catchment_area",
+    "newborn_dirths",
+    "children_live",
+    "perfect_births",
+    "date_last_born",
+    "last_born_status",
+    "date_tt1_received",
+    "date_tt2_received",
+    "date_tt3_received",
+    "date_tt4_received",
+    "date_tt5_received",
+    "itbn_use"
   ],
   "global_previous": [
     "age"
@@ -1165,6 +1191,23 @@
         "spacer_height": "20dp"
       },
       {
+        "key": "age_greater30_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "toaster_notes",
+        "type": "toaster_notes",
+        "text": "{{anc_profile.step1.age_greater30_toaster.text}}",
+        "text_color": "#1199F9",
+        "toaster_type": "warning",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
         "key": "gravida_label",
         "type": "label",
         "label_text_style": "bold",
@@ -1793,6 +1836,63 @@
             "key": "dont_know",
             "text": "{{anc_profile.step3.prev_preg_comps.options.dont_know.text}}"
           },
+
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "rapture_of_uterus",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.rapture_of_uterus.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "repeated_miscariages",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.repeated_miscariages.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "preterm_deliveries",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.preterm_deliveries.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "pre_fresh_still_birth",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_fresh_still_birth.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "pre_incomplete_placenta",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_incomplete_placenta.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "pre_post_partum_hemorrhage",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_post_partum_hemorrhage.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "165259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "baby_died_in_24_hrs",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.baby_died_in_24_hrs.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "pre_c_section",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_c_section.text}}"
+          },
           {
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -1849,13 +1949,7 @@
             "key": "heavy_bleeding",
             "text": "{{anc_profile.step3.prev_preg_comps.options.heavy_bleeding.text}}"
           },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "165259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "baby_died_in_24_hrs",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.baby_died_in_24_hrs.text}}"
-          },
+
           {
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -1884,48 +1978,7 @@
             "key": "3rd_degree_tear",
             "text": "{{anc_profile.step3.prev_preg_comps.options.3rd_degree_tear.text}}"
           },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "rapture_of_uterus",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.rapture_of_uterus.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "repeated_miscariages",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.repeated_miscariages.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "preterm_deliveries",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.preterm_deliveries.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "pre_fresh_still_birth",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_fresh_still_birth.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "pre_incomplete_placenta",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_incomplete_placenta.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "pre_post_partum_hemorrhage",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_post_partum_hemorrhage.text}}"
-          },
+
           {
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -2137,6 +2190,320 @@
     "title": "{{anc_profile.step4.title}}",
     "next": "step5",
     "fields": [
+      {
+        "key": "health_conditions",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "1628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select multiple",
+        "type": "check_box",
+        "label": "{{anc_profile.step4.health_conditions.label}}",
+        "label_text_style": "bold",
+        "hint": "{{anc_profile.step4.health_conditions.hint}}",
+        "exclusive": [
+          "none",
+          "dont_know"
+        ],
+        "options": [
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "none",
+            "text": "{{anc_profile.step4.health_conditions.options.none.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "dont_know",
+            "text": "{{anc_profile.step4.health_conditions.options.dont_know.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "hiv",
+            "text": "{{anc_profile.step4.health_conditions.options.hiv.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "hypertension",
+            "text": "{{anc_profile.step4.health_conditions.options.hypertension.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "6033AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "kidney_disease",
+            "text": "{{anc_profile.step4.health_conditions.options.kidney_disease.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "intestinal_operation",
+            "text": "{{anc_profile.step4.health_conditions.options.intestinal_operation.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "heart_disease",
+            "text": "{{anc_profile.step4.health_conditions.options.heart_disease.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "asthma",
+            "text": "{{anc_profile.step4.health_conditions.options.asthma.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "tuberculosis",
+            "text": "{{anc_profile.step4.health_conditions.options.tuberculosis.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "gest_diabetes",
+            "text": "{{anc_profile.step4.health_conditions.options.gest_diabetes.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "diabetes_other",
+            "text": "{{anc_profile.step4.health_conditions.options.diabetes_other.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "diabetes",
+            "text": "{{anc_profile.step4.health_conditions.options.diabetes.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "diabetes_type2",
+            "text": "{{anc_profile.step4.health_conditions.options.diabetes_type2.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "148117AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "autoimmune_disease",
+            "text": "{{anc_profile.step4.health_conditions.options.autoimmune_disease.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "165223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "blood_disorder",
+            "text": "{{anc_profile.step4.health_conditions.options.blood_disorder.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "151286AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "cancer",
+            "text": "{{anc_profile.step4.health_conditions.options.cancer.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "cancer_other",
+            "text": "{{anc_profile.step4.health_conditions.options.cancer_other.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "epilepsy",
+            "text": "{{anc_profile.step4.health_conditions.options.epilepsy.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "other",
+            "text": "{{anc_profile.step4.health_conditions.options.other.text}}"
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.health_conditions.v_required.err}}"
+        }
+      },
+      {
+        "key": "health_conditions_cancer_other",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step4.health_conditions_cancer_other.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.health_conditions_cancer_other.v_required.err}}"
+        },
+        "relevance": {
+          "step4:health_conditions": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "cancer_other"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "health_conditions_other",
+        "openmrs_entity_parent": "1628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step4.health_conditions_other.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.health_conditions_other.v_required.err}}"
+        },
+        "relevance": {
+          "step4:health_conditions": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "other"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "165260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "key": "preeclampsia_risk",
+        "type": "hidden",
+        "label_text_style": "bold",
+        "text_color": "#FF0000",
+        "v_required": {
+          "value": false
+        },
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "pre_eclampsia_two_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_profile.step4.pre_eclampsia_two_toaster.text}}",
+        "text_color": "#000000",
+        "toaster_info_text": "{{anc_profile.step4.pre_eclampsia_two_toaster.toaster_info_text}}",
+        "toaster_info_title": "{{anc_profile.step4.pre_eclampsia_two_toaster.toaster_info_title}}",
+        "toaster_type": "warning",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hiv_diagnosis_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step4.hiv_diagnosis_date.hint}}",
+        "expanded": false,
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step4.hiv_diagnosis_date.v_required.err}}"
+        }
+      },
+      {
+        "key": "hiv_diagnosis_date_unknown",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "165224AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "check_box",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "key": "yes",
+            "text": "{{anc_profile.step4.hiv_diagnosis_date_unknown.options.yes.text}}",
+            "value": false
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.hiv_diagnosis_date_unknown.v_required.err}}"
+        },
+        "relevance": {
+          "step4:health_conditions": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "hiv"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "key": "hiv_positive",
+        "type": "hidden",
+        "label_text_style": "bold",
+        "text_color": "#FF0000",
+        "v_required": {
+          "value": false
+        },
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
+      },
       {
         "key": "allergies",
         "openmrs_entity_parent": "",
@@ -2425,321 +2792,8 @@
             ]
           }
         }
-      },
-      {
-        "key": "health_conditions",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "1628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "openmrs_data_type": "select multiple",
-        "type": "check_box",
-        "label": "{{anc_profile.step4.health_conditions.label}}",
-        "label_text_style": "bold",
-        "hint": "{{anc_profile.step4.health_conditions.hint}}",
-        "exclusive": [
-          "none",
-          "dont_know"
-        ],
-        "options": [
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "none",
-            "text": "{{anc_profile.step4.health_conditions.options.none.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "dont_know",
-            "text": "{{anc_profile.step4.health_conditions.options.dont_know.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "148117AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "autoimmune_disease",
-            "text": "{{anc_profile.step4.health_conditions.options.autoimmune_disease.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "165223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "blood_disorder",
-            "text": "{{anc_profile.step4.health_conditions.options.blood_disorder.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "151286AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "cancer",
-            "text": "{{anc_profile.step4.health_conditions.options.cancer.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "cancer_other",
-            "text": "{{anc_profile.step4.health_conditions.options.cancer_other.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "gest_diabetes",
-            "text": "{{anc_profile.step4.health_conditions.options.gest_diabetes.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "diabetes_other",
-            "text": "{{anc_profile.step4.health_conditions.options.diabetes_other.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "diabetes",
-            "text": "{{anc_profile.step4.health_conditions.options.diabetes.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "diabetes_type2",
-            "text": "{{anc_profile.step4.health_conditions.options.diabetes_type2.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "epilepsy",
-            "text": "{{anc_profile.step4.health_conditions.options.epilepsy.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "hiv",
-            "text": "{{anc_profile.step4.health_conditions.options.hiv.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "hypertension",
-            "text": "{{anc_profile.step4.health_conditions.options.hypertension.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "6033AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "kidney_disease",
-            "text": "{{anc_profile.step4.health_conditions.options.kidney_disease.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "intestinal_operation",
-            "text": "{{anc_profile.step4.health_conditions.options.intestinal_operation.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "heart_disease",
-            "text": "{{anc_profile.step4.health_conditions.options.heart_disease.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "asthma",
-            "text": "{{anc_profile.step4.health_conditions.options.asthma.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "tuberculosis",
-            "text": "{{anc_profile.step4.health_conditions.options.tuberculosis.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "other",
-            "text": "{{anc_profile.step4.health_conditions.options.other.text}}"
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.health_conditions.v_required.err}}"
-        }
-      },
-      {
-        "key": "health_conditions_cancer_other",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step4.health_conditions_cancer_other.hint}}",
-        "edit_type": "edit_text",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.health_conditions_cancer_other.v_required.err}}"
-        },
-        "relevance": {
-          "step4:health_conditions": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "cancer_other"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "key": "health_conditions_other",
-        "openmrs_entity_parent": "1628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step4.health_conditions_other.hint}}",
-        "edit_type": "edit_text",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.health_conditions_other.v_required.err}}"
-        },
-        "relevance": {
-          "step4:health_conditions": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "other"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "165260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "key": "preeclampsia_risk",
-        "type": "hidden",
-        "label_text_style": "bold",
-        "text_color": "#FF0000",
-        "v_required": {
-          "value": false
-        },
-        "calculation": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_calculation_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "pre_eclampsia_two_toaster",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "type": "toaster_notes",
-        "text": "{{anc_profile.step4.pre_eclampsia_two_toaster.text}}",
-        "text_color": "#000000",
-        "toaster_info_text": "{{anc_profile.step4.pre_eclampsia_two_toaster.toaster_info_text}}",
-        "toaster_info_title": "{{anc_profile.step4.pre_eclampsia_two_toaster.toaster_info_title}}",
-        "toaster_type": "warning",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "hiv_diagnosis_date",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step4.hiv_diagnosis_date.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step4.hiv_diagnosis_date.v_required.err}}"
-        }
-      },
-      {
-        "key": "hiv_diagnosis_date_unknown",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "165224AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "openmrs_data_type": "select one",
-        "type": "check_box",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "",
-            "openmrs_entity_id": "",
-            "key": "yes",
-            "text": "{{anc_profile.step4.hiv_diagnosis_date_unknown.options.yes.text}}",
-            "value": false
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.hiv_diagnosis_date_unknown.v_required.err}}"
-        },
-        "relevance": {
-          "step4:health_conditions": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "hiv"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "key": "hiv_positive",
-        "type": "hidden",
-        "label_text_style": "bold",
-        "text_color": "#FF0000",
-        "v_required": {
-          "value": false
-        },
-        "calculation": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_calculation_rules.yml"
-            }
-          }
-        }
       }
+
     ]
   },
   "step5": {
@@ -2813,7 +2867,7 @@
         },
         "max_date": "today",
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_profile.step5.date_tt1_received.v_required.err}}"
         }
       },
@@ -2839,7 +2893,7 @@
         },
         "max_date": "today",
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_profile.step5.date_tt2_received.v_required.err}}"
         }
       },
@@ -2865,7 +2919,7 @@
         },
         "max_date": "today",
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_profile.step5.date_tt3_received.v_required.err}}"
         }
       },
@@ -2893,6 +2947,32 @@
         "v_required": {
           "value": false,
           "err": "{{anc_profile.step5.date_tt4_received.v_required.err}}"
+        }
+      },
+      {
+        "key": "date_tt5_received",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step5.date_tt5_received.hint}}",
+        "expanded": false,
+        "relevance": {
+          "step5:tt_immun_status": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "3_doses",
+                  "1-4_doses"
+                ]
+              }
+            ]
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step5.date_tt5_received.v_required.err}}"
         }
       },
       {

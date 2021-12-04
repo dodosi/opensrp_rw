@@ -52,5 +52,6 @@ public class DBConstantsUtils {
         public static final String SECTOR = "sector";
         public static final String INSURANCE = "insurance";
         public static final String UBUDEHE_CATEGORY = "ubudehe_category";
+        public static final String NATIONAL_ID = "national_id";
     }
 }

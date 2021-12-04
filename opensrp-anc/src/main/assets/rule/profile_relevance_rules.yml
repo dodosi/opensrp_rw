@@ -236,3 +236,10 @@ priority: 1
 condition: "(global_age < 19)"
 actions:
   - "isRelevant = true"
+---
+name: step3_age_greater30_toaster
+description: Age info
+priority: 1
+condition: "(global_age > 30) && (step3_gravida == 1)"
+actions:
+  - "isRelevant = true"

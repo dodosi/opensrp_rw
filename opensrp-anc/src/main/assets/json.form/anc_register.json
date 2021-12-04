@@ -116,6 +116,19 @@
         }
       },
       {
+        "key": "national_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "national_id",
+        "hint": "{{anc_register.step1.national_id.hint}}",
+        "type": "edit_text",
+        "edit_type": "number",
+        "v_required": {
+          "value": "true",
+          "err": "National id required please"
+        }
+      },
+      {
         "key": "gender",
         "openmrs_entity_parent": "",
         "openmrs_entity": "person",
@@ -274,18 +287,16 @@
         "type": "spinner",
         "hint": "{{anc_register.step1.ubudehe_category.hint}}",
         "values": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E"
+          "1",
+          "2",
+          "3",
+          "4"
         ],
         "keys": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E"
+          "1",
+          "2",
+          "3",
+          "4"
         ],
         "v_required": {
           "value": "true",
@@ -310,14 +321,10 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "address2",
-        "type": "edit_text",
+        "type": "hidden",
         "hint": "{{anc_register.step1.home_address.hint}}",
         "edit_type": "name",
-        "type": "hidden",
-        "v_required": {
-          "value": "true",
-          "err": "{{anc_register.step1.home_address.v_required.err}}"
-        }
+        "read_only": true
       },
       {
         "key": "province",
