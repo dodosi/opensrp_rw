@@ -3,6 +3,7 @@ package org.smartregister.anc.library.listener;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
+import android.widget.Toast;
 
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.BaseHomeRegisterActivity;
@@ -21,6 +22,7 @@ public class LibraryContentClickListener implements View.OnClickListener {
     public void onClick(View view) {
         if (view != null) {
             CustomFontTextView header = view.findViewById(R.id.library_text_header);
+            try {
             String headerText = header.getText().toString();
 
             if (activity != null) {
@@ -29,6 +31,9 @@ public class LibraryContentClickListener implements View.OnClickListener {
                 Intent intent = new Intent(activity, LibraryContentActivity.class);
                 intent.putExtra(ConstantsUtils.IntentKeyUtils.LIBRARY_HEADER, headerText);
                 activity.startActivity(intent);
+            }
+        }catch (NullPointerException e){
+                //Toast.makeText(activity, "Click on header to view", Toast.LENGTH_SHORT).show();
             }
         }
     }

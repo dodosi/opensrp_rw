@@ -291,6 +291,124 @@
         }
       },
       {
+        "key": "apgar_score",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{anc_close.step1.apgar_score.hint}}",
+        "options": [
+
+          {
+            "key": "5min",
+            "text": "{{anc_close.step1.apgar_score.options.5min.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "10min",
+            "text": "{{anc_close.step1.apgar_score.options.10min.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "resuscitation",
+            "text": "{{anc_close.step1.apgar_score.options.resuscitation.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_close.step1.apgar_score.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "anc_close_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "died_before24hrs",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{anc_close.step1.died_before24hrs.hint}}",
+        "options": [
+
+          {
+            "key": "no",
+            "text": "{{anc_close.step1.died_before24hrs.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "yes",
+            "text": "{{anc_close.step1.died_before24hrs.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_close.step1.died_before24hrs.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "anc_close_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "baby_fed_in30min",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{anc_close.step1.baby_fed_in30min.hint}}",
+        "options": [
+
+          {
+            "key": "no",
+            "text": "{{anc_close.step1.baby_fed_in30min.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "yes",
+            "text": "{{anc_close.step1.baby_fed_in30min.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_close.step1.baby_fed_in30min.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "anc_close_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
         "key": "exclusive_bf",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",

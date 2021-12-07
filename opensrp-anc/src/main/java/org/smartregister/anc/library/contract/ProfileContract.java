@@ -28,8 +28,6 @@ public interface ProfileContract {
         HashMap<String, String> saveFinishForm(Map<String, String> client, Context context);
 
         void getTaskCount(String baseEntityId);
-
-        void createContactSummaryPdf();
     }
 
     interface View extends BaseProfileContract.View {
@@ -47,8 +45,6 @@ public interface ProfileContract {
         void setPhoneNumber(String phoneNumber);
 
         void setTaskCount(String taskCount);
-
-        void createContactSummaryPdf();
 
     }
 

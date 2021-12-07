@@ -94,6 +94,82 @@
         }
       },
       {
+        "key": "visit_from",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "1631640AAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "native_radio",
+        "label": "{{anc_quick_check.step1.visit_from.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "community",
+            "text": "{{anc_quick_check.step1.visit_from.options.community.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "10650AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "health_post",
+            "text": "{{anc_quick_check.step1.visit_from.options.health_post.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "10660AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "referred",
+            "text": "{{anc_quick_check.step1.visit_from.options.referred.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "10661AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_quick_check.step1.visit_from.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "quick_check_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "accompanied_by_partner",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_quick_check.step1.accompanied_by_partner.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_quick_check.step1.accompanied_by_partner.options.yes.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_quick_check.step1.accompanied_by_partner.options.no.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_quick_check.step1.accompanied_by_partner.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "quick_check_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
         "key": "specific_complaint",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -585,6 +661,38 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "163477AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "proteinuria",
+            "text": "{{anc_quick_check.step1.danger_signs.options.proteinuria.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "anemia",
+            "text": "{{anc_quick_check.step1.danger_signs.options.anemia.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "oedema",
+            "text": "{{anc_quick_check.step1.danger_signs.options.oedema.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "not_gaining_weight",
+            "text": "{{anc_quick_check.step1.danger_signs.options.not_gaining_weight.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
           },
           {
             "key": "severe_abdominal_pain",

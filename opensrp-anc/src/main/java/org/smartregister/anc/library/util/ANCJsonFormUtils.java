@@ -538,7 +538,35 @@ public class ANCJsonFormUtils extends org.smartregister.util.JsonFormUtils {
             String homeAddress = womanClient.get(DBConstantsUtils.KeyUtils.HOME_ADDRESS);
             jsonObject.put(ANCJsonFormUtils.VALUE, homeAddress);
 
-        } else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(ConstantsUtils.WOM_IMAGE)) {
+        }else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.INSURANCE)) {
+            String insurance = womanClient.get(DBConstantsUtils.KeyUtils.INSURANCE);
+            jsonObject.put(ANCJsonFormUtils.VALUE, insurance);
+
+        } else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.UBUDEHE_CATEGORY)) {
+            String ubudehe_category = womanClient.get(DBConstantsUtils.KeyUtils.UBUDEHE_CATEGORY);
+            jsonObject.put(ANCJsonFormUtils.VALUE, ubudehe_category);
+
+        }else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.NATIONAL_ID)) {
+            String nationalid = womanClient.get(DBConstantsUtils.KeyUtils.NATIONAL_ID);
+            jsonObject.put(ANCJsonFormUtils.VALUE, nationalid);
+
+        }else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.VILLAGE)) {
+            String village = womanClient.get(DBConstantsUtils.KeyUtils.VILLAGE);
+            jsonObject.put(ANCJsonFormUtils.VALUE, village);
+        }
+        else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.PROVINCE)) {
+            String province = womanClient.get(DBConstantsUtils.KeyUtils.PROVINCE);
+            jsonObject.put(ANCJsonFormUtils.VALUE, province);
+        }
+        else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.DISTRICT)) {
+            String district = womanClient.get(DBConstantsUtils.KeyUtils.DISTRICT);
+            jsonObject.put(ANCJsonFormUtils.VALUE, district);
+        }
+        else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.SECTOR)) {
+            String sector = womanClient.get(DBConstantsUtils.KeyUtils.SECTOR);
+            jsonObject.put(ANCJsonFormUtils.VALUE, sector);
+        }
+        else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(ConstantsUtils.WOM_IMAGE)) {
             getPhotoFieldValue(womanClient, jsonObject);
         } else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.DOB_UNKNOWN)) {
             jsonObject.put(ANCJsonFormUtils.READ_ONLY, false);

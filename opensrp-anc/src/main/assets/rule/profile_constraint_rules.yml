@@ -26,3 +26,24 @@ priority: 1
 condition: "true"
 actions:
 - "constraint = step3_parity + 1"
+---
+name: step3_newborn_dirths
+description: newborn dirths number selectors
+priority: 1
+condition: "true"
+actions:
+ - "constraint = step3_previous_pregnancies + 1"
+---
+name: step3_children_live
+description: children live births number selectors
+priority: 1
+condition: "true"
+actions:
+ - "constraint = (step3_previous_pregnancies - step3_miscarriages_abortions) + 1"
+---
+name: step3_perfect_births
+description: children live births number selectors
+priority: 1
+condition: "true"
+actions:
+ - "constraint = (step3_previous_pregnancies - step3_miscarriages_abortions) + 1"
