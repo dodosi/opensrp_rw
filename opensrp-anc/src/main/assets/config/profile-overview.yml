@@ -3,10 +3,6 @@ properties_file_name: "profile_overview"
 group: overview_of_pregnancy
 sub_group: demographic_info
 fields:
-  - template: "{{profile_overview.overview_of_pregnancy.demographic_info.husband_name}} : {husband_name}"
-    relevance: "husband_name != ''"
-    isRedFont: "false"
-
   - template: "{{profile_overview.overview_of_pregnancy.demographic_info.occupation}}: {occupation_value}"
     relevance: "occupation.contains('informal_employment_sex_worker')"
     isRedFont: "true"
@@ -89,7 +85,7 @@ fields:
     isRedFont: "true"
 
 ---
-sub_group: weight and height
+sub_group: weight
 fields:
   - template: "{{profile_overview.overview_of_pregnancy.weight.bmi}}: {bmi}"
     relevance: "bmi != ''"
@@ -104,9 +100,6 @@ fields:
 
   - template: "{{profile_overview.overview_of_pregnancy.weight.total_weight_gain_in_pregnancy_so_far}}: {tot_weight_gain} kg"
     relevance: "tot_weight_gain != ''"
-
-  - template: "{{profile_overview.overview_of_pregnancy.height.height_category}}: {height_cat}"
-    relevance: "height_cat != ''"
 
 ---
 sub_group: medications

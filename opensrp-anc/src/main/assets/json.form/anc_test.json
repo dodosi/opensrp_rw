@@ -448,53 +448,6 @@
           }
         }
       },
-
-      {
-        "key": "accordion_rubella_tests",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_rubella_tests.text}}",
-        "type": "expansion_panel",
-        "display_bottom_section": true,
-        "content_form": "tests_rubella_tests_sub_form",
-        "container": "anc_test"
-      },
-      {
-        "key": "accordion_rpr_partener_tests",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_rpr_partener_tests.text}}",
-        "type": "expansion_panel",
-        "display_bottom_section": true,
-        "content_form": "tests_partner_rpr_sub_form",
-        "container": "anc_test"
-      },
-      {
-        "key": "accordion_cmv_tests",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_cmv_tests.text}}",
-        "type": "expansion_panel",
-        "accordion_info_text": "{{anc_test.step2.accordion_cmv_tests.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step2.accordion_cmv_tests.accordion_info_title}}",
-        "display_bottom_section": true,
-        "content_form": "tests_cmv_sub_form",
-        "container": "anc_test"
-      },
-      {
-        "key": "accordion_herpes_tests",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_herpes_tests.text}}",
-        "type": "expansion_panel",
-        "display_bottom_section": true,
-        "content_form": "tests_herps_sub_form",
-        "container": "anc_test"
-      },
       {
         "key": "accordion_other_tests",
         "openmrs_entity_parent": "",

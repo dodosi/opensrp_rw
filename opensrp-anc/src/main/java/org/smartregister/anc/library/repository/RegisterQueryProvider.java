@@ -77,10 +77,6 @@ public class RegisterQueryProvider {
                 getDetailsTable() + "." + DBConstantsUtils.KeyUtils.NEXT_CONTACT, getDetailsTable() + "." + DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE,
                 getDetailsTable() + "." + DBConstantsUtils.KeyUtils.VISIT_START_DATE, getDetailsTable() + "." + DBConstantsUtils.KeyUtils.RED_FLAG_COUNT,
                 getDetailsTable() + "." + DBConstantsUtils.KeyUtils.YELLOW_FLAG_COUNT, getDetailsTable() + "." + DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE,
-                getDetailsTable() + "." + DBConstantsUtils.KeyUtils.COHABITANTS, getDemographicTable() + "." + DBConstantsUtils.KeyUtils.RELATIONAL_ID,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.INSURANCE,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.VILLAGE,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.PROVINCE,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.DISTRICT,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.SECTOR,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.CELL,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.UBUDEHE_CATEGORY,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.NATIONAL_ID};
+                getDetailsTable() + "." + DBConstantsUtils.KeyUtils.COHABITANTS, getDemographicTable() + "." + DBConstantsUtils.KeyUtils.RELATIONAL_ID};
     }
 }
