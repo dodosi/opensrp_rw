@@ -7,7 +7,6 @@
   "relational_id": "",
   "form_version": "0.0.1",
   "default_values": [
-    "limping",
     "height",
     "pregest_weight",
     "pregest_weight_unknown",
@@ -20,7 +19,6 @@
     "current_weight"
   ],
   "editable_fields": [
-    "limping",
     "height",
     "pregest_weight",
     "pregest_weight_unknown",
@@ -454,46 +452,6 @@
             }
           }
         }
-      },
-      {
-        "key": "height_cat",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "type": "hidden",
-        "calculation": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "physical-exam-calculations-rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "limping",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step1.limping.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "yes",
-            "text": "{{anc_physical_exam.step1.limping.options.yes.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "no",
-            "text": "{{anc_physical_exam.step1.limping.options.no.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ]
       }
     ]
   },
@@ -1480,111 +1438,6 @@
         }
       },
       {
-        "key": "albumin_exam",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step3.albumin_exam.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "not_done",
-            "text": "{{anc_physical_exam.step3.albumin_exam.options.not_done.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "normal",
-            "text": "{{anc_physical_exam.step3.albumin_exam.options.normal.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "abnormal",
-            "text": "{{anc_physical_exam.step3.albumin_exam.options.abnormal.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ]
-      },
-      {
-        "key": "woman_hygiene",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step3.woman_hygiene.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "good",
-            "text": "{{anc_physical_exam.step3.woman_hygiene.options.good.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "poor",
-            "text": "{{anc_physical_exam.step3.woman_hygiene.options.poor.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          }
-        ],
-        "v_required": {
-          "value": "true",
-          "err": "Please rate woman Hygiene"
-        }
-      },
-      {
-        "key": "muac",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step3.muac.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "not_done",
-            "text": "{{anc_physical_exam.step3.muac.options.not_done.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "abnormal",
-            "text": "{{anc_physical_exam.step3.muac.options.abnormal.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "normal",
-            "text": "{{anc_physical_exam.step3.muac.options.normal.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          }
-        ],
-        "v_required": {
-          "value": "false",
-          "err": ""
-        }
-      },
-      {
         "key": "respiratory_exam",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -2445,7 +2298,6 @@
   },
   "step4": {
     "title": "{{anc_physical_exam.step4.title}}",
-
     "fields": [
       {
         "key": "sfh_label",
@@ -2489,38 +2341,6 @@
         "openmrs_entity_id": "spacer",
         "type": "spacer",
         "spacer_height": "10sp"
-      },{
-        "key": "sfh_to_ga",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step4.sfh_to_ga.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "yes",
-            "text": "{{anc_physical_exam.step4.sfh_to_ga.options.yes.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "no",
-            "text": "{{anc_physical_exam.step4.sfh_to_ga.options.no.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          }
-        ],
-        "v_required": {
-          "value": "true",
-          "err": "{{anc_physical_exam.step4.sfh_to_ga.v_required.err}}"
-        }
-
       },
       {
         "key": "fetal_movement",
@@ -2674,46 +2494,6 @@
               "rules-file": "physical-exam-relevance-rules.yml"
             }
           }
-        }
-      },
-      {
-        "key": "spacer",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "spacer",
-        "type": "spacer",
-        "spacer_height": "10sp"
-      },
-      {
-        "key": "fetus_tone",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step4.fetus_tone.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "abnormal",
-            "text": "{{anc_physical_exam.step4.fetus_tone.options.abnormal.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "normal",
-            "text": "{{anc_physical_exam.step4.fetus_tone.options.normal.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          }
-        ],
-        "v_required": {
-          "value": "false",
-          "err": ""
         }
       },
       {
@@ -2972,113 +2752,8 @@
             }
           }
         }
-      },
-      {
-        "key": "fetus_position",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step4.fetus_position.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "abnormal",
-            "text": "{{anc_physical_exam.step4.fetus_position.options.abnormal.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "normal",
-            "text": "{{anc_physical_exam.step4.fetus_position.options.normal.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          }
-        ],
-        "v_required": {
-          "value": "false",
-          "err": ""
-        }
-      },
-      {
-        "key": "baby_moving",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step4.baby_moving.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "yes",
-            "text": "{{anc_physical_exam.step4.baby_moving.options.yes.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "no",
-            "text": "{{anc_physical_exam.step4.baby_moving.options.no.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          }
-        ],
-        "v_required": {
-          "value": "false",
-          "err": ""
-        }
-      },
-      {
-        "key": "sex_of_baby",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_physical_exam.step4.sex_of_baby.label}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "options": [
-          {
-            "key": "M",
-            "text": "{{anc_physical_exam.step4.sex_of_baby.options.boy.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "F",
-            "text": "{{anc_physical_exam.step4.sex_of_baby.options.girl.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          },
-          {
-            "key": "sex_unknown",
-            "text": "{{anc_physical_exam.step4.sex_of_baby.options.unknown.text}}",
-            "value": "false",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          }
-        ],
-        "v_required": {
-          "value": "false",
-          "err": ""
-        }
       }
     ]
   },
-
   "properties_file_name": "anc_physical_exam"
 }
