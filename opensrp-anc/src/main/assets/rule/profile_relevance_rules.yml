@@ -104,6 +104,13 @@ condition: "((step3_previous_pregnancies - step3_miscarriages_abortions - step3_
 actions:
   - "isRelevant = true"
 ---
+name: step3_newborn_dirths_label
+description: Newborn dirths label
+priority: 1
+condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+actions:
+  - "isRelevant = true"
+---
 name: step3_stillbirths
 description: Slill births
 priority: 1
@@ -174,9 +181,65 @@ condition: "(step8_hiv_risk == 1)"
 actions:
   - "isRelevant = true"
 ---
+name: step3_newborn_dirths
+description: Newborn dirth
+priority: 1
+condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+actions:
+  - "isRelevant = true"
+---
+name: step3_date_last_born
+description: Date of Birth for last born
+priority: 1
+condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+actions:
+  - "isRelevant = true"
+---
+name: step3_last_born_status
+description: Last born status
+priority: 1
+condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+actions:
+  - "isRelevant = true"
+---
+name: step3_children_live_label
+description: Live births label
+priority: 1
+condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+actions:
+  - "isRelevant = true"
+---
+name: step3_children_live
+description: Children Live births
+priority: 1
+condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+actions:
+  - "isRelevant = true"
+---
+name: step3_perfect_births
+description: Perfect births
+priority: 1
+condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+actions:
+  - "isRelevant = true"
+---
+name: step3_perfect_births_label
+description: Perfect births
+priority: 1
+condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+actions:
+  - "isRelevant = true"
+---
 name: step1_headss_toaster
 description: HEADSS info
 priority: 1
 condition: "(global_age < 19)"
+actions:
+  - "isRelevant = true"
+---
+name: step3_age_greater30_toaster
+description: Age info
+priority: 1
+condition: "(global_age > 30) && (step3_gravida == 1)"
 actions:
   - "isRelevant = true"

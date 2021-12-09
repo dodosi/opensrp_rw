@@ -116,6 +116,19 @@
         }
       },
       {
+        "key": "national_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "national_id",
+        "hint": "{{anc_register.step1.national_id.hint}}",
+        "type": "edit_text",
+        "edit_type": "number",
+        "v_required": {
+          "value": "true",
+          "err": "National id required please"
+        }
+      },
+      {
         "key": "gender",
         "openmrs_entity_parent": "",
         "openmrs_entity": "person",
@@ -266,16 +279,111 @@
         }
       },
       {
+        "key": "ubudehe_category",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "hint": "{{anc_register.step1.ubudehe_category.hint}}",
+        "values": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "keys": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_register.step1.ubudehe_category.v_required.err}}"
+        }
+      },
+      {
+        "key": "insurance",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "edit_text",
+        "hint": "{{anc_register.step1.insurance.hint}}",
+        "v_required": {
+          "value": "false",
+          "err": "{{anc_register.step1.insurance.v_required.err}}"
+        }
+      },
+      {
         "key": "home_address",
         "openmrs_entity_parent": "",
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "address2",
-        "type": "edit_text",
+        "type": "hidden",
         "hint": "{{anc_register.step1.home_address.hint}}",
         "edit_type": "name",
+        "read_only": true
+      },
+      {
+        "key": "province",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "stateProvince",
+        "type": "edit_text",
+        "hint": "{{anc_register.step1.province.hint}}",
         "v_required": {
           "value": "true",
-          "err": "{{anc_register.step1.home_address.v_required.err}}"
+          "err": "{{anc_register.step1.province.v_required.err}}"
+        }
+      },
+      {
+        "key": "district",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "countyDistrict",
+        "type": "edit_text",
+        "hint": "{{anc_register.step1.district.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_register.step1.district.v_required.err}}"
+        }
+      },
+      {
+        "key": "sector",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "subDistrict",
+        "type": "edit_text",
+        "hint": "{{anc_register.step1.sector.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_register.step1.sector.v_required.err}}"
+        }
+      },
+      {
+        "key": "cell",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "subTown",
+        "type": "edit_text",
+        "hint": "{{anc_register.step1.cell.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_register.step1.cell.v_required.err}}"
+        }
+      },
+      {
+        "key": "village",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_address",
+        "openmrs_entity_id": "cityVillage",
+        "type": "edit_text",
+        "hint": "{{anc_register.step1.village.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_register.step1.village.v_required.err}}"
         }
       },
       {

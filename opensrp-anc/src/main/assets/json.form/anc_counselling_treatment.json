@@ -3498,6 +3498,106 @@
         }
       },
       {
+        "key": "breastfeeding_counselling",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.breastfeeding_counselling.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "done",
+            "text": "{{anc_counselling_treatment.step7.breastfeeding_counselling.options.done.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "not_done",
+            "text": "{{anc_counselling_treatment.step7.breastfeeding_counselling.options.not_done.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ]
+      },
+      {
+        "key": "insurance_counselling",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.insurance_counselling.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "done",
+            "text": "{{anc_counselling_treatment.step7.insurance_counselling.options.done.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "not_done",
+            "text": "{{anc_counselling_treatment.step7.insurance_counselling.options.not_done.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ]
+      },
+      {
+        "key": "deworming_performed",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.deworming_performed.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_counselling_treatment.step7.deworming_performed.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_counselling_treatment.step7.deworming_performed.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ]
+      },
+      {
+        "key": "mosquito_net_recieved",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.mosquito_net_recieved.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_counselling_treatment.step7.mosquito_net_recieved.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_counselling_treatment.step7.mosquito_net_recieved.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ]
+      },
+      {
         "key": "family_planning_counsel",
         "openmrs_entity_parent": "165340AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",

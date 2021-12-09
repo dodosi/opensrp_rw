@@ -45,5 +45,13 @@ public class DBConstantsUtils {
         public static final String VISIT_START_DATE = "visit_start_date";
         public static final String IS_FIRST_VISIT = "is_first_visit";
         public static final String COHABITANTS = "cohabitants";
+        public static final String VILLAGE = "village";
+        public static final String PROVINCE = "province";
+        public static final String DISTRICT = "district";
+        public static final String CELL = "cell";
+        public static final String SECTOR = "sector";
+        public static final String INSURANCE = "insurance";
+        public static final String UBUDEHE_CATEGORY = "ubudehe_category";
+        public static final String NATIONAL_ID = "national_id";
     }
 }

@@ -5,3 +5,17 @@ priority: 1
 condition: "!step1_contact_reason.isEmpty()"
 actions:
   - "isRelevant = true"
+---
+name: step1_visit_from
+description: visit_from
+priority: 1
+condition: "!step1_contact_reason.isEmpty()"
+actions:
+  - "isRelevant = true"
+---
+name: step1_accompanied_by_partner
+description: accompanied_by_partner
+priority: 1
+condition: "!step1_contact_reason.isEmpty()"
+actions:
+  - "isRelevant = true"

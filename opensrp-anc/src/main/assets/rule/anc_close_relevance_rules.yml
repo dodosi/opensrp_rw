@@ -34,10 +34,31 @@ condition: "step1_anc_close_reason == 'live_birth'"
 actions:
 - "isRelevant = true"
 ---
+name: step1_apgar_score
+description: apgar score
+priority: 1
+condition: "step1_anc_close_reason == 'live_birth'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_died_before24hrs
+description: apgar score
+priority: 1
+condition: "step1_anc_close_reason == 'live_birth'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_baby_fed_in30min
+description: apgar score
+priority: 1
+condition: "step1_anc_close_reason == 'live_birth' && step1_died_before24hrs == 'no'"
+actions:
+  - "isRelevant = true"
+---
 name: step1_exclusive_bf
 description: exclusive_bf
 priority: 1
-condition: "step1_anc_close_reason == 'live_birth'"
+condition: "step1_anc_close_reason == 'live_birth' && step1_died_before24hrs == 'no'"
 actions:
 - "isRelevant = true"
 ---
