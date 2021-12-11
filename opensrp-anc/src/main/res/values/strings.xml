@@ -421,9 +421,9 @@
     <string name="default_language_string">Current language: %1s</string>
 
     <string name="choose_language">Choose language</string>
-    <string name="english_language">English</string>
-    <string name="french_language">French</string>
-    <string name="portuguese_brazil_language">Portuguese (Brazil)</string>
+    <string name="english_language" translatable="false">English</string>
+    <string name="french_language" translatable="false">French</string>
+    <string name="portuguese_brazil_language" translatable="false">Portuguese (Brazil)</string>
 
     <string name="accordion_ultrasound">Ultrasound test</string>
     <string name="accordion_blood_type">Blood Type test</string>
@@ -440,6 +440,7 @@
     <string name="contact_summary_data">Contact Summary Data  -  %1$s</string>
     <string name="pdf_saved_successfully">\"Pdf saved successfully to location \"</string>
     <string name="contact_summary_data_file">contactSummaryData.pdf</string>
-    <string name="kinyarwanda">Kinyarwanda</string>
+    <string name="kinyarwanda" translatable="false">Kinyarwanda</string>
+    <string name="pdf_saved_successfully">\"Pdf saved successfully to location \"</string>
 
 </resources>
