@@ -1,0 +1,28 @@
+---
+name: step1_province
+description: Province
+priority: 1
+condition: "(!step1_province.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_district
+description: District
+priority: 1
+condition: "(!step1_district.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_sector
+description: Sector
+priority: 1
+condition: "(!step1_sector.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_cell
+description: Cell
+priority: 1
+condition: "(!step1_cell.isEmpty())"
+actions:
+  - "isRelevant = true"

@@ -27,6 +27,14 @@
           }
         },
         {
+          "column_name": "address_number",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "address_number"
+          }
+        },
+        {
           "column_name": "insurance",
           "type": "Event",
           "json_mapping": {
