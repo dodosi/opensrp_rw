@@ -538,6 +538,8 @@ public class ANCJsonFormUtils extends org.smartregister.util.JsonFormUtils {
             String homeAddress = womanClient.get(DBConstantsUtils.KeyUtils.HOME_ADDRESS);
             jsonObject.put(ANCJsonFormUtils.VALUE, homeAddress);
 
+        } else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(ConstantsUtils.WOM_IMAGE)) {
+            getPhotoFieldValue(womanClient, jsonObject);
         }else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.INSURANCE)) {
             String insurance = womanClient.get(DBConstantsUtils.KeyUtils.INSURANCE);
             jsonObject.put(ANCJsonFormUtils.VALUE, insurance);
@@ -565,6 +567,10 @@ public class ANCJsonFormUtils extends org.smartregister.util.JsonFormUtils {
         else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.SECTOR)) {
             String sector = womanClient.get(DBConstantsUtils.KeyUtils.SECTOR);
             jsonObject.put(ANCJsonFormUtils.VALUE, sector);
+        }
+        else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(DBConstantsUtils.KeyUtils.CELL)) {
+            String cell = womanClient.get(DBConstantsUtils.KeyUtils.CELL);
+            jsonObject.put(ANCJsonFormUtils.VALUE, cell);
         }
         else if (jsonObject.getString(ANCJsonFormUtils.KEY).equalsIgnoreCase(ConstantsUtils.WOM_IMAGE)) {
             getPhotoFieldValue(womanClient, jsonObject);

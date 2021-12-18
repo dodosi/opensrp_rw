@@ -2,6 +2,7 @@ package org.smartregister.anc.library.presenter;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import androidx.core.util.Pair;
 
@@ -35,6 +36,7 @@ public class RegisterPresenter implements RegisterContract.Presenter, RegisterCo
     private RegisterContract.Interactor interactor;
     private RegisterContract.Model model;
     private String baseEntityId;
+    private boolean isProgressDialogVisible = false;
 
     public RegisterPresenter(RegisterContract.View view) {
         viewReference = new WeakReference<>(view);
@@ -119,7 +121,10 @@ public class RegisterPresenter implements RegisterContract.Presenter, RegisterCo
     @Override
     public void saveRegistrationForm(String jsonString, boolean isEditMode) {
         try {
+            if(!isProgressDialogVisible)
             getView().showProgressDialog(R.string.saving_dialog_title);
+            isProgressDialogVisible = true;
+            Log.d("MY_TEST",String.valueOf(isEditMode));
             Pair<Client, Event> pair = model.processRegistration(jsonString);
             if (pair == null) {
                 return;
@@ -173,6 +178,7 @@ public class RegisterPresenter implements RegisterContract.Presenter, RegisterCo
         getView().refreshList(FetchStatus.fetched);
         goToClientProfile(baseEntityId);
         getView().hideProgressDialog();
+        isProgressDialogVisible = false;
     }
 
     private void goToClientProfile(String baseEntityId) {
