@@ -1484,7 +1484,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_physical_exam.step3.albumin_exam.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",
@@ -1562,17 +1562,19 @@
             "openmrs_entity_id": "",
             "openmrs_entity_parent": ""
           },
+
           {
-            "key": "abnormal",
-            "text": "{{anc_physical_exam.step3.muac.options.abnormal.text}}",
+            "key": "not_applicable",
+            "text": "{{anc_physical_exam.step3.muac.options.not_applicable.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
             "openmrs_entity_parent": ""
-          },
+          }
+        ,
           {
-            "key": "normal",
-            "text": "{{anc_physical_exam.step3.muac.options.normal.text}}",
+            "key": "done",
+            "text": "{{anc_physical_exam.step3.muac.options.done.text}}",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -1581,7 +1583,30 @@
         ],
         "v_required": {
           "value": "false",
-          "err": ""
+          "err": "{{anc_physical_exam.step3.muac.v_required.err}}"
+        }
+      },
+      {
+        "key": "muac_value",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_physical_exam.step3.muac_value.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_physical_exam.step3.muac_value.v_numeric.err}}"
+        },
+        "v_numeric": {
+          "value": "true",
+          "err": "{{anc_physical_exam.step3.muac_value.v_required.err}}"
+        },
+        "relevance": {
+          "step3:muac": {
+            "type": "string",
+            "ex": "equalTo(., \"done\")"
+
+          }
         }
       },
       {
@@ -3010,7 +3035,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_physical_exam.step4.baby_moving.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",

@@ -410,8 +410,8 @@
     <string name="caffeine_intake">Apport de caféine</string>
     <string name="balanced_diet_content_13">L\'apport maximal de caféine journalier pour une femme enceinte est 300mg, qui est équivalent à:</string>
     <string name="balanced_diet_url_11">ftp://ftp.caism.unicamp.br/pub/astec/CARTILHA_DE_EXERCISIO_FISICO_NA_GRAVIDEZ_Publico.pdf</string>
-    <string name="default_language_string">\"Langage actuel: %1s</string>
-    <string name="choose_language">Choisissez la langue:\"</string>
+    <string name="default_language_string">Langage actuel: %1s</string>
+    <string name="choose_language">Choisissez la langue:</string>
     <string name="accordion_blood_type">Test de groupe sanguin</string>
     <string name="accordion_ultrasound">Test échographique</string>
     <string name="accordion_hepatitis_b">Test dépistage de l\'hépatite B</string>
