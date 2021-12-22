@@ -94,43 +94,56 @@
         }
       },
       {
-        "key": "visit_from",
+        "key": "referred",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "1631640AAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity_id": "",
         "type": "native_radio",
-        "label": "{{anc_quick_check.step1.visit_from.label}}",
+        "label": "{{anc_quick_check.step1.referred.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",
         "options": [
           {
-            "key": "community",
-            "text": "{{anc_quick_check.step1.visit_from.options.community.text}}",
+            "key": "no",
+            "text": "{{anc_quick_check.step1.referred.options.no.text}}",
             "openmrs_entity": "",
-            "openmrs_entity_id": "10650AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            "openmrs_entity_id": ""
           },
           {
-            "key": "health_post",
-            "text": "{{anc_quick_check.step1.visit_from.options.health_post.text}}",
+            "key": "yes",
+            "text": "{{anc_quick_check.step1.referred.options.yes.text}}",
             "openmrs_entity": "",
-            "openmrs_entity_id": "10660AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-          },
-          {
-            "key": "referred",
-            "text": "{{anc_quick_check.step1.visit_from.options.referred.text}}",
-            "openmrs_entity": "",
-            "openmrs_entity_id": "10661AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            "openmrs_entity_id": ""
           }
         ],
         "v_required": {
           "value": true,
-          "err": "{{anc_quick_check.step1.visit_from.v_required.err}}"
+          "err": "{{anc_quick_check.step1.referred.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
             "ex-rules": {
               "rules-file": "quick_check_relevance_rules.yml"
             }
+          }
+        }
+      },
+      {
+        "key": "referred_institute",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_quick_check.step1.referred_institute.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_quick_check.step1.referred_institute.v_required.err}}"
+        },
+        "relevance": {
+          "step1:referred": {
+            "type": "string",
+            "ex": "equalTo(., \"yes\")"
+
           }
         }
       },

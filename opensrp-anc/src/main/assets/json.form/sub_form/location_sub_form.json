@@ -6,7 +6,7 @@
       "openmrs_entity": "",
       "openmrs_entity_id": "",
       "type": "tree",
-      "hint": "location",
+      "hint": "Select woman home address",
       "tree": [{
         "key": "Kigali City",
         "name": "Kigali City",
@@ -55315,22 +55315,6 @@
         }]
       }],
       "default": "[\"Kigali\",\"Nyarugenge\",\"Nyarugenge\",\"Biryogo\",\"Umurava\"]"
-    },
-    {
-      "key": "selected_location",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "edit_text",
-      "hint": "others",
-      "edit_type": "name",
-      "calculation": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
-          }
-        }
-      }
     }
   ],
   "count": 1,

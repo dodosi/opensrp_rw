@@ -3026,7 +3026,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_profile.step5.flu_immun_status.label}}",
         "label_text_style": "bold",
         "multi_relevance": true,
@@ -3056,6 +3056,73 @@
         "v_required": {
           "value": true,
           "err": "{{anc_profile.step5.flu_immun_status.v_required.err}}"
+        }
+      },
+      {
+        "key": "covid_immun_status",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step5.covid_immun_status.label}}",
+        "label_text_style": "bold",
+        "multi_relevance": true,
+        "options": [
+          {
+            "key": "fully_vaccinated",
+            "text": "{{anc_profile.step5.covid_immun_status.options.fully_vaccinated.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "under_vaccinated",
+            "text": "{{anc_profile.step5.covid_immun_status.options.under_vaccinated.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "not_vaccinated",
+            "text": "{{anc_profile.step5.covid_immun_status.options.not_vaccinated.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "unknown",
+            "text": "{{anc_profile.step5.covid_immun_status.options.unknown.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step5.covid_immun_status.v_required.err}}"
+        }
+      },
+      {
+        "key": "covid_immunisation_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_profile.step5.covid_immunisation_toaster.text}}",
+        "text_color": "#000000",
+        "toaster_type": "info",
+        "relevance": {
+          "step5:covid_immun_status": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "not_vaccinated",
+                  "unknown",
+                  "under_vaccinated"
+                ]
+              }
+            ]
+          }
         }
       },
       {
@@ -3097,6 +3164,27 @@
               {
                 "or": [
                   "seasonal_flu_dose_given"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "immunised_against_covid_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_profile.step5.immunised_against_covid_toaster.text}}",
+        "text_color": "#000000",
+        "toaster_type": "positive",
+        "relevance": {
+          "step5:covid_immun_status": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "fully_vaccinated"
                 ]
               }
             ]
