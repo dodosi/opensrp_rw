@@ -389,7 +389,32 @@
           "err": "{{anc_register.step1.home_address.v_required.err}}"
         }
       },
+      {
+        "key": "edit_woman_address",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "check_box",
+        "options": [
+          {
+            "key": "edit_address",
+            "text": "Edit Woman Address",
+            "text_size": "18px",
+            "value": "false",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "registration_relevance_rules.yml"
+            }
+          }
 
+        }
+      },
       {
         "key": "address_number",
         "openmrs_entity_parent": "",
@@ -11794,11 +11819,12 @@
         ],
         "default": "[\"Kigali\",\"Nyarugenge\",\"Nyarugenge\",\"Biryogo\",\"Umurava\"]",
         "relevance": {
-          "step1:province": {
-            "type": "string",
-            "ex": "equalTo(., \"\")"
-
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "registration_relevance_rules.yml"
+            }
           }
+
         }
       },
 
