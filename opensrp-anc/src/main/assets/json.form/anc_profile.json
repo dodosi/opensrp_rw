@@ -662,15 +662,15 @@
         },
         "v_numeric_integer": {
           "value": true,
-          "err": "Enter a Valid GA from ultrasound - weeks value"
+          "err": "{{anc_profile.step2.ultrasound_gest_age_wks.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "4",
-          "err": "GA from ultrasound - weeks should be equal to or greater than 4"
+          "err": "{{anc_profile.step2.ultrasound_gest_age_wks.v_min.err}}"
         },
         "v_max": {
           "value": "40",
-          "err": "GA from ultrasound - weeks should be less than or equal to 40"
+          "err": "{{anc_profile.step2.ultrasound_gest_age_wks.v_max.err}}"
         }
       },
       {
@@ -692,15 +692,15 @@
         },
         "v_numeric_integer": {
           "value": true,
-          "err": "Enter a Valid GA from ultrasound - days value"
+          "err": "{{anc_profile.step2.ultrasound_gest_age_days.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "1",
-          "err": "GA from ultrasound - days should be equal to or greater than 1"
+          "err": "{{anc_profile.step2.ultrasound_gest_age_days.v_min.err}}"
         },
         "v_max": {
           "value": "6",
-          "err": "GA from ultrasound - days should be less than or equal to 6"
+          "err": "{{anc_profile.step2.ultrasound_gest_age_days.v_max.err}}"
         }
       },
       {
@@ -779,8 +779,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "label_info_text": "If LMP is unknown and ultrasound wasn't done or it wasn't done early (before 24 weeks), then assess GA based on Symphysis Fundal Height (SFH) or abdominal palpation. Compare this GA against ultrasound GA (if done).",
-        "label_info_title": "GA from SFH or abdominal palpation - weeks",
+        "label_info_text": "{{anc_profile.step2.sfh_gest_age.label_info_text}}",
+        "label_info_title": "{{anc_profile.step2.sfh_gest_age.label_info_title}}",
         "hint": "{{anc_profile.step2.sfh_gest_age.hint}}",
         "v_required": {
           "value": true,
@@ -788,15 +788,15 @@
         },
         "v_numeric_integer": {
           "value": true,
-          "err": "Enter a Valid GA from SFH or abdominal palpation - weeks value"
+          "err": "{{anc_profile.step2.sfh_gest_age.v_numeric_integer.err}}"
         },
         "v_min": {
           "value": "4",
-          "err": "GA from SFH or abdominal palpation - weeks should 4 or greater"
+          "err": "{{anc_profile.step2.sfh_gest_age.v_min.err}}"
         },
         "v_max": {
           "value": "40",
-          "err": "GA from SFH or abdominal palpation - weeks should be 40 or less"
+          "err": "{{anc_profile.step2.sfh_gest_age.v_max.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -844,7 +844,7 @@
         "key": "select_gest_age_edd_label",
         "type": "label",
         "text": "{{anc_profile.step2.select_gest_age_edd_label.text}}",
-        "label_info_text": "If the difference between GA from LMP and early ultrasound is one week or less, then use GA from LMP. If the difference is more than 7 days, use the early ultrasound GA. If ultrasound was done late, use GA from LMP. Between late ultrasound and SFH or abdominal palpation, use your best judgment to select GA.",
+        "label_info_text": "{{anc_profile.step2.select_gest_age_edd_label.label_info_text}}",
         "label_text_style": "bold",
         "text_color": "#000000",
         "v_required": {
@@ -2340,7 +2340,7 @@
           }
         ],
         "v_required": {
-          "value": false,
+          "value": true,
           "err": "{{anc_profile.step4.health_conditions.v_required.err}}"
         }
       },
@@ -2751,7 +2751,7 @@
         "edit_type": "edit_text",
         "other_for": {
           "parent_key": "surgeries",
-          "label": "Other gynecological procedures (specify)"
+          "label": "{{anc_profile.step4.surgeries_other_gyn_proced.other_for.label}}"
         },
         "relevance": {
           "step4:surgeries": {
@@ -4056,6 +4056,338 @@
             "type": "string",
             "ex": "equalTo(., \"positive\")"
 
+          }
+        }
+      },
+      {
+        "key": "woman_with_hiv",
+        "type": "label",
+        "text": "{{anc_profile.step8.woman_with_hiv.text}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "v_required": {
+          "value": false,
+          "err": ""
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "creatinine",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step8.creatinine.hint}}",
+        "expanded": false,
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step8.creatinine.v_required.err}}"
+        }
+      },
+      {
+        "key": "cd4",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "CD4",
+        "edit_type": "name",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step8.cd4.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }},
+      {
+        "key": "recent_viral_load",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step8.recent_viral_load.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step8.recent_viral_load.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "arv_start_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step8.arv_start_date.hint}}",
+        "expanded": false,
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step8.arv_start_date.v_required.err}}"
+        }
+      },
+      {
+        "key": "prescribed_arv_regimen",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step8.prescribed_arv_regimen.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "1a",
+            "text": "TDF+3TC+EFV",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "1b",
+            "text": "TDF+3TC+DTG",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "1c",
+            "text": "ABC+3TC+EFV",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "1fspecify",
+            "text": "{{anc_profile.step8.prescribed_arv_regimen.options.1fspecify.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step8.prescribed_arv_regimen.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "prescribed_arv_regimen_specify",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step8.prescribed_arv_regimen_specify.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step8.prescribed_arv_regimen_specify.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "cotrimoxazole_start_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step8.cotrimoxazole_start_date.hint}}",
+        "expanded": false,
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step8.cotrimoxazole_start_date.v_required.err}}"
+        }
+      },
+      {
+        "key": "screened_for_tb",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step8.screened_for_tb.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "dont_know",
+            "text": "{{anc_profile.step8.screened_for_tb.options.dont_know.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "positive",
+            "text": "{{anc_profile.step8.screened_for_tb.options.positive.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "negative",
+            "text": "{{anc_profile.step8.screened_for_tb.options.negative.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step8.screened_for_tb.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "screened_for_sti",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step8.screened_for_sti.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "dont_know",
+            "text": "{{anc_profile.step8.screened_for_sti.options.dont_know.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "positive",
+            "text": "{{anc_profile.step8.screened_for_sti.options.positive.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "negative",
+            "text": "{{anc_profile.step8.screened_for_sti.options.negative.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step8.screened_for_sti.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "referred_to_art_clinic",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step8.referred_to_art_clinic.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_profile.step8.referred_to_art_clinic.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_profile.step8.referred_to_art_clinic.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step8.referred_to_art_clinic.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "tracnet",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step8.tracnet.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step8.tracnet.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
           }
         }
       }

@@ -125,11 +125,11 @@
         "edit_type": "number",
         "v_required": {
           "value": "true",
-          "err": "National id required please"
+          "err": "{{anc_register.step1.national_id.v_required.err}}"
         },
         "v_regex": {
           "value": "([0-9]{16})|\\s*",
-          "err": "National Id must be 16 digit "
+          "err": "{{anc_register.step1.national_id.v_regex.err}}"
         }
       },
       {
@@ -260,11 +260,11 @@
         },
         "v_min": {
           "value": "10",
-          "err": "Age must be equal to or greater than 10"
+          "err": "{{anc_register.step1.age_entered.v_min.err}}"
         },
         "v_max": {
           "value": "49",
-          "err": "Age must be equal or less than 49"
+          "err": "{{anc_register.step1.age_entered.v_max.err}}"
         },
         "relevance": {
           "step1:dob_unknown": {
@@ -398,7 +398,7 @@
         "options": [
           {
             "key": "edit_address",
-            "text": "Edit Woman Address",
+            "text": "{{anc_register.step1.edit_woman_address.options.edit_address.text}}",
             "text_size": "18px",
             "value": "false",
             "openmrs_entity_parent": "",
@@ -11937,7 +11937,7 @@
         },
         "v_regex": {
           "value": "(07[0-9]{8})|\\s*",
-          "err": "Phone number must start with 07 and must be 10 digit "
+          "err": "{{anc_register.step1.phone_number.v_regex.err}}"
         }
       },
       {
@@ -11997,7 +11997,7 @@
         },
         "v_regex": {
           "value": "(07[0-9]{8})|\\s*",
-          "err": "Phone number must start with 07 and must be 10 digit "
+          "err": "{{anc_register.step1.alt_phone_number.v_regex.err}}"
         }
       },
       {

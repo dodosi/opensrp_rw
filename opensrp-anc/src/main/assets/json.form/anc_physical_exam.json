@@ -108,11 +108,11 @@
         },
         "v_min": {
           "value": "100",
-          "err": "Height must be equal or greater than 100"
+          "err": "{{anc_physical_exam.step1.height.v_min.err}}"
         },
         "v_max": {
           "value": "200",
-          "err": "Height must be equal or less than 200"
+          "err": "{{anc_physical_exam.step1.height.v_max.err}}"
         }
       },
       {
@@ -170,11 +170,11 @@
         },
         "v_min": {
           "value": "30",
-          "err": "Weight must be equal or greater than 30"
+          "err": "{{anc_physical_exam.step1.pregest_weight.v_min.err}}"
         },
         "v_max": {
           "value": "180",
-          "err": "Weight must be equal or less than 180"
+          "err": "{{anc_physical_exam.step1.pregest_weight.v_max.err}}"
         },
         "v_required": {
           "value": "true",
@@ -230,11 +230,11 @@
         },
         "v_min": {
           "value": "30",
-          "err": "Weight must be equal or greater than 30"
+          "err": "{{anc_physical_exam.step1.current_weight.v_min.err}}"
         },
         "v_max": {
           "value": "180",
-          "err": "Weight must be equal or less than 180"
+          "err": "{{anc_physical_exam.step1.current_weight.v_max.err}}"
         },
         "v_required": {
           "value": "true",
@@ -536,11 +536,11 @@
         },
         "v_min": {
           "value": "20",
-          "err": "SBP must be equal or greater than 20"
+          "err": "{{anc_physical_exam.step2.bp_systolic.v_min.err}}"
         },
         "v_max": {
           "value": "260",
-          "err": "SBP must be equal or less than 260"
+          "err": "{{anc_physical_exam.step2.bp_systolic.v_max.err}}"
         },
         "v_required": {
           "value": "true",
@@ -612,11 +612,11 @@
         },
         "v_min": {
           "value": "20",
-          "err": "DBP must be equal to or greater than 20"
+          "err": "{{anc_physical_exam.step2.bp_diastolic.v_min.err}}"
         },
         "v_max": {
           "value": "260",
-          "err": "DBP must be equal to or less than 260"
+          "err": "{{anc_physical_exam.step2.bp_diastolic.v_max.err}}"
         },
         "v_required": {
           "value": "true",
@@ -763,11 +763,11 @@
         },
         "v_min": {
           "value": "20",
-          "err": "SBP must be equal or greater than 20"
+          "err": "{{anc_physical_exam.step2.bp_systolic_repeat.v_min.err}}"
         },
         "v_max": {
           "value": "260",
-          "err": "SBP must be equal or less than 260"
+          "err": "{{anc_physical_exam.step2.bp_systolic_repeat.v_max.err}}"
         },
         "v_required": {
           "value": "true",
@@ -820,11 +820,11 @@
         },
         "v_min": {
           "value": "20",
-          "err": "DBP must be equal or greater than 20"
+          "err": "{{anc_physical_exam.step2.bp_diastolic_repeat.v_min.err}}"
         },
         "v_max": {
           "value": "260",
-          "err": "DBP must be equal or less than 260"
+          "err": "{{anc_physical_exam.step2.bp_diastolic_repeat.v_max.err}}"
         },
         "v_required": {
           "value": "true",
@@ -1181,11 +1181,11 @@
         },
         "v_min": {
           "value": "35",
-          "err": "Temperature must be equal to or greater than 35"
+          "err": "{{anc_physical_exam.step3.body_temp.v_min.err}}"
         },
         "v_max": {
           "value": "42",
-          "err": "Temperature must be equal to or less than 42"
+          "err": "{{anc_physical_exam.step3.body_temp.v_max.err}}"
         }
       },
       {
@@ -1218,7 +1218,7 @@
         "label_text_style": "bold",
         "text": "{{anc_physical_exam.step3.body_temp_repeat_label.text}}",
         "text_color": "#000000",
-        "label_info_text": "Retake the woman\u0027s temperature if the first reading was 38ºC or higher.",
+        "label_info_text": "{{anc_physical_exam.step3.body_temp_repeat_label.label_info_text}}",
         "v_required": {
           "value": true
         },
@@ -1253,11 +1253,11 @@
         },
         "v_min": {
           "value": "35",
-          "err": "Temperature must be equal to or greater than 35"
+          "err": "{{anc_physical_exam.step3.body_temp_repeat.v_min.err}}"
         },
         "v_max": {
           "value": "42",
-          "err": "Temperature must be equal to or less than 42"
+          "err": "{{anc_physical_exam.step3.body_temp_repeat.v_max.err}}"
         }
       },
       {
@@ -1313,11 +1313,11 @@
         },
         "v_min": {
           "value": "20",
-          "err": "Pulse rate must be equal to or greater than 20"
+          "err": "{{anc_physical_exam.step3.pulse_rate.v_min.err}}"
         },
         "v_max": {
           "value": "200",
-          "err": "Pulse rate must be equal to or less than 200"
+          "err": "{{anc_physical_exam.step3.pulse_rate.v_max.err}}"
         }
       },
       {
@@ -1350,7 +1350,7 @@
         "type": "label",
         "label_text_style": "bold",
         "text": "{{anc_physical_exam.step3.pulse_rate_repeat_label.text}}",
-        "label_info_text": "Retake the woman\u0027s pulse rate if the first reading was lower than 60 or higher than 100.",
+        "label_info_text": "{{anc_physical_exam.step3.pulse_rate_repeat_label.label_info_text }}",
         "text_color": "#000000",
         "v_required": {
           "value": true
@@ -1377,11 +1377,11 @@
         },
         "v_min": {
           "value": "20",
-          "err": "Pulse rate must be equal to or greater than 20"
+          "err": "{{anc_physical_exam.step3.pulse_rate_repeat.v_min.err}}"
         },
         "v_max": {
           "value": "200",
-          "err": "Pulse rate must be equal to or less than 200"
+          "err": "{{anc_physical_exam.step3.pulse_rate_repeat.v_max.err}}"
         },
         "v_required": {
           "value": "true",
@@ -1541,7 +1541,7 @@
         ],
         "v_required": {
           "value": "true",
-          "err": "Please rate woman Hygiene"
+          "err": "{{anc_physical_exam.step3.woman_hygiene.v_required.err}}"
         }
       },
       {
@@ -1595,11 +1595,11 @@
         "hint": "{{anc_physical_exam.step3.muac_value.hint}}",
         "v_required": {
           "value": "true",
-          "err": "{{anc_physical_exam.step3.muac_value.v_numeric.err}}"
+          "err": "{{anc_physical_exam.step3.muac_value.v_required.err}}"
         },
         "v_numeric": {
           "value": "true",
-          "err": "{{anc_physical_exam.step3.muac_value.v_required.err}}"
+          "err": "{{anc_physical_exam.step3.muac_value.v_numeric.err}}"
         },
         "relevance": {
           "step3:muac": {
@@ -2492,15 +2492,15 @@
         "edit_type": "number",
         "v_min": {
           "value": "0.1",
-          "err": "SFH must be greater than 0"
+          "err": "{{anc_physical_exam.step4.sfh.v_min.err}}"
         },
         "v_max": {
           "value": "44",
-          "err": "SFH must be less than or equal to 44"
+          "err": "{{anc_physical_exam.step4.sfh.v_max.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Enter a valid sfh"
+          "err": "{{anc_physical_exam.step4.sfh.v_numeric_integer.err}}"
         },
         "v_required": {
           "value": "false",
@@ -2645,15 +2645,15 @@
         "edit_type": "number",
         "v_min": {
           "value": "80",
-          "err": "Fetal heartbeat must be equal or greater than 80"
+          "err": "{{anc_physical_exam.step4.fetal_heart_rate.v_min.err}}"
         },
         "v_max": {
           "value": "200",
-          "err": "Fetal heartbeat must be less than or equal to 200"
+          "err": "{{anc_physical_exam.step4.fetal_heart_rate.v_max.err}}"
         },
         "v_numeric_integer": {
           "value": "true",
-          "err": "Enter a valid number"
+          "err": "{{anc_physical_exam.step4.fetal_heart_rate.v_numeric_integer.err}}"
         },
         "relevance": {
           "step4:fetal_heartbeat": {
