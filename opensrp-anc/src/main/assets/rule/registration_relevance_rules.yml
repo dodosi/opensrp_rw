@@ -26,3 +26,17 @@ priority: 1
 condition: "(!step1_cell.isEmpty())"
 actions:
   - "isRelevant = true"
+---
+name: step1_edit_woman_address
+description: edit_woman_address
+priority: 1
+condition: "(!step1_cell.isEmpty() || !step1_sector.isEmpty() || !step1_district.isEmpty() || !step1_province.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_address_number
+description: Address_number
+priority: 1
+condition: "(step1_cell.isEmpty() || step1_edit_woman_address.contains('edit_address') )"
+actions:
+  - "isRelevant = true"

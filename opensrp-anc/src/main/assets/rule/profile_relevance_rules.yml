@@ -243,3 +243,87 @@ priority: 1
 condition: "(global_age > 30) && (step3_gravida == 1)"
 actions:
   - "isRelevant = true"
+---
+name: step8_creatinine
+description: creatinine
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_woman_with_hiv
+description: creatinine
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_cd4
+description: cd4
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_recent_viral_load
+description: recent_viral_load
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_arv_start_date
+description: arv_start_date
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_prescribed_arv_regimen
+description: prescribed_arv_regimen
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_prescribed_arv_regimen_specify
+description: prescribed_arv_regimen_specify
+priority: 1
+condition: "step8_prescribed_arv_regimen.contains('1fspecify')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_cotrimoxazole_start_date
+description: cotrimoxazole_start_date
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_screened_for_tb
+description: screened_for_tb
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_screened_for_sti
+description: screened_for_sti
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_tracnet
+description: Tracnet
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step8_referred_to_art_clinic
+description: Referred_to_art_clinic
+priority: 1
+condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
