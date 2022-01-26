@@ -244,84 +244,84 @@ condition: "(global_age > 30) && (step3_gravida == 1)"
 actions:
   - "isRelevant = true"
 ---
-name: step8_creatinine
+name: step4_creatinine
 description: creatinine
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_woman_with_hiv
+name: step4_woman_with_hiv
 description: creatinine
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_cd4
+name: step4_cd4
 description: cd4
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_recent_viral_load
+name: step4_recent_viral_load
 description: recent_viral_load
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_arv_start_date
+name: step4_arv_start_date
 description: arv_start_date
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_prescribed_arv_regimen
+name: step4_prescribed_arv_regimen
 description: prescribed_arv_regimen
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_prescribed_arv_regimen_specify
+name: step4_prescribed_arv_regimen_specify
 description: prescribed_arv_regimen_specify
 priority: 1
 condition: "step8_prescribed_arv_regimen.contains('1fspecify')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_cotrimoxazole_start_date
+name: step4_cotrimoxazole_start_date
 description: cotrimoxazole_start_date
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_screened_for_tb
+name: step4_screened_for_tb
 description: screened_for_tb
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_screened_for_sti
+name: step4_screened_for_sti
 description: screened_for_sti
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_tracnet
+name: step4_tracnet
 description: Tracnet
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
 actions:
   - "isRelevant = true"
 ---
-name: step8_referred_to_art_clinic
+name: step4_referred_to_art_clinic
 description: Referred_to_art_clinic
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"

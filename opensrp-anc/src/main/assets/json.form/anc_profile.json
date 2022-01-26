@@ -2504,6 +2504,343 @@
           }
         }
       },
+
+      {
+        "key": "woman_with_hiv",
+        "type": "label",
+        "text": "{{anc_profile.step4.woman_with_hiv.text}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "v_required": {
+          "value": false,
+          "err": ""
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "creatinine",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step4.creatinine.hint}}",
+        "expanded": false,
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step4.creatinine.v_required.err}}"
+        }
+      },
+      {
+        "key": "cd4",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "CD4",
+        "edit_type": "name",
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.cd4.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "recent_viral_load",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step4.recent_viral_load.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.recent_viral_load.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "arv_start_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step4.arv_start_date.hint}}",
+        "expanded": false,
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step4.arv_start_date.v_required.err}}"
+        }
+      },
+      {
+        "key": "prescribed_arv_regimen",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step4.prescribed_arv_regimen.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "1a",
+            "text": "TDF+3TC+EFV",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "1b",
+            "text": "TDF+3TC+DTG",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "1c",
+            "text": "ABC+3TC+EFV",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "1fspecify",
+            "text": "{{anc_profile.step4.prescribed_arv_regimen.options.1fspecify.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.prescribed_arv_regimen.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "prescribed_arv_regimen_specify",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step4.prescribed_arv_regimen_specify.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step4.prescribed_arv_regimen_specify.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "cotrimoxazole_start_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step4.cotrimoxazole_start_date.hint}}",
+        "expanded": false,
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step4.cotrimoxazole_start_date.v_required.err}}"
+        }
+      },
+      {
+        "key": "screened_for_tb",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step4.screened_for_tb.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "dont_know",
+            "text": "{{anc_profile.step4.screened_for_tb.options.dont_know.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "positive",
+            "text": "{{anc_profile.step4.screened_for_tb.options.positive.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "negative",
+            "text": "{{anc_profile.step4.screened_for_tb.options.negative.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.screened_for_tb.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "screened_for_sti",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step4.screened_for_sti.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "dont_know",
+            "text": "{{anc_profile.step4.screened_for_sti.options.dont_know.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "positive",
+            "text": "{{anc_profile.step4.screened_for_sti.options.positive.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "negative",
+            "text": "{{anc_profile.step4.screened_for_sti.options.negative.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.screened_for_sti.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "referred_to_art_clinic",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step4.referred_to_art_clinic.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_profile.step4.referred_to_art_clinic.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_profile.step4.referred_to_art_clinic.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.referred_to_art_clinic.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "tracnet",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step4.tracnet.hint}}",
+        "edit_type": "name",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step4.tracnet.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+
+
+
       {
         "key": "allergies",
         "openmrs_entity_parent": "",
@@ -4058,339 +4395,8 @@
 
           }
         }
-      },
-      {
-        "key": "woman_with_hiv",
-        "type": "label",
-        "text": "{{anc_profile.step8.woman_with_hiv.text}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "v_required": {
-          "value": false,
-          "err": ""
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "creatinine",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step8.creatinine.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step8.creatinine.v_required.err}}"
-        }
-      },
-      {
-        "key": "cd4",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "CD4",
-        "edit_type": "name",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step8.cd4.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }},
-      {
-        "key": "recent_viral_load",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step8.recent_viral_load.hint}}",
-        "edit_type": "name",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step8.recent_viral_load.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "arv_start_date",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step8.arv_start_date.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step8.arv_start_date.v_required.err}}"
-        }
-      },
-      {
-        "key": "prescribed_arv_regimen",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step8.prescribed_arv_regimen.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "1a",
-            "text": "TDF+3TC+EFV",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "1b",
-            "text": "TDF+3TC+DTG",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "1c",
-            "text": "ABC+3TC+EFV",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "1fspecify",
-            "text": "{{anc_profile.step8.prescribed_arv_regimen.options.1fspecify.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step8.prescribed_arv_regimen.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "prescribed_arv_regimen_specify",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step8.prescribed_arv_regimen_specify.hint}}",
-        "edit_type": "name",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step8.prescribed_arv_regimen_specify.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "cotrimoxazole_start_date",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step8.cotrimoxazole_start_date.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step8.cotrimoxazole_start_date.v_required.err}}"
-        }
-      },
-      {
-        "key": "screened_for_tb",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step8.screened_for_tb.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "dont_know",
-            "text": "{{anc_profile.step8.screened_for_tb.options.dont_know.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "positive",
-            "text": "{{anc_profile.step8.screened_for_tb.options.positive.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "negative",
-            "text": "{{anc_profile.step8.screened_for_tb.options.negative.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step8.screened_for_tb.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "screened_for_sti",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step8.screened_for_sti.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "dont_know",
-            "text": "{{anc_profile.step8.screened_for_sti.options.dont_know.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "positive",
-            "text": "{{anc_profile.step8.screened_for_sti.options.positive.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "negative",
-            "text": "{{anc_profile.step8.screened_for_sti.options.negative.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step8.screened_for_sti.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "referred_to_art_clinic",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step8.referred_to_art_clinic.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "yes",
-            "text": "{{anc_profile.step8.referred_to_art_clinic.options.yes.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "no",
-            "text": "{{anc_profile.step8.referred_to_art_clinic.options.no.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step8.referred_to_art_clinic.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "tracnet",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step8.tracnet.hint}}",
-        "edit_type": "name",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step8.tracnet.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
       }
+
     ]
   },
   "properties_file_name": "anc_profile"
