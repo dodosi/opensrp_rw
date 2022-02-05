@@ -21,14 +21,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/login_logo_top_padding">
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
             <RelativeLayout
                 android:orientation="horizontal"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
+                android:layout_marginTop="0dp"
                 android:background="#fff"
                 >
 

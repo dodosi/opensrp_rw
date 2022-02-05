@@ -210,7 +210,7 @@
 
     <string name="specify">Specify</string>
 
-    <string name="proceed_to_normal_contact">Proceed to normal contact</string>
+    <string name="proceed_to_normal_contact">Proceed  with  contact</string>
     <string name="refer_and_close_contact">Refer and close contact</string>
 
     <string name="validation_no_reason_selected">Please select a reason for coming to facility</string>
@@ -237,12 +237,12 @@
     <string name="edit"> edit </string>
 
     <!-- contact -->
-    <string name="quick_check">Quick Check</string>
-    <string name="profile">Profile</string>
-    <string name="symptoms_follow_up">Symptoms and Follow-up</string>
-    <string name="physical_exam">Physical Exam</string>
-    <string name="tests">Tests</string>
-    <string name="counselling_treatment">Counselling and Treatment</string>
+    <string name="quick_check" translatable="false">Quick Check</string>
+    <string name="profile" translatable="false">Profile</string>
+    <string name="symptoms_follow_up" translatable="false">Symptoms and Follow-up</string>
+    <string name="physical_exam" translatable="false">Physical Exam</string>
+    <string name="tests" translatable="false">Tests</string>
+    <string name="counselling_treatment" translatable="false">Counselling and Treatment</string>
     <string name="contact_tasks_form">Contact Tasks</string>
 
     <string name="finalize">Finalize</string>
@@ -441,5 +441,13 @@
     <string name="pdf_saved_successfully">\"Pdf saved successfully to location \"</string>
     <string name="contact_summary_data_file">contactSummaryData.pdf</string>
     <string name="kinyarwanda" translatable="false">Kinyarwanda</string>
+  <!--added-->
+    <string name="quick_check_title">Quick Check</string>
+    <string name="profile_title">Profile</string>
+    <string name="symptoms_follow_up_title">Symptoms</string>
+    <string name="physical_exam_title">Physical Exam</string>
+    <string name="tests_title">Tests</string>
+    <string name="counselling_treatment_title">Counselling and Treatment</string>
+    <string name="next">Next</string>
 
 </resources>

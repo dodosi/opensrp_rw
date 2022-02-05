@@ -11,6 +11,10 @@ public class Contact extends Form implements Serializable {
 
     private Integer requiredFields;
 
+//    ====added
+    private String title;
+//    ===
+
     private String formName;
 
     private int contactNumber;
@@ -66,5 +70,13 @@ public class Contact extends Form implements Serializable {
 
     public void setJsonForm(String jsonForm) {
         this.jsonForm = jsonForm;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

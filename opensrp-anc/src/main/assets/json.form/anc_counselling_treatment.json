@@ -3376,11 +3376,11 @@
         }
       },
       {
-        "key": "delivery_place",
+        "key": "delivery_place_old",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159758AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_counselling_treatment.step7.delivery_place.label}}",
         "label_text_style": "bold",
         "options": [
@@ -3401,6 +3401,45 @@
           {
             "key": "home",
             "text": "{{anc_counselling_treatment.step7.delivery_place.options.home.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "other",
+            "text": "{{anc_counselling_treatment.step7.delivery_place.options.other.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ]
+      },
+      {
+        "key": "delivery_place",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "159758AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.delivery_place.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "hospital",
+            "text": "{{anc_counselling_treatment.step7.delivery_place.options.hospital.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "health_center",
+            "text": "{{anc_counselling_treatment.step7.delivery_place.options.health_center.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "155886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "private_clinic",
+            "text": "{{anc_counselling_treatment.step7.delivery_place.options.private_clinic.text}}",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"

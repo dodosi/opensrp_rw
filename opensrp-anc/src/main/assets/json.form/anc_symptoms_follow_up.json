@@ -1413,6 +1413,14 @@
             "openmrs_entity_parent": ""
           },
           {
+            "key": "stomach_pains",
+            "text": "{{anc_symptoms_follow_up.step4.phys_symptoms.options.stomach_pains.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          },
+          {
             "key": "low_back_pain",
             "text": "{{anc_symptoms_follow_up.step4.phys_symptoms.options.low_back_pain.text}}",
             "value": false,
@@ -1560,6 +1568,27 @@
             "ex-rules": {
               "rules-file": "sf_relevance_rules.yml"
             }
+          }
+        }
+      },
+      {
+        "key": "toaster_stomach",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_symptoms_follow_up.step4.toaster_stomach.text}}",
+        "text_color": "#4855B3",
+        "toaster_type": "info",
+        "relevance": {
+          "step4:phys_symptoms": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "stomach_pains"
+                ]
+              }
+            ]
           }
         }
       },

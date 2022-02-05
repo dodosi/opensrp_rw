@@ -202,11 +202,11 @@
     <string name="edit">éditer</string>
 
     <!-- contact -->
-    <string name="quick_check">Vérification rapide</string>
-    <string name="profile">Profile</string>
-    <string name="symptoms_follow_up">Symptômes et suivi</string>
-    <string name="tests">Les examens</string>
-    <string name="counselling_treatment">Counselling et traitement</string>
+<!--    <string name="quick_check">Vérification rapide</string>-->
+<!--    <string name="profile">Profile</string>-->
+<!--    <string name="symptoms_follow_up">Symptômes et suivi</string>-->
+<!--    <string name="tests">Les examens</string>-->
+<!--    <string name="counselling_treatment">Counselling et traitement</string>-->
 
     <string name="finalize">Finaliser</string>
     <string name="required_fields">%1$d Champs obligatoires</string>
@@ -290,8 +290,8 @@
     <string name="clients_menu">Clients</string>
     <string name="first_contact">Premier contact</string>
     <string name="scheduled_contact">Contact prévu</string>
-    <string name="proceed_to_normal_contact">Passer au contact normal</string>
-    <string name="refer_and_close_contact">Référer et fermer le contact</string>
+    <string name="proceed_to_normal_contact">Continuer avec le contact </string>
+    <string name="refer_and_close_contact">Référer et fin du contact</string>
 
     <string name="contact_dummy_text">CONTACT&#10;22/05/2018</string>
     <string name="exit_contact_with">Quitter le contact avec\n %1$s</string>
@@ -427,5 +427,12 @@
     <string name="pdf_saved_successfully">\"Pdf enregistré avec succés a l\'emplacement\"</string>
     <string name="contact_summary_data_file">DonnéesRécapitulativesDeContact.pdf</string>
     <string name="string_bullet">•</string>
-    <string name="physical_exam">Examen physique</string>
+<!--    <string name="physical_exam">Examen physique</string>-->
+    <string name="quick_check_title">Vérification rapide</string>
+    <string name="profile_title">Profile</string>
+    <string name="symptoms_follow_up_title">Symptômes</string>
+    <string name="tests_title">Les examens</string>
+    <string name="counselling_treatment_title">Counselling et traitement</string>
+    <string name="physical_exam_title">Examen physique</string>
+    <string name="next">Suivant</string>
 </resources>

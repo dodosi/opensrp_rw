@@ -184,7 +184,7 @@
         },
         {
           "key": "indeterminate",
-          "text": "Indeterminate",
+          "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_result.options.indeterminate.text}}",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -199,6 +199,22 @@
           "ex-rules": {
             "rules-file": "tests_relevance_rules.yml"
           }
+        }
+      }
+    },
+    {
+      "key": "rpr_posotive_info_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_partner_rpr_sub_form.step1.rpr_positive_info_toaster.text}}",
+      "toaster_type": "problem",
+      "relevance": {
+        "step2:partner_rpr_test_result": {
+          "type": "string",
+          "ex": "equalTo(., \"positive\")"
+
         }
       }
     }

@@ -342,6 +342,13 @@
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
+        },
+        {
+          "key": "not_applicable",
+          "text": "{{tests_ultrasound_sub_form.step1.fetal_body_movement.options.not_applicable.text}}",
+          "openmrs_entity_parent": "",
+          "openmrs_entity": "concept",
+          "openmrs_entity_id": ""
         }
       ],
       "relevance": {
@@ -433,13 +440,7 @@
           "openmrs_entity": "concept",
           "openmrs_entity_id": "160091AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-        {
-          "key": "pelvic",
-          "text": "{{tests_ultrasound_sub_form.step1.fetal_presentation.options.pelvic.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": "146922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-        },
+
         {
           "key": "transverse",
           "text": "{{tests_ultrasound_sub_form.step1.fetal_presentation.options.transverse.text}}",
@@ -580,6 +581,22 @@
           "ex-rules": {
             "rules-file": "ultrasound_sub_form_relevance_rules.yml"
           }
+        }
+      }
+    },
+    {
+      "key": "placenta_praevia_info_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_ultrasound_sub_form.step1.placenta_praevia_info_toaster.text}}",
+      "toaster_type": "problem",
+      "relevance": {
+        "step1:placenta_location": {
+          "type": "string",
+          "ex": "equalTo(., \"praevia\")"
+
         }
       }
     }

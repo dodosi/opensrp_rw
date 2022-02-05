@@ -36,7 +36,7 @@
         },
         {
           "key": "not_done",
-          "text": "{{tests_herps_sub_form.step1.herps_test_status.options.not_done.text}}Not done",
+          "text": "{{tests_herps_sub_form.step1.herps_test_status.options.not_done.text}}",
           "type": "not_done",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",

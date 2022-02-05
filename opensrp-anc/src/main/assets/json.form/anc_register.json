@@ -317,7 +317,7 @@
         "options": [
           {
             "key": "none",
-            "text": "None",
+            "text": "{{anc_register.step1.insurance.options.none.text}}",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""

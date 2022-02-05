@@ -1,6 +1,7 @@
 package org.smartregister.anc.library.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,10 +44,22 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         Contact contact = contacts.get(position);
 
         holder.cardLayout.setBackgroundResource(contact.getBackground());
-        holder.cardLayout.setOnClickListener(clickListener);
+//added==========
+        if (position>0){
+            Contact prContact=contacts.get(position-1);
+            if (prContact.getRequiredFields() != null && prContact.getRequiredFields()==0){
+                holder.cardLayout.setOnClickListener(clickListener);
+
+            }
+        }
+//        ==============
+//        holder.cardLayout.setOnClickListener(clickListener);
         holder.cardLayout.setTag(contact);
 
-        holder.name.setText(contact.getName());
+//        holder.name.setText(contact.getName());
+        holder.name.setText(contact.getTitle());
+//        Log.i("TEST",contact.getName()+String.valueOf(contact.getRequiredFields()));
+
 
         if (contact.getRequiredFields() == null) {
             holder.requiredFields.setVisibility(View.GONE);

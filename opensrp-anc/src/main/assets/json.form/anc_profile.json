@@ -269,14 +269,6 @@
         "label": "{{anc_profile.step1.catchment_area.label}}",
         "label_text_style": "bold",
         "options": [
-
-          {
-            "key": "dont_know",
-            "text": "{{anc_profile.step1.catchment_area.options.dont_know.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
           {
             "key": "z",
             "text": "{{anc_profile.step1.catchment_area.options.z.text}}",
@@ -297,11 +289,41 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
+          },
+          {
+            "key": "others_catchment_area",
+            "text": "{{anc_profile.step1.catchment_area.options.others_catchment_area.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
           }
         ],
         "v_required": {
           "value": true,
           "err": "{{anc_profile.step1.catchment_area.v_required.err}}"
+        }
+      },
+      {
+        "key": "others_catchment_area_specify",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step1.others_catchment_area_specify.hint}}",
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "{{anc_profile.step1.others_catchment_area_specify.v_regex.err}}"
+        },
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step1.others_catchment_area_specify.v_required.err}}"
+        },
+        "relevance": {
+          "step1:catchment_area": {
+            "type": "string",
+            "ex": "equalTo(., \"others_catchment_area\")"
+
+          }
         }
       },
       {
@@ -340,6 +362,20 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "separated",
+            "text": "{{anc_profile.step1.marital_status.options.separated.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "cohabitating",
+            "text": "{{anc_profile.step1.marital_status.options.cohabitating.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
           }
         ],
         "v_required": {
@@ -496,7 +532,7 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "specify_info": "specify date",
+            "specify_info": "{{anc_profile.step2.lmp_known.options.yes.specify_info}}",
             "specify_widget": "date_picker",
             "max_date": "today-14d",
             "min_date": "today-280d"
@@ -578,7 +614,7 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "specify_info": "ultrasound date",
+            "specify_info": "{{anc_profile.step2.ultrasound_done.options.yes.specify_info}}",
             "specify_widget": "date_picker",
             "max_date": "today",
             "min_date": "today-9m"
@@ -1862,6 +1898,20 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
+            "key": "multiple_pregnancies",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.multiple_pregnancies.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "delivery_of_low-birth_weight_baby",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.delivery_of_low-birth_weight_baby.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
             "key": "pre_fresh_still_birth",
             "text": "{{anc_profile.step3.prev_preg_comps.options.pre_fresh_still_birth.text}}"
           },
@@ -2240,13 +2290,7 @@
             "key": "kidney_disease",
             "text": "{{anc_profile.step4.health_conditions.options.kidney_disease.text}}"
           },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "intestinal_operation",
-            "text": "{{anc_profile.step4.health_conditions.options.intestinal_operation.text}}"
-          },
+
           {
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -2330,6 +2374,13 @@
             "openmrs_entity_id": "155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "key": "epilepsy",
             "text": "{{anc_profile.step4.health_conditions.options.epilepsy.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "mental_problems",
+            "text": "{{anc_profile.step4.health_conditions.options.mental_problems.text}}"
           },
           {
             "openmrs_entity_parent": "",
@@ -3057,6 +3108,13 @@
             "openmrs_entity_id": "162811AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "key": "cervical_cone",
             "text": "{{anc_profile.step4.surgeries.options.cervical_cone.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "intestinal_operation",
+            "text": "{{anc_profile.step4.health_conditions.options.intestinal_operation.text}}"
           },
           {
             "openmrs_entity_parent": "",
@@ -3822,7 +3880,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select multiple",
-        "type": "check_box",
+        "type": "hidden",
         "label": "{{anc_profile.step7.caffeine_intake.label}}",
         "label_text_style": "bold",
         "hint": "{{anc_profile.step7.caffeine_intake.hint}}",
