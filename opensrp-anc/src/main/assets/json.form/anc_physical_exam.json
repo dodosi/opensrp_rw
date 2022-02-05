@@ -474,7 +474,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_physical_exam.step1.limping.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",
@@ -1582,7 +1582,7 @@
           }
         ],
         "v_required": {
-          "value": "false",
+          "value": "true",
           "err": "{{anc_physical_exam.step3.muac.v_required.err}}"
         }
       },
@@ -1591,7 +1591,8 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
-        "type": "edit_text",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
         "hint": "{{anc_physical_exam.step3.muac_value.hint}}",
         "v_required": {
           "value": "true",
@@ -1606,6 +1607,23 @@
             "type": "string",
             "ex": "equalTo(., \"done\")"
 
+          }
+        }
+      },
+      {
+        "key": "toaster_muac",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_physical_exam.step3.toaster_muac.text}}",
+        "text_color": "#E20000",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "physical-exam-relevance-rules.yml"
+            }
           }
         }
       },
@@ -1638,7 +1656,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.respiratory_exam.options.3.text}}",
-            "specify_info": "specify...",
+            "specify_info": "{{anc_physical_exam.step3.respiratory_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
             "content_form": "respiratory_exam_sub_form",
@@ -1647,6 +1665,21 @@
             "openmrs_entity_id": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           }
         ]
+      },
+      {
+        "key": "not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_physical_exam.step3.respiratory_exam.not_done_reason.hint}}",
+        "relevance": {
+          "step3:respiratory_exam": {
+            "type": "string",
+            "ex": "equalTo(., \"1\")"
+          }
+        }
       },
       {
         "key": "toaster20",
@@ -1747,7 +1780,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.cardiac_exam.options.3.text}}",
-            "specify_info": "specify...",
+            "specify_info": "{{anc_physical_exam.step3.cardiac_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
             "content_form": "cardiac_exam_sub_form",
@@ -1756,6 +1789,21 @@
             "openmrs_entity_id": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           }
         ]
+      },
+      {
+        "key": "cardiac_not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_physical_exam.step3.cardiac_not_done_reason.hint}}",
+        "relevance": {
+          "step3:cardiac_exam": {
+            "type": "string",
+            "ex": "equalTo(., \"1\")"
+          }
+        }
       },
       {
         "key": "toaster22",
@@ -1811,7 +1859,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.breast_exam.options.3.text}}",
-            "specify_info": "specify...",
+            "specify_info": "{{anc_physical_exam.step3.breast_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
             "content_form": "breast_exam_sub_form",
@@ -1820,6 +1868,21 @@
             "openmrs_entity_id": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           }
         ]
+      },
+      {
+        "key": "breast_exam_not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_physical_exam.step3.breast_exam_not_done_reason.hint}}",
+        "relevance": {
+          "step3:breast_exam": {
+            "type": "string",
+            "ex": "equalTo(., \"1\")"
+          }
+        }
       },
       {
         "key": "toaster23",
@@ -1875,7 +1938,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.abdominal_exam.options.3.text}}",
-            "specify_info": "specify...",
+            "specify_info": "{{anc_physical_exam.step3.abdominal_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
             "content_form": "abdominal_exam_sub_form",
@@ -1884,6 +1947,21 @@
             "openmrs_entity_id": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           }
         ]
+      },
+      {
+        "key": "abdominal_exam_not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_physical_exam.step3.abdominal_exam_not_done_reason.hint}}",
+        "relevance": {
+          "step3:abdominal_exam": {
+            "type": "string",
+            "ex": "equalTo(., \"1\")"
+          }
+        }
       },
       {
         "key": "toaster24",
@@ -1939,7 +2017,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.pelvic_exam.options.3.text}}",
-            "specify_info": "specify...",
+            "specify_info": "{{anc_physical_exam.step3.pelvic_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
             "content_form": "pelvic_exam_sub_form",
@@ -1948,6 +2026,21 @@
             "openmrs_entity_id": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           }
         ]
+      },
+      {
+        "key": "pelvic_exam_not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_physical_exam.step3.pelvic_exam_not_done_reason.hint}}",
+        "relevance": {
+          "step3:pelvic_exam": {
+            "type": "string",
+            "ex": "equalTo(., \"1\")"
+          }
+        }
       },
       {
         "key": "toaster25",
@@ -1992,7 +2085,7 @@
             "openmrs_entity_parent": "165374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "specify_info": "specify cm cervix dilated...",
+            "specify_info": "{{anc_physical_exam.step3.cervical_exam.options.1.specify_info}}",
             "specify_widget": "normal_edit_text",
             "specify_info_color": "#8C8C8C",
             "secondary_suffix": "cm",
@@ -2006,6 +2099,21 @@
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           }
         ]
+      },
+      {
+        "key": "cervical_exam_not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_physical_exam.step3.cervical_exam_not_done_reason.hint}}",
+        "relevance": {
+          "step3:cervical_exam": {
+            "type": "string",
+            "ex": "equalTo(., \"2\")"
+          }
+        }
       },
       {
         "key": "toaster26_hidden",
@@ -2066,7 +2174,7 @@
           {
             "key": "yes",
             "text": "{{anc_physical_exam.step3.oedema.options.yes.text}}",
-            "specify_info": "specify type...",
+            "specify_info": "{{anc_physical_exam.step3.oedema.options.yes.specify_info}}",
             "specify_widget": "radio_button",
             "specify_info_color": "#8C8C8C",
             "content_form": "oedema_present_sub_form",
@@ -3067,7 +3175,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_physical_exam.step4.sex_of_baby.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",

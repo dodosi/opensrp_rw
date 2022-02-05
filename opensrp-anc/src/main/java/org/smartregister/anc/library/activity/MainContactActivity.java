@@ -103,6 +103,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
 
             Contact quickCheck = new Contact();
             quickCheck.setName(getString(R.string.quick_check));
+            quickCheck.setTitle(getString(R.string.quick_check_title));
             quickCheck.setContactNumber(contactNo);
             quickCheck.setActionBarBackground(R.color.quick_check_red);
             quickCheck.setBackground(R.drawable.quick_check_bg);
@@ -118,6 +119,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
 
             Contact profile = new Contact();
             profile.setName(getString(R.string.profile));
+            profile.setTitle(getString(R.string.profile));
             profile.setContactNumber(contactNo);
             profile.setBackground(R.drawable.profile_bg);
             profile.setActionBarBackground(R.color.contact_profile_actionbar);
@@ -128,6 +130,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
 
             Contact symptomsAndFollowUp = new Contact();
             symptomsAndFollowUp.setName(getString(R.string.symptoms_follow_up));
+            symptomsAndFollowUp.setTitle(getString(R.string.symptoms_follow_up_title));
             symptomsAndFollowUp.setContactNumber(contactNo);
             symptomsAndFollowUp.setBackground(R.drawable.symptoms_bg);
             symptomsAndFollowUp.setActionBarBackground(R.color.contact_symptoms_actionbar);
@@ -138,6 +141,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
 
             Contact physicalExam = new Contact();
             physicalExam.setName(getString(R.string.physical_exam));
+            physicalExam.setTitle(getString(R.string.physical_exam_title));
             physicalExam.setContactNumber(contactNo);
             physicalExam.setBackground(R.drawable.physical_exam_bg);
             physicalExam.setActionBarBackground(R.color.contact_exam_actionbar);
@@ -148,6 +152,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
 
             Contact tests = new Contact();
             tests.setName(getString(R.string.tests));
+            tests.setTitle(getString(R.string.tests_title));
             tests.setContactNumber(contactNo);
             tests.setBackground(R.drawable.tests_bg);
             tests.setActionBarBackground(R.color.contact_tests_actionbar);
@@ -158,6 +163,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
 
             Contact counsellingAndTreatment = new Contact();
             counsellingAndTreatment.setName(getString(R.string.counselling_treatment));
+            counsellingAndTreatment.setTitle(getString(R.string.counselling_treatment_title));
             counsellingAndTreatment.setContactNumber(contactNo);
             counsellingAndTreatment.setBackground(R.drawable.counselling_bg);
             counsellingAndTreatment.setActionBarBackground(R.color.contact_counselling_actionbar);
@@ -165,7 +171,6 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
             setRequiredFields(counsellingAndTreatment);
             counsellingAndTreatment.setFormName(ConstantsUtils.JsonFormUtils.ANC_COUNSELLING_TREATMENT);
             contacts.add(counsellingAndTreatment);
-
             contactAdapter.setContacts(contacts);
             contactAdapter.notifyDataSetChanged();
 

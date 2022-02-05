@@ -57,6 +57,72 @@
       "spacer_height": "10dp"
     },
     {
+      "key": "blood_type_test_notdone",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_entity_id": "",
+      "type": "check_box",
+      "label": "{{tests_blood_type_sub_form.step1.blood_type_test_notdone.label}}",
+      "label_text_style": "bold",
+      "options": [
+        {
+          "key": "stock_out",
+          "text": "{{tests_blood_type_sub_form.step1.blood_type_test_notdone.options.stock_out.text}}",
+          "openmrs_entity_parent": "",
+          "openmrs_entity": "concept",
+          "openmrs_entity_id": ""
+        },
+        {
+          "key": "expired_stock",
+          "text": "{{tests_blood_type_sub_form.step1.blood_type_test_notdone.options.expired_stock.text}}",
+          "openmrs_entity_parent": "",
+          "openmrs_entity": "concept",
+          "openmrs_entity_id": ""
+        },
+        {
+          "key": "other",
+          "text": "{{tests_blood_type_sub_form.step1.blood_type_test_notdone.options.other.text}}",
+          "openmrs_entity_parent": "",
+          "openmrs_entity": "concept",
+          "openmrs_entity_id": ""
+        }
+      ],
+      "v_required": {
+        "value": true,
+        "err": "{{tests_blood_type_sub_form.step1.blood_type_test_notdone.v_required.err}}"
+      },
+      "relevance": {
+        "step1:blood_type_test_status": {
+          "type": "string",
+          "ex": "equalTo(., \"not_done\")"
+        }
+      }
+    },
+    {
+      "key": "blood_test_notdone_other",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_entity_id": "",
+      "type": "edit_text",
+      "hint": "{{tests_blood_type_sub_form.step1.blood_type_test_notdone_other.hint}}",
+      "edit_type": "name",
+      "v_required": {
+        "value": true,
+        "err": "{{tests_blood_type_sub_form.step1.blood_test_notdone_other.v_required.err}}"
+      },
+      "relevance": {
+        "step1:blood_type_test_notdone": {
+          "ex-checkbox": [
+            {
+              "or": [
+                "other"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
       "openmrs_entity_parent": "",
       "openmrs_entity": "",
       "openmrs_entity_id": "",

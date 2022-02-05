@@ -596,8 +596,8 @@
           {
             "key": "central_cyanosis",
             "text": "{{anc_quick_check.step1.danger_signs.options.central_cyanosis.text}}",
-            "label_info_text": "Bluish discolouration around the mucous membranes in the mouth, lips and tongue",
-            "label_info_title": "Central cyanosis",
+            "label_info_text": "{{anc_quick_check.step1.danger_signs.options.central_cyanosis.label_info_text}}",
+            "label_info_title": "{{anc_quick_check.step1.danger_signs.options.central_cyanosis.label_info_title}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -675,14 +675,7 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "163477AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
-          {
-            "key": "proteinuria",
-            "text": "{{anc_quick_check.step1.danger_signs.options.proteinuria.text}}",
-            "value": false,
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
+
           {
             "key": "anemia",
             "text": "{{anc_quick_check.step1.danger_signs.options.anemia.text}}",
@@ -722,6 +715,14 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "123818AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "other_specify",
+            "text": "{{anc_quick_check.step1.danger_signs.options.other_specify.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
           }
         ],
         "v_required": {
@@ -733,6 +734,30 @@
             "ex-rules": {
               "rules-file": "quick_check_relevance_rules.yml"
             }
+          }
+        }
+      },
+      {
+        "key": "specific_other_danger_signs",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_quick_check.step1.specific_other_danger_signs.hint}}",
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "{{anc_quick_check.step1.specific_other_danger_signs.v_regex.err}}"
+        },
+        "relevance": {
+          "step1:danger_signs": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "other_specify"
+                ]
+              }
+            ]
           }
         }
       }

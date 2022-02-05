@@ -108,10 +108,14 @@
       "hint": "{{tests_rubella_sub_form.step1.rubella_test_notdone_other.hint}}",
       "edit_type": "name",
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
+        "step2:rubella_test_notdone": {
+          "ex-checkbox": [
+            {
+              "or": [
+                "other"
+              ]
+            }
+          ]
         }
       }
     },
