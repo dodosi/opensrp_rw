@@ -5833,7 +5833,8 @@
         "type": "date_picker",
         "hint": "{{anc_counselling_treatment.step12.next_visit_date.hint}}",
         "expanded": "false",
-        "max_date": "today",
+        "max_date": "today+280d",
+        "min_date": "today",
         "v_required": {
           "value": true,
           "err": "{{anc_counselling_treatment.step12.next_visit_date.v_required.err}}"
