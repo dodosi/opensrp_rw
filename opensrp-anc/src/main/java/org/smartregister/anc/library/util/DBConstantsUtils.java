@@ -53,5 +53,7 @@ public class DBConstantsUtils {
         public static final String INSURANCE = "insurance";
         public static final String UBUDEHE_CATEGORY = "ubudehe_category";
         public static final String NATIONAL_ID = "national_id";
+        public static final String PASSPORT_ID = "passport_id";
+        public static final String DOCUMENT_TYPE = "document_type";
     }
 }

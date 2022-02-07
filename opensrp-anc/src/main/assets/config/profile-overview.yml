@@ -344,3 +344,10 @@ fields:
 
   - template: "{{profile_overview.immunisation_status.flu_dose}}: {flu_date_value}"
     relevance: "flu_date == 'done_today' || flu_date == 'done_earlier'"
+
+---
+sub_group: next_contact_date
+fields:
+  - template: "{{profile_overview.next_contact_date }}: {next_visit_date}"
+    relevance: "next_visit_date != ''"
+    isRedFont: "false"

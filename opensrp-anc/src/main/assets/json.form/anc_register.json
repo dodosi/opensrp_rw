@@ -116,6 +116,42 @@
         }
       },
       {
+        "key": "document_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "document_type",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "options": [
+          {
+            "key": "1",
+            "text": "{{anc_register.step1.document_type.options.none.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "2",
+            "text": "{{anc_register.step1.document_type.options.national_id.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "3",
+            "text": "{{anc_register.step1.document_type.options.passport.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "hint": "{{anc_register.step1.document_type.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_register.step1.document_type.v_required.err}}"
+        }
+      },
+      {
         "key": "national_id",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -124,12 +160,39 @@
         "type": "edit_text",
         "edit_type": "number",
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "{{anc_register.step1.national_id.v_required.err}}"
         },
         "v_regex": {
           "value": "([0-9]{16})|\\s*",
           "err": "{{anc_register.step1.national_id.v_regex.err}}"
+        },
+        "relevance": {
+          "step1:document_type": {
+            "type": "string",
+            "ex": "equalTo(., \"2\")"
+
+          }
+        }
+      },
+      {
+        "key": "passport_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "passport_id",
+        "hint": "{{anc_register.step1.passport_id.hint}}",
+        "type": "edit_text",
+        "edit_type": "number",
+        "v_required": {
+          "value": "false",
+          "err": ""
+        },
+        "relevance": {
+          "step1:document_type": {
+            "type": "string",
+            "ex": "equalTo(., \"3\")"
+
+          }
         }
       },
       {

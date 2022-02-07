@@ -49,7 +49,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             Contact prContact=contacts.get(position-1);
             if (prContact.getRequiredFields() != null && prContact.getRequiredFields()==0){
                 holder.cardLayout.setOnClickListener(clickListener);
+                holder.completePrevLayout.setVisibility(View.INVISIBLE);
 
+
+            }
+            else{
+                holder.completePrevLayout.setVisibility(View.VISIBLE);
+                holder.completePrevMessage.setText( context.getString(R.string.complete_prevoius)+" "+ prContact.getTitle() );
             }
         }
 //        ==============
@@ -84,6 +90,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         public TextView name;
         public TextView requiredFields;
         public View completeLayout;
+        public View completePrevLayout;
+        public TextView completePrevMessage;
+
+
 
 
         public ViewHolder(View view) {
@@ -92,6 +102,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             name = view.findViewById(R.id.container_name);
             requiredFields = view.findViewById(R.id.required_fields);
             completeLayout = view.findViewById(R.id.complete_layout);
+            completePrevLayout=view.findViewById(R.id.locked_container);
+            completePrevMessage=view.findViewById(R.id.complete_previous);
         }
     }
 }

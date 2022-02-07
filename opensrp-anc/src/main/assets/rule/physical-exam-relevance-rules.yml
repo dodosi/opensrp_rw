@@ -296,6 +296,6 @@ actions:
 name: step3_toaster_muac
 description: MUAC toaster
 priority: 1
-condition: " !step3_muac_value.isEmpty() && step3_muac_value != 21"
+condition: " !step3_muac_value.isEmpty() && step3_muac_value < 21"
 actions:
   - "isRelevant = true"

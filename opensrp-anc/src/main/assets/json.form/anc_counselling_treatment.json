@@ -2270,6 +2270,21 @@
         }
       },
       {
+        "key": "hypertension_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step5.hypertension_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step5:hypertension_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "hiv_positive_counsel",
         "openmrs_entity_parent": "165328AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -2304,6 +2319,21 @@
             "ex-rules": {
               "rules-file": "ct_relevance_rules.yml"
             }
+          }
+        }
+      },
+      {
+        "key": "hiv_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step5.hiv_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step5:hiv_positive_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
           }
         }
       },
@@ -3813,7 +3843,7 @@
         "openmrs_entity_parent": "1910AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_counselling_treatment.step7.breastfeed_counsel.label}}",
         "label_info_text": "{{anc_counselling_treatment.step7.breastfeed_counsel.label_info_text}}",
         "label_info_title": "{{anc_counselling_treatment.step7.breastfeed_counsel.label_info_title}}",
@@ -5794,6 +5824,20 @@
         "text": "{{anc_counselling_treatment.step12.prep_toaster.text}}",
         "toaster_info_text": "{{anc_counselling_treatment.step12.prep_toaster.toaster_info_text}}",
         "toaster_type": "info"
+      },
+      {
+        "key": "next_visit_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_counselling_treatment.step12.next_visit_date.hint}}",
+        "expanded": "false",
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_counselling_treatment.step12.next_visit_date.v_required.err}}"
+        }
       }
     ]
   },
