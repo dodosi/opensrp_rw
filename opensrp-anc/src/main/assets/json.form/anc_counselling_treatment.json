@@ -3308,6 +3308,21 @@
         ]
       },
       {
+        "key": "danger_signs_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.danger_signs_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:danger_signs_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "emergency_hosp_counsel",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -3333,6 +3348,21 @@
             "openmrs_entity_id": ""
           }
         ]
+      },
+      {
+        "key": "emergency_hosp_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.emergency_hosp_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:emergency_hosp_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
       },
       {
         "key": "anc_contact_counsel",
@@ -3362,6 +3392,21 @@
         ]
       },
       {
+        "key": "anc_contact_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.anc_contact_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:anc_contact_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "birth_prep_counsel",
         "openmrs_entity_parent": "161069AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -3387,6 +3432,21 @@
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           }
         ]
+      },
+      {
+        "key": "birth_prep_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.birth_prep_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:birth_prep_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
       },
       {
         "key": "birth_plan_toaster",
@@ -3533,6 +3593,21 @@
         }
       },
       {
+        "key": "rh_negative_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.rh_negative_counsel_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:rh_negative_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "gbs_agent_counsel",
         "openmrs_entity_parent": "165339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -3567,6 +3642,21 @@
         }
       },
       {
+        "key": "gbs_agent_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.gbs_agent_counsel_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:gbs_agent_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "breastfeeding_counselling",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -3590,6 +3680,21 @@
             "openmrs_entity_id": ""
           }
         ]
+      },
+      {
+        "key": "breastfeeding_counselling_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.breastfeeding_counselling_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:breastfeeding_counselling": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
       },
       {
         "key": "insurance_counselling",
@@ -3617,6 +3722,21 @@
         ]
       },
       {
+        "key": "insurance_counselling_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.insurance_counselling_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:insurance_counselling": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "deworming_performed",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -3642,6 +3762,21 @@
         ]
       },
       {
+        "key": "deworming_performed_not_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.deworming_performed_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:deworming_performed": {
+            "type": "string",
+            "ex": "equalTo(., \"no\")"
+          }
+        }
+      },
+      {
         "key": "mosquito_net_recieved",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -3665,6 +3800,21 @@
             "openmrs_entity_id": ""
           }
         ]
+      },
+      {
+        "key": "mosquito_net_recieved_not_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.mosquito_net_recieved_not_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:mosquito_net_recieved": {
+            "type": "string",
+            "ex": "equalTo(., \"no\")"
+          }
+        }
       },
       {
         "key": "family_planning_counsel",
@@ -3693,6 +3843,21 @@
         "v_required": {
           "value": true,
           "err": "{{anc_counselling_treatment.step7.family_planning_counsel.v_required.err}}"
+        }
+      },
+      {
+        "key": "family_planning_counsel_not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.family_planning_counsel_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
         }
       },
       {

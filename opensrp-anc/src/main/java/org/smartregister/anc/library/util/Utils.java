@@ -202,6 +202,7 @@ public class Utils extends org.smartregister.util.Utils {
             Intent intent = new Intent(context.getApplicationContext(), ContactJsonFormActivity.class);
             Contact quickCheck = new Contact();
             quickCheck.setName(context.getResources().getString(R.string.quick_check));
+            quickCheck.setTitle(context.getResources().getString(R.string.quick_check_title));
             quickCheck.setFormName(ConstantsUtils.JsonFormUtils.ANC_QUICK_CHECK);
             quickCheck.setContactNumber(Integer.valueOf(personObjectClient.get(DBConstantsUtils.KeyUtils.NEXT_CONTACT)));
             quickCheck.setBackground(R.drawable.quick_check_bg);

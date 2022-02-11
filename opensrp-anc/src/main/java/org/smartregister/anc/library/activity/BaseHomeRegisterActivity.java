@@ -98,6 +98,7 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
                                 .writeOnDrawable(org.smartregister.R.drawable.bottom_bar_initials_background, userInitials,
                                         getResources()));
             }
+//            bottomNavigationView.getMenu().add(Menu.NONE,R.string.cancel,Menu.NONE,"TEST").setIcon(R.drawable.ic_lock);
 
             bottomNavigationView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
 

@@ -23,7 +23,7 @@ actions:
 name: step2_sfh_gest_age
 description: sfh_gest_age
 priority: 1
-condition: "(step2_lmp_known == 'no' && step2_ultrasound_done == 'no') || (step2_lmp_known == 'no' && step2_ultrasound_gest_age_wks >= 24)"
+condition: "!step2_sfh_gest_age_not_applicable.contains('yes') && ((step2_lmp_known == 'no' && step2_ultrasound_done == 'no') || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')) || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes'))|| (step2_lmp_known == 'no' && step2_ultrasound_gest_age_wks >= 24))"
 actions:
   - "isRelevant = true"
 ---
@@ -37,28 +37,28 @@ actions:
 name: step2_lmp_ultrasound_gest_age_selection
 description: lmp_ultrasound_gest_age_selection
 priority: 1
-condition: "(step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes')"
+condition: "(step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes'))"
 actions:
   - "isRelevant = true"
 ---
 name: step2_sfh_gest_age_selection
 description: sfh_gest_age_selection
 priority: 1
-condition: "step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'no')"
+condition: "!step2_sfh_gest_age_not_applicable.contains('yes') && (step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'no') ||(step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')))"
 actions:
   - "isRelevant = true"
 ---
 name: step2_ultrasound_gest_age_selection
 description: ultrasound_gest_age_selection
 priority: 1
-condition: "step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && (step2_ultrasound_gest_age_wks == '' || step2_ultrasound_gest_age_wks < 24))"
+condition: "(step2_lmp_known == '' && !step2_ultrasound_gest_age_unknown.contains('yes'))  || (step2_lmp_known == 'yes' &&  !step2_ultrasound_gest_age_unknown.contains('yes') ) || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes') && (step2_ultrasound_gest_age_wks == '' || step2_ultrasound_gest_age_wks < 24))"
 actions:
   - "isRelevant = true"
 ---
 name: step2_lmp_gest_age_selection
 description: lmp_gest_age_selection
 priority: 1
-condition: "step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'no')"
+condition: "step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'no') || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes'  && step2_ultrasound_gest_age_unknown.contains('yes'))"
 actions:
   - "isRelevant = true"
 ---
@@ -325,5 +325,33 @@ name: step4_referred_to_art_clinic
 description: Referred_to_art_clinic
 priority: 1
 condition: "step4_health_conditions.contains('hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_ultrasound_gest_age_wks
+description: ultrasound_gest_age_wks
+priority: 1
+condition: "step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_ultrasound_gest_age_days
+description: ultrasound_gest_age_days
+priority: 1
+condition: "step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_sfh_gest_age_not_applicable
+description: sfh_gest_age_not_applicable
+priority: 1
+condition: "(step2_lmp_known == 'no' && step2_ultrasound_done == 'no') || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')) || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes'))|| (step2_lmp_known == 'no' && step2_ultrasound_gest_age_wks >= 24)"
+actions:
+  - "isRelevant = true"
+---
+name: step2_gest_age_selection_failed
+description: sfh_gest_age_not_applicable
+priority: 1
+condition: "step2_lmp_known == 'no' && (step2_ultrasound_done == 'no' || (step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')))&& step2_sfh_gest_age_not_applicable.contains('yes')"
 actions:
   - "isRelevant = true"

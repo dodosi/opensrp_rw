@@ -687,9 +687,10 @@
         "type": "edit_text",
         "hint": "{{anc_profile.step2.ultrasound_gest_age_wks.hint}}",
         "relevance": {
-          "step2:ultrasound_done": {
-            "type": "string",
-            "ex": "equalTo(., \"yes\")"
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
           }
         },
         "v_required": {
@@ -717,9 +718,10 @@
         "type": "edit_text",
         "hint": "{{anc_profile.step2.ultrasound_gest_age_days.hint}}",
         "relevance": {
-          "step2:ultrasound_done": {
-            "type": "string",
-            "ex": "equalTo(., \"yes\")"
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
           }
         },
         "v_required": {
@@ -739,6 +741,35 @@
           "err": "{{anc_profile.step2.ultrasound_gest_age_days.v_max.err}}"
         }
       },
+      {
+        "key": "ultrasound_gest_age_unknown",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "check_box",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "key": "yes",
+            "text": "{{anc_profile.step2.ultrasound_gest_age_unknown.options.yes.text}}",
+            "value": false
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": ""
+        },
+        "relevance": {
+          "step2:ultrasound_done": {
+            "type": "string",
+            "ex": "equalTo(., \"yes\")"
+          }
+        }
+       },
       {
         "key": "ultrasound_gest_age_concept",
         "openmrs_entity_parent": "",
@@ -833,6 +864,36 @@
         "v_max": {
           "value": "40",
           "err": "{{anc_profile.step2.sfh_gest_age.v_max.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "sfh_gest_age_not_applicable",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "check_box",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "key": "yes",
+            "text": "{{anc_profile.step2.sfh_gest_age_not_applicable.options.yes.text}}",
+            "value": false
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": ""
         },
         "relevance": {
           "rules-engine": {
@@ -984,6 +1045,34 @@
               "rules-file": "profile_calculation_rules.yml"
             }
           }
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "gest_age_selection_failed",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "ga_selection_failed",
+            "text": "{{anc_profile.step2.gest_age_selection_failed.options.ga_selection_failed.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "extra_info": "GA: 0 , EDD: --"
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step2.gest_age_selection_failed.v_required.err}}"
         },
         "relevance": {
           "rules-engine": {
@@ -3461,6 +3550,7 @@
         "type": "native_radio",
         "label": "{{anc_profile.step5.covid_immun_status.label}}",
         "label_text_style": "bold",
+        "label_info_text": "{{anc_profile.step5.covid_immun_status.label_info_text}}",
         "multi_relevance": true,
         "options": [
           {
