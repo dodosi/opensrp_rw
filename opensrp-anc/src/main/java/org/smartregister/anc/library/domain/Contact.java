@@ -13,6 +13,7 @@ public class Contact extends Form implements Serializable {
 
 //    ====added
     private String title;
+    private boolean isOpened =false;
 //    ===
 
     private String formName;
@@ -78,5 +79,13 @@ public class Contact extends Form implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public boolean isOpened() {
+        return isOpened;
+    }
+
+    public void setOpened(boolean opened) {
+        isOpened = opened;
     }
 }

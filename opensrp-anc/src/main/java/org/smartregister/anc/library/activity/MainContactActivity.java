@@ -115,6 +115,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
             }
 
             quickCheck.setFormName(ConstantsUtils.JsonFormUtils.ANC_QUICK_CHECK);
+            quickCheck.setOpened(true);
             contacts.add(quickCheck);
 
             Contact profile = new Contact();
@@ -126,6 +127,9 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
             profile.setNavigationBackground(R.color.contact_profile_navigation);
             setRequiredFields(profile);
             profile.setFormName(ConstantsUtils.JsonFormUtils.ANC_PROFILE);
+            if (quickCheck.getRequiredFields() !=null && quickCheck.getRequiredFields()==0){
+                profile.setOpened(true);
+            }
             contacts.add(profile);
 
             Contact symptomsAndFollowUp = new Contact();
@@ -137,6 +141,9 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
             symptomsAndFollowUp.setNavigationBackground(R.color.contact_symptoms_navigation);
             setRequiredFields(symptomsAndFollowUp);
             symptomsAndFollowUp.setFormName(ConstantsUtils.JsonFormUtils.ANC_SYMPTOMS_FOLLOW_UP);
+            if (profile.getRequiredFields()!=null && profile.getRequiredFields()==0){
+                  symptomsAndFollowUp.setOpened(true);
+            }
             contacts.add(symptomsAndFollowUp);
 
             Contact physicalExam = new Contact();
@@ -148,6 +155,9 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
             physicalExam.setNavigationBackground(R.color.contact_exam_navigation);
             setRequiredFields(physicalExam);
             physicalExam.setFormName(ConstantsUtils.JsonFormUtils.ANC_PHYSICAL_EXAM);
+            if (symptomsAndFollowUp.getRequiredFields()!=null && symptomsAndFollowUp.getRequiredFields()==0){
+                physicalExam.setOpened(true);
+            }
             contacts.add(physicalExam);
 
             Contact tests = new Contact();
@@ -159,6 +169,9 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
             tests.setNavigationBackground(R.color.contact_tests_navigation);
             setRequiredFields(tests);
             tests.setFormName(ConstantsUtils.JsonFormUtils.ANC_TEST);
+            if (physicalExam.getRequiredFields()!=null && physicalExam.getRequiredFields()==0){
+                tests.setOpened(true);
+            }
             contacts.add(tests);
 
             Contact counsellingAndTreatment = new Contact();
@@ -170,6 +183,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
             counsellingAndTreatment.setNavigationBackground(R.color.contact_counselling_navigation);
             setRequiredFields(counsellingAndTreatment);
             counsellingAndTreatment.setFormName(ConstantsUtils.JsonFormUtils.ANC_COUNSELLING_TREATMENT);
+            counsellingAndTreatment.setOpened(true);
             contacts.add(counsellingAndTreatment);
             contactAdapter.setContacts(contacts);
             contactAdapter.notifyDataSetChanged();
