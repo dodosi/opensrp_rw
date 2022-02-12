@@ -66,12 +66,12 @@ public class UkudoxFragment extends org.smartregister.view.fragment.LibraryFragm
             LibraryContent birthEmergencyPlan = new LibraryContent(getActivity().getResources().getString(R.string.birth_and_emergency_plan));
             LibraryContent physicalActivity = new LibraryContent(getActivity().getResources().getString(R.string.physical_activity));
             LibraryContent balancedNutrition = new LibraryContent(getActivity().getResources().getString(R.string.balanced_nutrition));
-            LibraryContent reportTab = new LibraryContent(getActivity().getResources().getString(R.string.report_staff));
+           // LibraryContent reportTab = new LibraryContent(getActivity().getResources().getString(R.string.report_staff));
 
             libraryContents.add(birthEmergencyPlan);
             libraryContents.add(balancedNutrition);
             libraryContents.add(physicalActivity);
-            libraryContents.add(reportTab);
+           // libraryContents.add(reportTab);
         }
         return libraryContents;
     }
