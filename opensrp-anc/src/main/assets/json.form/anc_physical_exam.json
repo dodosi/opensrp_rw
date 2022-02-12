@@ -1563,15 +1563,7 @@
             "openmrs_entity_parent": ""
           },
 
-          {
-            "key": "not_applicable",
-            "text": "{{anc_physical_exam.step3.muac.options.not_applicable.text}}",
-            "value": false,
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "openmrs_entity_parent": ""
-          }
-        ,
+
           {
             "key": "done",
             "text": "{{anc_physical_exam.step3.muac.options.done.text}}",
@@ -1606,6 +1598,22 @@
           "step3:muac": {
             "type": "string",
             "ex": "equalTo(., \"done\")"
+
+          }
+        }
+      },
+      {
+        "key": "muac_not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_physical_exam.step3.muac_not_done_reason.hint}}",
+        "relevance": {
+          "step3:muac": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
 
           }
         }
@@ -3054,14 +3062,6 @@
         "label_info_text": "{{anc_physical_exam.step4.fetal_presentation.label_info_text}}",
         "options": [
           {
-            "key": "unknown",
-            "text": "{{anc_physical_exam.step4.fetal_presentation.options.unknown.text}}",
-            "value": "false",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "openmrs_entity_parent": ""
-          },
-          {
             "key": "cephalic",
             "text": "{{anc_physical_exam.step4.fetal_presentation.options.cephalic.text}}",
             "value": "false",
@@ -3070,8 +3070,8 @@
             "openmrs_entity_parent": ""
           },
           {
-            "key": "pelvic",
-            "text": "{{anc_physical_exam.step4.fetal_presentation.options.pelvic.text}}",
+            "key": "breech",
+            "text": "{{anc_physical_exam.step4.fetal_presentation.options.breech.text}}",
             "value": "false",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "146922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",

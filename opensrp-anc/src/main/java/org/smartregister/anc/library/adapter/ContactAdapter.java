@@ -57,6 +57,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
                 holder.completePrevLayout.setVisibility(View.VISIBLE);
                 holder.completePrevMessage.setText( context.getString(R.string.complete_prevoius)+" "+ prContact.getTitle() );
             }
+            if (contact.getName()== context.getString(R.string.counselling_treatment)){
+                holder.cardLayout.setOnClickListener(clickListener);
+                holder.completePrevLayout.setVisibility(View.INVISIBLE);
+            }
         }
 //        ==============
 //        holder.cardLayout.setOnClickListener(clickListener);
