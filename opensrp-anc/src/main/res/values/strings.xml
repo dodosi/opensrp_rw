@@ -327,7 +327,7 @@
     <string name="birth_and_emergency_plan">Birth and Emergency plan</string>
     <string name="physical_activity">Physical Activity</string>
     <string name="balanced_nutrition">Balanced Nutrition</string>
-
+    <string name="report_staff">Report Content</string>
     <string name="balanced_nutrition_source">SOURCE: World Health Organization. Integrated Management of Pregnancy and Childbirth – Pregnancy, Childbirth, Postpartum and Newborn Care: A guide for essential practice. 2015. Geneva.</string>
     <string name="string_bullet">•</string>
     <string name="birth_and_emergency"></string>
@@ -441,7 +441,7 @@
     <string name="pdf_saved_successfully">\"Pdf saved successfully to location \"</string>
     <string name="contact_summary_data_file">contactSummaryData.pdf</string>
     <string name="kinyarwanda" translatable="false">Kinyarwanda</string>
-  <!--added-->
+    <!--added-->
     <string name="quick_check_title">Quick Check</string>
     <string name="profile_title">Profile</string>
     <string name="symptoms_follow_up_title">Symptoms</string>
@@ -452,5 +452,6 @@
     <string name="complete_prev">Complete previous step to continue with</string>
     <string name="complete_prevoius">Complete</string>
     <string name="locked_end"> to open this</string>
+    <string name="ukudox">Main</string>
 
 </resources>

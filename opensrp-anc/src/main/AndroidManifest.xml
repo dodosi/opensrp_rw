@@ -20,5 +20,13 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AncAppTheme"
-        tools:replace="android:theme" />
+        tools:replace="android:theme">
+        <activity
+            android:name=".activity.UkudoxDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UkudoxActivity"
+            android:exported="false" />
+    </application>
+
 </manifest>

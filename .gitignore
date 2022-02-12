@@ -26,7 +26,7 @@ project.properties
 .settings
 build/
 opensrp-anc/fabric.properties
-opensrp-anc/reports/
+opensrp-anc/s/
 opensrp-anc/jacoco.exec
 jacoco.exec
 ~                 

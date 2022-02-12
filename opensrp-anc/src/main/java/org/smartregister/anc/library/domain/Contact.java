@@ -7,12 +7,13 @@ import java.util.Map;
 
 public class Contact extends Form implements Serializable {
 
+    private String title;
     private int background;
 
     private Integer requiredFields;
 
 //    ====added
-    private String title;
+    //private String title;
     private boolean isOpened =false;
 //    ===
 
