@@ -48,22 +48,24 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         if (position>0){
             Contact prContact=contacts.get(position-1);
             if (prContact.getRequiredFields() != null && prContact.getRequiredFields()==0){
-                holder.cardLayout.setOnClickListener(clickListener);
+//                holder.cardLayout.setOnClickListener(clickListener);
                 holder.completePrevLayout.setVisibility(View.INVISIBLE);
-
-
             }
             else{
                 holder.completePrevLayout.setVisibility(View.VISIBLE);
                 holder.completePrevMessage.setText( context.getString(R.string.complete_prevoius)+" "+ prContact.getTitle() );
             }
             if (contact.getName()== context.getString(R.string.counselling_treatment)){
-                holder.cardLayout.setOnClickListener(clickListener);
+//                holder.cardLayout.setOnClickListener(clickListener);
+                holder.completePrevLayout.setVisibility(View.INVISIBLE);
+            }
+            if (contact.getName()==context.getString(R.string.quick_check)){
+//                holder.cardLayout.setOnClickListener(clickListener);
                 holder.completePrevLayout.setVisibility(View.INVISIBLE);
             }
         }
 //        ==============
-//        holder.cardLayout.setOnClickListener(clickListener);
+        holder.cardLayout.setOnClickListener(clickListener);
         holder.cardLayout.setTag(contact);
 
 //        holder.name.setText(contact.getName());
