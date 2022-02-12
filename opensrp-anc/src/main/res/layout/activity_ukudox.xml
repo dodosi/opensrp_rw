@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.UkudoxActivity">
+    <include
+        android:id="@+id/library_toolbar_layout"
+        layout="@layout/toolbar_ukudox" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/layout_attach_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:foregroundGravity="top"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/library_toolbar_layout" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/go"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/overview_font_red"
+        android:textColor="@android:color/white"
+        android:text="GO TO CLIENTS PAGE"
+        app:contentInsetLeft="10dp"
+        app:contentInsetStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_attach_recycler_view"
+        app:layout_constraintVertical_bias="1.0"
+        app:popupTheme="@style/AncAppTheme.PopupOverlay" />
+</androidx.constraintlayout.widget.ConstraintLayout>

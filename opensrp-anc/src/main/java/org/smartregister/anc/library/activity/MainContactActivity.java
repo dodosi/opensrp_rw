@@ -3,6 +3,7 @@ package org.smartregister.anc.library.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -262,6 +263,8 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
     }
 
     private void setRequiredFields(Contact contact) {
+        Log.d("TEST",contact.getName());
+        Log.d("MAP",requiredFieldsMap.toString());
         if (requiredFieldsMap != null && contact != null && requiredFieldsMap.containsKey(contact.getName())) {
             contact.setRequiredFields(requiredFieldsMap.get(contact.getName()));
         }

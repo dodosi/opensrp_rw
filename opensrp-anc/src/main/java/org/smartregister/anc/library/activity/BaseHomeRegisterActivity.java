@@ -39,6 +39,7 @@ import org.smartregister.anc.library.fragment.HomeRegisterFragment;
 import org.smartregister.anc.library.fragment.LibraryFragment;
 import org.smartregister.anc.library.fragment.MeFragment;
 import org.smartregister.anc.library.fragment.SortFilterFragment;
+import org.smartregister.anc.library.fragment.UkudoxFragment;
 import org.smartregister.anc.library.presenter.RegisterPresenter;
 import org.smartregister.anc.library.repository.PatientRepository;
 import org.smartregister.anc.library.util.ANCFormUtils;
@@ -176,8 +177,10 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
         }
 
         if (isLibraryItemEnabled()) {
-            fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new LibraryFragment();
+            //fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new LibraryFragment();
+            fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new UkudoxFragment();
         }
+        //fragments[4] = new UkudoxFragment();
 
         return fragments;
     }
