@@ -437,5 +437,10 @@
     <string name="next">Suivant</string>
     <string name="complete_prevoius">Terminé</string>
     <string name="locked_end"> pour ouvrir ce</string>
-    <string name="ukudox">Main</string>
+    <string name="ukudox">Accueil</string>
+    <string name="due_contacts">Contacts dus</string>
+    <string name="mother_with_danger_signs">Mères présentant des signes de danger</string>
+    <string name="reffered_mothers">Mères référées</string>
+    <string name="details">Des détails</string>
+    <string name="go_to_clients_page">Aller à la page des clients</string>
 </resources>
