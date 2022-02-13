@@ -24,7 +24,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/overview_font_red"
         android:textColor="@android:color/white"
-        android:text="GO TO CLIENTS PAGE"
+        android:text="@string/go_to_clients_page"
         app:contentInsetLeft="10dp"
         app:contentInsetStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

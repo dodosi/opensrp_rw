@@ -61,9 +61,11 @@ public class UkudoxActivity extends AppCompatActivity {
     private List<UkudoxContent> getLibraryContent() {
         List<UkudoxContent> libraryContents = new ArrayList<>();
         if (this != null && getResources() != null) {
-            UkudoxContent birthEmergencyPlan = new UkudoxContent("Due contacts");
-            UkudoxContent physicalActivity = new UkudoxContent("Mothers with danger signs");
-            UkudoxContent balancedNutrition = new UkudoxContent("Referred Mothers");
+            //LibraryContent birthEmergencyPlan = new LibraryContent(getActivity().getResources().getString(R.string.birth_and_emergency_plan));
+
+            UkudoxContent birthEmergencyPlan = new UkudoxContent(getResources().getString(R.string.due_contacts));
+            UkudoxContent physicalActivity = new UkudoxContent(getResources().getString(R.string.mother_with_danger_signs));
+            UkudoxContent balancedNutrition = new UkudoxContent(getResources().getString(R.string.reffered_mothers));
             //UkudoxContent reportTab = new UkudoxContent("Dismissed");
 
             libraryContents.add(birthEmergencyPlan);

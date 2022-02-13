@@ -17,6 +17,7 @@ import org.smartregister.anc.library.AncLibrary;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.PopulationCharacteristicsActivity;
 import org.smartregister.anc.library.activity.SiteCharacteristicsActivity;
+import org.smartregister.anc.library.activity.UkudoxActivity;
 import org.smartregister.anc.library.presenter.MePresenter;
 import org.smartregister.anc.library.util.Utils;
 import org.smartregister.util.LangUtils;
@@ -138,6 +139,7 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
     private void reloadClass() {
         if (getActivity() != null) {
             Intent intent = getActivity().getIntent();
+            intent = new Intent(getContext(), UkudoxActivity.class);
             getActivity().finish();
             getActivity().startActivity(intent);
         }
