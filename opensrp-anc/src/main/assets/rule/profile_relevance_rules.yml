@@ -107,7 +107,7 @@ actions:
 name: step3_newborn_dirths_label
 description: Newborn dirths label
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "(step3_live_births > 0)"
 actions:
   - "isRelevant = true"
 ---
@@ -184,7 +184,7 @@ actions:
 name: step3_newborn_dirths
 description: Newborn dirth
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "(step3_live_births > 0)"
 actions:
   - "isRelevant = true"
 ---
@@ -198,35 +198,35 @@ actions:
 name: step3_last_born_status
 description: Last born status
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "(step3_children_live > 0)"
 actions:
   - "isRelevant = true"
 ---
 name: step3_children_live_label
 description: Live births label
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "((step3_live_births - step3_newborn_dirths) > 0)"
 actions:
   - "isRelevant = true"
 ---
 name: step3_children_live
 description: Children Live births
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "((step3_live_births - step3_newborn_dirths) > 0)"
 actions:
   - "isRelevant = true"
 ---
 name: step3_perfect_births
 description: Perfect births
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "(step3_live_births > 0)"
 actions:
   - "isRelevant = true"
 ---
 name: step3_perfect_births_label
 description: Perfect births
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "(step3_live_births > 0)"
 actions:
   - "isRelevant = true"
 ---

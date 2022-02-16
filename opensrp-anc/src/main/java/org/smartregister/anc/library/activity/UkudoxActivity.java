@@ -109,27 +109,27 @@ public class UkudoxActivity extends AppCompatActivity {
         List<HomeItem> homeItems= new ArrayList<>();
 
         HomeItem dueContactToday=new HomeItem();
-        dueContactToday.setTitle("Due Contact today");
+        dueContactToday.setTitle(getString(R.string.due_contact_today));
         dueContactToday.setNumber(23);
         dueContactToday.setBackground(R.drawable.profile_bg);
 
         homeItems.add(dueContactToday);
 
         HomeItem refered= new HomeItem();
-        refered.setTitle("Woman referred today");
-        refered.setBackground(R.drawable.profile_bg);
+        refered.setTitle(getString(R.string.women_referred));
+        refered.setBackground(R.drawable.quick_check_bg);
         refered.setNumber(0);
 
         homeItems.add(refered);
 
         HomeItem  dangersigns= new HomeItem();
-        dangersigns.setTitle("Mother with Danger signs");
+        dangersigns.setTitle(getString(R.string.mother_with_danger_Signs));
         dangersigns.setNumber(0);
-        dangersigns.setBackground(R.drawable.profile_bg);
+        dangersigns.setBackground(R.drawable.quick_check_bg);
 
         homeItems.add(dangersigns);
         HomeItem processed =new HomeItem();
-        processed.setTitle("Processed case");
+        processed.setTitle(getString(R.string.home_visits));
         processed.setNumber(6);
         processed.setBackground(R.drawable.profile_bg);
         homeItems.add(processed);
@@ -240,8 +240,11 @@ public class UkudoxActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             int i = view.getId();
-            if (i == R.id.card_layout) {
+            if (i == R.id.card_layout_home) {
                 Toast.makeText(UkudoxActivity.this, "High Clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UkudoxActivity.this, UkudoxDetailsActivity.class);
+                intent.putExtra(ConstantsUtils.IntentKeyUtils.LIBRARY_HEADER, "headerText");
+                startActivity(intent);
             }
         }
     }
