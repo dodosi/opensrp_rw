@@ -2658,7 +2658,7 @@
           }
         ],
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "{{anc_physical_exam.step4.sfh_to_ga.v_required.err}}"
         }
 
