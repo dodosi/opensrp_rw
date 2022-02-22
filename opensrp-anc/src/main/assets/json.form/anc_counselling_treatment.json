@@ -82,6 +82,13 @@
     "next": "step2",
     "fields": [
       {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "key": "clinician_name",
+        "type": "hidden"
+      },
+      {
         "key": "danger_signs_toaster",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -3861,11 +3868,11 @@
         }
       },
       {
-        "key": "family_planning_type",
+        "key": "family_planning_type_old",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_counselling_treatment.step7.family_planning_type.label}}",
         "label_text_style": "bold",
         "options": [
@@ -4000,6 +4007,160 @@
           "step7:family_planning_counsel": {
             "type": "string",
             "ex": "equalTo(., \"done\")"
+          }
+        }
+      },
+      {
+        "key": "family_planning_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.family_planning_type.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "none",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.none.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "pills",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.pills.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "implant",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.implant.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "intra_uterine_device",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.intra_uterine_device.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "permanent_method",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.permanent_method.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "condom",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.condom.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "relevance": {
+          "step7:family_planning_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"done\")"
+          }
+        }
+      },
+      {
+        "key": "pills_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.pills_type.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"pills\")"
+          }
+        }
+      },
+      {
+        "key": "implant_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.implant_type.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"implant\")"
+          }
+        }
+      },
+      {
+        "key": "intra_uterine_device_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.intra_uterine_device_type.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"intra_uterine_device\")"
+          }
+        }
+      },
+      {
+        "key": "permanent_method_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.permanent_method_type.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"permanent_method\")"
+          }
+        }
+      },
+      {
+        "key": "condom_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "options": [
+          {
+            "key": "male_condoms",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.male_condoms.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "female_condoms",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.female_condoms.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "hint": "{{anc_counselling_treatment.step7.condom_type.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_counselling_treatment.step7.condom_type.v_required.err}}"
+        },
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"condom\")"
           }
         }
       },

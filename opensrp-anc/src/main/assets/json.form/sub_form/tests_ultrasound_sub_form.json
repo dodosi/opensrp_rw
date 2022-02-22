@@ -18,14 +18,7 @@
           "openmrs_entity": "concept",
           "openmrs_entity_id": "165383AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-        {
-          "key": "done_earlier",
-          "text": "{{tests_ultrasound_sub_form.step1.ultrasound.options.done_earlier.text}}",
-          "type": "done_earlier",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": "165385AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-        },
+
         {
           "key": "ordered",
           "text": "{{tests_ultrasound_sub_form.step1.ultrasound.options.ordered.text}}",
@@ -555,15 +548,15 @@
           "openmrs_entity_id": "541AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
         {
-          "key": "right_side",
-          "text": "{{tests_ultrasound_sub_form.step1.placenta_location.options.right_side.text}}",
+          "key": "postero_fundic",
+          "text": "{{tests_ultrasound_sub_form.step1.placenta_location.options.postero_fundic.text}}",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "5141AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
         {
-          "key": "left_side",
-          "text": "{{tests_ultrasound_sub_form.step1.placenta_location.options.left_side.text}}",
+          "key": "antero_fundic",
+          "text": "{{tests_ultrasound_sub_form.step1.placenta_location.options.antero_fundic.text}}",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "5139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"

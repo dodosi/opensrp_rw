@@ -94,6 +94,95 @@
         }
       },
       {
+        "key": "pregnancy_test",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_quick_check.step1.pregnancy_test.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_quick_check.step1.pregnancy_test.options.yes.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },{
+            "key": "no",
+            "text": "{{anc_quick_check.step1.pregnancy_test.options.no.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_quick_check.step1.pregnancy_test.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "quick_check_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "other_facility_anc",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_quick_check.step1.other_facility_anc.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_quick_check.step1.other_facility_anc.options.yes.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },{
+            "key": "no",
+            "text": "{{anc_quick_check.step1.other_facility_anc.options.no.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_quick_check.step1.other_facility_anc.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "quick_check_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "facility_first_visit_done",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_quick_check.step1.facility_p_visit_done.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_quick_check.step1.facility_p_visit_done.v_required.err}}"
+        },
+        "relevance": {
+          "step1:other_facility_anc": {
+            "type": "string",
+            "ex": "equalTo(., \"no\")"
+
+          }
+        }
+      },
+      {
         "key": "referred",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",

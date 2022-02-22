@@ -443,4 +443,8 @@
     <string name="reffered_mothers">Mères référées</string>
     <string name="details">Des détails</string>
     <string name="go_to_clients_page">Aller à la page des clients</string>
+    <string name="home_visits">Visites</string>
+    <string name="mother_with_danger_Signs">Femmes présentant des signes de danger</string>
+    <string name="women_referred">Femmes référées</string>
+    <string name="due_contact_today">Contactez dès aujourd\'hui</string>
 </resources>

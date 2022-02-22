@@ -1517,7 +1517,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_physical_exam.step3.woman_hygiene.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",
@@ -2658,7 +2658,7 @@
           }
         ],
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "{{anc_physical_exam.step4.sfh_to_ga.v_required.err}}"
         }
 
@@ -2830,7 +2830,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_physical_exam.step4.fetus_tone.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",
@@ -2954,9 +2954,9 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165293AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "numbers_selector",
-        "number_of_selectors": "5",
+        "number_of_selectors": "2",
         "start_number": "1",
-        "max_value": "8",
+        "max_value": "2",
         "text_size": "16px",
         "text_color": "#000000",
         "selected_text_color": "#ffffff",
@@ -3207,6 +3207,19 @@
         ],
         "v_required": {
           "value": "false",
+          "err": ""
+        }
+      },
+      {
+        "key": "other_findings",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_physical_exam.step4.other_findings.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
           "err": ""
         }
       }

@@ -32,18 +32,18 @@ description: newborn dirths number selectors
 priority: 1
 condition: "true"
 actions:
- - "constraint = (step3_previous_pregnancies - step3_miscarriages_abortions) + 1"
+ - "constraint = step3_live_births+1"
 ---
 name: step3_children_live
 description: children live births number selectors
 priority: 1
 condition: "true"
 actions:
- - "constraint = (step3_previous_pregnancies - step3_miscarriages_abortions) + 1"
+ - "constraint = (step3_live_births - step3_newborn_dirths)+1"
 ---
 name: step3_perfect_births
 description: children live births number selectors
 priority: 1
 condition: "true"
 actions:
- - "constraint = (step3_previous_pregnancies - step3_miscarriages_abortions) + 1"
+ - "constraint = step3_live_births+1"
