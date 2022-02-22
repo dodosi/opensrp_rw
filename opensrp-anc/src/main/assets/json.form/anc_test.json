@@ -455,7 +455,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "text": "{{anc_test.step2.accordion_rubella_tests.text}}",
-        "type": "expansion_panel",
+        "type": "hidden",
         "display_bottom_section": true,
         "content_form": "tests_rubella_tests_sub_form",
         "container": "anc_test"
@@ -477,7 +477,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "text": "{{anc_test.step2.accordion_cmv_tests.text}}",
-        "type": "expansion_panel",
+        "type": "hidden",
         "accordion_info_text": "{{anc_test.step2.accordion_cmv_tests.accordion_info_text}}",
         "accordion_info_title": "{{anc_test.step2.accordion_cmv_tests.accordion_info_title}}",
         "display_bottom_section": true,
@@ -490,7 +490,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "text": "{{anc_test.step2.accordion_herpes_tests.text}}",
-        "type": "expansion_panel",
+        "type": "hidden",
         "display_bottom_section": true,
         "content_form": "tests_herps_sub_form",
         "container": "anc_test"

@@ -51,7 +51,7 @@ actions:
 name: step2_ultrasound_gest_age_selection
 description: ultrasound_gest_age_selection
 priority: 1
-condition: "(step2_lmp_known == '' && !step2_ultrasound_gest_age_unknown.contains('yes'))  || (step2_lmp_known == 'yes' &&  !step2_ultrasound_gest_age_unknown.contains('yes') ) || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes') && (step2_ultrasound_gest_age_wks == '' || step2_ultrasound_gest_age_wks < 24))"
+condition: "(step2_lmp_known == '' && !step2_ultrasound_gest_age_unknown.contains('yes'))   || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes') && (step2_ultrasound_gest_age_wks == '' || step2_ultrasound_gest_age_wks < 24))"
 actions:
   - "isRelevant = true"
 ---
@@ -177,7 +177,7 @@ actions:
 name: step8_hiv_risk_counselling_toaster
 description: Hiv Risk counselling
 priority: 1
-condition: "(step8_hiv_risk == 1)"
+condition: "(step8_hiv_risk == 1) || (step8_partner_hiv_status == 'positive') || (step8_partner_hiv_status == 'negative')"
 actions:
   - "isRelevant = true"
 ---
@@ -353,5 +353,26 @@ name: step2_gest_age_selection_failed
 description: sfh_gest_age_not_applicable
 priority: 1
 condition: "step2_lmp_known == 'no' && (step2_ultrasound_done == 'no' || (step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')))&& step2_sfh_gest_age_not_applicable.contains('yes')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_edd_from_ultrasound
+description: edd_from_ultrasound
+priority: 1
+condition: "step2_ultrasound_done == 'yes'"
+actions:
+  - "isRelevant = true"
+---
+name: step3_multiple_pregnancy
+description: multiple_pregnancy
+priority: 1
+condition: "step3_previous_pregnancies > 0 "
+actions:
+  - "isRelevant = true"
+---
+name: step3_multiple_pregnancy_details
+description: multiple_pregnancy_details
+priority: 1
+condition: "step3_multiple_pregnancy.contains('yes')"
 actions:
   - "isRelevant = true"

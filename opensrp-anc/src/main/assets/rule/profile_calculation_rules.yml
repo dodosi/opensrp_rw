@@ -158,7 +158,7 @@ description: Children died  calculation
 priority: 1
 condition: "true"
 actions:
-  - "calculation = step3_previous_pregnancies - step3_children_live-1"
+  - "calculation = step3_previous_pregnancies - step3_children_live"
 ---
 name: step3_preeclampsia_risk
 description: preeclampsia_risk
@@ -208,3 +208,10 @@ priority: 1
 condition: "(step8_partner_hiv_status == 'positive') || (global_hiv_test_partner_result != null && global_hiv_test_partner_result != '' && global_hiv_test_partner_result == 'positive')"
 actions:
   - "calculation = 1"
+---
+name: step3_stillbirths
+description: stillbirth value calculation
+priority: 1
+condition: "step3_previous_pregnancies  > 0"
+actions:
+  - "calculation = step3_previous_pregnancies - step3_miscarriages_abortions- step3_live_births"

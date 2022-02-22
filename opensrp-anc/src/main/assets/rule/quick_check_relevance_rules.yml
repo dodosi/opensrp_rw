@@ -26,3 +26,17 @@ priority: 1
 condition: "!step1_contact_reason.isEmpty()"
 actions:
   - "isRelevant = true"
+---
+name: step1_pregnancy_test
+description: Pregnancy
+priority: 1
+condition: "!step1_contact_reason.isEmpty() && step1_contact_reason =='first_contact'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_other_facility_anc
+description: other_facility_anc
+priority: 1
+condition: "!step1_contact_reason.isEmpty() && step1_contact_reason =='scheduled_contact'"
+actions:
+  - "isRelevant = true"

@@ -742,6 +742,28 @@
         }
       },
       {
+        "key": "edd_from_ultrasound",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "expanded": "false",
+        "min_date": "today",
+        "max_date": "today+10m",
+        "hint": "{{anc_profile.step2.edd_from_ultrasound.hint}}",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "v_required": {
+          "value": false,
+          "err": ""
+        }
+      },
+      {
         "key": "ultrasound_gest_age_unknown",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -1492,14 +1514,7 @@
           }
         }
       },
-      {
-        "key": "spacer",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "spacer",
-        "type": "spacer",
-        "spacer_height": "24dp"
-      },
+
       {
         "key": "last_live_birth_preterm",
         "openmrs_entity_parent": "",
@@ -1560,11 +1575,35 @@
         }
       },
       {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
         "key": "stillbirths",
+        "type": "edit_text",
+        "text_color": "#FF0000",
+        "read_only": true,
+        "edit_type": "number",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "stillbirths_old",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160077AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "numbers_selector",
+        "type": "hidden",
         "number_of_selectors": "5",
         "start_number": "0",
         "max_value": "15",
@@ -1609,14 +1648,7 @@
           }
         }
       },
-      {
-        "key": "spacer",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "spacer",
-        "type": "spacer",
-        "spacer_height": "24dp"
-      },
+
       {
         "key": "c_sections_label",
         "type": "label",
@@ -1852,14 +1884,7 @@
           }
         }
       },
-      {
-        "key": "spacer",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "spacer",
-        "type": "spacer",
-        "spacer_height": "24dp"
-      },
+
       {
         "key": "date_last_born",
         "openmrs_entity_parent": "",
@@ -1881,14 +1906,7 @@
           "err": "{{anc_profile.step3.date_last_born.v_required.err}}"
         }
       },
-      {
-        "key": "spacer",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "spacer",
-        "type": "spacer",
-        "spacer_height": "24dp"
-      },
+
       {
         "key": "last_born_status",
         "openmrs_entity_parent": "",
@@ -1925,14 +1943,7 @@
           }
         }
       },
-      {
-        "key": "spacer",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "spacer",
-        "type": "spacer",
-        "spacer_height": "24dp"
-      },
+
       {
         "key": "prev_preg_comps",
         "openmrs_entity_parent": "",
@@ -3588,6 +3599,56 @@
         }
       },
       {
+        "key": "vaccine_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step5.vaccine_type.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
+          "err": ""
+        },
+        "relevance": {
+          "step5:covid_immun_status": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "fully_vaccinated",
+                  "under_vaccinated"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "vaccine_number",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step5.vaccine_number.hint}}",
+        "edit_type": "number",
+        "v_required": {
+          "value": false,
+          "err": ""
+        },
+        "relevance": {
+          "step5:covid_immun_status": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "fully_vaccinated",
+                  "under_vaccinated"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
         "key": "covid_immunisation_toaster",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -4254,7 +4315,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165268AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_profile.step7.alcohol_substance_enquiry.label}}",
         "label_text_style": "bold",
         "label_info_text": "{{anc_profile.step7.alcohol_substance_enquiry.label_info_text}}",
@@ -4537,10 +4598,10 @@
         "toaster_info_title": "{{anc_profile.step8.hiv_risk_counselling_toaster.toaster_info_title}}",
         "toaster_type": "problem",
         "relevance": {
-          "step8:partner_hiv_status": {
-            "type": "string",
-            "ex": "equalTo(., \"positive\")"
-
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
           }
         }
       }
