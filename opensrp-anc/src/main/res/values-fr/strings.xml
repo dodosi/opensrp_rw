@@ -447,4 +447,6 @@
     <string name="mother_with_danger_Signs">Femmes présentant des signes de danger</string>
     <string name="women_referred">Femmes référées</string>
     <string name="due_contact_today">Contactez dès aujourd\'hui</string>
+    <string name="anc_dashboard">TABLEAU DE BORD ANC</string>
+    <string name="anc_visits">VISITES ANC</string>
 </resources>
