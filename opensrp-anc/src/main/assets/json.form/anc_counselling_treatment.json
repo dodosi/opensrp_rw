@@ -5804,6 +5804,26 @@
         }
       },
       {
+        "key": "proposed_tt2_date_will_done",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_counselling_treatment.step11.proposed_tt2_date_will_done.hint}}",
+        "expanded": "false",
+        "max_date": "today+10m",
+        "relevance": {
+          "step11:tt1_date": {
+            "type": "string",
+            "ex": "equalTo(., \"done_today\")"
+          }
+        },
+        "v_required": {
+          "value": false,
+          "err": ""
+        }
+      },
+      {
         "key": "tt2_date",
         "openmrs_entity_parent": "84879AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -6142,14 +6162,236 @@
     "title": "{{anc_counselling_treatment.step12.title}}",
     "fields": [
       {
-        "key": "prep_toaster",
+        "key": "prevention_measures",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "",
+        "type": "check_box",
+        "label": "{{anc_counselling_treatment.step12.prevention_measures.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "exclusive": [
+          "none"
+        ],
+        "options": [
+          {
+            "key": "none",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.none.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "mosquito_net",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.mosquito_net.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "iron_and_foric_acid",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.iron_and_foric_acid.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "calcium",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.calcium.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "mebendazole ",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.mebendazole.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "tetanos",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.tetanos.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "other",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.other.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_counselling_treatment.step12.prevention_measures.v_required.err}}"
+        }
+      },
+      {
+        "key": "prevention_measures_other",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.prevention_measures_other.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step12:prevention_measures": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "other"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "treatment_label",
+        "type": "label",
+        "label_text_style": "bold",
+        "text": "{{anc_counselling_treatment.step12.treatment_label.text}}",
+        "text_color": "#000000",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "syphilis_treatment_toaster",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "toaster_notes",
-        "text": "{{anc_counselling_treatment.step12.prep_toaster.text}}",
-        "toaster_info_text": "{{anc_counselling_treatment.step12.prep_toaster.toaster_info_text}}",
-        "toaster_type": "info"
+        "text": "{{anc_counselling_treatment.step12.syphilis_treatment_toaster.text}}",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "syphilis_treatment",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.syphilis_treatment.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "infection_urinaire_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_counselling_treatment.step12.infection_urinaire_toaster.text}}",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "infection_urinaire",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.infection_urinaire.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hepatite_b_treatment_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_counselling_treatment.step12.hepatite_b_treatment_toaster.text}}",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hepatite_b_treatment",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.hepatite_b_treatment.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hepatite_c_treatment_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_counselling_treatment.step12.hepatite_c_treatment_toaster.text}}",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hepatite_c_treatment",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.hepatite_c_treatment.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
       },
       {
         "key": "next_visit_date",
@@ -6165,6 +6407,16 @@
           "value": true,
           "err": "{{anc_counselling_treatment.step12.next_visit_date.v_required.err}}"
         }
+      },
+      {
+        "key": "prep_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_counselling_treatment.step12.prep_toaster.text}}",
+        "toaster_info_text": "{{anc_counselling_treatment.step12.prep_toaster.toaster_info_text}}",
+        "toaster_type": "info"
       }
     ]
   },

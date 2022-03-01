@@ -345,6 +345,24 @@ fields:
   - template: "{{profile_overview.immunisation_status.flu_dose}}: {flu_date_value}"
     relevance: "flu_date == 'done_today' || flu_date == 'done_earlier'"
 
+  - template: "{{profile_overview.immunisation_status.tt1_dose_received_date}}: {date_tt1_received}"
+    relevance: "date_tt1_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt2_dose_received_date}}: {date_tt2_received}"
+    relevance: "date_tt1_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt3_dose_received_date}}: {date_tt3_received}"
+    relevance: "date_tt3_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt4_dose_received_date}}: {date_tt4_received}"
+    relevance: "date_tt4_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt5_dose_received_date}}: {date_tt5_received}"
+    relevance: "date_tt5_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.proposed_tt2_date_will_done}}: {proposed_tt2_date_will_done}"
+    relevance: "proposed_tt2_date_will_done !=''"
+
 ---
 sub_group: next_contact_date
 fields:

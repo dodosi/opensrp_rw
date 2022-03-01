@@ -55,5 +55,6 @@ public class DBConstantsUtils {
         public static final String NATIONAL_ID = "national_id";
         public static final String PASSPORT_ID = "passport_id";
         public static final String DOCUMENT_TYPE = "document_type";
+        public static final String OTHER_ID = "other_id";
     }
 }

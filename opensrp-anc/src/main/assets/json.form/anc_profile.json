@@ -1105,6 +1105,57 @@
         }
       },
       {
+        "key": "pregnancy_test_required_toast",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "toaster_notes",
+        "type": "toaster_notes",
+        "text": "{{anc_profile.step2.pregnancy_test_required_toast.text}}",
+        "text_color": "#1199F9",
+        "toaster_type": "warning",
+        "relevance": {
+          "step2:gest_age_selection_failed": {
+            "type": "string",
+            "ex": "equalTo(., \"ga_selection_failed\")"
+          }
+        }
+      },
+      {
+        "key": "pregnancy_test_on_ga_unknown",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "label": "{{anc_profile.step2.pregnancy_test_on_ga_unknown.label}}",
+        "label_text_style": "bold",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "positive",
+            "text": "{{anc_profile.step2.pregnancy_test_on_ga_unknown.options.positive.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "negative",
+            "text": "{{anc_profile.step2.pregnancy_test_on_ga_unknown.options.negative.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step2.gest_age_selection_failed.v_required.err}}"
+        },
+        "relevance": {
+          "step2:gest_age_selection_failed": {
+            "type": "string",
+            "ex": "equalTo(., \"ga_selection_failed\")"
+          }
+        }
+      },
+      {
         "key": "lmp_ultrasound_gest_age_selection",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -1991,6 +2042,13 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
+            "key": "miscariages",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.miscariages.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
             "key": "preterm_deliveries",
             "text": "{{anc_profile.step3.prev_preg_comps.options.preterm_deliveries.text}}"
           },
@@ -2369,13 +2427,7 @@
             "key": "dont_know",
             "text": "{{anc_profile.step4.health_conditions.options.dont_know.text}}"
           },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "hiv",
-            "text": "{{anc_profile.step4.health_conditions.options.hiv.text}}"
-          },
+
           {
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -2481,6 +2533,13 @@
             "openmrs_entity_id": "",
             "key": "mental_problems",
             "text": "{{anc_profile.step4.health_conditions.options.mental_problems.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "hiv",
+            "text": "{{anc_profile.step4.health_conditions.options.hiv.text}}"
           },
           {
             "openmrs_entity_parent": "",
@@ -4018,6 +4077,78 @@
             ]
           }
         }
+      },
+      {
+        "key": "medications_asthma",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step6.medications_asthma.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
+          "err": ""
+        },
+        "relevance": {
+          "step6:medications": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "asthma"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "medications_hemorrhoidal",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step6.medications_hemorrhoidal.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
+          "err": ""
+        },
+        "relevance": {
+          "step6:medications": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "hemorrhoidal"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "medications_thyroid",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step6.medications_thyroid.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
+          "err": ""
+        },
+        "relevance": {
+          "step6:medications": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "thyroid"
+                ]
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -4259,6 +4390,51 @@
           "step7:condom_use": {
             "type": "string",
             "ex": "equalTo(., \"no\")"
+          }
+        }
+      },
+      {
+        "key": "traditional_medicine_use",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_profile.step7.traditional_medicine_use.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_profile.step7.traditional_medicine_use.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_profile.step7.traditional_medicine_use.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": ""
+        }
+      },
+      {
+        "key": "traditional_medicine_counseling_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_profile.step7.traditional_medicine_counseling_toaster.text}}",
+        "text_color": "#000000",
+        "toaster_type": "problem",
+        "relevance": {
+          "step7:traditional_medicine_use": {
+            "type": "string",
+            "ex": "equalTo(., \"yes\")"
           }
         }
       },

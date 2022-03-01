@@ -2200,11 +2200,49 @@
         ]
       },
       {
+        "key": "pitting_oedema",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_physical_exam.step3.pitting_oedema.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_physical_exam.step3.pitting_oedema.options.yes.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_physical_exam.step3.pitting_oedema.options.no.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          }
+        ],
+        "v_required": {
+          "value": "false",
+          "err": "{{anc_physical_exam.step3.oedema_severity.v_required.err}}"
+        },
+        "relevance": {
+          "step3:oedema": {
+            "type": "string",
+            "ex": "equalTo(., \"yes\")"
+          }
+        }
+      },
+      {
         "key": "oedema_severity",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_physical_exam.step3.oedema_severity.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",

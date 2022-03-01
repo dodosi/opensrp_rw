@@ -43,6 +43,14 @@
           }
         },
         {
+          "column_name": "other_id",
+          "type": "Event",
+          "json_mapping": {
+            "field": "obs.fieldCode",
+            "concept": "other_id"
+          }
+        },
+        {
           "column_name": "address_number",
           "type": "Event",
           "json_mapping": {
