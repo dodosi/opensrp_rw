@@ -92,7 +92,6 @@ public class AdvancedSearchPresenter extends RegisterFragmentPresenter
         AdvancedMatrixCursor advancedMatrixCursor = getRemoteLocalMatrixCursor(matrixCursor);
         advancedMatrixCursor.moveToFirst();
         getView().recalculatePagination(advancedMatrixCursor);
-
         getView().filterandSortInInitializeQueries();
         getView().hideProgressView();
     }

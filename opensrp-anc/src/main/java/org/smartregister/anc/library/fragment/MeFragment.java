@@ -139,7 +139,8 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
     private void reloadClass() {
         if (getActivity() != null) {
             Intent intent = getActivity().getIntent();
-            intent = new Intent(getContext(), UkudoxActivity.class);
+            //ukudox stuff below
+            //intent = new Intent(getContext(), UkudoxActivity.class);
             getActivity().finish();
             getActivity().startActivity(intent);
         }
