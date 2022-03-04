@@ -449,4 +449,5 @@
     <string name="due_contact_today">Contactez dès aujourd\'hui</string>
     <string name="anc_dashboard">TABLEAU DE BORD ANC</string>
     <string name="anc_visits">VISITES ANC</string>
+    <string name="device_to_device">Device-to-device sync</string>
 </resources>

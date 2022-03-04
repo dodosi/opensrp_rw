@@ -5,6 +5,7 @@ import org.smartregister.anc.library.AncLibrary;
 import org.smartregister.domain.LoginResponse;
 import org.smartregister.job.DocumentConfigurationServiceJob;
 import org.smartregister.job.ImageUploadServiceJob;
+import org.smartregister.job.P2pServiceJob;
 import org.smartregister.job.PullUniqueIdsServiceJob;
 import org.smartregister.job.SyncServiceJob;
 import org.smartregister.job.SyncSettingsServiceJob;
@@ -23,7 +24,11 @@ public class LoginInteractor extends BaseLoginInteractor implements BaseLoginCon
 
     @Override
     protected void scheduleJobsPeriodically() {
-        SyncServiceJob.scheduleJob(SyncServiceJob.TAG, TimeUnit.MINUTES.toMillis(BuildConfig.DATA_SYNC_DURATION_MINUTES),
+        P2pServiceJob.scheduleJob(P2pServiceJob.TAG,  TimeUnit.MINUTES.toMillis(
+                BuildConfig.CLIENT_SETTINGS_SYNC_MINUTES),getFlexValue(BuildConfig.CLIENT_SETTINGS_SYNC_MINUTES));
+
+
+                SyncServiceJob.scheduleJob(SyncServiceJob.TAG, TimeUnit.MINUTES.toMillis(BuildConfig.DATA_SYNC_DURATION_MINUTES),
                 getFlexValue(BuildConfig.DATA_SYNC_DURATION_MINUTES));
         PullUniqueIdsServiceJob
                 .scheduleJob(PullUniqueIdsServiceJob.TAG, TimeUnit.MINUTES.toMillis(BuildConfig.PULL_UNIQUE_IDS_MINUTES),

@@ -1,5 +1,8 @@
 package org.smartregister.anc.application;
 
+import static org.smartregister.util.Log.logError;
+import static org.smartregister.util.Log.logInfo;
+
 import android.content.Intent;
 import android.util.Log;
 
@@ -19,6 +22,7 @@ import org.smartregister.anc.BuildConfig;
 import org.smartregister.anc.activity.LoginActivity;
 import org.smartregister.anc.job.AncJobCreator;
 import org.smartregister.anc.library.AncLibrary;
+import org.smartregister.anc.library.auth.AncCoreAuthorizationService;
 import org.smartregister.anc.library.sync.BaseAncClientProcessorForJava;
 import org.smartregister.anc.library.util.DBConstantsUtils;
 import org.smartregister.anc.library.util.Utils;
@@ -26,7 +30,6 @@ import org.smartregister.anc.repository.AncRepository;
 import org.smartregister.commonregistry.CommonFtsObject;
 import org.smartregister.configurableviews.ConfigurableViewsLibrary;
 import org.smartregister.location.helper.LocationHelper;
-import org.smartregister.p2p.authorizer.P2PAuthorizationService;
 import org.smartregister.receiver.SyncStatusBroadcastReceiver;
 import org.smartregister.repository.Repository;
 import org.smartregister.sync.ClientProcessorForJava;
@@ -37,15 +40,10 @@ import org.smartregister.view.receiver.TimeChangedBroadcastReceiver;
 import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
 
-import static org.smartregister.util.Log.logError;
-import static org.smartregister.util.Log.logInfo;
-
-import java.util.Map;
-
 /**
  * Created by ndegwamartin on 21/06/2018.
  */
-public class AncApplication extends DrishtiApplication implements TimeChangedBroadcastReceiver.OnTimeChangedListener, P2PAuthorizationService {
+public class AncApplication extends DrishtiApplication implements TimeChangedBroadcastReceiver.OnTimeChangedListener {
     private static CommonFtsObject commonFtsObject;
 
     @Override
@@ -56,9 +54,10 @@ public class AncApplication extends DrishtiApplication implements TimeChangedBro
         context = Context.getInstance();
         context.updateApplicationContext(getApplicationContext());
         context.updateCommonFtsObject(createCommonFtsObject());
-        P2POptions p2POptions = new P2POptions(true);
-        p2POptions.setAuthorizationService(this);
+
         //Initialize Modules
+        P2POptions p2POptions = new P2POptions(true);
+        p2POptions.setAuthorizationService(new AncCoreAuthorizationService());
         CoreLibrary.init(context, new AncSyncConfiguration(), BuildConfig.BUILD_TIMESTAMP, p2POptions);
         AncLibrary.init(context, BuildConfig.DATABASE_VERSION, new ANCEventBusIndex());
         ConfigurableViewsLibrary.init(context);
@@ -85,6 +84,7 @@ public class AncApplication extends DrishtiApplication implements TimeChangedBro
         NativeFormLibrary
                 .getInstance()
                 .setClientFormDao(CoreLibrary.getInstance().context().getClientFormRepository());
+
     }
 
     private void setDefaultLanguage() {
@@ -204,15 +204,5 @@ public class AncApplication extends DrishtiApplication implements TimeChangedBro
         Utils.showToast(this, this.getString(org.smartregister.anc.library.R.string.device_timezone_changed));
         context.userService().getAllSharedPreferences().saveForceRemoteLogin(true, context.allSharedPreferences().fetchRegisteredANM());
         logoutCurrentUser();
-    }
-
-    @Override
-    public void authorizeConnection(@NonNull Map<String, Object> map, @NonNull AuthorizationCallback authorizationCallback) {
-
-    }
-
-    @Override
-    public void getAuthorizationDetails(@NonNull OnAuthorizationDetailsProvidedCallback onAuthorizationDetailsProvidedCallback) {
-
     }
 }

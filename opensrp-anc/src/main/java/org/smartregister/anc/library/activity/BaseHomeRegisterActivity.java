@@ -177,8 +177,8 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
         }
 
         if (isLibraryItemEnabled()) {
-            //fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new LibraryFragment();
-            fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new UkudoxFragment();
+            fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new LibraryFragment();
+            //fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new UkudoxFragment();
         }
         //fragments[4] = new UkudoxFragment();
 
