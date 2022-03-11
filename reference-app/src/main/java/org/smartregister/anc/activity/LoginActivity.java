@@ -11,7 +11,6 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.BaseHomeRegisterActivity;
 import org.smartregister.anc.library.activity.SiteCharacteristicsEnterActivity;
-import org.smartregister.anc.library.activity.UkudoxActivity;
 import org.smartregister.anc.library.event.ViewConfigurationSyncCompleteEvent;
 import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.Utils;
@@ -78,8 +77,6 @@ public class LoginActivity extends BaseLoginActivity implements BaseLoginContrac
 
     private void gotToHomeRegister(boolean remote) {
         Intent intent = new Intent(this, BaseHomeRegisterActivity.class);
-        //ukudox stuff
-        //Intent intent = new Intent(this, UkudoxActivity.class);
         intent.putExtra(ConstantsUtils.IntentKeyUtils.IS_REMOTE_LOGIN, remote);
         startActivity(intent);
     }

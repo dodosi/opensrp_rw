@@ -2,7 +2,6 @@ package org.smartregister.anc.library.presenter;
 
 import android.database.Cursor;
 import android.database.CursorJoiner;
-import android.util.Log;
 
 import org.apache.commons.lang3.StringUtils;
 import org.smartregister.anc.library.contract.AdvancedSearchContract;
@@ -34,7 +33,6 @@ public class AdvancedSearchPresenter extends RegisterFragmentPresenter
                        String alternateContact, boolean isLocal) {
         String searchCriteria =
                 model.createSearchString(firstName, lastName, ancId, edd, dob, phoneNumber, alternateContact);
-
         if (StringUtils.isBlank(searchCriteria)) {
             return;
         }
@@ -92,6 +90,7 @@ public class AdvancedSearchPresenter extends RegisterFragmentPresenter
         AdvancedMatrixCursor advancedMatrixCursor = getRemoteLocalMatrixCursor(matrixCursor);
         advancedMatrixCursor.moveToFirst();
         getView().recalculatePagination(advancedMatrixCursor);
+
         getView().filterandSortInInitializeQueries();
         getView().hideProgressView();
     }

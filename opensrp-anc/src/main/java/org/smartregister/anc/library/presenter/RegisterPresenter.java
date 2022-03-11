@@ -2,7 +2,6 @@ package org.smartregister.anc.library.presenter;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import androidx.core.util.Pair;
 
@@ -124,7 +123,6 @@ public class RegisterPresenter implements RegisterContract.Presenter, RegisterCo
             if(!isProgressDialogVisible)
             getView().showProgressDialog(R.string.saving_dialog_title);
             isProgressDialogVisible = true;
-            Log.d("MY_TEST",String.valueOf(isEditMode));
             Pair<Client, Event> pair = model.processRegistration(jsonString);
             if (pair == null) {
                 return;

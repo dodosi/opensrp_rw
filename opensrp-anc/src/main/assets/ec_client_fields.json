@@ -19,62 +19,6 @@
           }
         },
         {
-          "column_name": "document_type",
-          "type": "Event",
-          "json_mapping": {
-            "field": "obs.fieldCode",
-            "concept": "document_type"
-          }
-        },
-        {
-          "column_name": "passport_id",
-          "type": "Event",
-          "json_mapping": {
-            "field": "obs.fieldCode",
-            "concept": "passport_id"
-          }
-        },
-        {
-          "column_name": "national_id",
-          "type": "Event",
-          "json_mapping": {
-            "field": "obs.fieldCode",
-            "concept": "national_id"
-          }
-        },
-        {
-          "column_name": "other_id",
-          "type": "Event",
-          "json_mapping": {
-            "field": "obs.fieldCode",
-            "concept": "other_id"
-          }
-        },
-        {
-          "column_name": "address_number",
-          "type": "Event",
-          "json_mapping": {
-            "field": "obs.fieldCode",
-            "concept": "address_number"
-          }
-        },
-        {
-          "column_name": "insurance",
-          "type": "Event",
-          "json_mapping": {
-            "field": "obs.fieldCode",
-            "concept": "insurance"
-          }
-        },
-        {
-          "column_name": "ubudehe_category",
-          "type": "Event",
-          "json_mapping": {
-            "field": "obs.fieldCode",
-            "concept": "ubudehe_category"
-          }
-        },
-        {
           "column_name": "alt_name",
           "type": "Event",
           "json_mapping": {
@@ -176,45 +120,45 @@
           }
         },
         {
-          "column_name": "visit_start_date",
-          "type": "Client",
-          "json_mapping": {
-            "field": "attributes.visit_start_date"
-          }
-        },
-        {
           "column_name": "province",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.stateProvince"
+            "field": "attributes.province"
           }
         },
         {
           "column_name": "district",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.countyDistrict"
+            "field": "attributes.district"
           }
         },
         {
-          "column_name": "sector",
+          "column_name": "subdistrict",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.subDistrict"
+            "field": "attributes.subdistrict"
           }
         },
         {
-          "column_name": "cell",
+          "column_name": "health_facility",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.subTown"
+            "field": "attributes.health_facility"
           }
         },
         {
           "column_name": "village",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.cityVillage"
+            "field": "attributes.village"
+          }
+        },
+        {
+          "column_name": "visit_start_date",
+          "type": "Client",
+          "json_mapping": {
+            "field": "attributes.visit_start_date"
           }
         }
       ]

@@ -100,28 +100,6 @@
       }
     },
     {
-      "key": "hepb_test_scheduled_date",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "date_picker",
-      "hint": "{{tests_hepatitis_b_sub_form.step1.hepb_test_scheduled_date.hint}}",
-      "expanded": "false",
-      "max_date": "today+10m",
-      "min_date": "today",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      },
-      "v_required": {
-        "value": false,
-        "err": ""
-      }
-    },
-    {
       "key": "hepb_test_notdone_other",
       "openmrs_entity_parent": "161475AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
       "openmrs_entity": "concept",

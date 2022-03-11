@@ -186,8 +186,7 @@ public class ContactWizardJsonFormFragment extends JsonWizardFormFragment {
     public void setActionBarTitle(String title) {
         Contact contact = getContact();
         if (contact != null) {
-//            contactTitle.setText(contact.getName());
-            contactTitle.setText(contact.getTitle());
+            contactTitle.setText(contact.getName());
             if (getStepName() != null) {
                 getStepName().setText(title);
             }

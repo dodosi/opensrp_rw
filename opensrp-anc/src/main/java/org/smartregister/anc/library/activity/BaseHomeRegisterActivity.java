@@ -24,7 +24,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.smartregister.AllConstants;
 import org.smartregister.anc.library.AncLibrary;
@@ -39,7 +38,6 @@ import org.smartregister.anc.library.fragment.HomeRegisterFragment;
 import org.smartregister.anc.library.fragment.LibraryFragment;
 import org.smartregister.anc.library.fragment.MeFragment;
 import org.smartregister.anc.library.fragment.SortFilterFragment;
-import org.smartregister.anc.library.fragment.UkudoxFragment;
 import org.smartregister.anc.library.presenter.RegisterPresenter;
 import org.smartregister.anc.library.repository.PatientRepository;
 import org.smartregister.anc.library.util.ANCFormUtils;
@@ -99,7 +97,6 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
                                 .writeOnDrawable(org.smartregister.R.drawable.bottom_bar_initials_background, userInitials,
                                         getResources()));
             }
-//            bottomNavigationView.getMenu().add(Menu.NONE,R.string.cancel,Menu.NONE,"TEST").setIcon(R.drawable.ic_lock);
 
             bottomNavigationView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
 
@@ -178,9 +175,7 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
 
         if (isLibraryItemEnabled()) {
             fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new LibraryFragment();
-            //fragments[BaseRegisterActivity.LIBRARY_POSITION - 1] = new UkudoxFragment();
         }
-        //fragments[4] = new UkudoxFragment();
 
         return fragments;
     }
@@ -206,7 +201,7 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
 
     @Override
     public void startFormActivity(JSONObject form) {
-        Intent intent = new Intent(this, FormConfigurationJsonFormActivity.class);
+        Intent intent = new Intent(this, AncRegistrationActivity.class);
         intent.putExtra(ConstantsUtils.JsonFormExtraUtils.JSON, form.toString());
         intent.putExtra(JsonFormConstants.PERFORM_FORM_TRANSLATION, true);
         startActivityForResult(intent, ANCJsonFormUtils.REQUEST_CODE_GET_JSON);
@@ -246,50 +241,6 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
                     JSONObject form = new JSONObject(jsonString);
                     switch (form.getString(ANCJsonFormUtils.ENCOUNTER_TYPE)) {
                         case ConstantsUtils.EventTypeUtils.REGISTRATION:
-
-//--------------------------------Eric code start here----------------------
-
-                            JSONObject reg_form = new JSONObject(jsonString);
-                            JSONObject step1=reg_form.getJSONObject("step1");
-                            JSONArray feilds=step1.getJSONArray("fields");
-
-                            String province="";
-                            String district="";
-                            String sector="";
-                            String cell ="";
-                            for (int i=0;i<feilds.length();i++){
-
-
-                                    if (feilds.getJSONObject(i).getString("key").equals("address_number")){
-
-                                        String[] locationArrays=feilds.getJSONObject(i).getString("value").split(",");
-                                            province=locationArrays[0].substring(2,locationArrays[0].length()-1);;
-                                            district=locationArrays[1].substring(1,locationArrays[1].length()-1);
-                                            sector=locationArrays[2].substring(1,locationArrays[2].length()-1);
-                                            cell=locationArrays[3].substring(1,locationArrays[3].length()-2);
-                                    }
-                                if (feilds.getJSONObject(i).getString("key").equals("province")){
-                                    feilds.getJSONObject(i).put("value",province);
-                                }
-
-                                if (feilds.getJSONObject(i).getString("key").equals("district")){
-                                    feilds.getJSONObject(i).put("value",district);
-                                    }
-                                if (feilds.getJSONObject(i).getString("key").equals("sector")){
-                                    feilds.getJSONObject(i).put("value",sector);
-                                }
-                                if (feilds.getJSONObject(i).getString("key").equals("cell")){
-                                    feilds.getJSONObject(i).put("value",cell);
-                                }
-
-
-                            }
-                            step1.put("fields",feilds);
-                            reg_form.put("step1",step1);
-                            jsonString=reg_form.toString();
-
-//                         ---------------- Eric code ends here--------------------
-
                             ((RegisterContract.Presenter) presenter).saveRegistrationForm(jsonString, false);
                             break;
                         case ConstantsUtils.EventTypeUtils.CLOSE:

@@ -251,54 +251,7 @@ fields:
   - template: "{{profile_contact_test.partner_hiv_test.partner_hiv_test_result}}: {hiv_test_partner_result}"
     relevance: "hiv_test_partner_result != ''"
 test_results: "['hiv_test_partner_result:Partner HIV tests results']"
----
-sub_group: partner_rpr_test_results
-fields:
-  - template: "{{profile_contact_test.partner_rpr_tests.partner_rpr_test_status}}: {partner_rpr_test_status}"
-    relevance: "partner_rpr_test_status != ''"
 
-  - template: "{{profile_contact_test.partner_rpr_tests.partner_rpr_done_date}}: {partner_rpr_test_date}"
-    relevance: "partner_rpr_test_date != ''"
-
-  - template: "Partner RPR tests results: {partner_rpr_test_result}"
-    relevance: "partner_rpr_test_result != ''"
-test_results: "['partner_rpr_test_result:Partner RPR tests results']"
----
-sub_group: cmv_test_results
-fields:
-  - template: " {{profile_contact_test.cmv_tests.cmv_test_status}}: {cmv_test_status}"
-    relevance: "cmv_test_status != ''"
-
-  - template: "{{profile_contact_test.cmv_tests.cmv_done_date}}: {cmv_test_date}"
-    relevance: "cmv_test_date != ''"
-
-  - template: "{{profile_contact_test.cmv_tests.cmv_test_result}}: {cmv_test_result}"
-    relevance: "cmv_test_result != ''"
-test_results: "['cmv_test_result:CMV tests results']"
----
-sub_group: rubella_test_results
-fields:
-  - template: " {{profile_contact_test.rubella_tests.rubella_test_status}}: {rubella_test_status}"
-    relevance: "rubella_test_status != ''"
-
-  - template: "{{profile_contact_test.rubella_tests.rubella_done_date}}: {rubella_test_date}"
-    relevance: "rubella_test_date != ''"
-
-  - template: "{{profile_contact_test.rubella_tests.rubella_test_result}}: {rubella_test_result}"
-    relevance: "rubella_test_result != ''"
-test_results: "['rubella_test_result:Rubella tests results']"
----
-sub_group: herpes_test_results
-fields:
-  - template: " {{profile_contact_test.herps_tests.herps_test_status}}: {herps_test_status}"
-    relevance: "herps_test_status != ''"
-
-  - template: "{{profile_contact_test.herps_tests.herps_done_date}}: {herps_test_date}"
-    relevance: "herps_test_date != ''"
-
-  - template: "{{profile_contact_test.herps_tests.herps_test_result}}: {herps_test_result}"
-    relevance: "herps_test_result != ''"
-test_results: "['herps_test_result:Herpes tests results']"
 ---
 sub_group: other_tests_results
 fields:

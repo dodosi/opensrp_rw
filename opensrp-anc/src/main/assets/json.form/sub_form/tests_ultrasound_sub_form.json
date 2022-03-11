@@ -18,7 +18,14 @@
           "openmrs_entity": "concept",
           "openmrs_entity_id": "165383AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-
+        {
+          "key": "done_earlier",
+          "text": "{{tests_ultrasound_sub_form.step1.ultrasound.options.done_earlier.text}}",
+          "type": "done_earlier",
+          "openmrs_entity_parent": "",
+          "openmrs_entity": "concept",
+          "openmrs_entity_id": "165385AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
         {
           "key": "ordered",
           "text": "{{tests_ultrasound_sub_form.step1.ultrasound.options.ordered.text}}",
@@ -89,28 +96,6 @@
             "rules-file": "ultrasound_sub_form_relevance_rules.yml"
           }
         }
-      }
-    },
-    {
-      "key": "ultrasound_scheduled_date",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "date_picker",
-      "hint": "{{tests_ultrasound_sub_form.step1.ultrasound_scheduled_date.hint}}",
-      "expanded": "false",
-      "max_date": "today+10m",
-      "min_date": "today",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      },
-      "v_required": {
-        "value": false,
-        "err": ""
       }
     },
     {
@@ -336,109 +321,6 @@
       "spacer_height": "10dp"
     },
     {
-      "key": "fetal_body_movement",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "native_radio",
-      "label": "{{tests_ultrasound_sub_form.step1.fetal_body_movement.label}}",
-      "label_text_style": "bold",
-      "options": [
-        {
-          "key": "yes",
-          "text": "{{tests_ultrasound_sub_form.step1.fetal_body_movement.options.yes.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        },
-        {
-          "key": "no",
-          "text": "{{tests_ultrasound_sub_form.step1.fetal_body_movement.options.no.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        },
-        {
-          "key": "not_applicable",
-          "text": "{{tests_ultrasound_sub_form.step1.fetal_body_movement.options.not_applicable.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        }
-      ],
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "ultrasound_sub_form_relevance_rules.yml"
-          }
-        }
-      }
-    },
-    {
-      "key": "respiratory_movement",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "native_radio",
-      "label": "{{tests_ultrasound_sub_form.step1.respiratory_movement.label}}",
-      "label_text_style": "bold",
-      "options": [
-        {
-          "key": "normal",
-          "text": "{{tests_ultrasound_sub_form.step1.respiratory_movement.options.normal.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        },
-        {
-          "key": "abnormal",
-          "text": "{{tests_ultrasound_sub_form.step1.respiratory_movement.options.abnormal.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        }
-      ],
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "ultrasound_sub_form_relevance_rules.yml"
-          }
-        }
-      }
-    },
-    {
-      "key": "congenital_abnormality",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "native_radio",
-      "label": "{{tests_ultrasound_sub_form.step1.congenital_abnormality.label}}",
-      "label_text_style": "bold",
-      "options": [
-        {
-          "key": "yes",
-          "text": "{{tests_ultrasound_sub_form.step1.congenital_abnormality.options.yes.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        },
-        {
-          "key": "no",
-          "text": "{{tests_ultrasound_sub_form.step1.congenital_abnormality.options.no.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        }
-      ],
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "ultrasound_sub_form_relevance_rules.yml"
-          }
-        }
-      }
-    },
-    {
       "key": "fetal_presentation",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
@@ -455,20 +337,19 @@
           "openmrs_entity": "concept",
           "openmrs_entity_id": "160091AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
-
+        {
+          "key": "pelvic",
+          "text": "{{tests_ultrasound_sub_form.step1.fetal_presentation.options.pelvic.text}}",
+          "openmrs_entity_parent": "",
+          "openmrs_entity": "concept",
+          "openmrs_entity_id": "146922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        },
         {
           "key": "transverse",
           "text": "{{tests_ultrasound_sub_form.step1.fetal_presentation.options.transverse.text}}",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "112259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-        },
-        {
-          "key": "breech",
-          "text": "{{tests_ultrasound_sub_form.step1.fetal_presentation.options.breech.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
         },
         {
           "key": "other",
@@ -570,15 +451,15 @@
           "openmrs_entity_id": "541AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
         {
-          "key": "postero_fundic",
-          "text": "{{tests_ultrasound_sub_form.step1.placenta_location.options.postero_fundic.text}}",
+          "key": "right_side",
+          "text": "{{tests_ultrasound_sub_form.step1.placenta_location.options.right_side.text}}",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "5141AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
         {
-          "key": "antero_fundic",
-          "text": "{{tests_ultrasound_sub_form.step1.placenta_location.options.antero_fundic.text}}",
+          "key": "left_side",
+          "text": "{{tests_ultrasound_sub_form.step1.placenta_location.options.left_side.text}}",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "5139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -596,22 +477,6 @@
           "ex-rules": {
             "rules-file": "ultrasound_sub_form_relevance_rules.yml"
           }
-        }
-      }
-    },
-    {
-      "key": "placenta_praevia_info_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_ultrasound_sub_form.step1.placenta_praevia_info_toaster.text}}",
-      "toaster_type": "problem",
-      "relevance": {
-        "step1:placenta_location": {
-          "type": "string",
-          "ex": "equalTo(., \"praevia\")"
-
         }
       }
     }

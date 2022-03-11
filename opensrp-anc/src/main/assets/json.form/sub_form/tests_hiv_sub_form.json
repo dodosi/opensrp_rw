@@ -161,28 +161,6 @@
       }
     },
     {
-      "key": "hiv_test_scheduled_date",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "date_picker",
-      "hint": "{{tests_hiv_sub_form.step1.hiv_test_scheduled_date.hint}}",
-      "expanded": "false",
-      "max_date": "today+10m",
-      "min_date": "today",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      },
-      "v_required": {
-        "value": false,
-        "err": ""
-      }
-    },
-    {
       "key": "hiv_test_result",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
@@ -222,41 +200,6 @@
           "ex-rules": {
             "rules-file": "tests_relevance_rules.yml"
           }
-        }
-      }
-    },
-    {
-      "key": "woman_referred",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "native_radio",
-      "label": "{{tests_hiv_sub_form.step1.woman_referred.label}}",
-      "label_text_style": "bold",
-      "options": [
-        {
-          "key": "yes",
-          "text": "{{tests_hiv_sub_form.step1.woman_referred.options.yes.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        },
-        {
-          "key": "no",
-          "text": "{{tests_hiv_sub_form.step1.woman_referred.options.no.text}}",
-          "openmrs_entity_parent": "",
-          "openmrs_entity": "concept",
-          "openmrs_entity_id": ""
-        }
-      ],
-      "v_required": {
-        "value": true,
-        "err": "{{tests_hiv_sub_form.step1.woman_referred.v_required.err}}"
-      },
-      "relevance": {
-        "step1:hiv_test_result": {
-          "type": "string",
-          "ex": "equalTo(., \"positive\")"
         }
       }
     },

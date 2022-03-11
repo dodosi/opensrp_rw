@@ -210,7 +210,7 @@
 
     <string name="specify">Specify</string>
 
-    <string name="proceed_to_normal_contact">Proceed  with  contact</string>
+    <string name="proceed_to_normal_contact">Proceed to normal contact</string>
     <string name="refer_and_close_contact">Refer and close contact</string>
 
     <string name="validation_no_reason_selected">Please select a reason for coming to facility</string>
@@ -237,12 +237,12 @@
     <string name="edit"> edit </string>
 
     <!-- contact -->
-    <string name="quick_check" translatable="false">Quick Check</string>
-    <string name="profile" translatable="false">Profile</string>
-    <string name="symptoms_follow_up" translatable="false">Symptoms and Follow-up</string>
-    <string name="physical_exam" translatable="false">Physical Exam</string>
-    <string name="tests" translatable="false">Tests</string>
-    <string name="counselling_treatment" translatable="false">Counselling and Treatment</string>
+    <string name="quick_check">Quick Check</string>
+    <string name="profile">Profile</string>
+    <string name="symptoms_follow_up">Symptoms and Follow-up</string>
+    <string name="physical_exam">Physical Exam</string>
+    <string name="tests">Tests</string>
+    <string name="counselling_treatment">Counselling and Treatment</string>
     <string name="contact_tasks_form">Contact Tasks</string>
 
     <string name="finalize">Finalize</string>
@@ -327,7 +327,7 @@
     <string name="birth_and_emergency_plan">Birth and Emergency plan</string>
     <string name="physical_activity">Physical Activity</string>
     <string name="balanced_nutrition">Balanced Nutrition</string>
-    <string name="report_staff">Report Content</string>
+
     <string name="balanced_nutrition_source">SOURCE: World Health Organization. Integrated Management of Pregnancy and Childbirth – Pregnancy, Childbirth, Postpartum and Newborn Care: A guide for essential practice. 2015. Geneva.</string>
     <string name="string_bullet">•</string>
     <string name="birth_and_emergency"></string>
@@ -421,9 +421,9 @@
     <string name="default_language_string">Current language: %1s</string>
 
     <string name="choose_language">Choose language</string>
-    <string name="english_language" translatable="false">English</string>
-    <string name="french_language" translatable="false">French</string>
-    <string name="portuguese_brazil_language" translatable="false">Portuguese (Brazil)</string>
+    <string name="english_language">English</string>
+    <string name="french_language">French</string>
+    <string name="portuguese_brazil_language">Portuguese (Brazil)</string>
 
     <string name="accordion_ultrasound">Ultrasound test</string>
     <string name="accordion_blood_type">Blood Type test</string>
@@ -440,30 +440,5 @@
     <string name="contact_summary_data">Contact Summary Data  -  %1$s</string>
     <string name="pdf_saved_successfully">\"Pdf saved successfully to location \"</string>
     <string name="contact_summary_data_file">contactSummaryData.pdf</string>
-    <string name="kinyarwanda" translatable="false">Kinyarwanda</string>
-    <!--added-->
-    <string name="quick_check_title">Quick Check</string>
-    <string name="profile_title">Profile</string>
-    <string name="symptoms_follow_up_title">Symptoms</string>
-    <string name="physical_exam_title">Physical Exam</string>
-    <string name="tests_title">Tests</string>
-    <string name="counselling_treatment_title">Counselling and Treatment</string>
-    <string name="next">Next</string>
-    <string name="complete_prev">Complete previous step to continue with</string>
-    <string name="complete_prevoius">Complete</string>
-    <string name="locked_end"> to open this</string>
-    <string name="ukudox">Home</string>
-    <string name="due_contacts">Due Contacts</string>
-    <string name="mother_with_danger_signs">Mothers with danger signs</string>
-    <string name="reffered_mothers">Referred Mothers</string>
-    <string name="details">Details</string>
-    <string name="go_to_clients_page">GO TO CLIENTS PAGE</string>
-    <string name="home_visits">Visits</string>
-    <string name="mother_with_danger_Signs">Women with Danger signs</string>
-    <string name="women_referred">Women referred</string>
-    <string name="due_contact_today">Due Contact today</string>
-    <string name="anc_dashboard">ANC DASHBOARD</string>
-    <string name="anc_visits">ANC VISITS</string>
-    <string name="device_to_device">Device-to-device sync</string>
 
 </resources>

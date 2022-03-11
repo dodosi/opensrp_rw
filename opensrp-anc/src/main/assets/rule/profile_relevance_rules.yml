@@ -23,7 +23,7 @@ actions:
 name: step2_sfh_gest_age
 description: sfh_gest_age
 priority: 1
-condition: "!step2_sfh_gest_age_not_applicable.contains('yes') && ((step2_lmp_known == 'no' && step2_ultrasound_done == 'no') || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')) || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes'))|| (step2_lmp_known == 'no' && step2_ultrasound_gest_age_wks >= 24))"
+condition: "(step2_lmp_known == 'no' && step2_ultrasound_done == 'no') || (step2_lmp_known == 'no' && step2_ultrasound_gest_age_wks >= 24)"
 actions:
   - "isRelevant = true"
 ---
@@ -37,28 +37,28 @@ actions:
 name: step2_lmp_ultrasound_gest_age_selection
 description: lmp_ultrasound_gest_age_selection
 priority: 1
-condition: "(step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes'))"
+condition: "(step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes')"
 actions:
   - "isRelevant = true"
 ---
 name: step2_sfh_gest_age_selection
 description: sfh_gest_age_selection
 priority: 1
-condition: "!step2_sfh_gest_age_not_applicable.contains('yes') && (step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'no') ||(step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')))"
+condition: "step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'no')"
 actions:
   - "isRelevant = true"
 ---
 name: step2_ultrasound_gest_age_selection
 description: ultrasound_gest_age_selection
 priority: 1
-condition: "(step2_lmp_known == '' && !step2_ultrasound_gest_age_unknown.contains('yes'))   || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes') && (step2_ultrasound_gest_age_wks == '' || step2_ultrasound_gest_age_wks < 24))"
+condition: "step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && (step2_ultrasound_gest_age_wks == '' || step2_ultrasound_gest_age_wks < 24))"
 actions:
   - "isRelevant = true"
 ---
 name: step2_lmp_gest_age_selection
 description: lmp_gest_age_selection
 priority: 1
-condition: "step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'no') || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes'  && step2_ultrasound_gest_age_unknown.contains('yes'))"
+condition: "step2_lmp_known == '' || step2_ultrasound_done == '' || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'no')"
 actions:
   - "isRelevant = true"
 ---
@@ -101,13 +101,6 @@ name: step3_stillbirths_label
 description: Still births label
 priority: 1
 condition: "((step3_previous_pregnancies - step3_miscarriages_abortions - step3_live_births) > 0)"
-actions:
-  - "isRelevant = true"
----
-name: step3_newborn_dirths_label
-description: Newborn dirths label
-priority: 1
-condition: "(step3_live_births > 0)"
 actions:
   - "isRelevant = true"
 ---
@@ -177,56 +170,7 @@ actions:
 name: step8_hiv_risk_counselling_toaster
 description: Hiv Risk counselling
 priority: 1
-condition: "(step8_hiv_risk == 1) || (step8_partner_hiv_status == 'positive') || (step8_partner_hiv_status == 'negative')"
-actions:
-  - "isRelevant = true"
----
-name: step3_newborn_dirths
-description: Newborn dirth
-priority: 1
-condition: "(step3_live_births > 0)"
-actions:
-  - "isRelevant = true"
----
-name: step3_date_last_born
-description: Date of Birth for last born
-priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
-actions:
-  - "isRelevant = true"
----
-name: step3_last_born_status
-description: Last born status
-priority: 1
-condition: "(step3_children_live > 0)"
-actions:
-  - "isRelevant = true"
----
-name: step3_children_live_label
-description: Live births label
-priority: 1
-condition: "((step3_live_births - step3_newborn_dirths) > 0)"
-actions:
-  - "isRelevant = true"
----
-name: step3_children_live
-description: Children Live births
-priority: 1
-condition: "((step3_live_births - step3_newborn_dirths) > 0)"
-actions:
-  - "isRelevant = true"
----
-name: step3_perfect_births
-description: Perfect births
-priority: 1
-condition: "(step3_live_births > 0)"
-actions:
-  - "isRelevant = true"
----
-name: step3_perfect_births_label
-description: Perfect births
-priority: 1
-condition: "(step3_live_births > 0)"
+condition: "(step8_hiv_risk == 1)"
 actions:
   - "isRelevant = true"
 ---
@@ -234,145 +178,5 @@ name: step1_headss_toaster
 description: HEADSS info
 priority: 1
 condition: "(global_age < 19)"
-actions:
-  - "isRelevant = true"
----
-name: step3_age_greater30_toaster
-description: Age info
-priority: 1
-condition: "(global_age > 30) && (step3_gravida == 1)"
-actions:
-  - "isRelevant = true"
----
-name: step4_creatinine
-description: creatinine
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_woman_with_hiv
-description: creatinine
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_cd4
-description: cd4
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_recent_viral_load
-description: recent_viral_load
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_arv_start_date
-description: arv_start_date
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_prescribed_arv_regimen
-description: prescribed_arv_regimen
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_prescribed_arv_regimen_specify
-description: prescribed_arv_regimen_specify
-priority: 1
-condition: "step8_prescribed_arv_regimen.contains('1fspecify')"
-actions:
-  - "isRelevant = true"
----
-name: step4_cotrimoxazole_start_date
-description: cotrimoxazole_start_date
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_screened_for_tb
-description: screened_for_tb
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_screened_for_sti
-description: screened_for_sti
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_tracnet
-description: Tracnet
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step4_referred_to_art_clinic
-description: Referred_to_art_clinic
-priority: 1
-condition: "step4_health_conditions.contains('hiv')"
-actions:
-  - "isRelevant = true"
----
-name: step2_ultrasound_gest_age_wks
-description: ultrasound_gest_age_wks
-priority: 1
-condition: "step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes')"
-actions:
-  - "isRelevant = true"
----
-name: step2_ultrasound_gest_age_days
-description: ultrasound_gest_age_days
-priority: 1
-condition: "step2_ultrasound_done == 'yes' && !step2_ultrasound_gest_age_unknown.contains('yes')"
-actions:
-  - "isRelevant = true"
----
-name: step2_sfh_gest_age_not_applicable
-description: sfh_gest_age_not_applicable
-priority: 1
-condition: "(step2_lmp_known == 'no' && step2_ultrasound_done == 'no') || (step2_lmp_known == 'no' && step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')) || (step2_lmp_known == 'yes' && step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes'))|| (step2_lmp_known == 'no' && step2_ultrasound_gest_age_wks >= 24)"
-actions:
-  - "isRelevant = true"
----
-name: step2_gest_age_selection_failed
-description: sfh_gest_age_not_applicable
-priority: 1
-condition: "step2_lmp_known == 'no' && (step2_ultrasound_done == 'no' || (step2_ultrasound_done == 'yes' && step2_ultrasound_gest_age_unknown.contains('yes')))&& step2_sfh_gest_age_not_applicable.contains('yes')"
-actions:
-  - "isRelevant = true"
----
-name: step2_edd_from_ultrasound
-description: edd_from_ultrasound
-priority: 1
-condition: "step2_ultrasound_done == 'yes'"
-actions:
-  - "isRelevant = true"
----
-name: step3_multiple_pregnancy
-description: multiple_pregnancy
-priority: 1
-condition: "step3_previous_pregnancies > 0 "
-actions:
-  - "isRelevant = true"
----
-name: step3_multiple_pregnancy_details
-description: multiple_pregnancy_details
-priority: 1
-condition: "step3_multiple_pregnancy.contains('yes')"
 actions:
   - "isRelevant = true"

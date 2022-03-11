@@ -44,7 +44,7 @@ import java.util.UUID;
 
 import timber.log.Timber;
 
-public class   AncRulesEngineHelper extends RulesEngineHelper {
+public class AncRulesEngineHelper extends RulesEngineHelper {
     private final String RULE_FOLDER_PATH = "rule/";
     private final Context context;
     private final RulesEngine inferentialRulesEngine;
