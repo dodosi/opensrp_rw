@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 /**
  * Created by Ephraim Kigamba - ekigamba@ona.io on 2019-07-17
  */
-
+// adding ona new feautre
 public class ActivityConfiguration {
 
     private Class<? extends BaseHomeRegisterActivity> homeRegisterActivityClass;
