@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WHO ANC</string>
+    <string name="action_logout">Sohoka</string>
+    <string name="choose_language">Hitamo Ururimi</string>
+    <string name="device_to_device">Device-to-device sync</string>
+</resources>

@@ -94,6 +94,184 @@
         }
       },
       {
+        "key": "pregnancy_test",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_quick_check.step1.pregnancy_test.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_quick_check.step1.pregnancy_test.options.yes.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },{
+            "key": "no",
+            "text": "{{anc_quick_check.step1.pregnancy_test.options.no.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_quick_check.step1.pregnancy_test.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "quick_check_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "other_facility_anc",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_quick_check.step1.other_facility_anc.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_quick_check.step1.other_facility_anc.options.yes.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },{
+            "key": "no",
+            "text": "{{anc_quick_check.step1.other_facility_anc.options.no.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_quick_check.step1.other_facility_anc.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "quick_check_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "facility_first_visit_done",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_quick_check.step1.facility_p_visit_done.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_quick_check.step1.facility_p_visit_done.v_required.err}}"
+        },
+        "relevance": {
+          "step1:other_facility_anc": {
+            "type": "string",
+            "ex": "equalTo(., \"no\")"
+
+          }
+        }
+      },
+      {
+        "key": "referred",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_quick_check.step1.referred.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "no",
+            "text": "{{anc_quick_check.step1.referred.options.no.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "yes",
+            "text": "{{anc_quick_check.step1.referred.options.yes.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_quick_check.step1.referred.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "quick_check_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "referred_institute",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_quick_check.step1.referred_institute.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_quick_check.step1.referred_institute.v_required.err}}"
+        },
+        "relevance": {
+          "step1:referred": {
+            "type": "string",
+            "ex": "equalTo(., \"yes\")"
+
+          }
+        }
+      },
+      {
+        "key": "accompanied_by_partner",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_quick_check.step1.accompanied_by_partner.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_quick_check.step1.accompanied_by_partner.options.yes.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_quick_check.step1.accompanied_by_partner.options.no.text}}",
+            "openmrs_entity": "",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_quick_check.step1.accompanied_by_partner.v_required.err}}"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "quick_check_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
         "key": "specific_complaint",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -507,8 +685,8 @@
           {
             "key": "central_cyanosis",
             "text": "{{anc_quick_check.step1.danger_signs.options.central_cyanosis.text}}",
-            "label_info_text": "Bluish discolouration around the mucous membranes in the mouth, lips and tongue",
-            "label_info_title": "Central cyanosis",
+            "label_info_text": "{{anc_quick_check.step1.danger_signs.options.central_cyanosis.label_info_text}}",
+            "label_info_title": "{{anc_quick_check.step1.danger_signs.options.central_cyanosis.label_info_title}}",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -586,6 +764,31 @@
             "openmrs_entity": "concept",
             "openmrs_entity_id": "163477AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           },
+
+          {
+            "key": "anemia",
+            "text": "{{anc_quick_check.step1.danger_signs.options.anemia.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "oedema",
+            "text": "{{anc_quick_check.step1.danger_signs.options.oedema.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "not_gaining_weight",
+            "text": "{{anc_quick_check.step1.danger_signs.options.not_gaining_weight.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
           {
             "key": "severe_abdominal_pain",
             "text": "{{anc_quick_check.step1.danger_signs.options.severe_abdominal_pain.text}}",
@@ -601,6 +804,14 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "123818AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "other_specify",
+            "text": "{{anc_quick_check.step1.danger_signs.options.other_specify.text}}",
+            "value": false,
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
           }
         ],
         "v_required": {
@@ -612,6 +823,30 @@
             "ex-rules": {
               "rules-file": "quick_check_relevance_rules.yml"
             }
+          }
+        }
+      },
+      {
+        "key": "specific_other_danger_signs",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "normal_edit_text",
+        "edit_text_style": "bordered",
+        "hint": "{{anc_quick_check.step1.specific_other_danger_signs.hint}}",
+        "v_regex": {
+          "value": "[A-Za-z\\s\\.\\-]*",
+          "err": "{{anc_quick_check.step1.specific_other_danger_signs.v_regex.err}}"
+        },
+        "relevance": {
+          "step1:danger_signs": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "other_specify"
+                ]
+              }
+            ]
           }
         }
       }

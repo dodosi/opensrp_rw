@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -274,7 +275,13 @@ public abstract class BaseContactActivity extends SecuredActivity {
             if (i == R.id.undo_button) {
                 displayContactSaveDialog();
             } else if (i == R.id.card_layout) {
-                startForms(view);
+                Contact contact=(Contact) view.getTag();
+                if (contact.isOpened())
+                {
+                startForms(view);}
+                else {
+                    Toast.makeText(view.getContext(), view.getContext().getString(R.string.complete_prev)+" "+ contact.getTitle(), Toast.LENGTH_SHORT).show();
+                }
             } else if (i == R.id.finalize_contact) {
                 Utils.finalizeForm(getActivity(),
                         (HashMap<String, String>) getIntent().getSerializableExtra(ConstantsUtils.IntentKeyUtils.CLIENT_MAP),

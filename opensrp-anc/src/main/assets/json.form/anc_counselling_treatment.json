@@ -82,6 +82,13 @@
     "next": "step2",
     "fields": [
       {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "key": "clinician_name",
+        "type": "hidden"
+      },
+      {
         "key": "danger_signs_toaster",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -2270,6 +2277,21 @@
         }
       },
       {
+        "key": "hypertension_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step5.hypertension_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step5:hypertension_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "hiv_positive_counsel",
         "openmrs_entity_parent": "165328AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -2304,6 +2326,21 @@
             "ex-rules": {
               "rules-file": "ct_relevance_rules.yml"
             }
+          }
+        }
+      },
+      {
+        "key": "hiv_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step5.hiv_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step5:hiv_positive_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
           }
         }
       },
@@ -3278,6 +3315,21 @@
         ]
       },
       {
+        "key": "danger_signs_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.danger_signs_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:danger_signs_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "emergency_hosp_counsel",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -3303,6 +3355,21 @@
             "openmrs_entity_id": ""
           }
         ]
+      },
+      {
+        "key": "emergency_hosp_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.emergency_hosp_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:emergency_hosp_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
       },
       {
         "key": "anc_contact_counsel",
@@ -3332,6 +3399,21 @@
         ]
       },
       {
+        "key": "anc_contact_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.anc_contact_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:anc_contact_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "birth_prep_counsel",
         "openmrs_entity_parent": "161069AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -3359,6 +3441,21 @@
         ]
       },
       {
+        "key": "birth_prep_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.birth_prep_counsel_notdone_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:birth_prep_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "birth_plan_toaster",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
@@ -3376,11 +3473,11 @@
         }
       },
       {
-        "key": "delivery_place",
+        "key": "delivery_place_old",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "159758AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_counselling_treatment.step7.delivery_place.label}}",
         "label_text_style": "bold",
         "options": [
@@ -3401,6 +3498,45 @@
           {
             "key": "home",
             "text": "{{anc_counselling_treatment.step7.delivery_place.options.home.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "other",
+            "text": "{{anc_counselling_treatment.step7.delivery_place.options.other.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          }
+        ]
+      },
+      {
+        "key": "delivery_place",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "159758AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.delivery_place.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "hospital",
+            "text": "{{anc_counselling_treatment.step7.delivery_place.options.hospital.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "health_center",
+            "text": "{{anc_counselling_treatment.step7.delivery_place.options.health_center.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "155886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          },
+          {
+            "key": "private_clinic",
+            "text": "{{anc_counselling_treatment.step7.delivery_place.options.private_clinic.text}}",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3464,6 +3600,21 @@
         }
       },
       {
+        "key": "rh_negative_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.rh_negative_counsel_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:rh_negative_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
         "key": "gbs_agent_counsel",
         "openmrs_entity_parent": "165339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -3498,6 +3649,181 @@
         }
       },
       {
+        "key": "gbs_agent_counsel_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.gbs_agent_counsel_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:gbs_agent_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
+        "key": "breastfeeding_counselling",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.breastfeeding_counselling.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "done",
+            "text": "{{anc_counselling_treatment.step7.breastfeeding_counselling.options.done.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "not_done",
+            "text": "{{anc_counselling_treatment.step7.breastfeeding_counselling.options.not_done.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ]
+      },
+      {
+        "key": "breastfeeding_counselling_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.breastfeeding_counselling_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:breastfeeding_counselling": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
+        "key": "insurance_counselling",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.insurance_counselling.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "done",
+            "text": "{{anc_counselling_treatment.step7.insurance_counselling.options.done.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "not_done",
+            "text": "{{anc_counselling_treatment.step7.insurance_counselling.options.not_done.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ]
+      },
+      {
+        "key": "insurance_counselling_notdone_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.insurance_counselling_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:insurance_counselling": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
+        "key": "deworming_performed",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.deworming_performed.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_counselling_treatment.step7.deworming_performed.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_counselling_treatment.step7.deworming_performed.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ]
+      },
+      {
+        "key": "deworming_performed_not_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.deworming_performed_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:deworming_performed": {
+            "type": "string",
+            "ex": "equalTo(., \"no\")"
+          }
+        }
+      },
+      {
+        "key": "mosquito_net_recieved",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.mosquito_net_recieved.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_counselling_treatment.step7.mosquito_net_recieved.options.yes.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_counselling_treatment.step7.mosquito_net_recieved.options.no.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ]
+      },
+      {
+        "key": "mosquito_net_recieved_not_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.mosquito_net_recieved_not_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:mosquito_net_recieved": {
+            "type": "string",
+            "ex": "equalTo(., \"no\")"
+          }
+        }
+      },
+      {
         "key": "family_planning_counsel",
         "openmrs_entity_parent": "165340AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -3527,11 +3853,26 @@
         }
       },
       {
-        "key": "family_planning_type",
+        "key": "family_planning_counsel_not_done_reason",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.family_planning_counsel_not_done_reason.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"not_done\")"
+          }
+        }
+      },
+      {
+        "key": "family_planning_type_old",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_counselling_treatment.step7.family_planning_type.label}}",
         "label_text_style": "bold",
         "options": [
@@ -3670,11 +4011,165 @@
         }
       },
       {
+        "key": "family_planning_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "native_radio",
+        "label": "{{anc_counselling_treatment.step7.family_planning_type.label}}",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "key": "none",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.none.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "pills",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.pills.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "implant",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.implant.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "intra_uterine_device",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.intra_uterine_device.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "permanent_method",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.permanent_method.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "condom",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.condom.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "relevance": {
+          "step7:family_planning_counsel": {
+            "type": "string",
+            "ex": "equalTo(., \"done\")"
+          }
+        }
+      },
+      {
+        "key": "pills_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.pills_type.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"pills\")"
+          }
+        }
+      },
+      {
+        "key": "implant_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.implant_type.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"implant\")"
+          }
+        }
+      },
+      {
+        "key": "intra_uterine_device_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.intra_uterine_device_type.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"intra_uterine_device\")"
+          }
+        }
+      },
+      {
+        "key": "permanent_method_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step7.permanent_method_type.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"permanent_method\")"
+          }
+        }
+      },
+      {
+        "key": "condom_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "select one",
+        "type": "spinner",
+        "options": [
+          {
+            "key": "male_condoms",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.male_condoms.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "female_condoms",
+            "text": "{{anc_counselling_treatment.step7.family_planning_type.options.female_condoms.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "hint": "{{anc_counselling_treatment.step7.condom_type.hint}}",
+        "v_required": {
+          "value": "true",
+          "err": "{{anc_counselling_treatment.step7.condom_type.v_required.err}}"
+        },
+        "relevance": {
+          "step7:family_planning_type": {
+            "type": "string",
+            "ex": "equalTo(., \"condom\")"
+          }
+        }
+      },
+      {
         "key": "breastfeed_counsel",
         "openmrs_entity_parent": "1910AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_counselling_treatment.step7.breastfeed_counsel.label}}",
         "label_info_text": "{{anc_counselling_treatment.step7.breastfeed_counsel.label_info_text}}",
         "label_info_title": "{{anc_counselling_treatment.step7.breastfeed_counsel.label_info_title}}",
@@ -5309,6 +5804,26 @@
         }
       },
       {
+        "key": "proposed_tt2_date_will_done",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_counselling_treatment.step11.proposed_tt2_date_will_done.hint}}",
+        "expanded": "false",
+        "max_date": "today+10m",
+        "relevance": {
+          "step11:tt1_date": {
+            "type": "string",
+            "ex": "equalTo(., \"done_today\")"
+          }
+        },
+        "v_required": {
+          "value": false,
+          "err": ""
+        }
+      },
+      {
         "key": "tt2_date",
         "openmrs_entity_parent": "84879AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_entity": "concept",
@@ -5646,6 +6161,253 @@
   "step12": {
     "title": "{{anc_counselling_treatment.step12.title}}",
     "fields": [
+      {
+        "key": "prevention_measures",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "openmrs_data_type": "",
+        "type": "check_box",
+        "label": "{{anc_counselling_treatment.step12.prevention_measures.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "exclusive": [
+          "none"
+        ],
+        "options": [
+          {
+            "key": "none",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.none.text}}",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "mosquito_net",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.mosquito_net.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "iron_and_foric_acid",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.iron_and_foric_acid.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "calcium",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.calcium.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "mebendazole ",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.mebendazole.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "tetanos",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.tetanos.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          },
+          {
+            "key": "other",
+            "text": "{{anc_counselling_treatment.step12.prevention_measures.options.other.text}}",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": ""
+          }
+        ],
+        "v_required": {
+          "value": true,
+          "err": "{{anc_counselling_treatment.step12.prevention_measures.v_required.err}}"
+        }
+      },
+      {
+        "key": "prevention_measures_other",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.prevention_measures_other.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step12:prevention_measures": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "other"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "treatment_label",
+        "type": "label",
+        "label_text_style": "bold",
+        "text": "{{anc_counselling_treatment.step12.treatment_label.text}}",
+        "text_color": "#000000",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "syphilis_treatment_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_counselling_treatment.step12.syphilis_treatment_toaster.text}}",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "syphilis_treatment",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.syphilis_treatment.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "infection_urinaire_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_counselling_treatment.step12.infection_urinaire_toaster.text}}",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "infection_urinaire",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.infection_urinaire.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hepatite_b_treatment_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_counselling_treatment.step12.hepatite_b_treatment_toaster.text}}",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hepatite_b_treatment",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.hepatite_b_treatment.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hepatite_c_treatment_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_counselling_treatment.step12.hepatite_c_treatment_toaster.text}}",
+        "toaster_type": "problem",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hepatite_c_treatment",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.hepatite_c_treatment.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "ct_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "next_visit_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "{{anc_counselling_treatment.step12.next_visit_date.hint}}",
+        "expanded": "false",
+        "max_date": "today+280d",
+        "min_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_counselling_treatment.step12.next_visit_date.v_required.err}}"
+        }
+      },
       {
         "key": "prep_toaster",
         "openmrs_entity_parent": "",

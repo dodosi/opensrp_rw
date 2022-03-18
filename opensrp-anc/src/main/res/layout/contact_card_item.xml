@@ -89,5 +89,63 @@
                 android:textSize="@dimen/contact_detail_text_size" />
 
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/locked_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/complete_layout"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/locked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/contact_drawable_padding"
+                android:paddingRight="2dp"
+                android:src="@drawable/ic_lock" />
+
+        <LinearLayout
+            android:id="@+id/locked_container2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/complete_previous"
+                style="@style/CustomFontTextViewStyle.ClientList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/container_name"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="0dp"
+                android:paddingRight="@dimen/contact_drawable_padding"
+                android:text="@string/complete_prev"
+                android:textColor="@color/translucent_white"
+                android:textSize="10sp" />
+            <TextView
+                android:id="@+id/complete_previous_end"
+                style="@style/CustomFontTextViewStyle.ClientList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/container_name"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="0dp"
+                android:paddingRight="@dimen/contact_drawable_padding"
+                android:text="@string/locked_end"
+                android:textColor="@color/translucent_white"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        </LinearLayout>
     </RelativeLayout>
 </org.smartregister.anc.library.view.SquareCardView>

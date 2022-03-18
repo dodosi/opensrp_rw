@@ -1,0 +1,49 @@
+---
+name: step1_province
+description: Province
+priority: 1
+condition: "(!step1_province.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_district
+description: District
+priority: 1
+condition: "(!step1_district.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_sector
+description: Sector
+priority: 1
+condition: "(!step1_sector.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_cell
+description: Cell
+priority: 1
+condition: "(!step1_cell.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_edit_woman_address
+description: edit_woman_address
+priority: 1
+condition: "(!step1_cell.isEmpty() || !step1_sector.isEmpty() || !step1_district.isEmpty() || !step1_province.isEmpty())"
+actions:
+  - "isRelevant = true"
+---
+name: step1_address_number
+description: Address_number
+priority: 1
+condition: "(step1_cell.isEmpty() || step1_edit_woman_address.contains('edit_address') )"
+actions:
+  - "isRelevant = true"
+---
+name: step1_other_id
+description: other_id
+priority: 1
+condition: "(step1_document_type== 'hhni' || step1_document_type== 'application_number' || step1_document_type== 'nin' )"
+actions:
+  - "isRelevant = true"

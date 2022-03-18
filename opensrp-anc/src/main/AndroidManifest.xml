@@ -20,5 +20,19 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AncAppTheme"
-        tools:replace="android:theme" />
+        tools:replace="android:theme">
+        <activity
+            android:name=".activity.UkudoxDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UkudoxActivity"
+            android:exported="false" />
+        <activity android:name=".activity.AncP2pModeSelectActivity" />
+        <service
+            android:name="org.smartregister.sync.intent.P2pProcessRecordsService"
+            android:description="@string/component_desc_p2p_process_records_service"
+            android:exported="false" />
+
+    </application>
+
 </manifest>
