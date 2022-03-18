@@ -23,6 +23,7 @@ import androidx.annotation.Nullable;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.IBlockElement;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TextAlignment;
@@ -75,6 +76,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -205,6 +207,7 @@ public class Utils extends org.smartregister.util.Utils {
             Intent intent = new Intent(context.getApplicationContext(), ContactJsonFormActivity.class);
             Contact quickCheck = new Contact();
             quickCheck.setName(context.getResources().getString(R.string.quick_check));
+            quickCheck.setTitle(context.getResources().getString(R.string.quick_check_title));
             quickCheck.setFormName(ConstantsUtils.JsonFormUtils.ANC_QUICK_CHECK);
             quickCheck.setContactNumber(Integer.valueOf(personObjectClient.get(DBConstantsUtils.KeyUtils.NEXT_CONTACT)));
             quickCheck.setBackground(R.drawable.quick_check_bg);
@@ -677,7 +680,6 @@ public class Utils extends org.smartregister.util.Utils {
     public static Boolean enableLanguageSwitching() {
         return AncLibrary.getInstance().getProperties().getPropertyBoolean(AncAppPropertyConstants.KeyUtils.LANGUAGE_SWITCHING_ENABLED);
     }
-
     /**
      * Loads yaml files that contain rules for the profile displays
      *
@@ -733,7 +735,6 @@ public class Utils extends org.smartregister.util.Utils {
 
         ANCFormUtils.persistPartial(baseEntityId, contact);
     }
-
     /**
      * Returns the Contact Tasks Repository {@link ContactTasksRepository}
      *

@@ -3,6 +3,7 @@ package org.smartregister.anc.library.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -103,6 +104,7 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
 
             Contact quickCheck = new Contact();
             quickCheck.setName(getString(R.string.quick_check));
+            quickCheck.setTitle(getString(R.string.quick_check_title));
             quickCheck.setContactNumber(contactNo);
             quickCheck.setActionBarBackground(R.color.quick_check_red);
             quickCheck.setBackground(R.drawable.quick_check_bg);
@@ -114,56 +116,75 @@ public class MainContactActivity extends BaseContactActivity implements ContactC
             }
 
             quickCheck.setFormName(ConstantsUtils.JsonFormUtils.ANC_QUICK_CHECK);
+            quickCheck.setOpened(true);
             contacts.add(quickCheck);
 
             Contact profile = new Contact();
             profile.setName(getString(R.string.profile));
+            profile.setTitle(getString(R.string.profile));
             profile.setContactNumber(contactNo);
             profile.setBackground(R.drawable.profile_bg);
             profile.setActionBarBackground(R.color.contact_profile_actionbar);
             profile.setNavigationBackground(R.color.contact_profile_navigation);
             setRequiredFields(profile);
             profile.setFormName(ConstantsUtils.JsonFormUtils.ANC_PROFILE);
+            if (quickCheck.getRequiredFields() !=null && quickCheck.getRequiredFields()==0){
+                profile.setOpened(true);
+            }
             contacts.add(profile);
 
             Contact symptomsAndFollowUp = new Contact();
             symptomsAndFollowUp.setName(getString(R.string.symptoms_follow_up));
+            symptomsAndFollowUp.setTitle(getString(R.string.symptoms_follow_up_title));
             symptomsAndFollowUp.setContactNumber(contactNo);
             symptomsAndFollowUp.setBackground(R.drawable.symptoms_bg);
             symptomsAndFollowUp.setActionBarBackground(R.color.contact_symptoms_actionbar);
             symptomsAndFollowUp.setNavigationBackground(R.color.contact_symptoms_navigation);
             setRequiredFields(symptomsAndFollowUp);
             symptomsAndFollowUp.setFormName(ConstantsUtils.JsonFormUtils.ANC_SYMPTOMS_FOLLOW_UP);
+            if (profile.getRequiredFields()!=null && profile.getRequiredFields()==0){
+                  symptomsAndFollowUp.setOpened(true);
+            }
             contacts.add(symptomsAndFollowUp);
 
             Contact physicalExam = new Contact();
             physicalExam.setName(getString(R.string.physical_exam));
+            physicalExam.setTitle(getString(R.string.physical_exam_title));
             physicalExam.setContactNumber(contactNo);
             physicalExam.setBackground(R.drawable.physical_exam_bg);
             physicalExam.setActionBarBackground(R.color.contact_exam_actionbar);
             physicalExam.setNavigationBackground(R.color.contact_exam_navigation);
             setRequiredFields(physicalExam);
             physicalExam.setFormName(ConstantsUtils.JsonFormUtils.ANC_PHYSICAL_EXAM);
+            if (symptomsAndFollowUp.getRequiredFields()!=null && symptomsAndFollowUp.getRequiredFields()==0){
+                physicalExam.setOpened(true);
+            }
             contacts.add(physicalExam);
 
             Contact tests = new Contact();
             tests.setName(getString(R.string.tests));
+            tests.setTitle(getString(R.string.tests_title));
             tests.setContactNumber(contactNo);
             tests.setBackground(R.drawable.tests_bg);
             tests.setActionBarBackground(R.color.contact_tests_actionbar);
             tests.setNavigationBackground(R.color.contact_tests_navigation);
             setRequiredFields(tests);
             tests.setFormName(ConstantsUtils.JsonFormUtils.ANC_TEST);
+            if (physicalExam.getRequiredFields()!=null && physicalExam.getRequiredFields()==0){
+                tests.setOpened(true);
+            }
             contacts.add(tests);
 
             Contact counsellingAndTreatment = new Contact();
             counsellingAndTreatment.setName(getString(R.string.counselling_treatment));
+            counsellingAndTreatment.setTitle(getString(R.string.counselling_treatment_title));
             counsellingAndTreatment.setContactNumber(contactNo);
             counsellingAndTreatment.setBackground(R.drawable.counselling_bg);
             counsellingAndTreatment.setActionBarBackground(R.color.contact_counselling_actionbar);
             counsellingAndTreatment.setNavigationBackground(R.color.contact_counselling_navigation);
             setRequiredFields(counsellingAndTreatment);
             counsellingAndTreatment.setFormName(ConstantsUtils.JsonFormUtils.ANC_COUNSELLING_TREATMENT);
+            counsellingAndTreatment.setOpened(true);
             contacts.add(counsellingAndTreatment);
 
             contactAdapter.setContacts(contacts);

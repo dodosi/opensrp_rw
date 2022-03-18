@@ -254,7 +254,8 @@ actions:
 name: step5_hiv_positive_counsel
 description: HIV positive counseling
 priority: 1
-condition: "global_hiv_positive == 1"
+#condition: "global_hiv_positive == 1"
+condition: "true"
 actions:
   - "isRelevant = true"
 ---
@@ -640,5 +641,68 @@ name: step8_ipv_referrals
 description: ipv_care
 priority: 1
 condition: "step8_ipv_care != null && !step8_ipv_care.isEmpty() && step8_ipv_care.contains('referred')"
+actions:
+  - "isRelevant = true"
+---
+name: step12_treatment_label
+description: treatment_label
+priority: 1
+condition: "global_syphilis_positive == 1 || global_asb_positive == 1 || global_hepc_positive == 1 || global_hepb_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step12_syphilis_treatment
+description: global_syphilis_positive
+priority: 1
+condition: "global_syphilis_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step12_infection_urinaire
+description: global_syphilis_positive
+priority: 1
+condition: "global_asb_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step12_hepatite_b_treatment
+description: hepatite_b_treatment
+priority: 1
+condition: "global_hepb_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step12_hepatite_c_treatment
+description: hepatite_c_treatment
+priority: 1
+condition: "global_hepc_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step12_syphilis_treatment_toaster
+description: syphilis_treatment_toaster
+priority: 1
+condition: "global_syphilis_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step12_infection_urinaire_toaster
+description: infection_urinaire_toaster
+priority: 1
+condition: "global_asb_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step12_hepatite_b_treatment_toaster
+description: hepatite_b_treatment_toaster
+priority: 1
+condition: "global_hepb_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step12_hepatite_c_treatment_toaster
+description: hepatite_c_treatment_toaster
+priority: 1
+condition: "global_hepc_positive == 1"
 actions:
   - "isRelevant = true"

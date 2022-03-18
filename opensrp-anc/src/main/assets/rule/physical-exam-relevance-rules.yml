@@ -114,14 +114,14 @@ actions:
 name: step4_fetal_heart_rate_repeat_label
 description: Fetal heart beat rate
 priority: 1
-condition: "(step4_fetal_heart_rate > 0 && (step4_fetal_heart_rate < 100 || step4_fetal_heart_rate > 180))"
+condition: "(step4_fetal_heart_rate > 0 && (step4_fetal_heart_rate < 110 || step4_fetal_heart_rate > 160))"
 actions:
   - "isRelevant = true"
 ---
 name: step4_fetal_heart_rate_repeat
 description: Fetal heart beat rate
 priority: 1
-condition: "(step4_fetal_heart_rate > 0 && (step4_fetal_heart_rate < 100 || step4_fetal_heart_rate > 180))"
+condition: "(step4_fetal_heart_rate > 0 && (step4_fetal_heart_rate < 110 || step4_fetal_heart_rate > 160))"
 actions:
   - "isRelevant = true"
 ---
@@ -290,5 +290,12 @@ name: step3_ipv_subject_violence_types
 description: ipv_subject
 priority: 1
 condition: "step3_ipv_subject == 'yes'"
+actions:
+  - "isRelevant = true"
+---
+name: step3_toaster_muac
+description: MUAC toaster
+priority: 1
+condition: " !step3_muac_value.isEmpty() && step3_muac_value < 21"
 actions:
   - "isRelevant = true"

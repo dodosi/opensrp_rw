@@ -3,6 +3,10 @@ properties_file_name: "profile_overview"
 group: overview_of_pregnancy
 sub_group: demographic_info
 fields:
+  - template: "{{profile_overview.overview_of_pregnancy.demographic_info.husband_name}} : {husband_name}"
+    relevance: "husband_name != ''"
+    isRedFont: "false"
+
   - template: "{{profile_overview.overview_of_pregnancy.demographic_info.occupation}}: {occupation_value}"
     relevance: "occupation.contains('informal_employment_sex_worker')"
     isRedFont: "true"
@@ -85,7 +89,7 @@ fields:
     isRedFont: "true"
 
 ---
-sub_group: weight
+sub_group: weight and height
 fields:
   - template: "{{profile_overview.overview_of_pregnancy.weight.bmi}}: {bmi}"
     relevance: "bmi != ''"
@@ -100,6 +104,9 @@ fields:
 
   - template: "{{profile_overview.overview_of_pregnancy.weight.total_weight_gain_in_pregnancy_so_far}}: {tot_weight_gain} kg"
     relevance: "tot_weight_gain != ''"
+
+  - template: "{{profile_overview.overview_of_pregnancy.height.height_category}}: {height_cat}"
+    relevance: "height_cat != ''"
 
 ---
 sub_group: medications
@@ -337,3 +344,28 @@ fields:
 
   - template: "{{profile_overview.immunisation_status.flu_dose}}: {flu_date_value}"
     relevance: "flu_date == 'done_today' || flu_date == 'done_earlier'"
+
+  - template: "{{profile_overview.immunisation_status.tt1_dose_received_date}}: {date_tt1_received}"
+    relevance: "date_tt1_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt2_dose_received_date}}: {date_tt2_received}"
+    relevance: "date_tt1_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt3_dose_received_date}}: {date_tt3_received}"
+    relevance: "date_tt3_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt4_dose_received_date}}: {date_tt4_received}"
+    relevance: "date_tt4_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt5_dose_received_date}}: {date_tt5_received}"
+    relevance: "date_tt5_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.proposed_tt2_date_will_done}}: {proposed_tt2_date_will_done}"
+    relevance: "proposed_tt2_date_will_done !=''"
+
+---
+sub_group: next_contact_date
+fields:
+  - template: "{{profile_overview.next_contact_date.date}}: {next_visit_date}"
+    relevance: "next_visit_date != ''"
+    isRedFont: "false"

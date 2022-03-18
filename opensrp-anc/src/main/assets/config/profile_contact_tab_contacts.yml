@@ -1,6 +1,9 @@
 ---
 properties_file_name: "profile_contact_tab_contacts"
 fields:
+-   template: "Health worker name: {clinician_name}"
+    relevance: "clinician_name != ''"
+    isRedFont: "true"
 -   template: "{{profile_contact_tab_contacts.physiological_symptoms}}: {phys_symptoms}"
     relevance: "phys_symptoms != ''"
 

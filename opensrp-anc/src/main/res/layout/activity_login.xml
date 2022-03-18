@@ -21,19 +21,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/login_logo_top_padding">
-
-            <ImageView
-                android:id="@+id/login_logo"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/login_logo_height"
-                android:layout_alignParentTop="true"
-                android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:orientation="horizontal"
                 android:layout_weight="1"
-                android:contentDescription="logo"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_who_logo" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="0dp"
+                android:background="#fff"
+                >
+
+
+                <ImageView
+                    android:id="@+id/login_logo_moh"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="1"
+                    android:contentDescription="MoH logo"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/moh" />
+
+
+                <ImageView
+                    android:id="@+id/login_logo"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="1"
+                    android:contentDescription="RBC logo"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/rbc" />
+
+
+            </RelativeLayout>
+
+
 
             <TextView
                 android:id="@+id/login_title_text_view"
@@ -179,6 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
+                android:textSize="14sp"
                 android:paddingBottom="5dp"
                 android:text="Powered by"
                 android:textAlignment="center"
@@ -186,8 +213,8 @@
 
             <ImageView
                 android:id="@+id/opensrp_logo_image_view"
-                android:layout_width="@dimen/login_opensrp_logo_width"
-                android:layout_height="@dimen/login_opensrp_logo_height"
+                android:layout_width="50dp"
+                android:layout_height="18dp"
                 android:layout_gravity="center_horizontal"
                 android:adjustViewBounds="false"
                 android:cropToPadding="false"
