@@ -60,7 +60,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "type": "choose_image",
-        "uploadButtonText": "{{anc_register.step1.wom_image.hint}}"
+        "uploadButtonText": "Take a picture of the woman"
       },
       {
         "key": "anc_id",
@@ -71,7 +71,7 @@
         "barcode_type": "qrcode",
         "hint": "{{anc_register.step1.anc_id.hint}}",
         "value": "0",
-        "scanButtonText": "{{anc_register.step1.anc_id.button.text}}",
+        "scanButtonText": "Scan QR Code",
         "v_numeric": {
           "value": "true",
           "err": "{{anc_register.step1.anc_id.v_numeric.err}}"
@@ -113,128 +113,6 @@
         "v_regex": {
           "value": "[A-Za-z\\s\\.\\-]*",
           "err": "{{anc_register.step1.last_name.v_regex.err}}"
-        }
-      },
-      {
-        "key": "document_type",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "document_type",
-        "openmrs_data_type": "select one",
-        "type": "spinner",
-        "options": [
-          {
-            "key": "1",
-            "text": "{{anc_register.step1.document_type.options.none.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "2",
-            "text": "{{anc_register.step1.document_type.options.national_id.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "3",
-            "text": "{{anc_register.step1.document_type.options.passport.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "hhni",
-            "text": "{{anc_register.step1.document_type.options.hhni.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "application_number",
-            "text": "{{anc_register.step1.document_type.options.application_number.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "nin",
-            "text": "{{anc_register.step1.document_type.options.nin.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "hint": "{{anc_register.step1.document_type.hint}}",
-        "v_required": {
-          "value": "true",
-          "err": "{{anc_register.step1.document_type.v_required.err}}"
-        }
-      },
-      {
-        "key": "national_id",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "national_id",
-        "hint": "{{anc_register.step1.national_id.hint}}",
-        "type": "edit_text",
-        "edit_type": "number",
-        "v_required": {
-          "value": "false",
-          "err": "{{anc_register.step1.national_id.v_required.err}}"
-        },
-        "v_regex": {
-          "value": "([0-9]{16})|\\s*",
-          "err": "{{anc_register.step1.national_id.v_regex.err}}"
-        },
-        "relevance": {
-          "step1:document_type": {
-            "type": "string",
-            "ex": "equalTo(., \"2\")"
-
-          }
-        }
-      },
-      {
-        "key": "other_id",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "other_id",
-        "hint": "{{anc_register.step1.others_id.hint}}",
-        "type": "edit_text",
-        "edit_type": "number",
-        "v_required": {
-          "value": "false",
-          "err": ""
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "registration_relevance_rules.yml"
-            }
-          }
-
-        }
-      },
-      {
-        "key": "passport_id",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "passport_id",
-        "hint": "{{anc_register.step1.passport_id.hint}}",
-        "type": "edit_text",
-        "edit_type": "number",
-        "v_required": {
-          "value": "false",
-          "err": ""
-        },
-        "relevance": {
-          "step1:document_type": {
-            "type": "string",
-            "ex": "equalTo(., \"3\")"
-
-          }
         }
       },
       {
@@ -365,11 +243,11 @@
         },
         "v_min": {
           "value": "10",
-          "err": "{{anc_register.step1.age_entered.v_min.err}}"
+          "err": "Age must be equal to or greater than 10"
         },
         "v_max": {
           "value": "49",
-          "err": "{{anc_register.step1.age_entered.v_max.err}}"
+          "err": "Age must be equal or less than 49"
         },
         "relevance": {
           "step1:dob_unknown": {
@@ -388,105 +266,11 @@
         }
       },
       {
-        "key": "ubudehe_category",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "openmrs_data_type": "select one",
-        "type": "spinner",
-        "hint": "{{anc_register.step1.ubudehe_category.hint}}",
-        "values": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "keys": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "v_required": {
-          "value": "true",
-          "err": "{{anc_register.step1.ubudehe_category.v_required.err}}"
-        }
-      },
-      {
-        "key": "insurance",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "openmrs_data_type": "select one",
-        "type": "spinner",
-        "options": [
-          {
-            "key": "none",
-            "text": "{{anc_register.step1.insurance.options.none.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "rama",
-            "text": "RAMA",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "MMI",
-            "text": "MMI",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "mutuelle_de_sante",
-            "text": "Mutuelle de Santé",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "other_specify",
-            "text": "{{anc_register.step1.insurance.options.other_specify.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "hint": "{{anc_register.step1.insurance.hint}}",
-        "v_required": {
-          "value": "true",
-          "err": "{{anc_register.step1.insurance.v_required.err}}"
-        }
-      },
-      {
-        "key": "others_insurance",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_register.step1.others_insurance.hint}}",
-        "v_required": {
-          "value": "true",
-          "err": "{{anc_register.step1.others_insurance.v_required.err}}"
-        },
-        "relevance": {
-          "step1:insurance": {
-            "type": "string",
-            "ex": "equalTo(., \"other_specify\")"
-
-          }
-        }
-      },
-      {
         "key": "home_address",
         "openmrs_entity_parent": "",
         "openmrs_entity": "person_address",
         "openmrs_entity_id": "address2",
-        "type": "hidden",
+        "type": "edit_text",
         "hint": "{{anc_register.step1.home_address.hint}}",
         "edit_type": "name",
         "v_required": {
@@ -494,75 +278,6 @@
           "err": "{{anc_register.step1.home_address.v_required.err}}"
         }
       },
-      {
-        "key": "province",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "province",
-        "type": "spinner",
-        "sub_type": "location",
-        "hint": "Select Province",
-        "options" : [],
-        "v_required": {
-          "value": "true",
-          "err": "Please Select"
-        }
-      },
-      {
-        "key": "district",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "district",
-        "type": "spinner",
-        "sub_type": "location",
-        "hint": "Select District",
-        "options" : [],
-        "v_required": {
-          "value": "true",
-          "err": "Please Select"
-        }
-      },
-      {
-        "key": "subdistrict",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "subdistrict",
-        "type": "spinner",
-        "sub_type": "location",
-        "hint": "Select Sub-District",
-        "options" : [],
-        "v_required": {
-          "value": "true",
-          "err": "Please Select"
-        }
-      },
-      {
-        "key": "health_facility",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "health_facility",
-        "type": "spinner",
-        "sub_type": "location",
-        "hint": "Select Health Facility",
-        "options" : [],
-        "v_required": {
-          "value": "true",
-          "err": "Please Select"
-        }
-      },
-      {
-        "key": "village",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "village",
-        "type": "spinner",
-        "sub_type": "location",
-        "hint": "Select Village",
-        "options" : [],
-        "v_required": {
-          "value": "true",
-          "err": "Please Select"
-        }},
       {
         "key": "phone_number",
         "openmrs_entity_parent": "",
@@ -578,9 +293,9 @@
           "value": "true",
           "err": "{{anc_register.step1.phone_number.v_required.err}}"
         },
-        "v_regex": {
-          "value": "(07[0-9]{8})|\\s*",
-          "err": "{{anc_register.step1.phone_number.v_regex.err}}"
+        "v_max_length": {
+          "value": "12",
+          "err": "Phone number input cannot exceed 12 Characters"
         }
       },
       {
@@ -637,10 +352,6 @@
         "v_numeric": {
           "value": "true",
           "err": "{{anc_register.step1.alt_phone_number.v_numeric.err}}"
-        },
-        "v_regex": {
-          "value": "(07[0-9]{8})|\\s*",
-          "err": "{{anc_register.step1.alt_phone_number.v_regex.err}}"
         }
       },
       {
@@ -690,14 +401,6 @@
           {
             "key": "friends",
             "text": "{{anc_register.step1.cohabitants.options.friends.text}}",
-            "text_size": "18px",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "chw",
-            "text": "{{anc_register.step1.cohabitants.options.chw.text}}",
             "text_size": "18px",
             "openmrs_entity_parent": "",
             "openmrs_entity": "",
@@ -776,6 +479,76 @@
         "openmrs_entity_id": "last_contact_record_date",
         "type": "hidden",
         "value": ""
+      },
+      {
+        "key": "province",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "province",
+        "type": "spinner",
+        "sub_type": "location",
+        "hint": "Select Province",
+        "options" : [],
+        "v_required": {
+          "value": "true",
+          "err": "Please Select"
+        }
+      },
+      {
+        "key": "district",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "district",
+        "type": "spinner",
+        "sub_type": "location",
+        "hint": "Select District",
+        "options" : [],
+        "v_required": {
+          "value": "true",
+          "err": "Please Select"
+        }
+      },
+      {
+        "key": "subdistrict",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "subdistrict",
+        "type": "spinner",
+        "sub_type": "location",
+        "hint": "Select Sub-District",
+        "options" : [],
+        "v_required": {
+          "value": "true",
+          "err": "Please Select"
+        }
+      },
+      {
+        "key": "health_facility",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "health_facility",
+        "type": "spinner",
+        "sub_type": "location",
+        "hint": "Select Health Facility",
+        "options" : [],
+        "v_required": {
+          "value": "true",
+          "err": "Please Select"
+        }
+      },
+      {
+        "key": "village",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "person_attribute",
+        "openmrs_entity_id": "village",
+        "type": "spinner",
+        "sub_type": "location",
+        "hint": "Select Village",
+        "options" : [],
+        "v_required": {
+          "value": "true",
+          "err": "Please Select"
+        }
       }
     ]
   },

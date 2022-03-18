@@ -81,10 +81,6 @@ public class RegisterQueryProvider {
                 getDetailsTable() + "." + DBConstantsUtils.KeyUtils.COHABITANTS, getDemographicTable() + "." + DBConstantsUtils.KeyUtils.RELATIONAL_ID,
                 getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.PROVINCE, getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.DISTRICT,
                 getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.SUB_DISTRICT, getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.FACILITY,
-                getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.VILLAGE ,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.INSURANCE,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.VILLAGE,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.UBUDEHE_CATEGORY,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.NATIONAL_ID,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.DOCUMENT_TYPE,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.PASSPORT_ID,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.OTHER_ID };
-
+                getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.VILLAGE};
     }
 }

@@ -158,28 +158,6 @@
       }
     },
     {
-      "key": "hepc_test_scheduled_date",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "concept",
-      "openmrs_entity_id": "",
-      "type": "date_picker",
-      "hint": "{{tests_hepatitis_c_sub_form.step1.hepc_test_scheduled_date.hint}}",
-      "expanded": "false",
-      "max_date": "today+10m",
-      "min_date": "today",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      },
-      "v_required": {
-        "value": false,
-        "err": ""
-      }
-    },
-    {
       "key": "hepc_test_type",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",

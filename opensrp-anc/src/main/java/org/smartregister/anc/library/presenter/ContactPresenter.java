@@ -5,7 +5,6 @@ import android.content.Context;
 import com.vijay.jsonwizard.constants.JsonFormConstants;
 
 import org.apache.commons.lang3.StringUtils;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.AllConstants;
@@ -15,8 +14,6 @@ import org.smartregister.anc.library.contract.ContactContract;
 import org.smartregister.anc.library.domain.Contact;
 import org.smartregister.anc.library.interactor.ContactInteractor;
 import org.smartregister.anc.library.model.ContactModel;
-import org.smartregister.anc.library.model.MeModel;
-import org.smartregister.view.contract.MeContract;
 
 import java.lang.ref.WeakReference;
 import java.util.Map;
@@ -129,26 +126,6 @@ public class ContactPresenter implements ContactContract.Presenter, ContactContr
             try {
                 String locationId = AncLibrary.getInstance().getContext().allSharedPreferences().getPreference(AllConstants.CURRENT_LOCATION_ID);
                 JSONObject form = model.getFormAsJson(contact.getFormName(), baseEntityId, locationId);
-//added
-                JSONObject step1=form.getJSONObject("step1");
-                JSONArray feilds=step1.getJSONArray("fields");
-//                MeFragment meFragment= new MeFragment();
-                MeContract.Model model= new MeModel();
-                String name = model.getName();
-
-                for (int i=0;i<feilds.length();i++){
-
-
-                    if (feilds.getJSONObject(i).getString("key").equals("clinician_name")){
-                        feilds.getJSONObject(i).put("value",name);
-                    }
-
-                }
-                step1.put("fields",feilds);
-                form.put("step1",step1);
-                //////
-
-
                 if (contact.getGlobals() != null) {
                     for (Map.Entry<String, String> entry : contact.getGlobals().entrySet()) {
                         defaultGlobals.put(entry.getKey(), entry.getValue());

@@ -27,7 +27,7 @@
           "openmrs_entity_parent": "165369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
         },
         {
-          "key": "rougeur",
+          "key": "flushing",
           "text": "{{breast_exam_sub_form.step1.breast_exam_abnormal.options.flushing.text}}",
           "value": false,
           "openmrs_entity": "concept",

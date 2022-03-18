@@ -55,19 +55,6 @@
     }
   },
   "editable_fields": [
-    "husband_name",
-    "catchment_area",
-    "newborn_dirths",
-    "children_live",
-    "perfect_births",
-    "date_last_born",
-    "last_born_status",
-    "date_tt1_received",
-    "date_tt2_received",
-    "date_tt3_received",
-    "date_tt4_received",
-    "date_tt5_received",
-    "itbn_use",
     "educ_level",
     "marital_status",
     "occupation",
@@ -152,20 +139,7 @@
     "ultrasound_gest_age_selection",
     "sfh_gest_age_selection",
     "lmp_ultrasound_gest_age_selection",
-    "sfh_ultrasound_gest_age_selection",
-    "husband_name",
-    "catchment_area",
-    "newborn_dirths",
-    "children_live",
-    "perfect_births",
-    "date_last_born",
-    "last_born_status",
-    "date_tt1_received",
-    "date_tt2_received",
-    "date_tt3_received",
-    "date_tt4_received",
-    "date_tt5_received",
-    "itbn_use"
+    "sfh_ultrasound_gest_age_selection"
   ],
   "global_previous": [
     "age"
@@ -191,23 +165,6 @@
               "rules-file": "profile_relevance_rules.yml"
             }
           }
-        }
-      },
-      {
-        "key": "husband_name",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step1.husband_name.hint}}",
-        "edit_type": "name",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step1.husband_name.v_required.err}}"
-        },
-        "v_regex": {
-          "value": "[A-Za-z\\s\\.\\-]*",
-          "err": "{{anc_profile.step1.husband_name.v_regex.err}}"
         }
       },
       {
@@ -261,72 +218,6 @@
         }
       },
       {
-        "key": "catchment_area",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step1.catchment_area.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "z",
-            "text": "{{anc_profile.step1.catchment_area.options.z.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "hz",
-            "text": "{{anc_profile.step1.catchment_area.options.hz.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "hd",
-            "text": "{{anc_profile.step1.catchment_area.options.hd.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "others_catchment_area",
-            "text": "{{anc_profile.step1.catchment_area.options.others_catchment_area.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step1.catchment_area.v_required.err}}"
-        }
-      },
-      {
-        "key": "others_catchment_area_specify",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step1.others_catchment_area_specify.hint}}",
-        "v_regex": {
-          "value": "[A-Za-z\\s\\.\\-]*",
-          "err": "{{anc_profile.step1.others_catchment_area_specify.v_regex.err}}"
-        },
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step1.others_catchment_area_specify.v_required.err}}"
-        },
-        "relevance": {
-          "step1:catchment_area": {
-            "type": "string",
-            "ex": "equalTo(., \"others_catchment_area\")"
-
-          }
-        }
-      },
-      {
         "key": "marital_status",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -362,20 +253,6 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-          },
-          {
-            "key": "separated",
-            "text": "{{anc_profile.step1.marital_status.options.separated.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "cohabitating",
-            "text": "{{anc_profile.step1.marital_status.options.cohabitating.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
           }
         ],
         "v_required": {
@@ -532,10 +409,11 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "specify_info": "{{anc_profile.step2.lmp_known.options.yes.specify_info}}",
+            "specify_info": "specify date",
             "specify_widget": "date_picker",
             "max_date": "today-14d",
-            "min_date": "today-280d"
+            "min_date": "today-280d",
+            "default": "today"
           },
           {
             "key": "no",
@@ -557,7 +435,14 @@
         "key": "lmp_known_date",
         "type": "hidden",
         "label_text_style": "bold",
-        "text_color": "#FF0000"
+        "text_color": "#FF0000",
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
       },
       {
         "openmrs_entity_parent": "",
@@ -614,10 +499,11 @@
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "specify_info": "{{anc_profile.step2.ultrasound_done.options.yes.specify_info}}",
+            "specify_info": "ultrasound date",
             "specify_widget": "date_picker",
             "max_date": "today",
-            "min_date": "today-9m"
+            "min_date": "today-9m",
+            "default": "today"
           },
           {
             "key": "no",
@@ -639,7 +525,14 @@
         "key": "ultrasound_done_date",
         "type": "hidden",
         "label_text_style": "bold",
-        "text_color": "#FF0000"
+        "text_color": "#FF0000",
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
       },
       {
         "key": "ultrasound_toaster",
@@ -687,10 +580,9 @@
         "type": "edit_text",
         "hint": "{{anc_profile.step2.ultrasound_gest_age_wks.hint}}",
         "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
+          "step2:ultrasound_done": {
+            "type": "string",
+            "ex": "equalTo(., \"yes\")"
           }
         },
         "v_required": {
@@ -699,15 +591,15 @@
         },
         "v_numeric_integer": {
           "value": true,
-          "err": "{{anc_profile.step2.ultrasound_gest_age_wks.v_numeric_integer.err}}"
+          "err": "Enter a Valid GA from ultrasound - weeks value"
         },
         "v_min": {
           "value": "4",
-          "err": "{{anc_profile.step2.ultrasound_gest_age_wks.v_min.err}}"
+          "err": "GA from ultrasound - weeks should be equal to or greater than 4"
         },
         "v_max": {
           "value": "40",
-          "err": "{{anc_profile.step2.ultrasound_gest_age_wks.v_max.err}}"
+          "err": "GA from ultrasound - weeks should be less than or equal to 40"
         }
       },
       {
@@ -718,10 +610,9 @@
         "type": "edit_text",
         "hint": "{{anc_profile.step2.ultrasound_gest_age_days.hint}}",
         "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
+          "step2:ultrasound_done": {
+            "type": "string",
+            "ex": "equalTo(., \"yes\")"
           }
         },
         "v_required": {
@@ -730,68 +621,17 @@
         },
         "v_numeric_integer": {
           "value": true,
-          "err": "{{anc_profile.step2.ultrasound_gest_age_days.v_numeric_integer.err}}"
+          "err": "Enter a Valid GA from ultrasound - days value"
         },
         "v_min": {
           "value": "1",
-          "err": "{{anc_profile.step2.ultrasound_gest_age_days.v_min.err}}"
+          "err": "GA from ultrasound - days should be equal to or greater than 1"
         },
         "v_max": {
           "value": "6",
-          "err": "{{anc_profile.step2.ultrasound_gest_age_days.v_max.err}}"
+          "err": "GA from ultrasound - days should be less than or equal to 6"
         }
       },
-      {
-        "key": "edd_from_ultrasound",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "expanded": "false",
-        "min_date": "today",
-        "max_date": "today+10m",
-        "hint": "{{anc_profile.step2.edd_from_ultrasound.hint}}",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "v_required": {
-          "value": false,
-          "err": ""
-        }
-      },
-      {
-        "key": "ultrasound_gest_age_unknown",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "openmrs_data_type": "select one",
-        "type": "check_box",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "",
-            "openmrs_entity_id": "",
-            "key": "yes",
-            "text": "{{anc_profile.step2.ultrasound_gest_age_unknown.options.yes.text}}",
-            "value": false
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": ""
-        },
-        "relevance": {
-          "step2:ultrasound_done": {
-            "type": "string",
-            "ex": "equalTo(., \"yes\")"
-          }
-        }
-       },
       {
         "key": "ultrasound_gest_age_concept",
         "openmrs_entity_parent": "",
@@ -868,8 +708,8 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "1439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "type": "edit_text",
-        "label_info_text": "{{anc_profile.step2.sfh_gest_age.label_info_text}}",
-        "label_info_title": "{{anc_profile.step2.sfh_gest_age.label_info_title}}",
+        "label_info_text": "If LMP is unknown and ultrasound wasn't done or it wasn't done early (before 24 weeks), then assess GA based on Symphysis Fundal Height (SFH) or abdominal palpation. Compare this GA against ultrasound GA (if done).",
+        "label_info_title": "GA from SFH or abdominal palpation - weeks",
         "hint": "{{anc_profile.step2.sfh_gest_age.hint}}",
         "v_required": {
           "value": true,
@@ -877,45 +717,15 @@
         },
         "v_numeric_integer": {
           "value": true,
-          "err": "{{anc_profile.step2.sfh_gest_age.v_numeric_integer.err}}"
+          "err": "Enter a Valid GA from SFH or abdominal palpation - weeks value"
         },
         "v_min": {
           "value": "4",
-          "err": "{{anc_profile.step2.sfh_gest_age.v_min.err}}"
+          "err": "GA from SFH or abdominal palpation - weeks should 4 or greater"
         },
         "v_max": {
           "value": "40",
-          "err": "{{anc_profile.step2.sfh_gest_age.v_max.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "sfh_gest_age_not_applicable",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "openmrs_data_type": "select one",
-        "type": "check_box",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "",
-            "openmrs_entity_id": "",
-            "key": "yes",
-            "text": "{{anc_profile.step2.sfh_gest_age_not_applicable.options.yes.text}}",
-            "value": false
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": ""
+          "err": "GA from SFH or abdominal palpation - weeks should be 40 or less"
         },
         "relevance": {
           "rules-engine": {
@@ -963,7 +773,7 @@
         "key": "select_gest_age_edd_label",
         "type": "label",
         "text": "{{anc_profile.step2.select_gest_age_edd_label.text}}",
-        "label_info_text": "{{anc_profile.step2.select_gest_age_edd_label.label_info_text}}",
+        "label_info_text": "If the difference between GA from LMP and early ultrasound is one week or less, then use GA from LMP. If the difference is more than 7 days, use the early ultrasound GA. If ultrasound was done late, use GA from LMP. Between late ultrasound and SFH or abdominal palpation, use your best judgment to select GA.",
         "label_text_style": "bold",
         "text_color": "#000000",
         "v_required": {
@@ -1073,85 +883,6 @@
             "ex-rules": {
               "rules-file": "profile_relevance_rules.yml"
             }
-          }
-        }
-      },
-      {
-        "key": "gest_age_selection_failed",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "options": [
-          {
-            "key": "ga_selection_failed",
-            "text": "{{anc_profile.step2.gest_age_selection_failed.options.ga_selection_failed.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "extra_info": "GA: 0 , EDD: --"
-          }
-        ],
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step2.gest_age_selection_failed.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "pregnancy_test_required_toast",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "toaster_notes",
-        "type": "toaster_notes",
-        "text": "{{anc_profile.step2.pregnancy_test_required_toast.text}}",
-        "text_color": "#1199F9",
-        "toaster_type": "warning",
-        "relevance": {
-          "step2:gest_age_selection_failed": {
-            "type": "string",
-            "ex": "equalTo(., \"ga_selection_failed\")"
-          }
-        }
-      },
-      {
-        "key": "pregnancy_test_on_ga_unknown",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "label": "{{anc_profile.step2.pregnancy_test_on_ga_unknown.label}}",
-        "label_text_style": "bold",
-        "type": "native_radio",
-        "options": [
-          {
-            "key": "positive",
-            "text": "{{anc_profile.step2.pregnancy_test_on_ga_unknown.options.positive.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "negative",
-            "text": "{{anc_profile.step2.pregnancy_test_on_ga_unknown.options.negative.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step2.gest_age_selection_failed.v_required.err}}"
-        },
-        "relevance": {
-          "step2:gest_age_selection_failed": {
-            "type": "string",
-            "ex": "equalTo(., \"ga_selection_failed\")"
           }
         }
       },
@@ -1389,23 +1120,6 @@
         "spacer_height": "20dp"
       },
       {
-        "key": "age_greater30_toaster",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "toaster_notes",
-        "type": "toaster_notes",
-        "text": "{{anc_profile.step1.age_greater30_toaster.text}}",
-        "text_color": "#1199F9",
-        "toaster_type": "warning",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
         "key": "gravida_label",
         "type": "label",
         "label_text_style": "bold",
@@ -1565,7 +1279,14 @@
           }
         }
       },
-
+      {
+        "key": "spacer",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "spacer",
+        "type": "spacer",
+        "spacer_height": "24dp"
+      },
       {
         "key": "last_live_birth_preterm",
         "openmrs_entity_parent": "",
@@ -1609,7 +1330,7 @@
       },
       {
         "key": "stillbirths_label",
-        "type": "hidden",
+        "type": "label",
         "label_text_style": "bold",
         "text": "{{anc_profile.step3.stillbirths_label.text}}",
         "text_color": "#000000",
@@ -1626,29 +1347,11 @@
         }
       },
       {
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
         "key": "stillbirths",
-        "type": "hidden",
-        "text_color": "#FF0000",
-        "read_only": true,
-        "edit_type": "number",
-
-        "calculation": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_calculation_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "stillbirths_old",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "160077AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "hidden",
+        "type": "numbers_selector",
         "number_of_selectors": "5",
         "start_number": "0",
         "max_value": "15",
@@ -1693,7 +1396,14 @@
           }
         }
       },
-
+      {
+        "key": "spacer",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "spacer",
+        "type": "spacer",
+        "spacer_height": "24dp"
+      },
       {
         "key": "c_sections_label",
         "type": "label",
@@ -1751,245 +1461,6 @@
         "spacer_height": "24dp"
       },
       {
-        "key": "newborn_dirths_label",
-        "type": "label",
-        "label_text_style": "bold",
-        "text": "{{anc_profile.step3.newborn_dirths_label.text}}",
-        "text_color": "#000000",
-        "v_required": {
-          "value": true
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "newborn_dirths",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "numbers_selector",
-        "number_of_selectors": "5",
-        "start_number": "0",
-        "max_value": "15",
-        "text_size": "16px",
-        "text_color": "#000000",
-        "selected_text_color": "#ffffff",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step3.newborn_dirths.v_required.err}}"
-        },
-        "constraints": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_constraint_rules.yml"
-            }
-          }
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "spacer",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "spacer",
-        "type": "spacer",
-        "spacer_height": "24dp"
-      },
-      {
-        "key": "children_live_label",
-        "type": "label",
-        "label_text_style": "bold",
-        "text": "{{anc_profile.step3.children_live_label.text}}",
-        "text_color": "#000000",
-        "v_required": {
-          "value": true
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "children_live",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "numbers_selector",
-        "number_of_selectors": "5",
-        "start_number": "0",
-        "max_value": "15",
-        "text_size": "16px",
-        "text_color": "#000000",
-        "selected_text_color": "#ffffff",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step3.children_live.v_required.err}}"
-        },
-        "constraints": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_constraint_rules.yml"
-            }
-          }
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "spacer",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "spacer",
-        "type": "spacer",
-        "spacer_height": "24dp"
-      },
-      {
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "key": "children_died",
-        "type": "hidden",
-        "label_text_style": "bold",
-        "text_color": "#FF0000",
-        "v_required": {
-          "value": false
-        },
-        "calculation": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_calculation_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "perfect_births_label",
-        "type": "label",
-        "label_text_style": "bold",
-        "text": "{{anc_profile.step3.perfect_births_label.text}}",
-        "text_color": "#000000",
-        "v_required": {
-          "value": true
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "perfect_births",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "numbers_selector",
-        "number_of_selectors": "5",
-        "start_number": "0",
-        "max_value": "15",
-        "text_size": "16px",
-        "text_color": "#000000",
-        "selected_text_color": "#ffffff",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step3.perfect_births.v_required.err}}"
-        },
-        "constraints": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_constraint_rules.yml"
-            }
-          }
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-
-      {
-        "key": "date_last_born",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step3.date_last_born.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today-1y",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step3.date_last_born.v_required.err}}"
-        }
-      },
-
-      {
-        "key": "last_born_status",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step3.last_born_status_label.text}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "alive",
-            "text": "{{anc_profile.step3.last_born_status.options.alive.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "dead",
-            "text": "{{anc_profile.step3.last_born_status.options.dead.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step3.last_born_status.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-
-      {
         "key": "prev_preg_comps",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
@@ -2016,84 +1487,6 @@
             "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "key": "dont_know",
             "text": "{{anc_profile.step3.prev_preg_comps.options.dont_know.text}}"
-          },
-
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "rapture_of_uterus",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.rapture_of_uterus.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "repeated_miscariages",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.repeated_miscariages.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "miscariages",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.miscariages.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "preterm_deliveries",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.preterm_deliveries.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "multiple_pregnancies",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.multiple_pregnancies.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "delivery_of_low-birth_weight_baby",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.delivery_of_low-birth_weight_baby.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "pre_fresh_still_birth",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_fresh_still_birth.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "pre_incomplete_placenta",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_incomplete_placenta.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "pre_post_partum_hemorrhage",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_post_partum_hemorrhage.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "165259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "baby_died_in_24_hrs",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.baby_died_in_24_hrs.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "pre_c_section",
-            "text": "{{anc_profile.step3.prev_preg_comps.options.pre_c_section.text}}"
           },
           {
             "openmrs_entity_parent": "",
@@ -2151,7 +1544,13 @@
             "key": "heavy_bleeding",
             "text": "{{anc_profile.step3.prev_preg_comps.options.heavy_bleeding.text}}"
           },
-
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "165259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "baby_died_in_24_hrs",
+            "text": "{{anc_profile.step3.prev_preg_comps.options.baby_died_in_24_hrs.text}}"
+          },
           {
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -2180,7 +1579,6 @@
             "key": "3rd_degree_tear",
             "text": "{{anc_profile.step3.prev_preg_comps.options.3rd_degree_tear.text}}"
           },
-
           {
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
@@ -2392,659 +1790,6 @@
     "title": "{{anc_profile.step4.title}}",
     "next": "step5",
     "fields": [
-      {
-        "key": "health_conditions",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "1628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "openmrs_data_type": "select multiple",
-        "type": "check_box",
-        "label": "{{anc_profile.step4.health_conditions.label}}",
-        "label_text_style": "bold",
-        "hint": "{{anc_profile.step4.health_conditions.hint}}",
-        "exclusive": [
-          "none",
-          "dont_know"
-        ],
-        "options": [
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "none",
-            "text": "{{anc_profile.step4.health_conditions.options.none.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "dont_know",
-            "text": "{{anc_profile.step4.health_conditions.options.dont_know.text}}"
-          },
-
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "hypertension",
-            "text": "{{anc_profile.step4.health_conditions.options.hypertension.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "6033AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "kidney_disease",
-            "text": "{{anc_profile.step4.health_conditions.options.kidney_disease.text}}"
-          },
-
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "heart_disease",
-            "text": "{{anc_profile.step4.health_conditions.options.heart_disease.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "asthma",
-            "text": "{{anc_profile.step4.health_conditions.options.asthma.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "tuberculosis",
-            "text": "{{anc_profile.step4.health_conditions.options.tuberculosis.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "gest_diabetes",
-            "text": "{{anc_profile.step4.health_conditions.options.gest_diabetes.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "diabetes_other",
-            "text": "{{anc_profile.step4.health_conditions.options.diabetes_other.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "diabetes",
-            "text": "{{anc_profile.step4.health_conditions.options.diabetes.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "diabetes_type2",
-            "text": "{{anc_profile.step4.health_conditions.options.diabetes_type2.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "148117AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "autoimmune_disease",
-            "text": "{{anc_profile.step4.health_conditions.options.autoimmune_disease.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "165223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "blood_disorder",
-            "text": "{{anc_profile.step4.health_conditions.options.blood_disorder.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "151286AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "cancer",
-            "text": "{{anc_profile.step4.health_conditions.options.cancer.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "cancer_other",
-            "text": "{{anc_profile.step4.health_conditions.options.cancer_other.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "epilepsy",
-            "text": "{{anc_profile.step4.health_conditions.options.epilepsy.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "mental_problems",
-            "text": "{{anc_profile.step4.health_conditions.options.mental_problems.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "hiv",
-            "text": "{{anc_profile.step4.health_conditions.options.hiv.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "key": "other",
-            "text": "{{anc_profile.step4.health_conditions.options.other.text}}"
-          }
-        ],
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step4.health_conditions.v_required.err}}"
-        }
-      },
-      {
-        "key": "health_conditions_cancer_other",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step4.health_conditions_cancer_other.hint}}",
-        "edit_type": "edit_text",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.health_conditions_cancer_other.v_required.err}}"
-        },
-        "relevance": {
-          "step4:health_conditions": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "cancer_other"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "key": "health_conditions_other",
-        "openmrs_entity_parent": "1628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step4.health_conditions_other.hint}}",
-        "edit_type": "edit_text",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.health_conditions_other.v_required.err}}"
-        },
-        "relevance": {
-          "step4:health_conditions": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "other"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "165260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "key": "preeclampsia_risk",
-        "type": "hidden",
-        "label_text_style": "bold",
-        "text_color": "#FF0000",
-        "v_required": {
-          "value": false
-        },
-        "calculation": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_calculation_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "pre_eclampsia_two_toaster",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "type": "toaster_notes",
-        "text": "{{anc_profile.step4.pre_eclampsia_two_toaster.text}}",
-        "text_color": "#000000",
-        "toaster_info_text": "{{anc_profile.step4.pre_eclampsia_two_toaster.toaster_info_text}}",
-        "toaster_info_title": "{{anc_profile.step4.pre_eclampsia_two_toaster.toaster_info_title}}",
-        "toaster_type": "warning",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "hiv_diagnosis_date",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step4.hiv_diagnosis_date.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step4.hiv_diagnosis_date.v_required.err}}"
-        }
-      },
-      {
-        "key": "hiv_diagnosis_date_unknown",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "165224AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "openmrs_data_type": "select one",
-        "type": "check_box",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "",
-            "openmrs_entity_id": "",
-            "key": "yes",
-            "text": "{{anc_profile.step4.hiv_diagnosis_date_unknown.options.yes.text}}",
-            "value": false
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.hiv_diagnosis_date_unknown.v_required.err}}"
-        },
-        "relevance": {
-          "step4:health_conditions": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "hiv"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "key": "hiv_positive",
-        "type": "hidden",
-        "label_text_style": "bold",
-        "text_color": "#FF0000",
-        "v_required": {
-          "value": false
-        },
-        "calculation": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_calculation_rules.yml"
-            }
-          }
-        }
-      },
-
-      {
-        "key": "woman_with_hiv",
-        "type": "label",
-        "text": "{{anc_profile.step4.woman_with_hiv.text}}",
-        "label_text_style": "bold",
-        "text_color": "#000000",
-        "v_required": {
-          "value": false,
-          "err": ""
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "creatinine",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step4.creatinine.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.creatinine.v_required.err}}"
-        }
-      },
-      {
-        "key": "cd4",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "CD4",
-        "edit_type": "name",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.cd4.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "recent_viral_load",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step4.recent_viral_load.hint}}",
-        "edit_type": "name",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.recent_viral_load.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "arv_start_date",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step4.arv_start_date.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.arv_start_date.v_required.err}}"
-        }
-      },
-      {
-        "key": "prescribed_arv_regimen",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step4.prescribed_arv_regimen.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "1a",
-            "text": "TDF+3TC+EFV",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "1b",
-            "text": "TDF+3TC+DTG",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "1c",
-            "text": "ABC+3TC+EFV",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "1fspecify",
-            "text": "{{anc_profile.step4.prescribed_arv_regimen.options.1fspecify.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.prescribed_arv_regimen.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "prescribed_arv_regimen_specify",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step4.prescribed_arv_regimen_specify.hint}}",
-        "edit_type": "name",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.prescribed_arv_regimen_specify.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "cotrimoxazole_start_date",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step4.cotrimoxazole_start_date.hint}}",
-        "expanded": false,
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.cotrimoxazole_start_date.v_required.err}}"
-        }
-      },
-      {
-        "key": "screened_for_tb",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step4.screened_for_tb.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "dont_know",
-            "text": "{{anc_profile.step4.screened_for_tb.options.dont_know.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "positive",
-            "text": "{{anc_profile.step4.screened_for_tb.options.positive.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "negative",
-            "text": "{{anc_profile.step4.screened_for_tb.options.negative.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.screened_for_tb.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "screened_for_sti",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step4.screened_for_sti.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "dont_know",
-            "text": "{{anc_profile.step4.screened_for_sti.options.dont_know.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "positive",
-            "text": "{{anc_profile.step4.screened_for_sti.options.positive.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "negative",
-            "text": "{{anc_profile.step4.screened_for_sti.options.negative.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.screened_for_sti.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "referred_to_art_clinic",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step4.referred_to_art_clinic.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "yes",
-            "text": "{{anc_profile.step4.referred_to_art_clinic.options.yes.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "no",
-            "text": "{{anc_profile.step4.referred_to_art_clinic.options.no.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.referred_to_art_clinic.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "tracnet",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step4.tracnet.hint}}",
-        "edit_type": "name",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step4.tracnet.v_required.err}}"
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
-        }
-      },
-
-
-
       {
         "key": "allergies",
         "openmrs_entity_parent": "",
@@ -3265,13 +2010,6 @@
           {
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
-            "openmrs_entity_id": "",
-            "key": "intestinal_operation",
-            "text": "{{anc_profile.step4.health_conditions.options.intestinal_operation.text}}"
-          },
-          {
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
             "openmrs_entity_id": "165263AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "key": "other_gynecological_procedures",
             "text": "{{anc_profile.step4.surgeries.options.other_gynecological_procedures.text}}"
@@ -3299,7 +2037,7 @@
         "edit_type": "edit_text",
         "other_for": {
           "parent_key": "surgeries",
-          "label": "{{anc_profile.step4.surgeries_other_gyn_proced.other_for.label}}"
+          "label": "Other gynecological procedures (specify)"
         },
         "relevance": {
           "step4:surgeries": {
@@ -3340,8 +2078,293 @@
             ]
           }
         }
+      },
+      {
+        "key": "health_conditions",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "1628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select multiple",
+        "type": "check_box",
+        "label": "{{anc_profile.step4.health_conditions.label}}",
+        "label_text_style": "bold",
+        "hint": "{{anc_profile.step4.health_conditions.hint}}",
+        "exclusive": [
+          "none",
+          "dont_know"
+        ],
+        "options": [
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "none",
+            "text": "{{anc_profile.step4.health_conditions.options.none.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "dont_know",
+            "text": "{{anc_profile.step4.health_conditions.options.dont_know.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "148117AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "autoimmune_disease",
+            "text": "{{anc_profile.step4.health_conditions.options.autoimmune_disease.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "165223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "blood_disorder",
+            "text": "{{anc_profile.step4.health_conditions.options.blood_disorder.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "151286AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "cancer",
+            "text": "{{anc_profile.step4.health_conditions.options.cancer.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "cancer_other",
+            "text": "{{anc_profile.step4.health_conditions.options.cancer_other.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "gest_diabetes",
+            "text": "{{anc_profile.step4.health_conditions.options.gest_diabetes.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "diabetes_other",
+            "text": "{{anc_profile.step4.health_conditions.options.diabetes_other.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "diabetes",
+            "text": "{{anc_profile.step4.health_conditions.options.diabetes.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "key": "diabetes_type2",
+            "text": "{{anc_profile.step4.health_conditions.options.diabetes_type2.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "epilepsy",
+            "text": "{{anc_profile.step4.health_conditions.options.epilepsy.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "hiv",
+            "text": "{{anc_profile.step4.health_conditions.options.hiv.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "hypertension",
+            "text": "{{anc_profile.step4.health_conditions.options.hypertension.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "6033AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "kidney_disease",
+            "text": "{{anc_profile.step4.health_conditions.options.kidney_disease.text}}"
+          },
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "key": "other",
+            "text": "{{anc_profile.step4.health_conditions.options.other.text}}"
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.health_conditions.v_required.err}}"
+        }
+      },
+      {
+        "key": "health_conditions_cancer_other",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step4.health_conditions_cancer_other.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.health_conditions_cancer_other.v_required.err}}"
+        },
+        "relevance": {
+          "step4:health_conditions": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "cancer_other"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "key": "health_conditions_other",
+        "openmrs_entity_parent": "1628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "edit_text",
+        "hint": "{{anc_profile.step4.health_conditions_other.hint}}",
+        "edit_type": "edit_text",
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.health_conditions_other.v_required.err}}"
+        },
+        "relevance": {
+          "step4:health_conditions": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "other"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "165260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "key": "preeclampsia_risk",
+        "type": "hidden",
+        "label_text_style": "bold",
+        "text_color": "#FF0000",
+        "v_required": {
+          "value": false
+        },
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "pre_eclampsia_two_toaster",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "",
+        "type": "toaster_notes",
+        "text": "{{anc_profile.step4.pre_eclampsia_two_toaster.text}}",
+        "text_color": "#000000",
+        "toaster_info_text": "{{anc_profile.step4.pre_eclampsia_two_toaster.toaster_info_text}}",
+        "toaster_info_title": "{{anc_profile.step4.pre_eclampsia_two_toaster.toaster_info_title}}",
+        "toaster_type": "warning",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "hiv_diagnosis_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "type": "date_picker",
+        "hint": "{{anc_profile.step4.hiv_diagnosis_date.hint}}",
+        "expanded": false,
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        },
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "{{anc_profile.step4.hiv_diagnosis_date.v_required.err}}"
+        }
+      },
+      {
+        "key": "hiv_diagnosis_date_unknown",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "165224AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "openmrs_data_type": "select one",
+        "type": "check_box",
+        "label_text_style": "bold",
+        "options": [
+          {
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "",
+            "openmrs_entity_id": "",
+            "key": "yes",
+            "text": "{{anc_profile.step4.hiv_diagnosis_date_unknown.options.yes.text}}",
+            "value": false
+          }
+        ],
+        "v_required": {
+          "value": false,
+          "err": "{{anc_profile.step4.hiv_diagnosis_date_unknown.v_required.err}}"
+        },
+        "relevance": {
+          "step4:health_conditions": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "hiv"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "key": "hiv_positive",
+        "type": "hidden",
+        "label_text_style": "bold",
+        "text_color": "#FF0000",
+        "v_required": {
+          "value": false
+        },
+        "calculation": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_calculation_rules.yml"
+            }
+          }
+        }
       }
-
     ]
   },
   "step5": {
@@ -3391,136 +2414,6 @@
         "v_required": {
           "value": true,
           "err": "{{anc_profile.step5.tt_immun_status.v_required.err}}"
-        }
-      },
-      {
-        "key": "date_tt1_received",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step5.date_tt1_received.hint}}",
-        "expanded": false,
-        "relevance": {
-          "step5:tt_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "3_doses",
-                  "1-4_doses"
-                ]
-              }
-            ]
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step5.date_tt1_received.v_required.err}}"
-        }
-      },
-      {
-        "key": "date_tt2_received",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step5.date_tt2_received.hint}}",
-        "expanded": false,
-        "relevance": {
-          "step5:tt_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "3_doses",
-                  "1-4_doses"
-                ]
-              }
-            ]
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step5.date_tt2_received.v_required.err}}"
-        }
-      },
-      {
-        "key": "date_tt3_received",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step5.date_tt3_received.hint}}",
-        "expanded": false,
-        "relevance": {
-          "step5:tt_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "3_doses",
-                  "1-4_doses"
-                ]
-              }
-            ]
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step5.date_tt3_received.v_required.err}}"
-        }
-      },
-      {
-        "key": "date_tt4_received",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step5.date_tt4_received.hint}}",
-        "expanded": false,
-        "relevance": {
-          "step5:tt_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "3_doses",
-                  "1-4_doses"
-                ]
-              }
-            ]
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step5.date_tt4_received.v_required.err}}"
-        }
-      },
-      {
-        "key": "date_tt5_received",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "date_picker",
-        "hint": "{{anc_profile.step5.date_tt5_received.hint}}",
-        "expanded": false,
-        "relevance": {
-          "step5:tt_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "3_doses",
-                  "1-4_doses"
-                ]
-              }
-            ]
-          }
-        },
-        "max_date": "today",
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step5.date_tt5_received.v_required.err}}"
         }
       },
       {
@@ -3574,7 +2467,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "hidden",
+        "type": "native_radio",
         "label": "{{anc_profile.step5.flu_immun_status.label}}",
         "label_text_style": "bold",
         "multi_relevance": true,
@@ -3604,124 +2497,6 @@
         "v_required": {
           "value": true,
           "err": "{{anc_profile.step5.flu_immun_status.v_required.err}}"
-        }
-      },
-      {
-        "key": "covid_immun_status",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step5.covid_immun_status.label}}",
-        "label_text_style": "bold",
-        "label_info_text": "{{anc_profile.step5.covid_immun_status.label_info_text}}",
-        "multi_relevance": true,
-        "options": [
-          {
-            "key": "fully_vaccinated",
-            "text": "{{anc_profile.step5.covid_immun_status.options.fully_vaccinated.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "under_vaccinated",
-            "text": "{{anc_profile.step5.covid_immun_status.options.under_vaccinated.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "not_vaccinated",
-            "text": "{{anc_profile.step5.covid_immun_status.options.not_vaccinated.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "unknown",
-            "text": "{{anc_profile.step5.covid_immun_status.options.unknown.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": true,
-          "err": "{{anc_profile.step5.covid_immun_status.v_required.err}}"
-        }
-      },
-      {
-        "key": "vaccine_type",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step5.vaccine_type.hint}}",
-        "edit_type": "edit_text",
-        "v_required": {
-          "value": false,
-          "err": ""
-        },
-        "relevance": {
-          "step5:covid_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "fully_vaccinated",
-                  "under_vaccinated"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "key": "vaccine_number",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step5.vaccine_number.hint}}",
-        "edit_type": "number",
-        "v_required": {
-          "value": false,
-          "err": ""
-        },
-        "relevance": {
-          "step5:covid_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "fully_vaccinated",
-                  "under_vaccinated"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "key": "covid_immunisation_toaster",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "type": "toaster_notes",
-        "text": "{{anc_profile.step5.covid_immunisation_toaster.text}}",
-        "text_color": "#000000",
-        "toaster_type": "info",
-        "relevance": {
-          "step5:covid_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "not_vaccinated",
-                  "unknown",
-                  "under_vaccinated"
-                ]
-              }
-            ]
-          }
         }
       },
       {
@@ -3763,27 +2538,6 @@
               {
                 "or": [
                   "seasonal_flu_dose_given"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "key": "immunised_against_covid_toaster",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "type": "toaster_notes",
-        "text": "{{anc_profile.step5.immunised_against_covid_toaster.text}}",
-        "text_color": "#000000",
-        "toaster_type": "positive",
-        "relevance": {
-          "step5:covid_immun_status": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "fully_vaccinated"
                 ]
               }
             ]
@@ -4071,78 +2825,6 @@
             ]
           }
         }
-      },
-      {
-        "key": "medications_asthma",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step6.medications_asthma.hint}}",
-        "edit_type": "edit_text",
-        "v_required": {
-          "value": false,
-          "err": ""
-        },
-        "relevance": {
-          "step6:medications": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "asthma"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "key": "medications_hemorrhoidal",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step6.medications_hemorrhoidal.hint}}",
-        "edit_type": "edit_text",
-        "v_required": {
-          "value": false,
-          "err": ""
-        },
-        "relevance": {
-          "step6:medications": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "hemorrhoidal"
-                ]
-              }
-            ]
-          }
-        }
-      },
-      {
-        "key": "medications_thyroid",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "edit_text",
-        "hint": "{{anc_profile.step6.medications_thyroid.hint}}",
-        "edit_type": "edit_text",
-        "v_required": {
-          "value": false,
-          "err": ""
-        },
-        "relevance": {
-          "step6:medications": {
-            "ex-checkbox": [
-              {
-                "or": [
-                  "thyroid"
-                ]
-              }
-            ]
-          }
-        }
       }
     ]
   },
@@ -4156,7 +2838,7 @@
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "openmrs_data_type": "select multiple",
-        "type": "hidden",
+        "type": "check_box",
         "label": "{{anc_profile.step7.caffeine_intake.label}}",
         "label_text_style": "bold",
         "hint": "{{anc_profile.step7.caffeine_intake.hint}}",
@@ -4388,104 +3070,11 @@
         }
       },
       {
-        "key": "traditional_medicine_use",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "",
-        "type": "native_radio",
-        "label": "{{anc_profile.step7.traditional_medicine_use.label}}",
-        "label_text_style": "bold",
-        "options": [
-          {
-            "key": "yes",
-            "text": "{{anc_profile.step7.traditional_medicine_use.options.yes.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "no",
-            "text": "{{anc_profile.step7.traditional_medicine_use.options.no.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": ""
-        }
-      },
-      {
-        "key": "traditional_medicine_counseling_toaster",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "type": "toaster_notes",
-        "text": "{{anc_profile.step7.traditional_medicine_counseling_toaster.text}}",
-        "text_color": "#000000",
-        "toaster_type": "problem",
-        "relevance": {
-          "step7:traditional_medicine_use": {
-            "type": "string",
-            "ex": "equalTo(., \"yes\")"
-          }
-        }
-      },
-      {
-        "key": "itbn_use",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "concept",
-        "openmrs_entity_id": "1357AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
-        "label": "{{anc_profile.step7.itbn_use.label}}",
-        "label_text_style": "bold",
-        "label_info_text":"{{anc_profile.step7.itbn_use.label_info_text}}",
-        "options": [
-          {
-            "key": "yes",
-            "text": "{{anc_profile.step7.itbn_use.options.yes.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          },
-          {
-            "key": "no",
-            "text": "{{anc_profile.step7.itbn_use.options.no.text}}",
-            "openmrs_entity_parent": "",
-            "openmrs_entity": "concept",
-            "openmrs_entity_id": ""
-          }
-        ],
-        "v_required": {
-          "value": false,
-          "err": "{{anc_profile.step7.itbn_use.v_required.err}}"
-        }
-      },
-      {
-        "key": "itbn_counseling_toaster",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "type": "toaster_notes",
-        "text": "{{anc_profile.step7.itbn_counseling_toaster.text}}",
-        "text_color": "#000000",
-        "toaster_info_text": "{{anc_profile.step7.itbn_counseling_toaster.toaster_info_text}}",
-        "toaster_info_title": "{{anc_profile.step7.itbn_counseling_toaster.toaster_info_title}}",
-        "toaster_type": "problem",
-        "relevance": {
-          "step7:itbn_use": {
-            "type": "string",
-            "ex": "equalTo(., \"no\")"
-          }
-        }
-      },
-      {
         "key": "alcohol_substance_enquiry",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "165268AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "hidden",
+        "type": "native_radio",
         "label": "{{anc_profile.step7.alcohol_substance_enquiry.label}}",
         "label_text_style": "bold",
         "label_info_text": "{{anc_profile.step7.alcohol_substance_enquiry.label_info_text}}",
@@ -4768,14 +3357,13 @@
         "toaster_info_title": "{{anc_profile.step8.hiv_risk_counselling_toaster.toaster_info_title}}",
         "toaster_type": "problem",
         "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
+          "step8:partner_hiv_status": {
+            "type": "string",
+            "ex": "equalTo(., \"positive\")"
+
           }
         }
       }
-
     ]
   },
   "properties_file_name": "anc_profile"

@@ -7,15 +7,9 @@ import java.util.Map;
 
 public class Contact extends Form implements Serializable {
 
-    private String title;
     private int background;
 
     private Integer requiredFields;
-
-//    ====added
-    //private String title;
-    private boolean isOpened =false;
-//    ===
 
     private String formName;
 
@@ -72,21 +66,5 @@ public class Contact extends Form implements Serializable {
 
     public void setJsonForm(String jsonForm) {
         this.jsonForm = jsonForm;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public boolean isOpened() {
-        return isOpened;
-    }
-
-    public void setOpened(boolean opened) {
-        isOpened = opened;
     }
 }
