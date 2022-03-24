@@ -190,24 +190,19 @@
           }
         },
         {
-          "column_name": "subdistrict",
+          "column_name": "sector",
           "type": "Client",
           "json_mapping": {
-            "field": "attributes.subdistrict"
+            "field": "attributes.sector"
           }
-        },
+
+        }
+        ,
         {
           "column_name": "cell",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.subTown"
-          }
-        },
-        {
-          "column_name": "health_facility",
-          "type": "Client",
-          "json_mapping": {
-            "field": "attributes.health_facility"
+            "field": "attributes.cell"
           }
         },
         {

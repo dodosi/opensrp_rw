@@ -1136,7 +1136,7 @@ public class Utils extends org.smartregister.util.Utils {
                 return district != null ? district.getId() : "";
             case ConstantsUtils.LocationConstants.SUBDISTRICT:
                 return subDistrict != null ? subDistrict.getId() : "";
-            case ConstantsUtils.LocationConstants.HEALTH_FACILITY:
+//            case ConstantsUtils.LocationConstants.HEALTH_FACILITY:
             case ConstantsUtils.LocationConstants.FACILITY:
                 return facility != null ? facility.getId() : "";
             case ConstantsUtils.LocationConstants.VILLAGE:

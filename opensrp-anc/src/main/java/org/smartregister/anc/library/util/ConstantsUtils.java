@@ -115,6 +115,8 @@ public abstract class ConstantsUtils {
         public static final String CLOSE = "ANC Close";
         public static final String SITE_CHARACTERISTICS = "Site Characteristics";
         public static final String CONTACT_VISIT = "Contact Visit";
+        public static final String LOCATION_ID = "locationId";
+        public static final String IDENTIFIER = "identifier";
     }
 
     public static class JsonFormUtils {
@@ -278,8 +280,8 @@ public abstract class ConstantsUtils {
     public static final class SpinnerKeyConstants {
         public static final String PROVINCE = "province";
         public static final String DISTRICT = "district";
-        public static final String SUB_DISTRICT = "subdistrict";
-        public static final String FACILITY = "health_facility";
+        public static final String SUB_DISTRICT = "sector";
+        public static final String FACILITY = "cell";
         public static final String VILLAGE = "village";
     }
 
@@ -292,9 +294,9 @@ public abstract class ConstantsUtils {
         public static final String COUNTRY = "Country";
         public static final String PROVINCE = "PROVINCE";
         public static final String DISTRICT = "DISTRICT";
-        public static final String SUBDISTRICT = "SUBDISTRICT";
-        public static final String HEALTH_FACILITY = "HEALTH_FACILITY";
-        public static final String FACILITY = "FACILITY";
+        public static final String SUBDISTRICT = "SECTOR";
+        public static final String HEALTH_FACILITY = "CELL";
+        public static final String FACILITY = "CELL";
         public static final String VILLAGE = "VILLAGE";
     }
 }

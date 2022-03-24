@@ -523,13 +523,13 @@
         }
       },
       {
-        "key": "subdistrict",
+        "key": "sector",
         "openmrs_entity_parent": "",
         "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "subdistrict",
+        "openmrs_entity_id": "sector",
         "type": "spinner",
         "sub_type": "location",
-        "hint": "Select Sub-District",
+        "hint": "Select Sector",
         "options" : [],
         "v_required": {
           "value": "true",
@@ -537,13 +537,13 @@
         }
       },
       {
-        "key": "health_facility",
+        "key": "cell",
         "openmrs_entity_parent": "",
         "openmrs_entity": "person_attribute",
-        "openmrs_entity_id": "health_facility",
+        "openmrs_entity_id": "cell",
         "type": "spinner",
         "sub_type": "location",
-        "hint": "Select Health Facility",
+        "hint": "Select Cell",
         "options" : [],
         "v_required": {
           "value": "true",
@@ -658,6 +658,7 @@
           {
             "key": "parents",
             "text": "{{anc_register.step1.cohabitants.options.parents.text}}",
+            "translation_text" :"anc_register.step1.cohabitants.options.parents.text",
             "text_size": "18px",
             "openmrs_entity_parent": "",
             "openmrs_entity": "",

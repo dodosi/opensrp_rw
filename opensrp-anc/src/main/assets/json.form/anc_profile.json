@@ -338,6 +338,7 @@
           {
             "key": "married",
             "text": "{{anc_profile.step1.marital_status.options.married.text}}",
+            "translation_text": "anc_profile.step1.marital_status.options.married.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1055AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -345,6 +346,7 @@
           {
             "key": "divorced",
             "text": "{{anc_profile.step1.marital_status.options.divorced.text}}",
+            "translation_text":"anc_profile.step1.marital_status.options.divorced.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -352,6 +354,7 @@
           {
             "key": "single",
             "text": "{{anc_profile.step1.marital_status.options.single.text}}",
+            "translation_text": "anc_profile.step1.marital_status.options.single.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5615AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -359,6 +362,7 @@
           {
             "key": "widowed",
             "text": "{{anc_profile.step1.marital_status.options.widowed.text}}",
+            "translation_text":"anc_profile.step1.marital_status.options.widowed.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -366,6 +370,7 @@
           {
             "key": "separated",
             "text": "{{anc_profile.step1.marital_status.options.separated.text}}",
+            "translation_text": "anc_profile.step1.marital_status.options.separated.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -373,6 +378,7 @@
           {
             "key": "cohabitating",
             "text": "{{anc_profile.step1.marital_status.options.cohabitating.text}}",
+            "translation_text": "anc_profile.step1.marital_status.options.cohabitating.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -529,6 +535,7 @@
           {
             "key": "yes",
             "text": "{{anc_profile.step2.lmp_known.options.yes.text}}",
+            "translation_text" :"anc_profile.step2.lmp_known.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -541,6 +548,7 @@
           {
             "key": "no",
             "text": "{{anc_profile.step2.lmp_known.options.no.text}}",
+            "translation_text": "anc_profile.step2.lmp_known.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
