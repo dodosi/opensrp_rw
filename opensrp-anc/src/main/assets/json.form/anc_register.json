@@ -501,7 +501,7 @@
         "openmrs_entity_id": "province",
         "type": "spinner",
         "sub_type": "location",
-        "hint": "Select Province",
+        "hint": "{{anc_register.step1.province.hint_select}}",
         "options" : [],
         "v_required": {
           "value": "true",
@@ -515,7 +515,7 @@
         "openmrs_entity_id": "district",
         "type": "spinner",
         "sub_type": "location",
-        "hint": "Select District",
+        "hint": "{{anc_register.step1.district.hint_select}}",
         "options" : [],
         "v_required": {
           "value": "true",
@@ -529,7 +529,7 @@
         "openmrs_entity_id": "sector",
         "type": "spinner",
         "sub_type": "location",
-        "hint": "Select Sector",
+        "hint": "{{anc_register.step1.sector.hint_select}}",
         "options" : [],
         "v_required": {
           "value": "true",
@@ -543,7 +543,7 @@
         "openmrs_entity_id": "cell",
         "type": "spinner",
         "sub_type": "location",
-        "hint": "Select Cell",
+        "hint": "{{anc_register.step1.cell.hint_select}}",
         "options" : [],
         "v_required": {
           "value": "true",
@@ -557,7 +557,7 @@
         "openmrs_entity_id": "village",
         "type": "spinner",
         "sub_type": "location",
-        "hint": "Select Village",
+        "hint": "{{anc_register.step1.village.hint_select}}",
         "options" : [],
         "v_required": {
           "value": "true",
