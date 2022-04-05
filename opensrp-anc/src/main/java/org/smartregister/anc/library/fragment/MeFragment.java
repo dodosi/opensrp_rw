@@ -39,7 +39,7 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
     private RelativeLayout languageSwitcherSection;
     private RelativeLayout p2pSyncSetion;
     private TextView languageSwitcherText;
-    private Map<String, Locale> locales = new HashMap<>();
+    private final Map<String, Locale> locales = new HashMap<>();
     private String[] languages;
 
     @Nullable
@@ -54,6 +54,7 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
         super.setUpViews(view);
         mePopCharacteristicsSection = view.findViewById(R.id.me_pop_characteristics_section);
         siteCharacteristicsSection = view.findViewById(R.id.site_characteristics_section);
+
         p2pSyncSetion = view.findViewById(R.id.p2p_section);
         if (Utils.enableLanguageSwitching()) {
             languageSwitcherSection = view.findViewById(R.id.language_switcher_section);
@@ -179,6 +180,7 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
         locales.put(getString(R.string.english_language), Locale.ENGLISH);
         locales.put(getString(R.string.french_language), Locale.FRENCH);
         locales.put(getString(R.string.portuguese_brazil_language), new Locale("pt"));
+        locales.put(getString(R.string.bahasa_indonesia_language), new Locale("ind"));
         locales.put(getString(R.string.kinyarwanda), new Locale("rw"));
     }
 

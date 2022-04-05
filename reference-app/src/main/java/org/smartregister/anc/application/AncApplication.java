@@ -37,8 +37,13 @@ import org.smartregister.sync.DrishtiSyncScheduler;
 import org.smartregister.view.activity.DrishtiApplication;
 import org.smartregister.view.receiver.TimeChangedBroadcastReceiver;
 
+import java.io.FileNotFoundException;
+
 import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
+
+import static org.smartregister.util.Log.logError;
+import static org.smartregister.util.Log.logInfo;
 
 /**
  * Created by ndegwamartin on 21/06/2018.

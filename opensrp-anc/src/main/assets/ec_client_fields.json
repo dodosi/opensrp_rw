@@ -176,45 +176,47 @@
           }
         },
         {
-          "column_name": "visit_start_date",
-          "type": "Client",
-          "json_mapping": {
-            "field": "attributes.visit_start_date"
-          }
-        },
-        {
           "column_name": "province",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.stateProvince"
+            "field": "attributes.province"
           }
         },
         {
           "column_name": "district",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.countyDistrict"
+            "field": "attributes.district"
           }
         },
         {
           "column_name": "sector",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.subDistrict"
+            "field": "attributes.sector"
           }
-        },
+
+        }
+        ,
         {
           "column_name": "cell",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.subTown"
+            "field": "attributes.cell"
           }
         },
         {
           "column_name": "village",
           "type": "Client",
           "json_mapping": {
-            "field": "addresses.cityVillage"
+            "field": "attributes.village"
+          }
+        },
+        {
+          "column_name": "visit_start_date",
+          "type": "Client",
+          "json_mapping": {
+            "field": "attributes.visit_start_date"
           }
         }
       ]

@@ -444,6 +444,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step1.referred_hosp.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step1.referred_hosp.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -451,6 +452,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step1.referred_hosp.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step1.referred_hosp.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -482,6 +484,7 @@
           {
             "key": "woman_refused",
             "text": "{{anc_counselling_treatment.step1.referred_hosp_notdone.options.woman_refused.text}}",
+            "translation_text": "anc_counselling_treatment.step1.referred_hosp_notdone.options.woman_refused.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165306AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -489,6 +492,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step1.referred_hosp_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step1.referred_hosp_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -550,6 +554,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step2.caffeine_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.caffeine_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -557,6 +562,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step2.caffeine_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.caffeine_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -588,6 +594,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step2.caffeine_counsel_notdone.options.referred_instead.text}}",
+            "text": "anc_counselling_treatment.step2.caffeine_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -595,6 +602,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step2.caffeine_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step2.caffeine_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "165311AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -641,6 +649,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step2.tobacco_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.tobacco_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -648,6 +657,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step2.tobacco_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.tobacco_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -679,6 +689,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step2.tobacco_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step2.tobacco_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -686,6 +697,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step2.tobacco_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step2.tobacco_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -732,6 +744,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step2.shs_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.shs_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -739,6 +752,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step2.shs_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.shs_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -770,6 +784,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step2.shs_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step2.shs_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -777,6 +792,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step2.shs_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step2.shs_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "165312AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -823,6 +839,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step2.condom_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.condom_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -830,6 +847,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step2.condom_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.condom_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -857,6 +875,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step2.condom_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step2.condom_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -864,6 +883,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step2.condom_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step2.condom_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "161594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -910,6 +930,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step2.alcohol_substance_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.alcohol_substance_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -917,6 +938,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step2.alcohol_substance_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step2.alcohol_substance_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -948,6 +970,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step2.alcohol_substance_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step2.alcohol_substance_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -955,6 +978,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step2.alcohol_substance_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step2.alcohol_substance_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "165313AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1007,6 +1031,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.nausea_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.nausea_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1014,6 +1039,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.nausea_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.nausea_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1045,6 +1071,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.nausea_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.nausea_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1052,6 +1079,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.nausea_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.nausea_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1093,6 +1121,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.nausea_not_relieved_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.nausea_not_relieved_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1100,6 +1129,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.nausea_not_relieved_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.nausea_not_relieved_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1127,6 +1157,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.nausea_not_relieved_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.nausea_not_relieved_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1134,6 +1165,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.nausea_not_relieved_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.nausea_not_relieved_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1191,6 +1223,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.heartburn_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.heartburn_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1198,6 +1231,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.heartburn_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.heartburn_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1229,6 +1263,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.heartburn_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.heartburn_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1236,6 +1271,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.heartburn_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.heartburn_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1277,6 +1313,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.heartburn_not_relieved_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.heartburn_not_relieved_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1284,6 +1321,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.heartburn_not_relieved_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.heartburn_not_relieved_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1311,6 +1349,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.heartburn_not_relieved_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.heartburn_not_relieved_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1318,6 +1357,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.heartburn_not_relieved_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.heartburn_not_relieved_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1375,6 +1415,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.leg_cramp_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.leg_cramp_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1382,6 +1423,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.leg_cramp_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.leg_cramp_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1413,6 +1455,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.leg_cramp_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.leg_cramp_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1420,6 +1463,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.leg_cramp_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.leg_cramp_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1461,6 +1505,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.leg_cramp_not_relieved_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.leg_cramp_not_relieved_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1468,6 +1513,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.leg_cramp_not_relieved_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.leg_cramp_not_relieved_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1495,6 +1541,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.leg_cramp_not_relieved_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.leg_cramp_not_relieved_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1502,6 +1549,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.leg_cramp_not_relieved_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.leg_cramp_not_relieved_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1543,6 +1591,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.constipation_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.constipation_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1550,6 +1599,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.constipation_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.constipation_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1581,6 +1631,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.constipation_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.constipation_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1588,6 +1639,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.constipation_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.constipation_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1629,6 +1681,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.constipation_not_relieved_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.constipation_not_relieved_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1636,6 +1689,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.constipation_not_relieved_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.constipation_not_relieved_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1663,6 +1717,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.constipation_not_relieved_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.constipation_not_relieved_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1670,6 +1725,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.constipation_not_relieved_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.constipation_not_relieved_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1711,6 +1767,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.back_pelvic_pain_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.back_pelvic_pain_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1718,6 +1775,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.back_pelvic_pain_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.back_pelvic_pain_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1749,6 +1807,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.back_pelvic_pain_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.back_pelvic_pain_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1756,6 +1815,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.back_pelvic_pain_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.back_pelvic_pain_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1813,6 +1873,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step3.varicose_oedema_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.varicose_oedema_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1820,6 +1881,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step3.varicose_oedema_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step3.varicose_oedema_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1851,6 +1913,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step3.varicose_oedema_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step3.varicose_oedema_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1858,6 +1921,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step3.varicose_oedema_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step3.varicose_oedema_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1953,6 +2017,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step4.eat_exercise_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step4.eat_exercise_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1960,6 +2025,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step4.eat_exercise_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step4.eat_exercise_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1984,6 +2050,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step4.eat_exercise_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step4.eat_exercise_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1991,6 +2058,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step4.eat_exercise_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step4.eat_exercise_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2056,6 +2124,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step4.increase_energy_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step4.increase_energy_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2063,6 +2132,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step4.increase_energy_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step4.increase_energy_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2094,6 +2164,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step4.increase_energy_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step4.increase_energy_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2101,6 +2172,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step4.increase_energy_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step4.increase_energy_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2151,6 +2223,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step4.balanced_energy_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step4.balanced_energy_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2158,6 +2231,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step4.balanced_energy_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step4.balanced_energy_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2189,6 +2263,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step4.balanced_energy_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step4.balanced_energy_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2196,6 +2271,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step4.balanced_energy_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step4.balanced_energy_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2252,6 +2328,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.hypertension_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.hypertension_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2259,6 +2336,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.hypertension_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.hypertension_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2305,6 +2383,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.hiv_positive_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.hiv_positive_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2312,6 +2391,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.hiv_positive_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.hiv_positive_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2358,6 +2438,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.hepb_positive_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.hepb_positive_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2365,6 +2446,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.hepb_positive_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.hepb_positive_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2396,6 +2478,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.hepc_positive_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.hepc_positive_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2403,6 +2486,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.hepc_positive_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.hepc_positive_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2434,6 +2518,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.syphilis_low_prev_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.syphilis_low_prev_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2441,6 +2526,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.syphilis_low_prev_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.syphilis_low_prev_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2498,6 +2584,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.syphilis_high_prev_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.syphilis_high_prev_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2505,6 +2592,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.syphilis_high_prev_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.syphilis_high_prev_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2578,6 +2666,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.asb_positive_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.asb_positive_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2585,6 +2674,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.asb_positive_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.asb_positive_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2614,6 +2704,7 @@
           {
             "key": "stock_out",
             "text": "{{anc_counselling_treatment.step5.asb_positive_counsel_notdone.options.stock_out.text}}",
+            "translation_text": "anc_counselling_treatment.step5.asb_positive_counsel_notdone.options.stock_out.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2621,6 +2712,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step5.asb_positive_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step5.asb_positive_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2682,6 +2774,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.diabetes_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.diabetes_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2689,6 +2782,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.diabetes_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.diabetes_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2720,6 +2814,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.ifa_anaemia.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.ifa_anaemia.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2727,6 +2822,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.ifa_anaemia.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.ifa_anaemia.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2758,6 +2854,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step5.ifa_anaemia_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step5.ifa_anaemia_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2765,6 +2862,7 @@
           {
             "key": "side_effects",
             "text": "{{anc_counselling_treatment.step5.ifa_anaemia_notdone.options.side_effects.text}}",
+            "translation_text": "anc_counselling_treatment.step5.ifa_anaemia_notdone.options.side_effects.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2772,6 +2870,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step5.ifa_anaemia_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step5.ifa_anaemia_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2834,6 +2933,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step5.tb_positive_counseling.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.tb_positive_counseling.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2841,6 +2941,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step5.tb_positive_counseling.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step5.tb_positive_counseling.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2872,6 +2973,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2879,6 +2981,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2908,6 +3011,7 @@
           {
             "key": "no_stock",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_notdone.options.no_stock.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_notdone.options.no_stock.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2915,6 +3019,7 @@
           {
             "key": "side_effects",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_notdone.options.side_effects.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_notdone.options.side_effects.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2922,6 +3027,7 @@
           {
             "key": "allergy",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_notdone.options.allergy.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_notdone.options.allergy.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "141760AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2929,6 +3035,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2972,6 +3079,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_calcium.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_calcium.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2979,6 +3087,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_calcium.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_calcium.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3008,6 +3117,7 @@
           {
             "key": "no_stock",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_calcium_notdone.options.no_stock.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_calcium_notdone.options.no_stock.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3015,6 +3125,7 @@
           {
             "key": "side_effects",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_calcium_notdone.options.side_effects.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_calcium_notdone.options.side_effects.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3022,6 +3133,7 @@
           {
             "key": "allergy",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_calcium_notdone.options.allergy.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_calcium_notdone.options.allergy.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "141760AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3029,6 +3141,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step6.pe_risk_aspirin_calcium_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step6.pe_risk_aspirin_calcium_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3090,6 +3203,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step6.hiv_risk_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.hiv_risk_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3097,6 +3211,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step6.hiv_risk_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.hiv_risk_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3142,6 +3257,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step6.hiv_prep.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.hiv_prep.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3149,6 +3265,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step6.hiv_prep.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.hiv_prep.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3174,6 +3291,7 @@
           {
             "key": "refered_instead",
             "text": "{{anc_counselling_treatment.step6.hiv_prep_notdone.options.refered_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step6.hiv_prep_notdone.options.refered_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3181,6 +3299,7 @@
           {
             "key": "no_drugs",
             "text": "{{anc_counselling_treatment.step6.hiv_prep_notdone.options.no_drugs.text}}",
+            "translation_text": "anc_counselling_treatment.step6.hiv_prep_notdone.options.no_drugs.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3188,6 +3307,7 @@
           {
             "key": "woman_refused",
             "text": "{{anc_counselling_treatment.step6.hiv_prep_notdone.options.woman_refused.text}}",
+            "translation_text": "anc_counselling_treatment.step6.hiv_prep_notdone.options.woman_refused.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "127750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3195,6 +3315,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step6.hiv_prep_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step6.hiv_prep_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3261,6 +3382,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step6.gdm_risk_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.gdm_risk_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3268,6 +3390,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step6.gdm_risk_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step6.gdm_risk_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3301,6 +3424,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.danger_signs_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.danger_signs_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3308,6 +3432,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.danger_signs_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.danger_signs_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3343,6 +3468,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.emergency_hosp_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.emergency_hosp_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "",
             "openmrs_entity_id": ""
@@ -3350,6 +3476,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.emergency_hosp_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.emergency_hosp_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "",
             "openmrs_entity_id": ""
@@ -3385,6 +3512,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.anc_contact_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.anc_contact_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3392,6 +3520,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.anc_contact_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.anc_contact_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3427,6 +3556,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.birth_prep_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.birth_prep_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3434,6 +3564,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.birth_prep_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.birth_prep_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3523,6 +3654,7 @@
           {
             "key": "hospital",
             "text": "{{anc_counselling_treatment.step7.delivery_place.options.hospital.text}}",
+            "translation_text": "anc_counselling_treatment.step7.delivery_place.options.hospital.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3530,6 +3662,7 @@
           {
             "key": "health_center",
             "text": "{{anc_counselling_treatment.step7.delivery_place.options.health_center.text}}",
+            "translation_text": "anc_counselling_treatment.step7.delivery_place.options.health_center.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "155886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3537,6 +3670,7 @@
           {
             "key": "private_clinic",
             "text": "{{anc_counselling_treatment.step7.delivery_place.options.private_clinic.text}}",
+            "translation_text": "anc_counselling_treatment.step7.delivery_place.options.private_clinic.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3544,6 +3678,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step7.delivery_place.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step7.delivery_place.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3579,6 +3714,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.rh_negative_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.rh_negative_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3586,6 +3722,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.rh_negative_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.rh_negative_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3628,6 +3765,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.gbs_agent_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.gbs_agent_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3635,6 +3773,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.gbs_agent_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.gbs_agent_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3675,6 +3814,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.breastfeeding_counselling.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.breastfeeding_counselling.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -3682,6 +3822,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.breastfeeding_counselling.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.breastfeeding_counselling.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -3715,6 +3856,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.insurance_counselling.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.insurance_counselling.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -3722,6 +3864,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.insurance_counselling.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.insurance_counselling.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -3755,6 +3898,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step7.deworming_performed.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step7.deworming_performed.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -3762,6 +3906,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step7.deworming_performed.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step7.deworming_performed.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -3795,6 +3940,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step7.mosquito_net_recieved.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step7.mosquito_net_recieved.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -3802,6 +3948,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step7.mosquito_net_recieved.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step7.mosquito_net_recieved.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -3835,6 +3982,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step7.family_planning_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3842,6 +3990,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step7.family_planning_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4022,6 +4171,7 @@
           {
             "key": "none",
             "text": "{{anc_counselling_treatment.step7.family_planning_type.options.none.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_type.options.none.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4029,6 +4179,7 @@
           {
             "key": "pills",
             "text": "{{anc_counselling_treatment.step7.family_planning_type.options.pills.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_type.options.pills.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4036,6 +4187,7 @@
           {
             "key": "implant",
             "text": "{{anc_counselling_treatment.step7.family_planning_type.options.implant.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_type.options.implant.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4043,6 +4195,7 @@
           {
             "key": "intra_uterine_device",
             "text": "{{anc_counselling_treatment.step7.family_planning_type.options.intra_uterine_device.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_type.options.intra_uterine_device.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4050,6 +4203,7 @@
           {
             "key": "permanent_method",
             "text": "{{anc_counselling_treatment.step7.family_planning_type.options.permanent_method.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_type.options.permanent_method.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4057,6 +4211,7 @@
           {
             "key": "condom",
             "text": "{{anc_counselling_treatment.step7.family_planning_type.options.condom.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_type.options.condom.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4140,6 +4295,7 @@
           {
             "key": "male_condoms",
             "text": "{{anc_counselling_treatment.step7.family_planning_type.options.male_condoms.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_type.options.male_condoms.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4147,6 +4303,7 @@
           {
             "key": "female_condoms",
             "text": "{{anc_counselling_treatment.step7.family_planning_type.options.female_condoms.text}}",
+            "translation_text": "anc_counselling_treatment.step7.family_planning_type.options.female_condoms.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4218,6 +4375,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step8.ipv_support.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_support.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4225,6 +4383,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step8.ipv_support.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_support.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4254,6 +4413,7 @@
           {
             "key": "referred",
             "text": "{{anc_counselling_treatment.step8.ipv_support_notdone.options.referred.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_support_notdone.options.referred.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4261,6 +4421,7 @@
           {
             "key": "provider_unavailable",
             "text": "{{anc_counselling_treatment.step8.ipv_support_notdone.options.provider_unavailable.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_support_notdone.options.provider_unavailable.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4268,6 +4429,7 @@
           {
             "key": "space_unavailable",
             "text": "{{anc_counselling_treatment.step8.ipv_support_notdone.options.space_unavailable.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_support_notdone.options.space_unavailable.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4275,6 +4437,7 @@
           {
             "key": "confidentiality",
             "text": "{{anc_counselling_treatment.step8.ipv_support_notdone.options.confidentiality.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_support_notdone.options.confidentiality.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4282,6 +4445,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step8.ipv_support_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_support_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4326,6 +4490,7 @@
           {
             "key": "no_action",
             "text": "{{anc_counselling_treatment.step8.ipv_care.options.no_action.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_care.options.no_action.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4333,6 +4498,7 @@
           {
             "key": "safety_assessment",
             "text": "{{anc_counselling_treatment.step8.ipv_care.options.safety_assessment.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_care.options.safety_assessment.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4340,6 +4506,7 @@
           {
             "key": "mental_health_care",
             "text": "{{anc_counselling_treatment.step8.ipv_care.options.mental_health_care.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_care.options.mental_health_care.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4347,6 +4514,7 @@
           {
             "key": "care_other_symptoms",
             "text": "{{anc_counselling_treatment.step8.ipv_care.options.care_other_symptoms.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_care.options.care_other_symptoms.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4354,6 +4522,7 @@
           {
             "key": "referred",
             "text": "{{anc_counselling_treatment.step8.ipv_care.options.referred.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_care.options.referred.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4379,6 +4548,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step8.phys_violence_worse.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step8.phys_violence_worse.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4386,6 +4556,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step8.phys_violence_worse.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step8.phys_violence_worse.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4411,6 +4582,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step8.used_weapon.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step8.used_weapon.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4418,6 +4590,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step8.used_weapon.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step8.used_weapon.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4443,6 +4616,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step8.strangle.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step8.strangle.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4450,6 +4624,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step8.strangle.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step8.strangle.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4475,6 +4650,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step8.beaten.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step8.beaten.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4482,6 +4658,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step8.beaten.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step8.beaten.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4507,6 +4684,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step8.jealous.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step8.jealous.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4514,6 +4692,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step8.jealous.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step8.jealous.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4539,6 +4718,7 @@
           {
             "key": "yes",
             "text": "{{anc_counselling_treatment.step8.believe_kill.options.yes.text}}",
+            "translation_text": "anc_counselling_treatment.step8.believe_kill.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4546,6 +4726,7 @@
           {
             "key": "no",
             "text": "{{anc_counselling_treatment.step8.believe_kill.options.no.text}}",
+            "translation_text": "anc_counselling_treatment.step8.believe_kill.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4572,6 +4753,7 @@
           {
             "key": "care_health_facility",
             "text": "{{anc_counselling_treatment.step8.ipv_referrals.options.care_health_facility.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_referrals.options.care_health_facility.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4579,6 +4761,7 @@
           {
             "key": "crisis_intervention",
             "text": "{{anc_counselling_treatment.step8.ipv_referrals.options.crisis_intervention.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_referrals.options.crisis_intervention.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4586,6 +4769,7 @@
           {
             "key": "police",
             "text": "{{anc_counselling_treatment.step8.ipv_referrals.options.police.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_referrals.options.police.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4593,6 +4777,7 @@
           {
             "key": "shelter",
             "text": "{{anc_counselling_treatment.step8.ipv_referrals.options.shelter.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_referrals.options.shelter.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4600,6 +4785,7 @@
           {
             "key": "legal_aid",
             "text": "{{anc_counselling_treatment.step8.ipv_referrals.options.legal_aid.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_referrals.options.legal_aid.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4607,6 +4793,7 @@
           {
             "key": "child_protection",
             "text": "{{anc_counselling_treatment.step8.ipv_referrals.options.child_protection.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_referrals.options.child_protection.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4614,6 +4801,7 @@
           {
             "key": "livelihood_support",
             "text": "{{anc_counselling_treatment.step8.ipv_referrals.options.livelihood_support.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_referrals.options.livelihood_support.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4621,6 +4809,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step8.ipv_referrals.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step8.ipv_referrals.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -4674,6 +4863,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step9.ifa_high_prev.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_high_prev.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4681,6 +4871,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step9.ifa_high_prev.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_high_prev.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4736,6 +4927,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step9.ifa_high_prev_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_high_prev_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4743,6 +4935,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step9.ifa_high_prev_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_high_prev_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4793,6 +4986,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step9.ifa_low_prev.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_low_prev.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4800,6 +4994,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step9.ifa_low_prev.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_low_prev.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4855,6 +5050,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step9.ifa_low_prev_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_low_prev_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4862,6 +5058,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step9.ifa_low_prev_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_low_prev_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4912,6 +5109,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step9.ifa_weekly.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_weekly.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4919,6 +5117,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step9.ifa_weekly.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_weekly.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4950,6 +5149,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step9.ifa_weekly_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_weekly_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -4957,6 +5157,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step9.ifa_weekly_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step9.ifa_weekly_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5023,6 +5224,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step9.calcium_supp.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.calcium_supp.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5030,6 +5232,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step9.calcium_supp.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.calcium_supp.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5061,6 +5264,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step9.calcium_supp_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step9.calcium_supp_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5068,6 +5272,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step9.calcium_supp_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step9.calcium_supp_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5135,6 +5340,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step9.vita_supp.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.vita_supp.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5142,6 +5348,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step9.vita_supp.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step9.vita_supp.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5173,6 +5380,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step9.vita_supp_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step9.vita_supp_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5180,6 +5388,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step9.vita_supp_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step9.vita_supp_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5251,6 +5460,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step10.deworm.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.deworm.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5258,6 +5468,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step10.deworm.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.deworm.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5313,6 +5524,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step10.deworm_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step10.deworm_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5320,6 +5532,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step10.deworm_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step10.deworm_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5379,6 +5592,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step10.iptp_sp1.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp1.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5386,6 +5600,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step10.iptp_sp1.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp1.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5431,6 +5646,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step10.iptp_sp2.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp2.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5438,6 +5654,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step10.iptp_sp2.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp2.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5483,6 +5700,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step10.iptp_sp3.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp3.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5490,6 +5708,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step10.iptp_sp3.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp3.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5552,6 +5771,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step10.iptp_sp_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5559,6 +5779,7 @@
           {
             "key": "stock_out",
             "text": "{{anc_counselling_treatment.step10.iptp_sp_notdone.options.stock_out.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp_notdone.options.stock_out.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5566,6 +5787,7 @@
           {
             "key": "expired",
             "text": "{{anc_counselling_treatment.step10.iptp_sp_notdone.options.expired.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp_notdone.options.expired.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165299AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5573,6 +5795,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step10.iptp_sp_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step10.iptp_sp_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5634,6 +5857,7 @@
           {
             "key": "done",
             "text": "{{anc_counselling_treatment.step10.malaria_counsel.options.done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.malaria_counsel.options.done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5641,6 +5865,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step10.malaria_counsel.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step10.malaria_counsel.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5668,6 +5893,7 @@
           {
             "key": "referred_instead",
             "text": "{{anc_counselling_treatment.step10.malaria_counsel_notdone.options.referred_instead.text}}",
+            "translation_text": "anc_counselling_treatment.step10.malaria_counsel_notdone.options.referred_instead.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1648AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5675,6 +5901,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step10.malaria_counsel_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step10.malaria_counsel_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5721,6 +5948,7 @@
           {
             "key": "done_today",
             "text": "{{anc_counselling_treatment.step11.tt1_date.options.done_today.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt1_date.options.done_today.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5728,6 +5956,7 @@
           {
             "key": "done_earlier",
             "text": "{{anc_counselling_treatment.step11.tt1_date.options.done_earlier.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt1_date.options.done_earlier.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160699AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5735,6 +5964,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step11.tt1_date.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt1_date.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5837,6 +6067,7 @@
           {
             "key": "done_today",
             "text": "{{anc_counselling_treatment.step11.tt2_date.options.done_today.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt2_date.options.done_today.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5844,6 +6075,7 @@
           {
             "key": "done_earlier",
             "text": "{{anc_counselling_treatment.step11.tt2_date.options.done_earlier.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt2_date.options.done_earlier.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160699AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5851,6 +6083,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step11.tt2_date.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt2_date.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5931,6 +6164,7 @@
           {
             "key": "vaccine_available",
             "text": "{{anc_counselling_treatment.step11.tt_dose_notdone.options.vaccine_available.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt_dose_notdone.options.vaccine_available.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5938,6 +6172,7 @@
           {
             "key": "woman_is_ill",
             "text": "{{anc_counselling_treatment.step11.tt_dose_notdone.options.woman_is_ill.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt_dose_notdone.options.woman_is_ill.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160585AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5945,6 +6180,7 @@
           {
             "key": "woman_refused",
             "text": "{{anc_counselling_treatment.step11.tt_dose_notdone.options.woman_refused.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt_dose_notdone.options.woman_refused.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "127750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5952,6 +6188,7 @@
           {
             "key": "allergies",
             "text": "{{anc_counselling_treatment.step11.tt_dose_notdone.options.allergies.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt_dose_notdone.options.allergies.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "141760AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -5959,6 +6196,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step11.tt_dose_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step11.tt_dose_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6005,6 +6243,7 @@
           {
             "key": "done_today",
             "text": "{{anc_counselling_treatment.step11.flu_date.options.done_today.text}}",
+            "translation_text": "anc_counselling_treatment.step11.flu_date.options.done_today.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6012,6 +6251,7 @@
           {
             "key": "done_earlier",
             "text": "{{anc_counselling_treatment.step11.flu_date.options.done_earlier.text}}",
+            "translation_text": "anc_counselling_treatment.step11.flu_date.options.done_earlier.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160699AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6019,6 +6259,7 @@
           {
             "key": "not_done",
             "text": "{{anc_counselling_treatment.step11.flu_date.options.not_done.text}}",
+            "translation_text": "anc_counselling_treatment.step11.flu_date.options.not_done.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6081,6 +6322,7 @@
           {
             "key": "vaccine_available",
             "text": "{{anc_counselling_treatment.step11.flu_dose_notdone.options.vaccine_available.text}}",
+            "translation_text": "anc_counselling_treatment.step11.flu_dose_notdone.options.vaccine_available.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6088,6 +6330,7 @@
           {
             "key": "woman_is_ill",
             "text": "{{anc_counselling_treatment.step11.flu_dose_notdone.options.woman_is_ill.text}}",
+            "translation_text": "anc_counselling_treatment.step11.flu_dose_notdone.options.woman_is_ill.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160585AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6095,6 +6338,7 @@
           {
             "key": "woman_refused",
             "text": "{{anc_counselling_treatment.step11.flu_dose_notdone.options.woman_refused.text}}",
+            "translation_text": "anc_counselling_treatment.step11.flu_dose_notdone.options.woman_refused.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "127750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6102,6 +6346,7 @@
           {
             "key": "allergies",
             "text": "{{anc_counselling_treatment.step11.flu_dose_notdone.options.allergies.text}}",
+            "translation_text": "anc_counselling_treatment.step11.flu_dose_notdone.options.allergies.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "141760AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6109,6 +6354,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step11.flu_dose_notdone.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step11.flu_dose_notdone.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -6178,6 +6424,7 @@
           {
             "key": "none",
             "text": "{{anc_counselling_treatment.step12.prevention_measures.options.none.text}}",
+            "translation_text": "anc_counselling_treatment.step12.prevention_measures.options.none.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -6186,6 +6433,7 @@
           {
             "key": "mosquito_net",
             "text": "{{anc_counselling_treatment.step12.prevention_measures.options.mosquito_net.text}}",
+            "translation_text": "anc_counselling_treatment.step12.prevention_measures.options.mosquito_net.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -6193,6 +6441,7 @@
           {
             "key": "iron_and_foric_acid",
             "text": "{{anc_counselling_treatment.step12.prevention_measures.options.iron_and_foric_acid.text}}",
+            "translation_text": "anc_counselling_treatment.step12.prevention_measures.options.iron_and_foric_acid.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -6200,6 +6449,7 @@
           {
             "key": "calcium",
             "text": "{{anc_counselling_treatment.step12.prevention_measures.options.calcium.text}}",
+            "translation_text": "anc_counselling_treatment.step12.prevention_measures.options.calcium.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -6207,6 +6457,7 @@
           {
             "key": "mebendazole ",
             "text": "{{anc_counselling_treatment.step12.prevention_measures.options.mebendazole.text}}",
+            "translation_text": "anc_counselling_treatment.step12.prevention_measures.options.mebendazole.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -6214,6 +6465,7 @@
           {
             "key": "tetanos",
             "text": "{{anc_counselling_treatment.step12.prevention_measures.options.tetanos.text}}",
+            "translation_text": "anc_counselling_treatment.step12.prevention_measures.options.tetanos.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -6221,6 +6473,7 @@
           {
             "key": "other",
             "text": "{{anc_counselling_treatment.step12.prevention_measures.options.other.text}}",
+            "translation_text": "anc_counselling_treatment.step12.prevention_measures.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""

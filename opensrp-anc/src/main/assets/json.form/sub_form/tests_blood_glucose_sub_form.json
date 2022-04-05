@@ -13,6 +13,7 @@
         {
           "key": "done_today",
           "text": "{{tests_blood_glucose_sub_form.step1.glucose_test_status.options.done_today.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.glucose_test_status.options.done_today.text",
           "type": "done_today",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -21,6 +22,7 @@
         {
           "key": "done_earlier",
           "text": "{{tests_blood_glucose_sub_form.step1.glucose_test_status.options.done_earlier.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.glucose_test_status.options.done_earlier.text",
           "type": "done_earlier",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -29,6 +31,7 @@
         {
           "key": "ordered",
           "text": "{{tests_blood_glucose_sub_form.step1.glucose_test_status.options.ordered.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.glucose_test_status.options.ordered.text",
           "type": "ordered",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -37,6 +40,7 @@
         {
           "key": "not_done",
           "text": "{{tests_blood_glucose_sub_form.step1.glucose_test_status.options.not_done.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.glucose_test_status.options.not_done.text",
           "type": "not_done",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -67,6 +71,7 @@
         {
           "key": "stock_out",
           "text": "{{tests_blood_glucose_sub_form.step1.blood_glucose_test_notdone.options.stock_out.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.blood_glucose_test_notdone.options.stock_out.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -74,6 +79,7 @@
         {
           "key": "expired_stock",
           "text": "{{tests_blood_glucose_sub_form.step1.blood_glucose_test_notdone.options.expired_stock.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.blood_glucose_test_notdone.options.expired_stock.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -81,6 +87,7 @@
         {
           "key": "other",
           "text": "{{tests_blood_glucose_sub_form.step1.blood_glucose_test_notdone.options.other.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.blood_glucose_test_notdone.options.other.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -199,6 +206,7 @@
         {
           "key": "fasting_plasma",
           "text": "{{tests_blood_glucose_sub_form.step1.glucose_test_type.options.fasting_plasma.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.glucose_test_type.options.fasting_plasma.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "160053AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -206,6 +214,7 @@
         {
           "key": "ogtt_75",
           "text": "{{tests_blood_glucose_sub_form.step1.glucose_test_type.options.ogtt_75.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.glucose_test_type.options.ogtt_75.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -213,6 +222,7 @@
         {
           "key": "random_plasma",
           "text": "{{tests_blood_glucose_sub_form.step1.glucose_test_type.options.random_plasma.text}}",
+          "translation_text": "tests_blood_glucose_sub_form.step1.glucose_test_type.options.random_plasma.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "887AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
