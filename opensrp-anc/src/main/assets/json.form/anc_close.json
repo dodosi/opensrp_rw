@@ -61,6 +61,7 @@
           {
             "key": "live_birth",
             "text": "{{anc_close.step1.anc_close_reason.options.live_birth.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.live_birth.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "151849AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -68,6 +69,7 @@
           {
             "key": "stillbirth",
             "text": "{{anc_close.step1.anc_close_reason.options.stillbirth.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.stillbirth.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "125872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -75,6 +77,7 @@
           {
             "key": "miscarriage",
             "text": "{{anc_close.step1.anc_close_reason.options.miscarriage.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.miscarriage.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "48AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -82,6 +85,7 @@
           {
             "key": "abortion",
             "text": "{{anc_close.step1.anc_close_reason.options.abortion.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.abortion.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "50AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -89,6 +93,7 @@
           {
             "key": "woman_died",
             "text": "{{anc_close.step1.anc_close_reason.options.woman_died.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.woman_died.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "",
             "openmrs_entity_id": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -96,6 +101,7 @@
           {
             "key": "moved_away",
             "text": "{{anc_close.step1.anc_close_reason.options.moved_away.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.moved_away.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5240AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -103,6 +109,7 @@
           {
             "key": "false_pregnancy",
             "text": "{{anc_close.step1.anc_close_reason.options.false_pregnancy.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.false_pregnancy.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "128299AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -110,6 +117,7 @@
           {
             "key": "lost_to_follow_up",
             "text": "{{anc_close.step1.anc_close_reason.options.lost_to_follow_up.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.lost_to_follow_up.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -117,6 +125,7 @@
           {
             "key": "wrong_entry",
             "text": "{{anc_close.step1.anc_close_reason.options.wrong_entry.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.wrong_entry.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165246AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -124,6 +133,7 @@
           {
             "key": "other",
             "text": "{{anc_close.step1.anc_close_reason.options.other.text}}",
+            "translation_text": "anc_close.step1.anc_close_reason.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -167,6 +177,7 @@
           {
             "key": "health_facility",
             "text": "{{anc_close.step1.delivery_place.options.health_facility.text}}",
+            "translation_text": "anc_close.step1.delivery_place.options.health_facility.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1588AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -174,6 +185,7 @@
           {
             "key": "home",
             "text": "{{anc_close.step1.delivery_place.options.home.text}}",
+            "translation_text": "anc_close.step1.delivery_place.options.home.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -181,6 +193,7 @@
           {
             "key": "other",
             "text": "{{anc_close.step1.delivery_place.options.other.text}}",
+            "translation_text": "anc_close.step1.delivery_place.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -229,6 +242,7 @@
           {
             "key": "normal",
             "text": "{{anc_close.step1.delivery_mode.options.normal.text}}",
+            "translation_text": "anc_close.step1.delivery_mode.options.normal.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -236,6 +250,7 @@
           {
             "key": "forceps_or_vacuum",
             "text": "{{anc_close.step1.delivery_mode.options.forceps_or_vacuum.text}}",
+            "translation_text": "anc_close.step1.delivery_mode.options.forceps_or_vacuum.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "118159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -243,6 +258,7 @@
           {
             "key": "c_section",
             "text": "{{anc_close.step1.delivery_mode.options.c_section.text}}",
+            "translation_text": "anc_close.step1.delivery_mode.options.c_section.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -303,6 +319,7 @@
           {
             "key": "5min",
             "text": "{{anc_close.step1.apgar_score.options.5min.text}}",
+            "translation_text": "anc_close.step1.apgar_score.options.5min.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -310,6 +327,7 @@
           {
             "key": "10min",
             "text": "{{anc_close.step1.apgar_score.options.10min.text}}",
+            "translation_text": "anc_close.step1.apgar_score.options.10min.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -317,6 +335,7 @@
           {
             "key": "resuscitation",
             "text": "{{anc_close.step1.apgar_score.options.resuscitation.text}}",
+            "translation_text": "anc_close.step1.apgar_score.options.resuscitation.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -347,6 +366,7 @@
           {
             "key": "no",
             "text": "{{anc_close.step1.died_before24hrs.options.no.text}}",
+            "translation_text": "anc_close.step1.died_before24hrs.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -354,6 +374,7 @@
           {
             "key": "yes",
             "text": "{{anc_close.step1.died_before24hrs.options.yes.text}}",
+            "translation_text": "anc_close.step1.died_before24hrs.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -384,6 +405,7 @@
           {
             "key": "no",
             "text": "{{anc_close.step1.baby_fed_in30min.options.no.text}}",
+            "translation_text": "anc_close.step1.baby_fed_in30min.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -391,6 +413,7 @@
           {
             "key": "yes",
             "text": "{{anc_close.step1.baby_fed_in30min.options.yes.text}}",
+            "translation_text": "anc_close.step1.baby_fed_in30min.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": ""
@@ -420,6 +443,7 @@
           {
             "key": "yes",
             "text": "{{anc_close.step1.exclusive_bf.options.yes.text}}",
+            "translation_text": "anc_close.step1.exclusive_bf.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -427,6 +451,7 @@
           {
             "key": "no",
             "text": "{{anc_close.step1.exclusive_bf.options.no.text}}",
+            "translation_text": "anc_close.step1.exclusive_bf.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -614,6 +639,7 @@
           {
             "key": "None",
             "text": "{{anc_close.step1.delivery_complications.options.None.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.None.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -621,6 +647,7 @@
           {
             "key": "Postpartum haemorrhage",
             "text": "{{anc_close.step1.delivery_complications.options.Postpartum_haemorrhage.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Postpartum_haemorrhage.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "230AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -628,6 +655,7 @@
           {
             "key": "Antepartum haemorrhage",
             "text": "{{anc_close.step1.delivery_complications.options.Antepartum_haemorrhage.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Antepartum_haemorrhage.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -635,6 +663,7 @@
           {
             "key": "Placenta praevia",
             "text": "{{anc_close.step1.delivery_complications.options.Placenta_praevia.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Placenta_praevia.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "114127AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -642,6 +671,7 @@
           {
             "key": "Placental abruption",
             "text": "{{anc_close.step1.delivery_complications.options.Placental_abruption.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Placental_abruption.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "130108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -649,6 +679,7 @@
           {
             "key": "Cord prolapse",
             "text": "{{anc_close.step1.delivery_complications.options.Cord_prolapse.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Cord_prolapse.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "128420AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -656,6 +687,7 @@
           {
             "key": "Obstructed labour",
             "text": "{{anc_close.step1.delivery_complications.options.Obstructed_labour.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Obstructed_labour.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "141596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -663,6 +695,7 @@
           {
             "key": "Abnormal presentation",
             "text": "{{anc_close.step1.delivery_complications.options.Abnormal_presentation.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Abnormal_presentation.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "150862AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -670,6 +703,7 @@
           {
             "key": "Pre-eclampsia",
             "text": "{{anc_close.step1.delivery_complications.options.Pre_eclampsia.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Pre_eclampsia.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -677,6 +711,7 @@
           {
             "key": "Eclampsia",
             "text": "{{anc_close.step1.delivery_complications.options.Eclampsia.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Eclampsia.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "129251AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -684,6 +719,7 @@
           {
             "key": "Perineal tear (2nd, 3rd or 4th degree)",
             "text": "{{anc_close.step1.delivery_complications.options.Perineal_tear_2nd_3rd_or_4th_degree.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Perineal_tear_2nd_3rd_or_4th_degree.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165247AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -691,6 +727,7 @@
           {
             "key": "Other",
             "text": "{{anc_close.step1.delivery_complications.options.Other.text}}",
+            "translation_text": "anc_close.step1.delivery_complications.options.Other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -785,6 +822,7 @@
           {
             "key": "normal",
             "text": "{{anc_close.step1.death_cause.options.normal.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.normal.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -792,6 +830,7 @@
           {
             "key": "abortion_related_complications",
             "text": "{{anc_close.step1.death_cause.options.abortion_related_complications.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.abortion_related_complications.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "122299AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -799,6 +838,7 @@
           {
             "key": "obstructed_labour",
             "text": "{{anc_close.step1.death_cause.options.obstructed_labour.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.obstructed_labour.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "141596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -806,6 +846,7 @@
           {
             "key": "pre_eclampsia",
             "text": "{{anc_close.step1.death_cause.options.pre_eclampsia.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.pre_eclampsia.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "129251AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -813,6 +854,7 @@
           {
             "key": "eclampsia",
             "text": "{{anc_close.step1.death_cause.options.eclampsia.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.eclampsia.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "118744AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -820,6 +862,7 @@
           {
             "key": "postpartum_haemorrhage",
             "text": "{{anc_close.step1.death_cause.options.postpartum_haemorrhage.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.postpartum_haemorrhage.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "230AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -827,6 +870,7 @@
           {
             "key": "antepartum_haemorrhage",
             "text": "{{anc_close.step1.death_cause.options.antepartum_haemorrhage.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.antepartum_haemorrhage.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -834,6 +878,7 @@
           {
             "key": "placental_abruption",
             "text": "{{anc_close.step1.death_cause.options.placental_abruption.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.placental_abruption.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "130108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -841,6 +886,7 @@
           {
             "key": "infection",
             "text": "{{anc_close.step1.death_cause.options.infection.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.infection.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "130AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -848,6 +894,7 @@
           {
             "key": "other",
             "text": "{{anc_close.step1.death_cause.options.other.text}}",
+            "translation_text": "anc_close.step1.death_cause.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
