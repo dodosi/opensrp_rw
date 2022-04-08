@@ -79,12 +79,11 @@ public class RegisterQueryProvider {
                 getDetailsTable() + "." + DBConstantsUtils.KeyUtils.VISIT_START_DATE, getDetailsTable() + "." + DBConstantsUtils.KeyUtils.RED_FLAG_COUNT,
                 getDetailsTable() + "." + DBConstantsUtils.KeyUtils.YELLOW_FLAG_COUNT, getDetailsTable() + "." + DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE,
                 getDetailsTable() + "." + DBConstantsUtils.KeyUtils.COHABITANTS, getDemographicTable() + "." + DBConstantsUtils.KeyUtils.RELATIONAL_ID,
-                getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.PROVINCE, getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.DISTRICT,
-                getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.SUB_DISTRICT, getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.FACILITY,
-                getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.VILLAGE ,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.INSURANCE,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.VILLAGE,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.UBUDEHE_CATEGORY,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.NATIONAL_ID,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.DOCUMENT_TYPE,
-                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.PASSPORT_ID,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.OTHER_ID };
-
+                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.INSURANCE,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.VILLAGE,
+                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.PROVINCE,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.DISTRICT,
+                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.SECTOR,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.CELL,
+                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.UBUDEHE_CATEGORY,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.NATIONAL_ID,
+                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.DOCUMENT_TYPE,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.PASSPORT_ID,
+                getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.OTHER_ID};
     }
 }

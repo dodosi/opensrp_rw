@@ -24,6 +24,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.smartregister.AllConstants;
 import org.smartregister.anc.library.AncLibrary;
@@ -241,6 +242,48 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
                     JSONObject form = new JSONObject(jsonString);
                     switch (form.getString(ANCJsonFormUtils.ENCOUNTER_TYPE)) {
                         case ConstantsUtils.EventTypeUtils.REGISTRATION:
+                            //--------------------------------Eric code start here----------------------
+
+                            JSONObject reg_form = new JSONObject(jsonString);
+                            JSONObject step1=reg_form.getJSONObject("step1");
+                            JSONArray feilds=step1.getJSONArray("fields");
+
+                            String province="";
+                            String district="";
+                            String sector="";
+                            String cell ="";
+                            for (int i=0;i<feilds.length();i++){
+
+
+                                if (feilds.getJSONObject(i).getString("key").equals("address_number")){
+
+                                    String[] locationArrays=feilds.getJSONObject(i).getString("value").split(",");
+                                    province=locationArrays[0].substring(2,locationArrays[0].length()-1);;
+                                    district=locationArrays[1].substring(1,locationArrays[1].length()-1);
+                                    sector=locationArrays[2].substring(1,locationArrays[2].length()-1);
+                                    cell=locationArrays[3].substring(1,locationArrays[3].length()-2);
+                                }
+                                if (feilds.getJSONObject(i).getString("key").equals("province")){
+                                    feilds.getJSONObject(i).put("value",province);
+                                }
+
+                                if (feilds.getJSONObject(i).getString("key").equals("district")){
+                                    feilds.getJSONObject(i).put("value",district);
+                                }
+                                if (feilds.getJSONObject(i).getString("key").equals("sector")){
+                                    feilds.getJSONObject(i).put("value",sector);
+                                }
+                                if (feilds.getJSONObject(i).getString("key").equals("cell")){
+                                    feilds.getJSONObject(i).put("value",cell);
+                                }
+
+
+                            }
+                            step1.put("fields",feilds);
+                            reg_form.put("step1",step1);
+                            jsonString=reg_form.toString();
+
+//                         ---------------- Eric code ends here--------------------
                             ((RegisterContract.Presenter) presenter).saveRegistrationForm(jsonString, false);
                             break;
                         case ConstantsUtils.EventTypeUtils.CLOSE:
