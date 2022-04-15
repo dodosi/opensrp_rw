@@ -77,9 +77,9 @@ public class LoginActivity extends BaseLoginActivity implements BaseLoginContrac
     }
 
     private void gotToHomeRegister(boolean remote) {
-        Intent intent = new Intent(this, BaseHomeRegisterActivity.class);
+//        Intent intent = new Intent(this, BaseHomeRegisterActivity.class);
         //ukudox stuff
-        //Intent intent = new Intent(this, UkudoxActivity.class);
+        Intent intent = new Intent(this, UkudoxActivity.class);
         intent.putExtra(ConstantsUtils.IntentKeyUtils.IS_REMOTE_LOGIN, remote);
         startActivity(intent);
     }

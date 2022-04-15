@@ -8,21 +8,28 @@
 
     <RelativeLayout
         android:id="@+id/top_left_layout"
-        android:layout_width="35dp"
+        android:layout_width="100dp"
         android:layout_height="35dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_centerVertical="true">
 
         <ImageView
-            android:id="@+id/scanQrCode"
+            android:id="@+id/dash"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_margin="3dp"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:gravity="center"
+            android:src="@drawable/ic_dashboard" />
+        <ImageView
+            android:id="@+id/scanQrCode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/dash"
+            android:layout_margin="3dp"
             android:src="@drawable/ic_icon_qr_code" />
 
         <ImageView
@@ -34,6 +41,7 @@
             android:gravity="center"
             android:src="@drawable/ic_action_menu"
             android:visibility="gone" />
+
 
     </RelativeLayout>
 
