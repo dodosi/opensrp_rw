@@ -58,9 +58,10 @@ public class DashboardRepository extends BaseRepository {
             String next_contact_date=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE));
 
 
-            DateTimeFormatter df = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+            DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
             LocalDate  d1 = LocalDate.parse(next_contact_date, df);
-                Log.i("TEST", "getDueContactDash: "+d1.getMonth().toString());
+                Log.i("TEST", "getDueContactDash: "+d1.toString());
+            Log.i("TEST", "getDueContactDash: "+next_contact_date);
                 count++;
 
 
