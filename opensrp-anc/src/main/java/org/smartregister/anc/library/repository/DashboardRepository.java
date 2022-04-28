@@ -42,13 +42,29 @@ public class DashboardRepository extends BaseRepository {
     public static final String VALUE = "value";
     private static final String[] projection = getRegisterQueryProvider().mainColumns();
 
-    public static long getDueContactDash(String datetoday) {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int getDueContactDash(String datetoday) {
 
             SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
-            String query = "SELECT COUNT(*) FROM " + getRegisterQueryProvider().getDetailsTable() + " WHERE " + DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE+ "= '"+datetoday+"'";
-        SQLiteStatement statement = db.compileStatement(query);
-        long count = statement.simpleQueryForLong();
+//            String query = "SELECT COUNT(*) FROM " + getRegisterQueryProvider().getDetailsTable() + " WHERE " + DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE+ "= '"+datetoday+"'";
+//        SQLiteStatement statement = db.compileStatement(query);
+//        long count = statement.simpleQueryForLong();
+//        return count;
+        String query = "SELECT * FROM " + getRegisterQueryProvider().getDetailsTable();
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        while (cursor.moveToNext()){
+            String next_contact_date=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE));
+
+
+            DateTimeFormatter df = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+            LocalDate  d1 = LocalDate.parse(next_contact_date, df);
+                Log.i("TEST", "getDueContactDash: "+d1.getMonth().toString());
+                count++;
+
+
+        }
         return count;
     }
     public static int getWomanReferred(String dateStart, String dateEnd) {
