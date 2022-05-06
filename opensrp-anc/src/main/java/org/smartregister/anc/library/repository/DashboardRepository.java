@@ -43,7 +43,7 @@ public class DashboardRepository extends BaseRepository {
     private static final String[] projection = getRegisterQueryProvider().mainColumns();
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static int getDueContactDash(String datetoday) {
+    public static int getDueContactDash(LocalDate datetoday) {
 
             SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
@@ -59,35 +59,78 @@ public class DashboardRepository extends BaseRepository {
 
 
             DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
-            LocalDate  d1 = LocalDate.parse(next_contact_date, df);
-                Log.i("TEST", "getDueContactDash: "+d1.toString());
-            Log.i("TEST", "getDueContactDash: "+next_contact_date);
+            LocalDate  d1=null;
+            if(next_contact_date.charAt(0)=='-'){
+                d1 = LocalDate.parse(next_contact_date.substring(1), df);
+            }
+            else{
+                d1 = LocalDate.parse(next_contact_date, df);
+            }
+
+            if(datetoday.isEqual(d1) || datetoday.isAfter(d1)) {
                 count++;
+            }else{
+
+            }
 
 
         }
         return count;
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static int getWomanReferred(String dateStart, String dateEnd) {
 
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE " + KEY + "= 'referred_hosp'";
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
       Cursor   cursor = db.rawQuery(query, null);
       int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
       while (cursor.moveToNext()){
-         try {
-              JSONObject val = new JSONObject(cursor.getString(4));
-
-              if (val.get("value").toString().equals("yes")) { count++;}
-         } catch (JSONException e) {
-              e.printStackTrace();
+          if (cursor.getString(3).equals("contact_date")){
+              LocalDate d=LocalDate.parse(cursor.getString(4));
+              if(d.isAfter(start) && d.isBefore(end)) {
+                  if(isReferred(cursor.getString(2))){
+                      count++;
+                  }
+              }
           }
 
       }
         return count;
     }
-    public static long getProcessedVisits(String datet) {
+
+    private static boolean isReferred(String woman_id) {
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE base_entity_id= '"+woman_id+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()){
+            try {
+                if (cursor.getString(3).equals("referred_hosp")) {
+
+
+                JSONObject val = new JSONObject(cursor.getString(4));
+
+                if (val.get(VALUE).toString().equals("yes")) {
+
+                    return true;
+                }
+                else {
+                    return  false;
+                }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return false;
+    }
+
+    public static long getProcessedVisits(LocalDate datet) {
 
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
@@ -97,21 +140,48 @@ public class DashboardRepository extends BaseRepository {
         long count = statement.simpleQueryForLong();
         return count;
     }
-    public static long getWomanWithDangerSing(String dateStart, String dateEnd){
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int getWomanWithDangerSing(String dateStart, String dateEnd) {
 
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
-        String query = "SELECT * FROM " + getRegisterQueryProvider().getDetailsTable();
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
         Cursor   cursor = db.rawQuery(query, null);
         int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
         while (cursor.moveToNext()){
-              String r=cursor.getString(18);
-             if (r!="0" && r!= null){
-                 count++;
-             }
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(hasDangerSign(cursor.getString(2))){
+                        count++;
+                    }
+                }
+            }
 
         }
         return count;
+    }
+    public static boolean hasDangerSign(String woman_id){
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + getRegisterQueryProvider().getDetailsTable()+" WHERE id= '"+woman_id+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+
+        while (cursor.moveToNext()){
+              String r=cursor.getString(18);
+             if (!"0".equals(r) && r!= null){
+                 return true;
+             }else{
+                 return false;
+             }
+
+        }
+
+        return false;
     }
     protected static Repository getMasterRepository() {
         return DrishtiApplication.getInstance().getRepository();

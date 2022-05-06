@@ -60,15 +60,16 @@ public class UkudoxActivity extends AppCompatActivity {
         super.onResume();
         attachLayoutContentAdapter();
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void setUpViews() {
         mToolbar = findViewById(R.id.library_toolbar);
         contentLayout = findViewById(R.id.layout_attach_recycler_view);
         initDatePicker();
         initDatePicker2();
         dateButton = findViewById(R.id.datePickerButton);
-        dateButton.setText(getTodaysDate());
+        dateButton.setText(getDate().minusWeeks(1).toString());
         dateButton2 = findViewById(R.id.datePickerButton2);
-        dateButton2.setText(getTodaysDate());
+        dateButton2.setText(getDate().toString());
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,6 +118,9 @@ public class UkudoxActivity extends AppCompatActivity {
     private  List<HomeItem> getHomeContent(){
         List<HomeItem> homeItems= new ArrayList<>();
 
+        String d1=dateButton.getText().toString().equals("") ? getDate().minusWeeks(1).toString():dateButton.getText().toString();
+        String d2=dateButton2.getText().toString().equals("") ? getDate().toString():dateButton2.getText().toString();
+
         HomeItem dueContactToday=new HomeItem();
         dueContactToday.setTitle(getString(R.string.due_contact_today));
         dueContactToday.setType("1");
@@ -131,7 +135,7 @@ public class UkudoxActivity extends AppCompatActivity {
         refered.setEndDate(dateButton2.getText().toString());
         refered.setStartDate(dateButton.getText().toString());
         refered.setBackground(R.drawable.quick_check_bg);
-        refered.setNumber( DashboardRepository.getWomanReferred("",""));
+        refered.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
 
         homeItems.add(refered);
 
@@ -140,7 +144,7 @@ public class UkudoxActivity extends AppCompatActivity {
         dangersigns.setType("3");
         dangersigns.setEndDate(dateButton2.getText().toString());
         dangersigns.setStartDate(dateButton.getText().toString());
-        dangersigns.setNumber((int) DashboardRepository.getWomanWithDangerSing("",""));
+        dangersigns.setNumber((int) DashboardRepository.getWomanWithDangerSing(dateButton.getText().toString(),dateButton2.getText().toString()));
         dangersigns.setBackground(R.drawable.quick_check_bg);
 
         homeItems.add(dangersigns);
@@ -249,8 +253,8 @@ public class UkudoxActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private String getDate(){
+    private LocalDate getDate(){
         LocalDate d= LocalDate.now();
-        return d.toString();
+        return d;
     }
 }

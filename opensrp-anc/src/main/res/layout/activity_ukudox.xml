@@ -42,14 +42,14 @@
             android:textColor="@color/black"
             style="?android:spinnerStyle"
             android:layout_marginTop="10dp"/>
-        <Button
-            android:id="@+id/Buttonfilter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Filter"
-            android:background="@color/customAppThemeBlue"
-            android:textColor="@color/white"
-            android:layout_marginTop="10dp"/>
+<!--        <Button-->
+<!--            android:id="@+id/Buttonfilter"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Filter"-->
+<!--            android:background="@color/customAppThemeBlue"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:layout_marginTop="10dp"/>-->
 
     </LinearLayout>
 
