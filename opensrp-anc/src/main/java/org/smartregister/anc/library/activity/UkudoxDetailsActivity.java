@@ -20,6 +20,7 @@ import org.smartregister.anc.library.custom.DashClientAdapter;
 import org.smartregister.anc.library.repository.DashboardRepository;
 import org.w3c.dom.Text;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +57,7 @@ public class UkudoxDetailsActivity extends AppCompatActivity {
         List<CustomClient> clientList=new ArrayList<>();
         switch (type){
             case "1":
-                clientList=DashboardRepository.getWomanProfileDetails("2022-04-14");
+                clientList=DashboardRepository.getWomanProfileDetails(getDate());
                 break;
 
             default:
@@ -90,5 +91,10 @@ public class UkudoxDetailsActivity extends AppCompatActivity {
 //                startActivity(intent);
             }
         }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private LocalDate getDate(){
+        LocalDate d= LocalDate.now();
+        return d;
     }
 }

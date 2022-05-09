@@ -38,6 +38,7 @@ import timber.log.Timber;
 public class DashboardRepository extends BaseRepository {
 
     public static final String TABLE_PREVIOUS_CONTACT = "previous_contact";
+    public static final String TABLE_EC_CLIENT = "ec_client";
     public static final String KEY = "key";
     public static final String VALUE = "value";
     private static final String[] projection = getRegisterQueryProvider().mainColumns();
@@ -68,7 +69,8 @@ public class DashboardRepository extends BaseRepository {
             }
 
             if(datetoday.isEqual(d1) || datetoday.isAfter(d1)) {
-                count++;
+                if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
+                count++;}
             }else{
 
             }
@@ -77,6 +79,22 @@ public class DashboardRepository extends BaseRepository {
         }
         return count;
     }
+
+    private static boolean isAnc_Closed(String base_entity_id) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_EC_CLIENT+ " WHERE base_entity_id='" +base_entity_id+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()){
+           if (cursor.getString(cursor.getColumnIndex("date_removed"))!=null){
+               return  true;
+            }
+
+        }
+        return false;
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static int getWomanReferred(String dateStart, String dateEnd) {
 
@@ -92,7 +110,7 @@ public class DashboardRepository extends BaseRepository {
           if (cursor.getString(3).equals("contact_date")){
               LocalDate d=LocalDate.parse(cursor.getString(4));
               if(d.isAfter(start) && d.isBefore(end)) {
-                  if(isReferred(cursor.getString(2))){
+                  if(isReferred(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))){
                       count++;
                   }
               }
@@ -155,7 +173,7 @@ public class DashboardRepository extends BaseRepository {
             if (cursor.getString(3).equals("contact_date")){
                 LocalDate d=LocalDate.parse(cursor.getString(4));
                 if(d.isAfter(start) && d.isBefore(end)) {
-                    if(hasDangerSign(cursor.getString(2))){
+                    if(hasDangerSign(cursor.getString(2))&& !isAnc_Closed(cursor.getString(2))){
                         count++;
                     }
                 }
@@ -190,7 +208,7 @@ public class DashboardRepository extends BaseRepository {
         return AncLibrary.getInstance().getRegisterQueryProvider();
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static List<CustomClient> getWomanProfileDetails(String baseEntityId) {
+    public static List<CustomClient> getWomanProfileDetails(LocalDate datetoday) {
         Cursor cursor = null;
         List<CustomClient> clientList=new ArrayList<>();
 
@@ -199,14 +217,30 @@ public class DashboardRepository extends BaseRepository {
 
             String query =
                     "SELECT " + StringUtils.join(projection, ",") + " FROM " + getRegisterQueryProvider().getDemographicTable() + " join " + getRegisterQueryProvider().getDetailsTable() +
-                            " on " + getRegisterQueryProvider().getDemographicTable() + "." + DBConstantsUtils.KeyUtils.BASE_ENTITY_ID + " = " + getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.BASE_ENTITY_ID + " WHERE " +
-                            getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE + " = ?";
-            cursor = db.rawQuery(query, new String[]{baseEntityId});
+                            " on " + getRegisterQueryProvider().getDemographicTable() + "." + DBConstantsUtils.KeyUtils.BASE_ENTITY_ID + " = " + getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.BASE_ENTITY_ID ;
+//                            + " WHERE " + getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE + " = ?";
+//            cursor = db.rawQuery(query, new String[]{baseEntityId});??
+            cursor = db.rawQuery(query, null);
 
             if (cursor != null ) {
 
                 while (cursor.moveToNext()){
                     CustomClient client=new CustomClient();
+                    String next_contact_date=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE));
+                    DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+                    LocalDate  d1=null;
+                    if(next_contact_date.charAt(0)=='-'){
+                        d1 = LocalDate.parse(next_contact_date.substring(1), df);
+                    }
+                    else{
+                        d1 = LocalDate.parse(next_contact_date, df);
+                    }
+
+                    if(datetoday.isEqual(d1) || datetoday.isAfter(d1)) {
+                        if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
+
+
+
                     client.setFirstName(cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.FIRST_NAME)));
                     client.setLastName(cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.LAST_NAME)));
                     client.setAge(String.valueOf(calculateAge(cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.DOB)))));
@@ -219,6 +253,8 @@ public class DashboardRepository extends BaseRepository {
                     String yellow= y == null?  "0":  y;
                     client.setAttentionFlag(Integer.parseInt(red)+ Integer.parseInt(yellow));
                     clientList.add(client)  ;
+                        }
+                }else{}
 
             }
     }
