@@ -128,6 +128,12 @@ public class UkudoxActivity extends AppCompatActivity {
         dueContactToday.setBackground(R.drawable.profile_bg);
 
         homeItems.add(dueContactToday);
+        HomeItem processed =new HomeItem();
+        processed.setTitle(getString(R.string.home_visits));
+        processed.setType("4");
+        processed.setNumber((int) DashboardRepository.getProcessedVisits(getDate()));
+        processed.setBackground(R.drawable.profile_bg);
+        homeItems.add(processed);
 
         HomeItem refered= new HomeItem();
         refered.setTitle(getString(R.string.women_referred));
@@ -148,12 +154,43 @@ public class UkudoxActivity extends AppCompatActivity {
         dangersigns.setBackground(R.drawable.quick_check_bg);
 
         homeItems.add(dangersigns);
-        HomeItem processed =new HomeItem();
-        processed.setTitle(getString(R.string.home_visits));
-        processed.setType("4");
-        processed.setNumber((int) DashboardRepository.getProcessedVisits(getDate()));
-        processed.setBackground(R.drawable.profile_bg);
-        homeItems.add(processed);
+
+        HomeItem accompanied_by_p=new HomeItem();
+        accompanied_by_p.setTitle(getString(R.string.accompanied_by_their_partners));
+        accompanied_by_p.setType("5");
+        accompanied_by_p.setEndDate(dateButton2.getText().toString());
+        accompanied_by_p.setStartDate(dateButton.getText().toString());
+        accompanied_by_p.setBackground(R.drawable.profile_bg);
+        accompanied_by_p.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
+        homeItems.add(accompanied_by_p);
+
+        HomeItem received_vaccination=new HomeItem();
+        received_vaccination.setTitle(getString(R.string.received_vaccination));
+        received_vaccination.setType("6");
+        received_vaccination.setEndDate(dateButton2.getText().toString());
+        received_vaccination.setStartDate(dateButton.getText().toString());
+        received_vaccination.setBackground(R.drawable.profile_bg);
+        received_vaccination.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
+        homeItems.add(received_vaccination);
+
+        HomeItem received_deworming_pills =new HomeItem();
+        received_deworming_pills.setTitle(getString(R.string.received_deworming_pills));
+        received_deworming_pills.setType("7");
+        received_deworming_pills.setEndDate(dateButton2.getText().toString());
+        received_deworming_pills.setStartDate(dateButton.getText().toString());
+        received_deworming_pills.setBackground(R.drawable.profile_bg);
+        received_deworming_pills.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
+        homeItems.add(received_deworming_pills);
+
+        HomeItem teenage_pregnancies  =new HomeItem();
+        teenage_pregnancies.setTitle(getString(R.string.teenage_pregnancies));
+        teenage_pregnancies.setType("8");
+        teenage_pregnancies.setEndDate(dateButton2.getText().toString());
+        teenage_pregnancies.setStartDate(dateButton.getText().toString());
+        teenage_pregnancies.setBackground(R.drawable.profile_bg);
+        teenage_pregnancies.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
+        homeItems.add(teenage_pregnancies);
+
 
         return homeItems;
 

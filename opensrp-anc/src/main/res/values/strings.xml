@@ -466,5 +466,9 @@
     <string name="anc_dashboard">ANC DASHBOARD</string>
     <string name="anc_visits">ANC VISITS</string>
     <string name="device_to_device">Device-to-device sync</string>
+    <string name="accompanied_by_their_partners">Accompanied by their partners</string>
+    <string name="received_vaccination">Received TT vaccine</string>
+    <string name="received_deworming_pills">Received deworming pills</string>
+    <string name="teenage_pregnancies">Teenage pregnancies</string>
 
 </resources>
