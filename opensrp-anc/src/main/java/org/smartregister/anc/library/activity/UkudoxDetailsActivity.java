@@ -1,6 +1,8 @@
 package org.smartregister.anc.library.activity;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,7 +12,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +41,15 @@ public class UkudoxDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ukudox_details);
+
+        ImageView bck=(ImageView) findViewById(R.id.backwhite);
+        bck.setVisibility(View.VISIBLE);
+        bck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UkudoxDetailsActivity.this.finish();
+            }
+        });
         Intent intent=getIntent();
         title=intent.getStringExtra("title");
         number=intent.getIntExtra("number",0);
@@ -45,6 +58,17 @@ public class UkudoxDetailsActivity extends AppCompatActivity {
         endDate=intent.getStringExtra("end");
         setUpViews();
  }
+    // this event will enable the back
+    // function to the button on press
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private void setUpViews() {
 
         contentLayout = findViewById(R.id.details_recycler_view);
@@ -58,6 +82,18 @@ public class UkudoxDetailsActivity extends AppCompatActivity {
         switch (type){
             case "1":
                 clientList=DashboardRepository.getWomanProfileDetails(getDate());
+                break;
+            case "4":
+                clientList=DashboardRepository.getProcessedVisitsDetails(getDate());
+                break;
+            case "2":
+                clientList=DashboardRepository.getWomanReferredDetails(startDate,endDate);
+                break;
+            case "3":
+                clientList=DashboardRepository.getWomanWithDangerSingDetails(startDate,endDate);
+                break;
+            case"5":
+                clientList=DashboardRepository.getWomanAccompaniedWithPartnerDetails(startDate,endDate);
                 break;
 
             default:

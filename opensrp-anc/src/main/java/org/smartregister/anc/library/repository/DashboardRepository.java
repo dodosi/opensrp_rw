@@ -119,6 +119,110 @@ public class DashboardRepository extends BaseRepository {
       }
         return count;
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int getWomanAccompaniedWithPartner(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isAccompanied(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))){
+                        count++;
+                    }
+                }
+            }
+
+        }
+        return count;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int getWomanReceivedDewormingPills(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isDewormingPerfomed(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))){
+                        count++;
+                    }
+                }
+            }
+
+        }
+        return count;
+    }
+
+    private static boolean isDewormingPerfomed(String woman_id) {
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE base_entity_id= '"+woman_id+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()){
+            try {
+                if (cursor.getString(3).equals("deworming_performed")) {
+
+
+                    JSONObject val = new JSONObject(cursor.getString(4));
+
+                    if (val.get(VALUE).toString().equals("yes")) {
+
+                        return true;
+                    }
+                    else {
+                        return  false;
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return false;
+    }
+
+    private static boolean isAccompanied(String woman_id) {
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE base_entity_id= '"+woman_id+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()){
+            try {
+                if (cursor.getString(3).equals("accompanied_by_partner")) {
+
+
+                    JSONObject val = new JSONObject(cursor.getString(4));
+
+                    if (val.get(VALUE).toString().equals("yes")) {
+
+                        return true;
+                    }
+                    else {
+                        return  false;
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return false;
+    }
 
     private static boolean isReferred(String woman_id) {
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
@@ -260,6 +364,168 @@ public class DashboardRepository extends BaseRepository {
     }
 
             return clientList;
+        } catch (Exception e) {
+            Timber.e(e, "%s ==> getWomanProfileDetails()", PatientRepository.class.getCanonicalName());
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+        return null;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static List<CustomClient>getProcessedVisitsDetails(LocalDate datet) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE " + KEY + "= 'contact_date' AND " +VALUE+ "='"+datet+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+        List<CustomClient> clientList=new ArrayList<>();
+
+        while (cursor.moveToNext()){
+           clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+        }
+
+        return clientList;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static List<CustomClient> getWomanReferredDetails(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        List<CustomClient> clientList=new ArrayList<>();
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isReferred(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))){
+                        clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                    }
+                }
+            }
+
+        }
+        return clientList;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static  List<CustomClient>  getWomanWithDangerSingDetails(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        List<CustomClient> clientList=new ArrayList<>();
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(hasDangerSign(cursor.getString(2))&& !isAnc_Closed(cursor.getString(2))){
+
+                        clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                    }
+                }
+            }
+
+        }
+        return clientList;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static List<CustomClient> getWomanAccompaniedWithPartnerDetails(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        List<CustomClient> clientList=new ArrayList<>();
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isAccompanied(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))){
+                        clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                    }
+                }
+            }
+
+        }
+        return clientList;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static List<CustomClient> getWomanReceivedDewormingPillsDetails(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        List<CustomClient> clientList=new ArrayList<>();
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isDewormingPerfomed(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))){
+                        clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                    }
+                }
+            }
+
+        }
+        return clientList;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static CustomClient getDetailsList(String baseEntityId) {
+        Cursor cursor = null;
+
+        try {
+            SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+            String query =
+                    "SELECT " + StringUtils.join(projection, ",") + " FROM " + getRegisterQueryProvider().getDemographicTable() + " join " + getRegisterQueryProvider().getDetailsTable() +
+                            " on " + getRegisterQueryProvider().getDemographicTable() + "." + DBConstantsUtils.KeyUtils.BASE_ENTITY_ID + " = " + getRegisterQueryProvider().getDetailsTable() + "." + DBConstantsUtils.KeyUtils.BASE_ENTITY_ID + " WHERE " +
+                            getRegisterQueryProvider().getDemographicTable() + "." + DBConstantsUtils.KeyUtils.BASE_ENTITY_ID + " = ?";
+            cursor = db.rawQuery(query, new String[]{baseEntityId});
+            CustomClient client=new CustomClient();
+            if (cursor != null ) {
+
+                while (cursor.moveToNext()){
+                    if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
+
+                            client.setFirstName(cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.FIRST_NAME)));
+                            client.setLastName(cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.LAST_NAME)));
+                            client.setAge(String.valueOf(calculateAge(cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.DOB)))));
+                            client.setGa(cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.EDD)));
+                            client.setRegistrationId(cursor.getString(cursor.getColumnIndex("register_id")));
+                            client.setNextContactDate(cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE)));
+                            String r=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.RED_FLAG_COUNT));
+                            String red= r == null?  "0":  r;
+                            String y=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.YELLOW_FLAG_COUNT));
+                            String yellow= y == null?  "0":  y;
+                            client.setAttentionFlag(Integer.parseInt(red)+ Integer.parseInt(yellow));
+
+
+                        }
+
+                }
+            }
+
+            return client;
         } catch (Exception e) {
             Timber.e(e, "%s ==> getWomanProfileDetails()", PatientRepository.class.getCanonicalName());
         } finally {

@@ -161,7 +161,7 @@ public class UkudoxActivity extends AppCompatActivity {
         accompanied_by_p.setEndDate(dateButton2.getText().toString());
         accompanied_by_p.setStartDate(dateButton.getText().toString());
         accompanied_by_p.setBackground(R.drawable.profile_bg);
-        accompanied_by_p.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
+        accompanied_by_p.setNumber( DashboardRepository.getWomanAccompaniedWithPartner(dateButton.getText().toString(),dateButton2.getText().toString()));
         homeItems.add(accompanied_by_p);
 
         HomeItem received_vaccination=new HomeItem();
@@ -179,7 +179,7 @@ public class UkudoxActivity extends AppCompatActivity {
         received_deworming_pills.setEndDate(dateButton2.getText().toString());
         received_deworming_pills.setStartDate(dateButton.getText().toString());
         received_deworming_pills.setBackground(R.drawable.profile_bg);
-        received_deworming_pills.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
+        received_deworming_pills.setNumber( DashboardRepository.getWomanReceivedDewormingPills(dateButton.getText().toString(),dateButton2.getText().toString()));
         homeItems.add(received_deworming_pills);
 
         HomeItem teenage_pregnancies  =new HomeItem();

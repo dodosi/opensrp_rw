@@ -3,13 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="?android:attr/actionBarSize"
     android:background="@color/customAppThemeBlue">
+    <ImageView
+        android:id="@+id/backwhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/activity_library_toolbar_title"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:src="@drawable/arrow_back_white"/>
 
     <TextView
         android:id="@+id/library_toolbar_title"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/backwhite"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="@dimen/characteristics_drawable_padding"
         android:gravity="center_vertical"
