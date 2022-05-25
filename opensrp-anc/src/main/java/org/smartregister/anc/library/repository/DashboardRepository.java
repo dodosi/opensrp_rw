@@ -21,11 +21,13 @@ import org.smartregister.repository.BaseRepository;
 import org.smartregister.repository.Repository;
 import org.smartregister.view.activity.DrishtiApplication;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -305,6 +307,92 @@ public class DashboardRepository extends BaseRepository {
 
         return false;
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int getWomanWithSyphilisPositive(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isSyphilisPositive(cursor.getString(2))&& !isAnc_Closed(cursor.getString(2))){
+                        count++;
+                    }
+                }
+            }
+
+        }
+        return count;
+    }
+    private static boolean isSyphilisPositive(String woman_id) {
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE base_entity_id= '"+woman_id+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()){
+
+                if (cursor.getString(3).equals("syphilis_positive") && cursor.getString(4).equals("1")) {
+                 return  true;
+                }
+
+
+        }
+        return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int getWomanInParticularAge(String dateStart, String dateEnd,int age) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM ec_details";
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()){
+            Long dt=Long.parseLong(cursor.getString(cursor.getColumnIndex("event_date")));
+
+            DateFormat simple = new SimpleDateFormat("yyyy-MM-dd");
+            Date result = new Date(dt);
+                LocalDate d=LocalDate.parse(simple.format(result));
+
+                if(d.isAfter(start) && d.isBefore(end)) {
+
+                  if(cursor.getString(1).equals("age_calculated") ) {
+                     int ag = getWomanAge(cursor.getString(cursor.getColumnIndex("base_entity_id")));
+                      Log.i("TEST1",  String.valueOf(ag)+ "getWomanInParticularAge: "+cursor.getString(cursor.getColumnIndex("base_entity_id")));
+                      if (age < 20) {
+                          if (ag < 20 && !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
+                              count++;
+                          }
+                      } else if (age < 30 && age >= 20) {
+
+                          if ( ag >= 20 && ag < 30 && !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
+                              count++;
+                          }
+
+                      } else {
+                          if (ag >= 30 &&  !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
+                              count++;
+                          }
+                      }
+                  }
+
+
+            }
+
+        }
+        return count;
+    }
     protected static Repository getMasterRepository() {
         return DrishtiApplication.getInstance().getRepository();
     }
@@ -356,6 +444,7 @@ public class DashboardRepository extends BaseRepository {
                     String y=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.YELLOW_FLAG_COUNT));
                     String yellow= y == null?  "0":  y;
                     client.setAttentionFlag(Integer.parseInt(red)+ Integer.parseInt(yellow));
+                    client.setBaseIntityId(cursor.getString(cursor.getColumnIndex("base_entity_id")));
                     clientList.add(client)  ;
                         }
                 }else{}
@@ -490,6 +579,68 @@ public class DashboardRepository extends BaseRepository {
         return clientList;
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
+    public static List<CustomClient> getWomanInParticularAgeDetails(String dateStart, String dateEnd,int age) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM ec_details";
+        Cursor   cursor = db.rawQuery(query, null);
+
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+
+        List<CustomClient> clientList=new ArrayList<>();
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()){
+            Long dt=Long.parseLong(cursor.getString(cursor.getColumnIndex("event_date")));
+
+            DateFormat simple = new SimpleDateFormat("yyyy-MM-dd");
+            Date result = new Date(dt);
+            LocalDate d=LocalDate.parse(simple.format(result));
+            if(d.isAfter(start) && d.isBefore(end)) {
+                if(cursor.getString(1).equals("age_calculated") ) {
+                    int ag = getWomanAge(cursor.getString(cursor.getColumnIndex("base_entity_id")));
+                    Log.i("TEST1",  String.valueOf(ag)+ "getWomanInParticularAge: "+cursor.getString(cursor.getColumnIndex("base_entity_id")));
+                    if (age < 20) {
+                        if (ag < 20 && !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
+                            clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                        }
+                    } else if (age < 30 && age >= 20) {
+
+                        if ( ag >= 20 && ag < 30 && !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
+                            clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                        }
+
+                    } else {
+                        if (ag >= 30 &&  !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
+                            clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                        }
+                    }
+                }
+
+
+
+            }
+
+        }
+        return clientList;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private static int getWomanAge(String base_entity_id) {
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+         int age=25;
+        String query = "SELECT * FROM " + TABLE_EC_CLIENT+ " WHERE base_entity_id='" +base_entity_id+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()){
+            age= calculateAge(cursor.getString(cursor.getColumnIndex("dob")));
+
+            }
+
+        return age;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static CustomClient getDetailsList(String baseEntityId) {
         Cursor cursor = null;
 
@@ -518,6 +669,7 @@ public class DashboardRepository extends BaseRepository {
                             String y=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.YELLOW_FLAG_COUNT));
                             String yellow= y == null?  "0":  y;
                             client.setAttentionFlag(Integer.parseInt(red)+ Integer.parseInt(yellow));
+                            client.setBaseIntityId(cursor.getString(cursor.getColumnIndex("base_entity_id")));
 
 
                         }

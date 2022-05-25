@@ -45,7 +45,7 @@ public class HomeItem {
     }
 
     public void setBackground(int background) {
-        this.background = background;
+        this.background=background;
     }
 
     public String getStartDate() {

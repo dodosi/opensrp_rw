@@ -90,7 +90,7 @@ public class UkudoxActivity extends AppCompatActivity {
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void attachLayoutContentAdapter() {
-        HomeAdapter libraryContentAdapter = new HomeAdapter( getHomeContent(),new HomeActionHandler());
+        HomeAdapter libraryContentAdapter = new HomeAdapter( UkudoxActivity.this,getHomeContent(),new HomeActionHandler());
         libraryContentAdapter.notifyDataSetChanged();
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(UkudoxActivity.this, 2);
         contentLayout.setLayoutManager(mLayoutManager);
@@ -118,21 +118,20 @@ public class UkudoxActivity extends AppCompatActivity {
     private  List<HomeItem> getHomeContent(){
         List<HomeItem> homeItems= new ArrayList<>();
 
-        String d1=dateButton.getText().toString().equals("") ? getDate().minusWeeks(1).toString():dateButton.getText().toString();
-        String d2=dateButton2.getText().toString().equals("") ? getDate().toString():dateButton2.getText().toString();
+
 
         HomeItem dueContactToday=new HomeItem();
         dueContactToday.setTitle(getString(R.string.due_contact_today));
         dueContactToday.setType("1");
         dueContactToday.setNumber((int) DashboardRepository.getDueContactDash(getDate()));
-        dueContactToday.setBackground(R.drawable.profile_bg);
+        dueContactToday.setBackground(getResources().getColor(R.color.primary_dark));
 
         homeItems.add(dueContactToday);
         HomeItem processed =new HomeItem();
         processed.setTitle(getString(R.string.home_visits));
         processed.setType("4");
         processed.setNumber((int) DashboardRepository.getProcessedVisits(getDate()));
-        processed.setBackground(R.drawable.profile_bg);
+        processed.setBackground(getResources().getColor(R.color.primary_dark));
         homeItems.add(processed);
 
         HomeItem refered= new HomeItem();
@@ -140,10 +139,18 @@ public class UkudoxActivity extends AppCompatActivity {
         refered.setType("2");
         refered.setEndDate(dateButton2.getText().toString());
         refered.setStartDate(dateButton.getText().toString());
-        refered.setBackground(R.drawable.quick_check_bg);
+        refered.setBackground(getResources().getColor(R.color.refer_close_red));
         refered.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
 
         homeItems.add(refered);
+        HomeItem rprpositive  =new HomeItem();
+        rprpositive.setTitle(getString(R.string.rprpositive));
+        rprpositive.setType("11");
+        rprpositive.setEndDate(dateButton2.getText().toString());
+        rprpositive.setStartDate(dateButton.getText().toString());
+        rprpositive.setBackground(getResources().getColor(R.color.refer_close_red));
+        rprpositive.setNumber( DashboardRepository.getWomanWithSyphilisPositive(dateButton.getText().toString(),dateButton2.getText().toString()));
+        homeItems.add(rprpositive);
 
         HomeItem  dangersigns= new HomeItem();
         dangersigns.setTitle(getString(R.string.mother_with_danger_Signs));
@@ -151,7 +158,7 @@ public class UkudoxActivity extends AppCompatActivity {
         dangersigns.setEndDate(dateButton2.getText().toString());
         dangersigns.setStartDate(dateButton.getText().toString());
         dangersigns.setNumber((int) DashboardRepository.getWomanWithDangerSing(dateButton.getText().toString(),dateButton2.getText().toString()));
-        dangersigns.setBackground(R.drawable.quick_check_bg);
+        dangersigns.setBackground(getResources().getColor(R.color.refer_close_red));
 
         homeItems.add(dangersigns);
 
@@ -160,7 +167,7 @@ public class UkudoxActivity extends AppCompatActivity {
         accompanied_by_p.setType("5");
         accompanied_by_p.setEndDate(dateButton2.getText().toString());
         accompanied_by_p.setStartDate(dateButton.getText().toString());
-        accompanied_by_p.setBackground(R.drawable.profile_bg);
+        accompanied_by_p.setBackground(getResources().getColor(R.color.contact_counselling_navigation));
         accompanied_by_p.setNumber( DashboardRepository.getWomanAccompaniedWithPartner(dateButton.getText().toString(),dateButton2.getText().toString()));
         homeItems.add(accompanied_by_p);
 
@@ -169,7 +176,7 @@ public class UkudoxActivity extends AppCompatActivity {
         received_vaccination.setType("6");
         received_vaccination.setEndDate(dateButton2.getText().toString());
         received_vaccination.setStartDate(dateButton.getText().toString());
-        received_vaccination.setBackground(R.drawable.profile_bg);
+        received_vaccination.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
         received_vaccination.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
         homeItems.add(received_vaccination);
 
@@ -178,7 +185,7 @@ public class UkudoxActivity extends AppCompatActivity {
         received_deworming_pills.setType("7");
         received_deworming_pills.setEndDate(dateButton2.getText().toString());
         received_deworming_pills.setStartDate(dateButton.getText().toString());
-        received_deworming_pills.setBackground(R.drawable.profile_bg);
+        received_deworming_pills.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
         received_deworming_pills.setNumber( DashboardRepository.getWomanReceivedDewormingPills(dateButton.getText().toString(),dateButton2.getText().toString()));
         homeItems.add(received_deworming_pills);
 
@@ -187,10 +194,27 @@ public class UkudoxActivity extends AppCompatActivity {
         teenage_pregnancies.setType("8");
         teenage_pregnancies.setEndDate(dateButton2.getText().toString());
         teenage_pregnancies.setStartDate(dateButton.getText().toString());
-        teenage_pregnancies.setBackground(R.drawable.profile_bg);
-        teenage_pregnancies.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
+        teenage_pregnancies.setBackground(getResources().getColor(R.color.vaccine_yellow));
+        teenage_pregnancies.setNumber( DashboardRepository.getWomanInParticularAge(dateButton.getText().toString(),dateButton2.getText().toString(), 19));
         homeItems.add(teenage_pregnancies);
 
+        HomeItem young_age_pregnancy  =new HomeItem();
+        young_age_pregnancy.setTitle(getString(R.string.young_age_pregnancy));
+        young_age_pregnancy.setType("9");
+        young_age_pregnancy.setEndDate(dateButton2.getText().toString());
+        young_age_pregnancy.setStartDate(dateButton.getText().toString());
+        young_age_pregnancy.setBackground(getResources().getColor(R.color.contact_counselling_navigation));
+        young_age_pregnancy.setNumber( DashboardRepository.getWomanInParticularAge(dateButton.getText().toString(),dateButton2.getText().toString(),30));
+        homeItems.add(young_age_pregnancy);
+
+        HomeItem old_age_pregnancy  =new HomeItem();
+        old_age_pregnancy.setTitle(getString(R.string.old_age_pregnancy));
+        old_age_pregnancy.setType("10");
+        old_age_pregnancy.setEndDate(dateButton2.getText().toString());
+        old_age_pregnancy.setStartDate(dateButton.getText().toString());
+        old_age_pregnancy.setBackground(getResources().getColor(R.color.vaccine_yellow));
+        old_age_pregnancy.setNumber( DashboardRepository.getWomanInParticularAge(dateButton.getText().toString(),dateButton2.getText().toString(),49));
+        homeItems.add(old_age_pregnancy);
 
         return homeItems;
 

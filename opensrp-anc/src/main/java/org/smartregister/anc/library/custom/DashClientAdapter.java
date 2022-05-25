@@ -13,20 +13,25 @@ import com.vijay.jsonwizard.views.CustomTextView;
 import org.jetbrains.annotations.NotNull;
 import org.smartregister.anc.library.R;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class DashClientAdapter extends RecyclerView.Adapter<DashClientAdapter.DashClientViewHolder>{
 
     private List<CustomClient> clientList;
 
     private View.OnClickListener clickListener;
+    private ArrayList<CustomClient> arraylist=new ArrayList<>();
+
 
     public DashClientAdapter( List<CustomClient> clientList, View.OnClickListener clickListener) {
 
         this.clientList = clientList;
         this.clickListener = clickListener;
+        this.arraylist.addAll(clientList);
     }
-    public void setContacts(List<CustomClient> homeItems) {
+    public void setContacts(List<CustomClient> clientList) {
         this.clientList = clientList;
     }
 
@@ -43,11 +48,19 @@ public class DashClientAdapter extends RecyclerView.Adapter<DashClientAdapter.Da
         holder.age.setText("AGE: "+client.getAge());
         holder.ancId.setText("ID: "+client.getRegistrationId());
         holder.ga.setText("GA: "+client.getAge()+ " wks");
-        holder.risk.setText(String.valueOf(client.getAttentionFlag()));
+        holder.ga.setVisibility(View.INVISIBLE);
+        if (client.getAttentionFlag()<1){
+            holder.risk.setVisibility(View.INVISIBLE);
+        }else{
+            holder.risk.setText(String.valueOf(client.getAttentionFlag()));
+        }
         holder.dueButton.setText("CONTACT DEU: \n" +client.getNextContactDate());
         holder.dueButton.setVisibility(View.VISIBLE);
         holder.contactDoneTodayButton.setVisibility(View.GONE);
         holder.dueButton.setOnClickListener(clickListener);
+        holder.dueButton.setTag(client);
+        holder.patientColumn.setTag(client);
+        holder.patientColumn.setOnClickListener(clickListener);
     }
     @NotNull
     @Override
@@ -80,5 +93,21 @@ public class DashClientAdapter extends RecyclerView.Adapter<DashClientAdapter.Da
             patientColumn = itemView.findViewById(R.id.patient_column);
             contactDoneTodayButton = itemView.findViewById(R.id.contact_today_text);
         }
+    }
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        clientList.clear();
+        if (charText.length() == 0) {
+            clientList.addAll(arraylist);
+        } else {
+            for (CustomClient wp : arraylist) {
+                if (wp.getLastName().toLowerCase(Locale.getDefault()).contains(charText) ||
+                        wp.getFirstName().toLowerCase(Locale.getDefault()).contains(charText) ||
+                        wp.getRegistrationId().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    clientList.add(wp);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 }
