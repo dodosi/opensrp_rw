@@ -462,7 +462,7 @@
     <string name="home_visits">Visits</string>
     <string name="mother_with_danger_Signs">Women with Danger signs</string>
     <string name="women_referred">Women referred</string>
-    <string name="due_contact_today">Due Contact today</string>
+    <string name="due_contact_today">Visit due today</string>
     <string name="anc_dashboard">ANC DASHBOARD</string>
     <string name="anc_visits">ANC VISITS</string>
     <string name="device_to_device">Device-to-device sync</string>

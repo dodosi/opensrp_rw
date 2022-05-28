@@ -22,6 +22,7 @@
             android:layout_margin="3dp"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
+            android:onClick="goToDashboard"
             android:src="@drawable/ic_dashboard" />
         <ImageView
             android:id="@+id/scanQrCode"

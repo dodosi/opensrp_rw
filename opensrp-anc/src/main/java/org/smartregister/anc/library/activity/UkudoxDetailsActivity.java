@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,7 +42,7 @@ import timber.log.Timber;
 public class UkudoxDetailsActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private RecyclerView contentLayout;
-    private TextView textView_title,toolbar_text;
+    private TextView textView_client_number,toolbar_text;
     private String title;
     private int number;
     private  String type;
@@ -48,6 +50,7 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
     private String endDate;
     private SearchView editsearch;
     private DashClientAdapter dashClientAdapter;
+    private List<CustomClient> clientList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +72,13 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
         endDate=intent.getStringExtra("end");
         setUpViews();
         editsearch = (SearchView) findViewById(R.id.search_client);
+        editsearch.setQueryHint(Html.fromHtml("<font color = #dbdbdb>" +getResources().getString(org.smartregister.R.string.search_hint)+ "</font>"));
         editsearch.setOnQueryTextListener(this);
+        int id = editsearch.getContext()
+                .getResources()
+                .getIdentifier("android:id/search_src_text", null, null);
+        TextView textView = (TextView) editsearch.findViewById(id);
+        textView.setTextColor(Color.WHITE);
  }
     // this event will enable the back
     // function to the button on press
@@ -85,8 +94,8 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
     private void setUpViews() {
 
         contentLayout = findViewById(R.id.details_recycler_view);
-//        textView_title=findViewById(R.id.text_title_content);
-//        textView_title.setText(title);
+        textView_client_number=findViewById(R.id.header_text_displayclient);
+        textView_client_number.setText(title);
         toolbar_text=findViewById(R.id.library_toolbar_title);
         toolbar_text.setText(title);
 
@@ -105,7 +114,6 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void attachLayoutContentAdapter() {
-        List<CustomClient> clientList=new ArrayList<>();
         switch (type){
             case "1":
                 clientList=DashboardRepository.getWomanProfileDetails(getDate());
@@ -150,6 +158,7 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
     public void onResume() {
         super.onResume();
         attachLayoutContentAdapter();
+        textView_client_number.setText(clientList.size()+ " Clients");
     }
     private List<CustomClient> getContent() {
         List<CustomClient> clientList=new ArrayList<>();

@@ -70,7 +70,8 @@ public class DashboardRepository extends BaseRepository {
                 d1 = LocalDate.parse(next_contact_date, df);
             }
 
-            if(datetoday.isEqual(d1) || datetoday.isAfter(d1)) {
+//            if(datetoday.isEqual(d1) || datetoday.isAfter(d1)) {
+            if(datetoday.isEqual(d1)) {
                 if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
                 count++;}
             }else{
@@ -370,11 +371,11 @@ public class DashboardRepository extends BaseRepository {
                   if(cursor.getString(1).equals("age_calculated") ) {
                      int ag = getWomanAge(cursor.getString(cursor.getColumnIndex("base_entity_id")));
                       Log.i("TEST1",  String.valueOf(ag)+ "getWomanInParticularAge: "+cursor.getString(cursor.getColumnIndex("base_entity_id")));
-                      if (age < 20) {
+                      if (age == 19) {
                           if (ag < 20 && !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
                               count++;
                           }
-                      } else if (age < 30 && age >= 20) {
+                      } else if (age == 30) {
 
                           if ( ag >= 20 && ag < 30 && !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
                               count++;
@@ -601,11 +602,11 @@ public class DashboardRepository extends BaseRepository {
                 if(cursor.getString(1).equals("age_calculated") ) {
                     int ag = getWomanAge(cursor.getString(cursor.getColumnIndex("base_entity_id")));
                     Log.i("TEST1",  String.valueOf(ag)+ "getWomanInParticularAge: "+cursor.getString(cursor.getColumnIndex("base_entity_id")));
-                    if (age < 20) {
+                    if (age == 19) {
                         if (ag < 20 && !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
                             clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
                         }
-                    } else if (age < 30 && age >= 20) {
+                    } else if (age == 30) {
 
                         if ( ag >= 20 && ag < 30 && !isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
                             clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));

@@ -124,14 +124,14 @@ public class UkudoxActivity extends AppCompatActivity {
         dueContactToday.setTitle(getString(R.string.due_contact_today));
         dueContactToday.setType("1");
         dueContactToday.setNumber((int) DashboardRepository.getDueContactDash(getDate()));
-        dueContactToday.setBackground(getResources().getColor(R.color.primary_dark));
+        dueContactToday.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
 
         homeItems.add(dueContactToday);
         HomeItem processed =new HomeItem();
         processed.setTitle(getString(R.string.home_visits));
         processed.setType("4");
         processed.setNumber((int) DashboardRepository.getProcessedVisits(getDate()));
-        processed.setBackground(getResources().getColor(R.color.primary_dark));
+        processed.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
         homeItems.add(processed);
 
         HomeItem refered= new HomeItem();

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -500,5 +501,9 @@ public class BaseHomeRegisterActivity extends BaseRegisterActivity implements Re
 
     public void setAdvancedSearchFormData(HashMap<String, String> advancedSearchFormData) {
         this.advancedSearchFormData = advancedSearchFormData;
+    }
+    public void goToDashboard(View v){
+        Intent gotod=new Intent(this,UkudoxActivity.class);
+        startActivity(gotod);
     }
 }
