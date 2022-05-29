@@ -123,6 +123,59 @@ public class DashboardRepository extends BaseRepository {
         return count;
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int getWomanVaccinated(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isVaccinatedToday(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))){
+                        count++;
+                    }
+                }
+            }
+
+        }
+        return count;
+    }
+
+    private static boolean isVaccinatedToday(String woman_id) {
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE base_entity_id= '"+woman_id+"'";
+        Cursor   cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()){
+            try {
+                if (cursor.getString(3).equals("tt1_date")) {
+
+
+                    JSONObject val = new JSONObject(cursor.getString(4));
+
+                    if (val.get(VALUE).toString().equals("done_today")) {
+
+                        return true;
+                    }
+                    else {
+                        return  false;
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static int getWomanAccompaniedWithPartner(String dateStart, String dateEnd) {
 
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
@@ -626,7 +679,56 @@ public class DashboardRepository extends BaseRepository {
         }
         return clientList;
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static List<CustomClient>  getWomanVaccinatedDetails(String dateStart, String dateEnd) {
 
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        List<CustomClient> clientList=new ArrayList<>();
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isVaccinatedToday(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))){
+                        clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                    }
+                }
+            }
+
+        }
+        return clientList;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static List<CustomClient> getWomanWithSyphilisPositiveDetails(String dateStart, String dateEnd) {
+
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        List<CustomClient> clientList=new ArrayList<>();
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(isSyphilisPositive(cursor.getString(2))&& !isAnc_Closed(cursor.getString(2))){
+                        clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                    }
+                }
+            }
+
+        }
+        return clientList;
+    }
     @RequiresApi(api = Build.VERSION_CODES.O)
     private static int getWomanAge(String base_entity_id) {
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();

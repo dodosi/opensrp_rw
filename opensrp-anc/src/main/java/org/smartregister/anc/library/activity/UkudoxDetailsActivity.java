@@ -134,7 +134,7 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
                 clientList=DashboardRepository.getWomanReceivedDewormingPillsDetails(startDate,endDate);
                 break;
             case "6":
-                clientList=DashboardRepository.getWomanReceivedDewormingPillsDetails(startDate,endDate);
+                clientList=DashboardRepository.getWomanVaccinatedDetails(startDate,endDate);
                 break;
             case "8":
                 clientList=DashboardRepository.getWomanInParticularAgeDetails(startDate,endDate,19);
@@ -144,6 +144,9 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
                 break;
             case "10":
                 clientList=DashboardRepository.getWomanInParticularAgeDetails(startDate,endDate,49);
+                break;
+            case "11":
+                clientList=DashboardRepository.getWomanWithSyphilisPositiveDetails(startDate,endDate);
                 break;
 
             default:

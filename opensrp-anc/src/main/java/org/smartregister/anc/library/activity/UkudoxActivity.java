@@ -177,7 +177,7 @@ public class UkudoxActivity extends AppCompatActivity {
         received_vaccination.setEndDate(dateButton2.getText().toString());
         received_vaccination.setStartDate(dateButton.getText().toString());
         received_vaccination.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
-        received_vaccination.setNumber( DashboardRepository.getWomanReferred(dateButton.getText().toString(),dateButton2.getText().toString()));
+        received_vaccination.setNumber( DashboardRepository.getWomanVaccinated(dateButton.getText().toString(),dateButton2.getText().toString()));
         homeItems.add(received_vaccination);
 
         HomeItem received_deworming_pills =new HomeItem();
