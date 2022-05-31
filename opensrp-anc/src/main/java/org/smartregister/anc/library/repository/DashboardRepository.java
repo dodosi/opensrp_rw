@@ -82,7 +82,31 @@ public class DashboardRepository extends BaseRepository {
         }
         return count;
     }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static int  getExpectedDeliveries (String dateStart, String dateEnd){
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
+        String query = "SELECT * FROM " + getRegisterQueryProvider().getDetailsTable();
+        Cursor   cursor = db.rawQuery(query, null);
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()){
+            String edd=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.EDD));
+
+           if (!"0".equals(edd) && edd!= null){
+            LocalDate d=LocalDate.parse(edd);
+            if(d.isAfter(start) && d.isBefore(end)) {
+                if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
+                    count++;
+                }
+            }}
+
+
+        }
+        return count;
+    }
     private static boolean isAnc_Closed(String base_entity_id) {
 
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
@@ -308,14 +332,32 @@ public class DashboardRepository extends BaseRepository {
         return false;
     }
 
-    public static long getProcessedVisits(LocalDate datet) {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static long getProcessedVisits(String dateStart, String dateEnd) {
 
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
-        String query = "SELECT COUNT(*) FROM " + TABLE_PREVIOUS_CONTACT + " WHERE " + KEY + "= 'contact_date' AND " +VALUE+ "='"+datet+"'";
+//        String query = "SELECT COUNT(*) FROM " + TABLE_PREVIOUS_CONTACT + " WHERE " + KEY + "= 'contact_date' AND " +VALUE+ "='"+datet+"'";
+//        Cursor   cursor = db.rawQuery(query, null);
+//        SQLiteStatement statement = db.compileStatement(query);
+//        long count = statement.simpleQueryForLong();
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
         Cursor   cursor = db.rawQuery(query, null);
-        SQLiteStatement statement = db.compileStatement(query);
-        long count = statement.simpleQueryForLong();
+        int count=0;
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()){
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(!isAnc_Closed(cursor.getString(2))){
+                        count++;
+                    }
+                }
+            }
+
+        }
         return count;
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -517,16 +559,33 @@ public class DashboardRepository extends BaseRepository {
         return null;
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static List<CustomClient>getProcessedVisitsDetails(LocalDate datet) {
+    public static List<CustomClient>getProcessedVisitsDetails(String dateStart, String dateEnd) {
 
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE " + KEY + "= 'contact_date' AND " +VALUE+ "='"+datet+"'";
-        Cursor   cursor = db.rawQuery(query, null);
+//        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE " + KEY + "= 'contact_date' AND " +VALUE+ "='"+datet+"'";
+//        Cursor   cursor = db.rawQuery(query, null);
         List<CustomClient> clientList=new ArrayList<>();
+//
+//        while (cursor.moveToNext()){
+//           clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+//        }
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
+        Cursor   cursor = db.rawQuery(query, null);
 
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
         while (cursor.moveToNext()){
-           clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+            if (cursor.getString(3).equals("contact_date")){
+                LocalDate d=LocalDate.parse(cursor.getString(4));
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if(!isAnc_Closed(cursor.getString(2))){
+                        clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                    }
+                }
+            }
+
         }
 
         return clientList;
@@ -725,6 +784,34 @@ public class DashboardRepository extends BaseRepository {
                     }
                 }
             }
+
+        }
+        return clientList;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static   List<CustomClient> getExpectedDeliveriesDetails (String dateStart, String dateEnd){
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+
+        String query = "SELECT * FROM " + getRegisterQueryProvider().getDetailsTable();
+        Cursor   cursor = db.rawQuery(query, null);
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+        LocalDate  start= LocalDate.parse(dateStart, df);
+        LocalDate  end= LocalDate.parse(dateEnd, df);
+        Log.i("TESTing", "getExpectedDeliveriesDetails: "+start);
+        Log.i("TESTing", "getExpectedDeliveriesDetails: "+end);
+        List<CustomClient> clientList=new ArrayList<>();
+        while (cursor.moveToNext()){
+            String edd=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.EDD));
+
+            if (!"0".equals(edd) && edd!= null){
+                LocalDate d=LocalDate.parse(edd);
+                if(d.isAfter(start) && d.isBefore(end)) {
+                    if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
+
+                            clientList.add(getDetailsList(cursor.getString(cursor.getColumnIndex("base_entity_id"))));
+                    }
+                }}
+
 
         }
         return clientList;

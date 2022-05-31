@@ -119,18 +119,32 @@ public class UkudoxActivity extends AppCompatActivity {
         List<HomeItem> homeItems= new ArrayList<>();
 
 
+//
+//        HomeItem dueContactToday=new HomeItem();
+//        dueContactToday.setTitle(getString(R.string.due_contact_today));
+//        dueContactToday.setType("1");
+//        dueContactToday.setNumber((int) DashboardRepository.getDueContactDash(getDate()));
+//        dueContactToday.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
+//
+//        homeItems.add(dueContactToday);
 
-        HomeItem dueContactToday=new HomeItem();
-        dueContactToday.setTitle(getString(R.string.due_contact_today));
-        dueContactToday.setType("1");
-        dueContactToday.setNumber((int) DashboardRepository.getDueContactDash(getDate()));
-        dueContactToday.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
+        HomeItem expected_deliveries=new HomeItem();
+        expected_deliveries.setTitle(getString(R.string.expected_deliveries));
+        expected_deliveries.setType("0");
 
-        homeItems.add(dueContactToday);
+        expected_deliveries.setEndDate(dateButton2.getText().toString());
+        expected_deliveries.setStartDate(dateButton.getText().toString());
+        expected_deliveries.setNumber((int) DashboardRepository.getExpectedDeliveries(dateButton.getText().toString(),dateButton2.getText().toString()));
+        expected_deliveries.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
+
+        homeItems.add(expected_deliveries);
+
         HomeItem processed =new HomeItem();
         processed.setTitle(getString(R.string.home_visits));
         processed.setType("4");
-        processed.setNumber((int) DashboardRepository.getProcessedVisits(getDate()));
+        processed.setEndDate(dateButton2.getText().toString());
+        processed.setStartDate(dateButton.getText().toString());
+        processed.setNumber((int) DashboardRepository.getProcessedVisits(dateButton.getText().toString(),dateButton2.getText().toString()));
         processed.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
         homeItems.add(processed);
 
@@ -259,7 +273,7 @@ public class UkudoxActivity extends AppCompatActivity {
         int style = AlertDialog.THEME_HOLO_LIGHT;
 
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+//        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
 
     }
     public void openDatePicker(View view)
@@ -288,7 +302,7 @@ public class UkudoxActivity extends AppCompatActivity {
         int style = AlertDialog.THEME_HOLO_LIGHT;
 
         datePickerDialog2 = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-        datePickerDialog2.getDatePicker().setMaxDate(System.currentTimeMillis());
+//        datePickerDialog2.getDatePicker().setMaxDate(System.currentTimeMillis());
 
     }
     public void openDatePicker2(View view)

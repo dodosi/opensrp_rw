@@ -473,5 +473,6 @@
     <string name="young_age_pregnancy">Young age pregnancy</string>
     <string name="old_age_pregnancy">Old age pregnancy</string>
     <string name="rprpositive">RPR positive</string>
+    <string name="expected_deliveries">Expected deliveries</string>
 
 </resources>
