@@ -75,6 +75,7 @@ public abstract class ConstantsUtils {
         String DUE_CHECK_STRATEGY = "DUE_CHECK_STRATEGY";
         String WIDGET_VALUE_TRANSLATED = "widget.value.translated";
         String DEAFAULT_COUNTRY_ID = "DEFAULT_COUNTRY_ID";
+        String IGNORE_LOCATION_DELETION = "ignore.location.deletion";
     }
 
     public interface DueCheckStrategy {
