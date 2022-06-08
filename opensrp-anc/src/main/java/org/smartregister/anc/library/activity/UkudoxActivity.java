@@ -175,6 +175,14 @@ public class UkudoxActivity extends AppCompatActivity {
         dangersigns.setBackground(getResources().getColor(R.color.refer_close_red));
 
         homeItems.add(dangersigns);
+//        HomeItem late_visits=new HomeItem();
+//        late_visits.setTitle(getString(R.string.accompanied_by_their_partners));
+//        late_visits.setType("5");
+//        late_visits.setEndDate(dateButton2.getText().toString());
+//        late_visits.setStartDate(dateButton.getText().toString());
+//        late_visits.setBackground(getResources().getColor(R.color.contact_counselling_navigation));
+//        late_visits.setNumber( DashboardRepository.getWomanAccompaniedWithPartner(dateButton.getText().toString(),dateButton2.getText().toString()));
+//        homeItems.add(late_visits);
 
         HomeItem accompanied_by_p=new HomeItem();
         accompanied_by_p.setTitle(getString(R.string.accompanied_by_their_partners));
