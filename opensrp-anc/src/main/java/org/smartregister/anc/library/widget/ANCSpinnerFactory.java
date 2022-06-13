@@ -31,6 +31,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.anc.library.R;
+import org.smartregister.anc.library.fragment.ANCRegisterFormFragment;
 import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.Utils;
 import org.smartregister.domain.Location;
@@ -101,8 +102,7 @@ public class ANCSpinnerFactory extends SpinnerFactory {
                     && jsonObject.has(ConstantsUtils.JsonFormKeyUtils.OPTIONS)
                     && jsonObject.getJSONArray(ConstantsUtils.JsonFormKeyUtils.OPTIONS).length() <= 0) {
 
-                String stepTitle = formFragment.getStep(STEP1).get(STEP_TITLE).toString();
-                if (stepTitle.equals(ConstantsUtils.EventTypeUtils.REGISTRATION)
+                if (formFragment instanceof  ANCRegisterFormFragment
                         && StringUtils.endsWithIgnoreCase(jsonObject.getString(KEY), "province")) {
                     populateProvince(jsonObject);
                 } else {
