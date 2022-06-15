@@ -116,7 +116,7 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
     private void attachLayoutContentAdapter() {
         switch (type){
             case "1":
-                clientList=DashboardRepository.getWomanProfileDetails(getDate());
+                //clientList=DashboardRepository.getWomanProfileDetails(getDate());
                 break;
             case "4":
                 clientList=DashboardRepository.getProcessedVisitsDetails(startDate,endDate);
@@ -150,6 +150,9 @@ public class UkudoxDetailsActivity extends AppCompatActivity implements SearchVi
                 break;
             case "0":
                 clientList=DashboardRepository.getExpectedDeliveriesDetails(startDate,endDate);
+                break;
+            case "12":
+                clientList=DashboardRepository.getWomanProfileDetails(getDate());
                 break;
 
             default:

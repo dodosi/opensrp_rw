@@ -175,23 +175,16 @@ public class UkudoxActivity extends AppCompatActivity {
         dangersigns.setBackground(getResources().getColor(R.color.refer_close_red));
 
         homeItems.add(dangersigns);
-//        HomeItem late_visits=new HomeItem();
-//        late_visits.setTitle(getString(R.string.accompanied_by_their_partners));
-//        late_visits.setType("5");
-//        late_visits.setEndDate(dateButton2.getText().toString());
-//        late_visits.setStartDate(dateButton.getText().toString());
-//        late_visits.setBackground(getResources().getColor(R.color.contact_counselling_navigation));
-//        late_visits.setNumber( DashboardRepository.getWomanAccompaniedWithPartner(dateButton.getText().toString(),dateButton2.getText().toString()));
-//        homeItems.add(late_visits);
+        HomeItem late_visits=new HomeItem();
+        late_visits.setTitle(getString(R.string.late_visits));
+        late_visits.setType("12");
+        late_visits.setEndDate(dateButton2.getText().toString());
+        late_visits.setStartDate(dateButton.getText().toString());
+        late_visits.setBackground(getResources().getColor(R.color.vaccine_yellow));
+        late_visits.setNumber(DashboardRepository.getWomanLateVisits(getDate()));
+        homeItems.add(late_visits);
 
-        HomeItem accompanied_by_p=new HomeItem();
-        accompanied_by_p.setTitle(getString(R.string.accompanied_by_their_partners));
-        accompanied_by_p.setType("5");
-        accompanied_by_p.setEndDate(dateButton2.getText().toString());
-        accompanied_by_p.setStartDate(dateButton.getText().toString());
-        accompanied_by_p.setBackground(getResources().getColor(R.color.contact_counselling_navigation));
-        accompanied_by_p.setNumber( DashboardRepository.getWomanAccompaniedWithPartner(dateButton.getText().toString(),dateButton2.getText().toString()));
-        homeItems.add(accompanied_by_p);
+
 
         HomeItem received_vaccination=new HomeItem();
         received_vaccination.setTitle(getString(R.string.received_vaccination));
@@ -210,6 +203,15 @@ public class UkudoxActivity extends AppCompatActivity {
         received_deworming_pills.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
         received_deworming_pills.setNumber( DashboardRepository.getWomanReceivedDewormingPills(dateButton.getText().toString(),dateButton2.getText().toString()));
         homeItems.add(received_deworming_pills);
+
+        HomeItem accompanied_by_p=new HomeItem();
+        accompanied_by_p.setTitle(getString(R.string.accompanied_by_their_partners));
+        accompanied_by_p.setType("5");
+        accompanied_by_p.setEndDate(dateButton2.getText().toString());
+        accompanied_by_p.setStartDate(dateButton.getText().toString());
+        accompanied_by_p.setBackground(getResources().getColor(R.color.contact_counselling_navigation));
+        accompanied_by_p.setNumber( DashboardRepository.getWomanAccompaniedWithPartner(dateButton.getText().toString(),dateButton2.getText().toString()));
+        homeItems.add(accompanied_by_p);
 
         HomeItem teenage_pregnancies  =new HomeItem();
         teenage_pregnancies.setTitle(getString(R.string.teenage_pregnancies));
