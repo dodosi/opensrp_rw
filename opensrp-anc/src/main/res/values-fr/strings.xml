@@ -446,8 +446,17 @@
     <string name="home_visits">Visites</string>
     <string name="mother_with_danger_Signs">Femmes présentant des signes de danger</string>
     <string name="women_referred">Femmes référées</string>
-    <string name="due_contact_today">Contactez dès aujourd\'hui</string>
+    <string name="due_contact_today">Visite prévue aujourd\'hui</string>
     <string name="anc_dashboard">TABLEAU DE BORD ANC</string>
     <string name="anc_visits">VISITES ANC</string>
     <string name="device_to_device">Device-to-device sync</string>
+    <string name="accompanied_by_their_partners">Accompagnés de leurs partenaires</string>
+    <string name="received_vaccination">A reçu le vaccin TT</string>
+    <string name="received_deworming_pills">Reçu des pilules vermifuges</string>
+    <string name="teenage_pregnancies">Grossesses chez les adolescentes</string>
+    <string name="young_age_pregnancy">Grossesse à un jeune âge</string>
+    <string name="old_age_pregnancy">Grossesse de vieillesse</string>
+    <string name="rprpositive">RPR positif</string>
+    <string name="expected_deliveries">Accoucheuses attendues</string>
+    <string name="late_visits">Visites tardives</string>
 </resources>
