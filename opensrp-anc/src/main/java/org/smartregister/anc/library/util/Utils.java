@@ -92,6 +92,8 @@ import java.util.Map;
 
 import timber.log.Timber;
 
+import static org.smartregister.client.utils.constants.JsonFormConstants.VALUE;
+
 /**
  * Created by ndegwamartin on 14/03/2018.
  */
@@ -1084,6 +1086,15 @@ public class Utils extends org.smartregister.util.Utils {
     }
 
     public static List<Location> getLocationsByParentId(String parentId) {
+        try{
+            JSONObject valueObject = new JSONObject(parentId);
+            parentId = valueObject.getString(VALUE);
+
+        }
+        catch (JSONException e){
+            e.printStackTrace();
+
+        }
         return CoreLibrary.getInstance().context().getLocationRepository().getLocationsByParentId(parentId);
     }
 
