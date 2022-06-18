@@ -2,11 +2,13 @@ package org.smartregister.anc.library.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 import org.apache.commons.lang3.StringUtils;
 import org.smartregister.anc.library.AncLibrary;
 import org.smartregister.anc.library.R;
+import org.smartregister.anc.library.activity.AncP2pModeSelectActivity;
 import org.smartregister.anc.library.activity.PopulationCharacteristicsActivity;
 import org.smartregister.anc.library.activity.SiteCharacteristicsActivity;
 import org.smartregister.anc.library.activity.UkudoxActivity;
@@ -34,8 +37,9 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
     private RelativeLayout mePopCharacteristicsSection;
     private RelativeLayout siteCharacteristicsSection;
     private RelativeLayout languageSwitcherSection;
+    private RelativeLayout p2pSyncSetion;
     private TextView languageSwitcherText;
-    private Map<String, Locale> locales = new HashMap<>();
+    private final Map<String, Locale> locales = new HashMap<>();
     private String[] languages;
 
     @Nullable
@@ -51,6 +55,7 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
         mePopCharacteristicsSection = view.findViewById(R.id.me_pop_characteristics_section);
         siteCharacteristicsSection = view.findViewById(R.id.site_characteristics_section);
 
+        p2pSyncSetion = view.findViewById(R.id.p2p_section);
         if (Utils.enableLanguageSwitching()) {
             languageSwitcherSection = view.findViewById(R.id.language_switcher_section);
             languageSwitcherSection.setVisibility(View.VISIBLE);
@@ -81,6 +86,7 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
         if (Utils.enableLanguageSwitching()) {
             languageSwitcherSection.setOnClickListener(meFragmentActionHandler);
         }
+        p2pSyncSetion.setOnClickListener(meFragmentActionHandler);
     }
 
     protected void initializePresenter() {
@@ -102,6 +108,8 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
             }
         } else if (viewId == R.id.language_switcher_section) {
             languageSwitcherDialog();
+        } else if (viewId == R.id.p2p_section) {
+            startActivity(new Intent(getContext(), AncP2pModeSelectActivity.class));
         }
     }
 
@@ -139,7 +147,8 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
     private void reloadClass() {
         if (getActivity() != null) {
             Intent intent = getActivity().getIntent();
-            intent = new Intent(getContext(), UkudoxActivity.class);
+            //ukudox stuff below
+            //intent = new Intent(getContext(), UkudoxActivity.class);
             getActivity().finish();
             getActivity().startActivity(intent);
         }
@@ -171,6 +180,7 @@ public class MeFragment extends org.smartregister.view.fragment.MeFragment imple
         locales.put(getString(R.string.english_language), Locale.ENGLISH);
         locales.put(getString(R.string.french_language), Locale.FRENCH);
         locales.put(getString(R.string.portuguese_brazil_language), new Locale("pt"));
+        locales.put(getString(R.string.bahasa_indonesia_language), new Locale("ind"));
         locales.put(getString(R.string.kinyarwanda), new Locale("rw"));
     }
 

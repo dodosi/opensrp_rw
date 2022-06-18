@@ -250,11 +250,11 @@ fields:
     relevance: "severe_preeclampsia == 1"
     isRedFont: "true"
 
-  - template: "Rh factor negative: {date}: {date}"
+  - template: "Rh factor negative: {rh_factor}"
     relevance: "rh_factor == 'negative'"
     isRedFont: "true"
 
-  - template: "HIV positive: {date}"
+  - template: "HIV Status: {hiv_test_result}"
     relevance: "hiv_positive == 1"
     isRedFont: "true"
 
@@ -328,7 +328,7 @@ fields:
 ---
 group: immunisation_status
 fields:
-  - template: "{{profile_overview.immunisation_status.tt_immunisation_status}}: {tt_immun_status_value}"
+  - template: "{{profile_overview.immunisation_status.tt_immunisation_status}}: {tt_immun_status}"
     relevance: "tt_immun_status != ''"
     isRedFont: "tt_immun_status == 'ttcv_not_received' || tt_immun_status == 'unknown'"
 
@@ -338,15 +338,33 @@ fields:
   - template: "{{profile_overview.immunisation_status.tt_dose_2}}: {tt2_date_value}"
     relevance: "tt2_date == 'done_today' || tt2_date == 'done_earlier'"
 
-  - template: "{{profile_overview.immunisation_status.flu_immunisation_status}}: {flu_immun_status_value}"
+  - template: "{{profile_overview.immunisation_status.flu_immunisation_status}}: {flu_immun_status}"
     relevance: "flu_immun_status != ''"
     isRedFont: "flu_immun_status == 'seasonal_flu_dose_missing' || flu_immun_status == 'unknown'"
 
   - template: "{{profile_overview.immunisation_status.flu_dose}}: {flu_date_value}"
     relevance: "flu_date == 'done_today' || flu_date == 'done_earlier'"
 
+  - template: "{{profile_overview.immunisation_status.tt1_dose_received_date}}: {date_tt1_received}"
+    relevance: "date_tt1_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt2_dose_received_date}}: {date_tt2_received}"
+    relevance: "date_tt1_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt3_dose_received_date}}: {date_tt3_received}"
+    relevance: "date_tt3_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt4_dose_received_date}}: {date_tt4_received}"
+    relevance: "date_tt4_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.tt5_dose_received_date}}: {date_tt5_received}"
+    relevance: "date_tt5_received !=''"
+
+  - template: "{{profile_overview.immunisation_status.proposed_tt2_date_will_done}}: {proposed_tt2_date_will_done}"
+    relevance: "proposed_tt2_date_will_done !=''"
+
 ---
-sub_group: next_contact_date
+sub_group: "{{profile_overview.next_contact_date.date}}"
 fields:
   - template: "{{profile_overview.next_contact_date.date}}: {next_visit_date}"
     relevance: "next_visit_date != ''"

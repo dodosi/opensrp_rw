@@ -13,6 +13,7 @@
         {
           "key": "done_today",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_status.options.done_today.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_status.options.done_today.text",
           "type": "done_today",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -21,6 +22,7 @@
         {
           "key": "done_earlier",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_status.options.done_earlier.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_status.options.done_earlier.text",
           "type": "done_earlier",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -29,6 +31,7 @@
         {
           "key": "ordered",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_status.options.ordered.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_status.options.ordered.text",
           "type": "ordered",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -37,6 +40,7 @@
         {
           "key": "not_done",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_status.options.not_done.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_status.options.not_done.text",
           "type": "not_done",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -68,6 +72,7 @@
         {
           "key": "stock_out",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_notdone.options.stock_out.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_notdone.options.stock_out.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "165183AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -75,6 +80,7 @@
         {
           "key": "expired_stock",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_notdone.options.expired_stock.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_notdone.options.expired_stock.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "165299AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -82,6 +88,7 @@
         {
           "key": "other",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_notdone.options.other.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_notdone.options.other.text",
           "openmrs_entity_parent": "161475AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -97,6 +104,28 @@
             "rules-file": "tests_relevance_rules.yml"
           }
         }
+      }
+    },
+    {
+      "key": "hepb_test_scheduled_date",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_entity_id": "",
+      "type": "date_picker",
+      "hint": "{{tests_hepatitis_b_sub_form.step1.hepb_test_scheduled_date.hint}}",
+      "expanded": "false",
+      "max_date": "today+10m",
+      "min_date": "today",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "tests_relevance_rules.yml"
+          }
+        }
+      },
+      "v_required": {
+        "value": false,
+        "err": ""
       }
     },
     {
@@ -171,6 +200,7 @@
         {
           "key": "hbsag_lab_based",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_type.options.hbsag_lab_based.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_type.options.hbsag_lab_based.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "159430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -178,6 +208,7 @@
         {
           "key": "hbsag_rdt",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_type.options.hbsag_rdt.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_type.options.hbsag_rdt.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "165301AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -185,6 +216,7 @@
         {
           "key": "hbsag_dbs",
           "text": "{{tests_hepatitis_b_sub_form.step1.hepb_test_type.options.hbsag_dbs.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hepb_test_type.options.hbsag_dbs.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "161472AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -214,6 +246,7 @@
         {
           "key": "positive",
           "text": "{{tests_hepatitis_b_sub_form.step1.hbsag_lab_ima.options.positive.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hbsag_lab_ima.options.positive.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -221,6 +254,7 @@
         {
           "key": "negative",
           "text": "{{tests_hepatitis_b_sub_form.step1.hbsag_lab_ima.options.negative.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hbsag_lab_ima.options.negative.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -250,6 +284,7 @@
         {
           "key": "positive",
           "text": "{{tests_hepatitis_b_sub_form.step1.hbsag_rdt.options.positive.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hbsag_rdt.options.positive.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -257,6 +292,7 @@
         {
           "key": "negative",
           "text": "{{tests_hepatitis_b_sub_form.step1.hbsag_rdt.options.negative.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hbsag_rdt.options.negative.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -286,6 +322,7 @@
         {
           "key": "positive",
           "text": "{{tests_hepatitis_b_sub_form.step1.hbsag_dbs.options.positive.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hbsag_dbs.options.positive.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -293,6 +330,7 @@
         {
           "key": "negative",
           "text": "{{tests_hepatitis_b_sub_form.step1.hbsag_dbs.options.negative.text}}",
+          "translation_text": "tests_hepatitis_b_sub_form.step1.hbsag_dbs.options.negative.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"

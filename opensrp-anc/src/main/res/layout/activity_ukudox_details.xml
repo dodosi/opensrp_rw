@@ -1,18 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.UkudoxDetailsActivity">
+    <include
+        android:id="@+id/library_toolbar_layout_details"
+        layout="@layout/toolbar_ukudox" />
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:id="@+id/title_content"-->
+<!--        android:layout_height="?android:attr/actionBarSize"-->
+<!--        android:layout_below="@+id/library_toolbar_layout_details"-->
 
-    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-        android:id="@+id/textView21"
+<!--        android:background="@color/customAppThemeBlue">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/text_title_content"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_marginEnd="@dimen/characteristics_drawable_padding"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:text="@string/anc_dashboard"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/characteristics_text_size" />-->
+
+<!--    </RelativeLayout>-->
+    <RelativeLayout
+        android:id="@+id/client_search"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_weight="2"
+        android:background="@color/search_bar_background_black"
+
+        android:layout_below="@+id/library_toolbar_layout_details">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_height="@dimen/ec_main_header_search_layout_height"
+            android:layout_marginStart="@dimen/register_search_bar_margin"
+            android:layout_marginEnd="@dimen/register_search_bar_min_margin"
+            android:layout_weight="1.5">
+        <SearchView
+            android:id="@+id/search_client"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/grey_edit_text_shape"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:minWidth="100dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/search_hint_white"
+            android:textSize="@dimen/default_font_size_search_bar"
+            android:iconifiedByDefault="false">
+
+            <requestFocus />
+        </SearchView>
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/register_sort_filter_bar_layoutclent"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_weight="2"
+        android:layout_below="@+id/client_search"
+        android:background="@color/sort_bar_grey"
+        android:gravity="center_vertical">
+    <TextView
+        android:id="@+id/header_text_displayclient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/details"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginStart="@dimen/register_search_bar_margin"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:padding="@dimen/min_padding_size"
+        android:background="@color/sort_bar_grey"
+        android:singleLine="true"
+        android:text="@string/_0_clients_sort_updated"
+        android:textColor="@color/light_grey_text"
+        android:textSize="@dimen/default_font_size_search_bar"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/details_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/register_sort_filter_bar_layoutclent" />
+</RelativeLayout>

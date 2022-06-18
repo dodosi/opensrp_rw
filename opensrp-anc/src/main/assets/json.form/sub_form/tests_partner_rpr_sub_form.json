@@ -13,6 +13,7 @@
         {
           "key": "done_today",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_status.options.done_today.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_status.options.done_today.text",
           "type": "done_today",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -21,6 +22,7 @@
         {
           "key": "done_earlier",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_status.options.done_earlier.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_status.options.done_earlier.text",
           "type": "done_earlier",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -29,6 +31,7 @@
         {
           "key": "ordered",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_status.options.ordered.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_status.options.ordered.text",
           "type": "ordered",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -37,6 +40,7 @@
         {
           "key": "not_done",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_status.options.not_done.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_status.options.not_done.text",
           "type": "not_done",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -68,6 +72,7 @@
         {
           "key": "stock_out",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_notdone.options.stock_out.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_notdone.options.stock_out.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -75,6 +80,7 @@
         {
           "key": "expired_stock",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_notdone.options.expired_stock.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_notdone.options.expired_stock.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -82,6 +88,7 @@
         {
           "key": "other",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_notdone.options.other.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_notdone.options.other.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -160,6 +167,28 @@
       }
     },
     {
+      "key": "partner_rpr_test_scheduled_date",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_entity_id": "",
+      "type": "date_picker",
+      "hint": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_scheduled_date.hint}}",
+      "expanded": "false",
+      "max_date": "today+10m",
+      "min_date": "today",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "tests_relevance_rules.yml"
+          }
+        }
+      },
+      "v_required": {
+        "value": false,
+        "err": ""
+      }
+    },
+    {
       "key": "partner_rpr_test_result",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
@@ -171,6 +200,7 @@
         {
           "key": "positive",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_result.options.positive.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_result.options.positive.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -178,6 +208,7 @@
         {
           "key": "negative",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_result.options.negative.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_result.options.negative.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -185,6 +216,7 @@
         {
           "key": "indeterminate",
           "text": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_result.options.indeterminate.text}}",
+          "translation_text": "tests_partner_rpr_sub_form.step1.partner_rpr_test_result.options.indeterminate.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""

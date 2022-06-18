@@ -2,13 +2,10 @@ package org.smartregister.anc.library.presenter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import androidx.core.util.Pair;
 
 import org.apache.commons.lang3.tuple.Triple;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.contract.ProfileContract;
@@ -119,61 +116,11 @@ public class ProfilePresenter implements ProfileContract.Presenter, RegisterCont
             Timber.d(jsonString);
             if (jsonString != null) {
                 JSONObject form = new JSONObject(jsonString);
-                Log.d("MY_TEST",form.toString());
                 getProfileView().showProgressDialog(
                         form.getString(ANCJsonFormUtils.ENCOUNTER_TYPE).equals(ConstantsUtils.EventTypeUtils.CLOSE) ?
                                 R.string.removing_dialog_title : R.string.saving_dialog_title);
 
                 if (form.getString(ANCJsonFormUtils.ENCOUNTER_TYPE).equals(ConstantsUtils.EventTypeUtils.UPDATE_REGISTRATION)) {
-
-                    //--------------------------------Eric code start here() for location----------------------
-                   try {
-
-
-                       JSONObject reg_form = new JSONObject(jsonString);
-                       JSONObject step1 = reg_form.getJSONObject("step1");
-                       JSONArray feilds = step1.getJSONArray("fields");
-
-                       String province = "";
-                       String district = "";
-                       String sector = "";
-                       String cell = "";
-                       for (int i = 0; i < feilds.length(); i++) {
-
-
-                           if (feilds.getJSONObject(i).getString("key").equals("address_number")) {
-
-                               String[] locationArrays = feilds.getJSONObject(i).getString("value").split(",");
-                               province = locationArrays[0].substring(2, locationArrays[0].length() - 1);
-                               ;
-                               district = locationArrays[1].substring(1, locationArrays[1].length() - 1);
-                               sector = locationArrays[2].substring(1, locationArrays[2].length() - 1);
-                               cell = locationArrays[3].substring(1, locationArrays[3].length() - 2);
-                           }
-                           if (feilds.getJSONObject(i).getString("key").equals("province")) {
-                               feilds.getJSONObject(i).put("value", province);
-                           }
-
-                           if (feilds.getJSONObject(i).getString("key").equals("district")) {
-                               feilds.getJSONObject(i).put("value", district);
-                           }
-                           if (feilds.getJSONObject(i).getString("key").equals("sector")) {
-                               feilds.getJSONObject(i).put("value", sector);
-                           }
-                           if (feilds.getJSONObject(i).getString("key").equals("cell")) {
-                               feilds.getJSONObject(i).put("value", cell);
-                           }
-
-
-                       }
-                       step1.put("fields", feilds);
-                       reg_form.put("step1", step1);
-                       jsonString = reg_form.toString();
-                   }catch (JSONException ex){
-
-                   }
-//                         ---------------- Eric code ends here--------------------
-
                     Pair<Client, Event> values = ANCJsonFormUtils.processRegistrationForm(allSharedPreferences, jsonString);
                     mRegisterInteractor.saveRegistration(values, jsonString, true, this);
                 } else if (form.getString(ANCJsonFormUtils.ENCOUNTER_TYPE).equals(ConstantsUtils.EventTypeUtils.CLOSE)) {
@@ -195,9 +142,12 @@ public class ProfilePresenter implements ProfileContract.Presenter, RegisterCont
                     .setProfileName(client.get(DBConstantsUtils.KeyUtils.FIRST_NAME) + " " + client.get(DBConstantsUtils.KeyUtils.LAST_NAME));
             getProfileView().setProfileAge(String.valueOf(Utils.getAgeFromDate(client.get(DBConstantsUtils.KeyUtils.DOB))));
             try {
-                getProfileView().setProfileGestationAge(
-                        client.containsKey(DBConstantsUtils.KeyUtils.EDD) && client.get(DBConstantsUtils.KeyUtils.EDD) != null ?
-                                String.valueOf(Utils.getGestationAgeFromEDDate(client.get(DBConstantsUtils.KeyUtils.EDD))) : null);
+                if(client.containsKey(DBConstantsUtils.KeyUtils.EDD) && client.get(DBConstantsUtils.KeyUtils.EDD) != null)
+                    if(Utils.getGestationAgeFromEDDate(client.get(DBConstantsUtils.KeyUtils.EDD)) <= 40) {
+                        getProfileView().setProfileGestationAge(
+                                String.valueOf(Utils.getGestationAgeFromEDDate(client.get(DBConstantsUtils.KeyUtils.EDD))));
+                    }
+
             } catch (Exception e) {
                 getProfileView().setProfileGestationAge("0");
             }

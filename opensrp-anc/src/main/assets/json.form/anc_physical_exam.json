@@ -191,6 +191,7 @@
           {
             "key": "pregest_weight_unknown",
             "text": "{{anc_physical_exam.step1.pregest_weight_unknown.options.pregest_weight_unknown.text}}",
+            "translation_text": "anc_physical_exam.step1.pregest_weight_unknown.options.pregest_weight_unknown.text",
             "value": "false",
             "openmrs_entity_parent": "165277AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
@@ -644,6 +645,7 @@
           {
             "key": "cant_record_bp",
             "text": "{{anc_physical_exam.step2.cant_record_bp.options.cant_record_bp.text}}",
+            "translation_text": "anc_physical_exam.step2.cant_record_bp.options.cant_record_bp.text",
             "value": false,
             "openmrs_entity_parent": "",
             "openmrs_entity": "",
@@ -664,6 +666,7 @@
           {
             "key": "bp_cuff_unavailable",
             "text": "{{anc_physical_exam.step2.cant_record_bp_reason.options.bp_cuff_unavailable.text}}",
+            "translation_text": "anc_physical_exam.step2.cant_record_bp_reason.options.bp_cuff_unavailable.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165386AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -671,6 +674,7 @@
           {
             "key": "bp_cuff_broken",
             "text": "{{anc_physical_exam.step2.cant_record_bp_reason.options.bp_cuff_broken.text}}",
+            "translation_text": "anc_physical_exam.step2.cant_record_bp_reason.options.bp_cuff_broken.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "165179AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -678,6 +682,7 @@
           {
             "key": "other",
             "text": "{{anc_physical_exam.step2.cant_record_bp_reason.options.other.text}}",
+            "translation_text": "anc_physical_exam.step2.cant_record_bp_reason.options.other.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -879,6 +884,7 @@
           {
             "key": "none",
             "text": "{{anc_physical_exam.step2.symp_sev_preeclampsia.options.none.text}}",
+            "translation_text": "anc_physical_exam.step2.symp_sev_preeclampsia.options.none.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -887,6 +893,7 @@
           {
             "key": "severe_headache",
             "text": "{{anc_physical_exam.step2.symp_sev_preeclampsia.options.severe_headache.text}}",
+            "translation_text": "anc_physical_exam.step2.symp_sev_preeclampsia.options.severe_headache.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "139081AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -895,6 +902,7 @@
           {
             "key": "visual_disturbance",
             "text": "{{anc_physical_exam.step2.symp_sev_preeclampsia.options.visual_disturbance.text}}",
+            "translation_text": "anc_physical_exam.step2.symp_sev_preeclampsia.options.visual_disturbance.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "147104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -903,6 +911,7 @@
           {
             "key": "epigastric_pain",
             "text": "{{anc_physical_exam.step2.symp_sev_preeclampsia.options.epigastric_pain.text}}",
+            "translation_text": "anc_physical_exam.step2.symp_sev_preeclampsia.options.epigastric_pain.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "141128AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -911,6 +920,7 @@
           {
             "key": "dizziness",
             "text": "{{anc_physical_exam.step2.symp_sev_preeclampsia.options.dizziness.text}}",
+            "translation_text": "anc_physical_exam.step2.symp_sev_preeclampsia.options.dizziness.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "156046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -919,6 +929,7 @@
           {
             "key": "vomiting",
             "text": "{{anc_physical_exam.step2.symp_sev_preeclampsia.options.vomiting.text}}",
+            "translation_text": "anc_physical_exam.step2.symp_sev_preeclampsia.options.vomiting.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "122983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -950,6 +961,7 @@
           {
             "key": "none",
             "text": "{{anc_physical_exam.step2.urine_protein.options.none.text}}",
+            "translation_text": "anc_physical_exam.step2.urine_protein.options.none.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1434,6 +1446,7 @@
           {
             "key": "yes",
             "text": "{{anc_physical_exam.step3.pallor.options.yes.text}}",
+            "translation_text": "anc_physical_exam.step3.pallor.options.yes.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1441,6 +1454,7 @@
           {
             "key": "no",
             "text": "{{anc_physical_exam.step3.pallor.options.no.text}}",
+            "translation_text": "anc_physical_exam.step3.pallor.options.no.text",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1557,6 +1571,7 @@
           {
             "key": "not_done",
             "text": "{{anc_physical_exam.step3.muac.options.not_done.text}}",
+            "translation_text": "anc_physical_exam.step3.muac.options.not_done.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -1567,6 +1582,7 @@
           {
             "key": "done",
             "text": "{{anc_physical_exam.step3.muac.options.done.text}}",
+            "translation_text": "anc_physical_exam.step3.muac.options.done.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -1650,6 +1666,7 @@
           {
             "key": "1",
             "text": "{{anc_physical_exam.step3.respiratory_exam.options.1.text}}",
+            "translation_text": "anc_physical_exam.step3.respiratory_exam.options.1.text",
             "openmrs_entity_parent": "165367AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1657,6 +1674,7 @@
           {
             "key": "2",
             "text": "{{anc_physical_exam.step3.respiratory_exam.options.2.text}}",
+            "translation_text": "anc_physical_exam.step3.respiratory_exam.options.2.text",
             "openmrs_entity_parent": "165367AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1664,6 +1682,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.respiratory_exam.options.3.text}}",
+            "translation_text": "anc_physical_exam.step3.respiratory_exam.options.3.text",
             "specify_info": "{{anc_physical_exam.step3.respiratory_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
@@ -1774,6 +1793,7 @@
           {
             "key": "1",
             "text": "{{anc_physical_exam.step3.cardiac_exam.options.1.text}}",
+            "translation_text": "anc_physical_exam.step3.cardiac_exam.options.1.text",
             "openmrs_entity_parent": "165368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1781,6 +1801,7 @@
           {
             "key": "2",
             "text": "{{anc_physical_exam.step3.cardiac_exam.options.2.text}}",
+            "translation_text": "anc_physical_exam.step3.cardiac_exam.options.2.text",
             "openmrs_entity_parent": "165368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1788,6 +1809,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.cardiac_exam.options.3.text}}",
+            "translation_text": "anc_physical_exam.step3.cardiac_exam.options.3.text",
             "specify_info": "{{anc_physical_exam.step3.cardiac_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
@@ -1853,6 +1875,7 @@
           {
             "key": "1",
             "text": "{{anc_physical_exam.step3.breast_exam.options.1.text}}",
+            "translation_text": "anc_physical_exam.step3.breast_exam.options.1.text",
             "openmrs_entity_parent": "165369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1860,6 +1883,7 @@
           {
             "key": "2",
             "text": "{{anc_physical_exam.step3.breast_exam.options.2.text}}",
+            "translation_text": "anc_physical_exam.step3.breast_exam.options.2.text",
             "openmrs_entity_parent": "165369AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1867,6 +1891,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.breast_exam.options.3.text}}",
+            "translation_text": "anc_physical_exam.step3.breast_exam.options.3.text",
             "specify_info": "{{anc_physical_exam.step3.breast_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
@@ -1932,6 +1957,7 @@
           {
             "key": "1",
             "text": "{{anc_physical_exam.step3.abdominal_exam.options.1.text}}",
+            "translation_text": "anc_physical_exam.step3.abdominal_exam.options.1.text",
             "openmrs_entity_parent": "165370AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1939,6 +1965,7 @@
           {
             "key": "2",
             "text": "{{anc_physical_exam.step3.abdominal_exam.options.2.text}}",
+            "translation_text": "anc_physical_exam.step3.abdominal_exam.options.2.text",
             "openmrs_entity_parent": "165370AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1946,6 +1973,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.abdominal_exam.options.3.text}}",
+            "translation_text": "anc_physical_exam.step3.abdominal_exam.options.3.text",
             "specify_info": "{{anc_physical_exam.step3.abdominal_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
@@ -2011,6 +2039,7 @@
           {
             "key": "1",
             "text": "{{anc_physical_exam.step3.pelvic_exam.options.1.text}}",
+            "translation_text": "anc_physical_exam.step3.pelvic_exam.options.1.text",
             "openmrs_entity_parent": "165373AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2018,6 +2047,7 @@
           {
             "key": "2",
             "text": "{{anc_physical_exam.step3.pelvic_exam.options.2.text}}",
+            "translation_text": "anc_physical_exam.step3.pelvic_exam.options.2.text",
             "openmrs_entity_parent": "165373AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2025,6 +2055,7 @@
           {
             "key": "3",
             "text": "{{anc_physical_exam.step3.pelvic_exam.options.3.text}}",
+            "translation_text": "anc_physical_exam.step3.pelvic_exam.options.3.text",
             "specify_info": "{{anc_physical_exam.step3.pelvic_exam.options.3.specify_info}}",
             "specify_widget": "check_box",
             "specify_info_color": "#8C8C8C",
@@ -2090,6 +2121,7 @@
           {
             "key": "1",
             "text": "{{anc_physical_exam.step3.cervical_exam.options.1.text}}",
+            "translation_text": "anc_physical_exam.step3.cervical_exam.options.1.text",
             "openmrs_entity_parent": "165374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "",
             "openmrs_entity_id": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2102,6 +2134,7 @@
           {
             "key": "2",
             "text": "{{anc_physical_exam.step3.cervical_exam.options.2.text}}",
+            "translation_text": "anc_physical_exam.step3.cervical_exam.options.2.text",
             "openmrs_entity_parent": "165374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "",
             "openmrs_entity_id": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2182,6 +2215,7 @@
           {
             "key": "yes",
             "text": "{{anc_physical_exam.step3.oedema.options.yes.text}}",
+            "translation_text": "anc_physical_exam.step3.oedema.options.yes.text",
             "specify_info": "{{anc_physical_exam.step3.oedema.options.yes.specify_info}}",
             "specify_widget": "radio_button",
             "specify_info_color": "#8C8C8C",
@@ -2193,6 +2227,7 @@
           {
             "key": "no",
             "text": "{{anc_physical_exam.step3.oedema.options.no.text}}",
+            "translation_text": "anc_physical_exam.step3.oedema.options.no.text",
             "openmrs_entity_parent": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -2200,11 +2235,51 @@
         ]
       },
       {
+        "key": "pitting_oedema",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_physical_exam.step3.pitting_oedema.label}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "yes",
+            "text": "{{anc_physical_exam.step3.pitting_oedema.options.yes.text}}",
+            "translation_text": "anc_physical_exam.step3.pitting_oedema.options.yes.text",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "no",
+            "text": "{{anc_physical_exam.step3.pitting_oedema.options.no.text}}",
+            "translation_text": "anc_physical_exam.step3.pitting_oedema.options.no.text",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          }
+        ],
+        "v_required": {
+          "value": "false",
+          "err": "{{anc_physical_exam.step3.oedema_severity.v_required.err}}"
+        },
+        "relevance": {
+          "step3:oedema": {
+            "type": "string",
+            "ex": "equalTo(., \"yes\")"
+          }
+        }
+      },
+      {
         "key": "oedema_severity",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "164494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_physical_exam.step3.oedema_severity.label}}",
         "label_text_style": "bold",
         "text_color": "#000000",
@@ -2270,6 +2345,7 @@
           {
             "key": "none",
             "text": "{{anc_physical_exam.step3.ipv_physical_signs_symptoms.options.none.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_physical_signs_symptoms.options.none.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2278,6 +2354,7 @@
           {
             "key": "abdomen_injury",
             "text": "{{anc_physical_exam.step3.ipv_physical_signs_symptoms.options.abdomen_injury.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_physical_signs_symptoms.options.abdomen_injury.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2286,6 +2363,7 @@
           {
             "key": "other_injury",
             "text": "{{anc_physical_exam.step3.ipv_physical_signs_symptoms.options.other_injury.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_physical_signs_symptoms.options.other_injury.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2294,6 +2372,7 @@
           {
             "key": "other",
             "text": "{{anc_physical_exam.step3.ipv_physical_signs_symptoms.options.other.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_physical_signs_symptoms.options.other.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2398,6 +2477,7 @@
           {
             "key": "yes",
             "text": "{{anc_physical_exam.step3.ipv_clinical_enquiry.options.yes.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_clinical_enquiry.options.yes.text",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": ""
@@ -2405,6 +2485,7 @@
           {
             "key": "no",
             "text": "{{anc_physical_exam.step3.ipv_clinical_enquiry.options.no.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_clinical_enquiry.options.no.text",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             "openmrs_entity_parent": ""
@@ -2431,6 +2512,7 @@
           {
             "key": "referred",
             "text": "{{anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.referred.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.referred.text",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
             "openmrs_entity_parent": ""
@@ -2438,6 +2520,7 @@
           {
             "key": "provider_unavailable",
             "text": "{{anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.provider_unavailable.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.provider_unavailable.text",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
             "openmrs_entity_parent": ""
@@ -2445,6 +2528,7 @@
           {
             "key": "space_unavailable",
             "text": "{{anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.space_unavailable.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.space_unavailable.text",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
             "openmrs_entity_parent": ""
@@ -2452,6 +2536,7 @@
           {
             "key": "confidentiality",
             "text": "{{anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.confidentiality.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.confidentiality.text",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
             "openmrs_entity_parent": ""
@@ -2459,6 +2544,7 @@
           {
             "key": "other",
             "text": "{{anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.other.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_clinical_enquiry_not_done_reason.options.other.text",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
             "openmrs_entity_parent": ""
@@ -2501,6 +2587,7 @@
           {
             "key": "yes",
             "text": "{{anc_physical_exam.step3.ipv_subject.options.yes.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_subject.options.yes.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2509,6 +2596,7 @@
           {
             "key": "no",
             "text": "{{anc_physical_exam.step3.ipv_subject.options.no.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_subject.options.no.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2544,6 +2632,7 @@
           {
             "key": "phys_violence",
             "text": "{{anc_physical_exam.step3.ipv_subject_violence_types.options.phys_violence.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_subject_violence_types.options.phys_violence.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2552,6 +2641,7 @@
           {
             "key": "sexual_violence",
             "text": "{{anc_physical_exam.step3.ipv_subject_violence_types.options.sexual_violence.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_subject_violence_types.options.sexual_violence.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2560,6 +2650,7 @@
           {
             "key": "emotional_abuse",
             "text": "{{anc_physical_exam.step3.ipv_subject_violence_types.options.emotional_abuse.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_subject_violence_types.options.emotional_abuse.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2568,6 +2659,7 @@
           {
             "key": "family_member_violence",
             "text": "{{anc_physical_exam.step3.ipv_subject_violence_types.options.family_member_violence.text}}",
+            "translation_text": "anc_physical_exam.step3.ipv_subject_violence_types.options.family_member_violence.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2643,6 +2735,7 @@
           {
             "key": "yes",
             "text": "{{anc_physical_exam.step4.sfh_to_ga.options.yes.text}}",
+            "translation_text": "anc_physical_exam.step4.sfh_to_ga.options.yes.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2651,6 +2744,7 @@
           {
             "key": "no",
             "text": "{{anc_physical_exam.step4.sfh_to_ga.options.no.text}}",
+            "translation_text": "anc_physical_exam.step4.sfh_to_ga.options.no.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -2676,6 +2770,7 @@
           {
             "key": "yes",
             "text": "{{anc_physical_exam.step4.fetal_movement.options.yes.text}}",
+            "translation_text": "anc_physical_exam.step4.fetal_movement.options.yes.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2684,6 +2779,7 @@
           {
             "key": "no",
             "text": "{{anc_physical_exam.step4.fetal_movement.options.no.text}}",
+            "translation_text": "anc_physical_exam.step4.fetal_movement.options.no.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2715,6 +2811,7 @@
           {
             "key": "yes",
             "text": "{{anc_physical_exam.step4.fetal_heartbeat.options.yes.text}}",
+            "translation_text": "anc_physical_exam.step4.fetal_heartbeat.options.yes.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2723,6 +2820,7 @@
           {
             "key": "no",
             "text": "{{anc_physical_exam.step4.fetal_heartbeat.options.no.text}}",
+            "translation_text": "anc_physical_exam.step4.fetal_heartbeat.options.no.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3064,6 +3162,7 @@
           {
             "key": "cephalic",
             "text": "{{anc_physical_exam.step4.fetal_presentation.options.cephalic.text}}",
+            "translation_text": "anc_physical_exam.step4.fetal_presentation.options.cephalic.text",
             "value": "false",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "160091AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3072,6 +3171,7 @@
           {
             "key": "breech",
             "text": "{{anc_physical_exam.step4.fetal_presentation.options.breech.text}}",
+            "translation_text": "anc_physical_exam.step4.fetal_presentation.options.breech.text",
             "value": "false",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "146922AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3080,6 +3180,7 @@
           {
             "key": "transverse",
             "text": "{{anc_physical_exam.step4.fetal_presentation.options.transverse.text}}",
+            "translation_text": "anc_physical_exam.step4.fetal_presentation.options.transverse.text",
             "value": "false",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "112259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3088,6 +3189,7 @@
           {
             "key": "other",
             "text": "{{anc_physical_exam.step4.fetal_presentation.options.other.text}}",
+            "translation_text": "anc_physical_exam.step4.fetal_presentation.options.other.text",
             "value": "false",
             "openmrs_entity": "concept",
             "openmrs_entity_id": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3119,6 +3221,7 @@
           {
             "key": "abnormal",
             "text": "{{anc_physical_exam.step4.fetus_position.options.abnormal.text}}",
+            "translation_text": "anc_physical_exam.step4.fetus_position.options.abnormal.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",
@@ -3127,6 +3230,7 @@
           {
             "key": "normal",
             "text": "{{anc_physical_exam.step4.fetus_position.options.normal.text}}",
+            "translation_text": "anc_physical_exam.step4.fetus_position.options.normal.text",
             "value": false,
             "openmrs_entity": "concept",
             "openmrs_entity_id": "",

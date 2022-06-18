@@ -1,14 +1,16 @@
 package org.smartregister.anc.library.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
-import org.smartregister.Context;
+
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.domain.HomeItem;
 
@@ -21,8 +23,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     private View.OnClickListener clickListener;
 
-    public HomeAdapter( List<HomeItem> homeItems, View.OnClickListener clickListener) {
-
+    public HomeAdapter( Context context ,List<HomeItem> homeItems,View.OnClickListener clickListener) {
+        this.context=context;
         this.homeItems = homeItems;
         this.clickListener = clickListener;
     }
@@ -42,12 +44,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     public void onBindViewHolder(final ViewHolder holder, int position) {
         HomeItem homeItem = homeItems.get(position);
 
-        holder.cardLayout.setBackgroundResource(homeItem.getBackground());
+//        holder.cardLayout.setBackgroundResource(homeItem.getBackground());
 
         holder.cardLayout.setTag(homeItem);
         holder.name.setText(homeItem.getTitle());
         holder.number.setText(String.valueOf(homeItem.getNumber()));
+        holder.number.setTextColor( homeItem.getBackground());
         holder.cardLayout.setOnClickListener(clickListener);
+        holder.relativeLayout.setBackgroundColor(homeItem.getBackground());
     }
 
     @Override
@@ -59,6 +63,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         public View cardLayout;
         public TextView name;
         public TextView number;
+        public RelativeLayout relativeLayout;
 
 
 
@@ -68,6 +73,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
             cardLayout = view.findViewById(R.id.card_layout_home);
             name = view.findViewById(R.id.container_name_home);
             number = view.findViewById(R.id.number);
+            relativeLayout=view.findViewById(R.id.container_name_home_header);
         }
     }
 }

@@ -13,6 +13,7 @@
         {
           "key": "done_today",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_status.options.done_today.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_status.options.done_today.text",
           "type": "done_today",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -21,6 +22,7 @@
         {
           "key": "done_earlier",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_status.options.done_earlier.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_status.options.done_earlier.text",
           "type": "done_earlier",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -29,6 +31,7 @@
         {
           "key": "ordered",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_status.options.ordered.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_status.options.ordered.text",
           "type": "ordered",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -37,6 +40,7 @@
         {
           "key": "not_done",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_status.options.not_done.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_status.options.not_done.text",
           "type": "not_done",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
@@ -67,6 +71,7 @@
         {
           "key": "stock_out",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_notdone.options.stock_out.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_notdone.options.stock_out.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -74,6 +79,7 @@
         {
           "key": "expired_stock",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_notdone.options.expired_stock.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_notdone.options.expired_stock.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -81,6 +87,7 @@
         {
           "key": "other",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_notdone.options.other.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_notdone.options.other.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": ""
@@ -95,6 +102,28 @@
           "type": "string",
           "ex": "equalTo(., \"not_done\")"
         }
+      }
+    },
+    {
+      "key": "hiv_test_partner_scheduled_date",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_entity_id": "",
+      "type": "date_picker",
+      "hint": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_scheduled_date.hint}}",
+      "expanded": "false",
+      "max_date": "today+10m",
+      "min_date": "today",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "tests_relevance_rules.yml"
+          }
+        }
+      },
+      "v_required": {
+        "value": false,
+        "err": ""
       }
     },
     {
@@ -177,6 +206,7 @@
         {
           "key": "positive",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_result.options.positive.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_result.options.positive.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -184,6 +214,7 @@
         {
           "key": "negative",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_result.options.negative.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_result.options.negative.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -191,6 +222,7 @@
         {
           "key": "inconclusive",
           "text": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_result.options.inconclusive.text}}",
+          "translation_text": "tests_partner_hiv_sub_form.step1.hiv_test_partner_result.options.inconclusive.text",
           "openmrs_entity_parent": "",
           "openmrs_entity": "concept",
           "openmrs_entity_id": "1138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"

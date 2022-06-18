@@ -9,7 +9,9 @@ import com.evernote.android.job.JobCreator;
 import org.smartregister.job.DocumentConfigurationServiceJob;
 import org.smartregister.job.ExtendedSyncServiceJob;
 import org.smartregister.job.ImageUploadServiceJob;
+import org.smartregister.job.P2pServiceJob;
 import org.smartregister.job.PullUniqueIdsServiceJob;
+import org.smartregister.job.SyncAllLocationsServiceJob;
 import org.smartregister.job.SyncServiceJob;
 import org.smartregister.job.SyncSettingsServiceJob;
 import org.smartregister.job.ValidateSyncDataServiceJob;
@@ -26,6 +28,8 @@ public class AncJobCreator implements JobCreator {
     @Override
     public Job create(@NonNull String tag) {
         switch (tag) {
+            case P2pServiceJob.TAG:
+                return new P2pServiceJob();
             case SyncServiceJob.TAG:
                 return new SyncServiceJob(SyncIntentService.class);
             case ExtendedSyncServiceJob.TAG:
@@ -42,6 +46,8 @@ public class AncJobCreator implements JobCreator {
                 return new SyncSettingsServiceJob();
             case DocumentConfigurationServiceJob.TAG:
                 return new DocumentConfigurationServiceJob(DocumentConfigurationIntentService.class);
+            case SyncAllLocationsServiceJob.TAG:
+                return new SyncAllLocationsServiceJob();
             default:
                 Timber.d("Looks like you tried to create a job " + tag + " that is not declared in the Anc Job Creator");
                 return null;
