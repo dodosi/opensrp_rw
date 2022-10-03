@@ -55,7 +55,7 @@ public class ProfileTasksFragment extends BaseProfileFragment implements Profile
     private RecyclerView recyclerView;
     private HashMap<String, String> clientDetails;
     private Task currentTask;
-    private ANCFormUtils formUtils = new ANCFormUtils();
+    private final ANCFormUtils formUtils = new ANCFormUtils();
 
     public static ProfileTasksFragment newInstance(Bundle bundle) {
         Bundle args = bundle;
@@ -195,8 +195,9 @@ public class ProfileTasksFragment extends BaseProfileFragment implements Profile
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         try {
-            String jsonString = data.getStringExtra(ConstantsUtils.IntentKeyUtils.JSON);
-            if (StringUtils.isNotBlank(jsonString)) {
+            if (data != null && StringUtils.isNotBlank(data.getStringExtra(ConstantsUtils.IntentKeyUtils.JSON))) {
+                String jsonString = data.getStringExtra(ConstantsUtils.IntentKeyUtils.JSON);
+
                 JSONObject form = new JSONObject(jsonString);
                 JSONArray accordionValues = createAccordionValues(form);
                 Task newTask = updateTaskValue(accordionValues);

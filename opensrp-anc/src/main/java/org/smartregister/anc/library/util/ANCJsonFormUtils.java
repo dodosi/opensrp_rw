@@ -855,6 +855,10 @@ public class ANCJsonFormUtils extends org.smartregister.util.JsonFormUtils {
             attributes.put(DBConstantsUtils.KeyUtils.EDD, womanDetails.get(DBConstantsUtils.KeyUtils.EDD));
             clientForm.put(ConstantsUtils.JsonFormKeyUtils.ATTRIBUTES, attributes);
 
+            attributes.put(DBConstantsUtils.KeyUtils.ALT_NAME, womanDetails.get(DBConstantsUtils.KeyUtils.ALT_NAME));
+            attributes.put(DBConstantsUtils.KeyUtils.PHONE_NUMBER, womanDetails.get(DBConstantsUtils.KeyUtils.PHONE_NUMBER));
+            attributes.put(DBConstantsUtils.KeyUtils.ALT_PHONE_NUMBER, womanDetails.get(DBConstantsUtils.KeyUtils.ALT_PHONE_NUMBER));
+
             db.addorUpdateClient(baseEntityId, clientForm);
 
             Event updateClientEvent = createUpdateClientDetailsEvent(baseEntityId);

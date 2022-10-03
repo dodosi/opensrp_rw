@@ -118,6 +118,7 @@ public abstract class ConstantsUtils {
         public static final String CONTACT_VISIT = "Contact Visit";
         public static final String LOCATION_ID = "locationId";
         public static final String IDENTIFIER = "identifier";
+        public static final String REGISTRATION_FRENCH = "Enregistrement CPN";
     }
 
     public static class JsonFormUtils {

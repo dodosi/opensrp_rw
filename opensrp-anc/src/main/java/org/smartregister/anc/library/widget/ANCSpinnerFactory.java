@@ -101,8 +101,8 @@ public class ANCSpinnerFactory extends SpinnerFactory {
                     .equalsIgnoreCase(LOCATION_SUB_TYPE)
                     && jsonObject.has(ConstantsUtils.JsonFormKeyUtils.OPTIONS)
                     && jsonObject.getJSONArray(ConstantsUtils.JsonFormKeyUtils.OPTIONS).length() <= 0) {
-
-                if (formFragment instanceof  ANCRegisterFormFragment
+                String stepTitle = formFragment.getStep(STEP1).get(STEP_TITLE).toString();
+                if ((stepTitle.equals(ConstantsUtils.EventTypeUtils.REGISTRATION) || stepTitle.equals(ConstantsUtils.EventTypeUtils.REGISTRATION_FRENCH))
                         && StringUtils.endsWithIgnoreCase(jsonObject.getString(KEY), "province")) {
                     populateProvince(jsonObject);
                 } else {
