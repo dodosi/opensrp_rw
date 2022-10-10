@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
@@ -1015,6 +1016,13 @@ public class Utils extends org.smartregister.util.Utils {
             List<YamlConfigItem> fields = yamlConfig.getFields();
             StringBuilder outputBuilder = new StringBuilder();
             for (YamlConfigItem yamlConfigItem : fields) {
+                for (String key :facts.asMap().keySet()) {
+                    String value = Utils.returnTranslatedStringJoinedValue(facts.get(key).toString());
+                    if (StringUtils.isNotBlank(value)) {
+                        facts.put(key, value);
+                    } else {
+                        facts.put(key, "");
+                    }}
                 if (yamlConfigItem.isMultiWidget() != null && yamlConfigItem.isMultiWidget()) {
                     prefillInjectableFacts(facts, yamlConfigItem.getTemplate());
                 }
