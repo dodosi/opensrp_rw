@@ -1654,7 +1654,7 @@
       },
       {
         "key": "stillbirths_label",
-        "type": "label",
+        "type": "hidden",
         "label_text_style": "bold",
         "text": "{{anc_profile.step3.stillbirths_label.text}}",
         "text_color": "#000000",
@@ -1675,7 +1675,7 @@
         "openmrs_entity": "",
         "openmrs_entity_id": "",
         "key": "stillbirths",
-        "type": "edit_text",
+        "type": "hidden",
         "text_color": "#FF0000",
         "read_only": true,
         "edit_type": "number",
@@ -1686,14 +1686,8 @@
               "rules-file": "profile_calculation_rules.yml"
             }
           }
-        },
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "profile_relevance_rules.yml"
-            }
-          }
         }
+
       },
       {
         "key": "stillbirths_old",
