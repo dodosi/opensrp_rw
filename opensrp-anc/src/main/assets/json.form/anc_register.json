@@ -107,7 +107,7 @@
         "hint": "{{anc_register.step1.last_name.hint}}",
         "edit_type": "name",
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "{{anc_register.step1.last_name.v_required.err}}"
         },
         "v_regex": {

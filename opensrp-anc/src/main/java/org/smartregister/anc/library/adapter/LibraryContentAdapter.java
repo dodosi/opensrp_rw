@@ -19,20 +19,21 @@ public class LibraryContentAdapter extends RecyclerView.Adapter<LibraryContentVi
     private final List<LibraryContent> libraryContentList;
     private final LayoutInflater inflater;
     private Activity activity;
-    private final Context context;
+//    private final Context context;
 
     public LibraryContentAdapter(List<LibraryContent> libraryContentList, Context context) {
         this.libraryContentList = libraryContentList;
         this.inflater = LayoutInflater.from(context);
-//        this.activity = (Activity) context;
-        this.context = context;
+        this.activity = (Activity) context;
+//        this.context = context;
     }
 
     @NonNull
     @Override
     public LibraryContentViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = inflater.inflate(R.layout.library_items_row, viewGroup, false);
-        return new LibraryContentViewHolder(view);
+//        return new LibraryContentViewHolder(view);
+        return new LibraryContentViewHolder(view, activity);
     }
 
     @Override
