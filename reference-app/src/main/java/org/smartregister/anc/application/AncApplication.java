@@ -8,8 +8,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.core.CrashlyticsCore;
+//import com.crashlytics.android.Crashlytics;
+//import com.crashlytics.android.core.CrashlyticsCore;
 import org.smartregister.anc.library.util.ANCFailSafeRecalledID;
 import com.evernote.android.job.JobManager;
 import com.flurry.android.FlurryAgent;
@@ -40,7 +40,7 @@ import org.smartregister.view.receiver.TimeChangedBroadcastReceiver;
 
 import java.io.FileNotFoundException;
 
-import io.fabric.sdk.android.Fabric;
+//import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
 
 import static org.smartregister.util.Log.logError;
@@ -75,7 +75,7 @@ public class AncApplication extends DrishtiApplication implements TimeChangedBro
         TimeChangedBroadcastReceiver.init(this);
         TimeChangedBroadcastReceiver.getInstance().addOnTimeChangedListener(this);
         LocationHelper.init(Utils.ALLOWED_LEVELS, Utils.DEFAULT_LOCATION_LEVEL);
-        Fabric.with(this, new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()).build());
+//        Fabric.with(this, new Crashlytics.Builder().core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()).build());
 
         //init Job Manager
         JobManager.create(this).addJobCreator(new AncJobCreator());
