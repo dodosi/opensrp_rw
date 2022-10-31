@@ -503,7 +503,7 @@ public class AdvancedSearchFragment extends HomeRegisterFragment
         lastName.addTextChangedListener(advancedSearchTextwatcher);
 
         edd = view.findViewById(R.id.edd);
-        edd.setFocusable(false);
+        edd.setFocusable(true);
         edd.setFocusableInTouchMode(false);
         edd.addTextChangedListener(advancedSearchTextwatcher);
 
@@ -518,8 +518,8 @@ public class AdvancedSearchFragment extends HomeRegisterFragment
         altContactName = view.findViewById(R.id.alternate_contact_name);
         altContactName.addTextChangedListener(advancedSearchTextwatcher);
 
-        setDatePicker(edd, false);
-        setDatePicker(dob, true);
+        setDatePicker(edd, true, true);
+        setDatePicker(dob, true, false);
 
         qrCodeButton.setOnClickListener(view1 -> {
             if (getActivity() == null) {
@@ -535,8 +535,8 @@ public class AdvancedSearchFragment extends HomeRegisterFragment
         resetForm();
     }
 
-    private void setDatePicker(final EditText editText, boolean maxDateToday) {
-        editText.setOnClickListener(new DatePickerListener(getActivity(), editText, maxDateToday));
+    private void setDatePicker(final EditText editText, boolean hasMaximumDates, boolean edd) {
+        editText.setOnClickListener(new DatePickerListener(getActivity(), editText, hasMaximumDates, edd));
     }
 
     private HashMap<String, String> createSelectedFieldMap() {

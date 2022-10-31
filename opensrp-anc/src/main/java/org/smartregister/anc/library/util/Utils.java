@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
@@ -941,9 +942,8 @@ public class Utils extends org.smartregister.util.Utils {
                     List<String> translatedList = new ArrayList<>();
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject object = jsonArray.optJSONObject(i);
-                        String text, translatedText;
-                        text = object.optString(JsonFormConstants.TEXT).trim();
-                        translatedText = StringUtils.isNotBlank(text) ? NativeFormLangUtils.translateDatabaseString(text, AncLibrary.getInstance().getApplicationContext()) : "";
+                        String text = object.optString(JsonFormConstants.TEXT).trim();
+                        String translatedText = StringUtils.isNotBlank(text) ? NativeFormLangUtils.translateDatabaseString(text, AncLibrary.getInstance().getApplicationContext()) : "";
                         translatedList.add(translatedText);
                     }
                     return translatedList.size() > 1 ? String.join(",", translatedList) : translatedList.size() == 1 ? translatedList.get(0) : "";
@@ -953,17 +953,16 @@ public class Utils extends org.smartregister.util.Utils {
             }
             if (StringUtils.isNotBlank(value) && value.charAt(0) == '{') {
                 JSONObject attentionFlagObject = new JSONObject(value);
-                String translated_text, text;
-                text = attentionFlagObject.optString(JsonFormConstants.TEXT).trim();
-                translated_text = StringUtils.isNotBlank(text) ? NativeFormLangUtils.translateDatabaseString(text, AncLibrary.getInstance().getApplicationContext()) : "";
+                String text = attentionFlagObject.optString(JsonFormConstants.TEXT).trim();
+                String translated_text = StringUtils.isNotBlank(text) ? NativeFormLangUtils.translateDatabaseString(text, AncLibrary.getInstance().getApplicationContext()) : "";
                 return translated_text;
             }
             if (StringUtils.isNotBlank(value) && value.contains(",") && value.contains(".") && value.contains(JsonFormConstants.TEXT)) {
                 List<String> attentionFlagValueArray = Arrays.asList(value.trim().split(","));
                 List<String> translatedList = new ArrayList<>();
                 for (int i = 0; i < attentionFlagValueArray.size(); i++) {
-                    String textToTranslate = attentionFlagValueArray.get(i).trim(), translatedText;
-                    translatedText = StringUtils.isNotBlank(textToTranslate) ? NativeFormLangUtils.translateDatabaseString(textToTranslate, AncLibrary.getInstance().getApplicationContext()) : "";
+                    String textToTranslate = attentionFlagValueArray.get(i).trim();
+                    String translatedText = StringUtils.isNotBlank(textToTranslate) ? NativeFormLangUtils.translateDatabaseString(textToTranslate, AncLibrary.getInstance().getApplicationContext()) : "";
                     translatedList.add(translatedText);
                 }
                 return translatedList.size() > 1 ? String.join(",", translatedList) : translatedList.size() == 1 ? translatedList.get(0) : "";
@@ -993,9 +992,9 @@ public class Utils extends org.smartregister.util.Utils {
         }
     }
 
-    public void createSavePdf(Context context, List<YamlConfig> yamlConfigList, Facts facts) throws FileNotFoundException {
+    public void createSavePdf(Context context, List<YamlConfig> yamlConfigList, Facts facts,String womanName) throws FileNotFoundException {
 
-        String FILENAME = context.getResources().getString(R.string.contact_summary_data_file);
+        String FILENAME = womanName+"_"+context.getResources().getString(R.string.contact_summary_data_file);
         String filePath = getAppPath(context) + FILENAME;
 
         if ((new File(filePath)).exists()) {
@@ -1007,7 +1006,7 @@ public class Utils extends org.smartregister.util.Utils {
         Document layoutDocument = new Document(pdfDocument);
 
 
-        addTitle(layoutDocument, context.getResources().getString(R.string.contact_summary_data, getTodaysDate()));
+        addTitle(layoutDocument, context.getResources().getString(R.string.contact_summary_data, getTodaysDate(),womanName));
 
 
         for (YamlConfig yamlConfig : yamlConfigList) {
@@ -1017,6 +1016,13 @@ public class Utils extends org.smartregister.util.Utils {
             List<YamlConfigItem> fields = yamlConfig.getFields();
             StringBuilder outputBuilder = new StringBuilder();
             for (YamlConfigItem yamlConfigItem : fields) {
+                for (String key :facts.asMap().keySet()) {
+                    String value = Utils.returnTranslatedStringJoinedValue(facts.get(key).toString());
+                    if (StringUtils.isNotBlank(value)) {
+                        facts.put(key, value);
+                    } else {
+                        facts.put(key, "");
+                    }}
                 if (yamlConfigItem.isMultiWidget() != null && yamlConfigItem.isMultiWidget()) {
                     prefillInjectableFacts(facts, yamlConfigItem.getTemplate());
                 }
