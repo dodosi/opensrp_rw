@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -122,6 +123,26 @@ public class ANCJsonFormUtils extends org.smartregister.util.JsonFormUtils {
                 ancId.remove(ANCJsonFormUtils.VALUE);
                 ancId.put(ANCJsonFormUtils.VALUE, entityId);
             }
+
+            ///Inject Team & Location into from
+            AllSharedPreferences allSharedPreferences = AncLibrary.getInstance().getContext().userService().getAllSharedPreferences();
+            String providerId = allSharedPreferences.fetchRegisteredANM();
+            String locationId = allSharedPreferences.fetchDefaultLocalityId(providerId);
+            String team = allSharedPreferences.fetchDefaultTeam(providerId);
+            String teamId = allSharedPreferences.fetchDefaultTeamId(providerId);
+
+            JSONObject teamIdField = getFieldJSONObject(field, "team_id");
+            if (teamIdField != null) {
+                teamIdField.remove(ANCJsonFormUtils.VALUE);
+                teamIdField.put(ANCJsonFormUtils.VALUE, teamId);
+            }
+
+            JSONObject teamNameField = getFieldJSONObject(field, "team_name");
+            if (teamNameField != null) {
+                teamNameField.remove(ANCJsonFormUtils.VALUE);
+                teamNameField.put(ANCJsonFormUtils.VALUE, team);
+            }
+
 
         } else if (ConstantsUtils.JsonFormUtils.ANC_CLOSE.equals(formName)) {
             if (StringUtils.isNotBlank(entityId)) {
