@@ -12,10 +12,9 @@
         },
         {
           "column_name": "phone_number",
-          "type": "Event",
+          "type": "Client",
           "json_mapping": {
-            "field": "obs.fieldCode",
-            "concept": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            "field": "attributes.phone_number"
           }
         },
         {
@@ -159,6 +158,20 @@
           "type": "Client",
           "json_mapping": {
             "field": "attributes.next_contact"
+          }
+        },
+        {
+          "column_name": "team_name",
+          "type": "Client",
+          "json_mapping": {
+            "field": "attributes.team_name"
+          }
+        },
+        {
+          "column_name": "team_id",
+          "type": "Client",
+          "json_mapping": {
+            "field": "attributes.team_id"
           }
         },
         {
