@@ -1,17 +1,19 @@
 {
-  "version": 2,
+  "version": 1,
   "artifactType": {
     "type": "APK",
     "kind": "Directory"
   },
   "applicationId": "org.smartregister.anc",
-  "variantName": "processDebugResources",
+  "variantName": "debug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 10610,
-      "versionName": "1.6.10",
+      "properties": [],
+      "versionCode": 10614,
+      "versionName": "10614",
+      "enabled": true,
       "outputFile": "reference-app-debug.apk"
     }
   ]

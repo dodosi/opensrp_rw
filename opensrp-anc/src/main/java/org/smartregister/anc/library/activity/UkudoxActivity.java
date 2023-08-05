@@ -45,7 +45,9 @@ public class UkudoxActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ukudox);
-        setUpViews();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            setUpViews();
+        }
         go=(Button)findViewById(R.id.go);
         go.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,7 +136,8 @@ public class UkudoxActivity extends AppCompatActivity {
 
         expected_deliveries.setEndDate(dateButton2.getText().toString());
         expected_deliveries.setStartDate(dateButton.getText().toString());
-        expected_deliveries.setNumber((int) DashboardRepository.getExpectedDeliveries(dateButton.getText().toString(),dateButton2.getText().toString()));
+        expected_deliveries.setNumber(0);
+       // expected_deliveries.setNumber((int) DashboardRepository.getExpectedDeliveries(dateButton.getText().toString(),dateButton2.getText().toString()));
         expected_deliveries.setBackground(getResources().getColor(R.color.vaccine_blue_bg_stk));
 
         homeItems.add(expected_deliveries);

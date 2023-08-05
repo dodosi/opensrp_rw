@@ -2,6 +2,7 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.3'
@@ -234,7 +235,9 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
     def powerMockVersion = '2.0.7'
     implementation project(":opensrp-anc")
-    implementation('org.smartregister:opensrp-client-native-form:3.1.1-PREVIEW-SNAPSHOT@aar') {
+    implementation 'org.smartregister:opensrp-client-utils:0.0.6-SNAPSHOT'
+    implementation 'org.smartregister:opensrp-client-materialedittext:2.1.6-SNAPSHOT'
+    implementation('rw.ths:opensrp-client-native-form:1.0-local-release') {
         transitive = true
         exclude group: 'com.android.support', module: 'recyclerview-v7'
         exclude group: 'com.android.support', module: 'appcompat-v7'
@@ -245,8 +248,23 @@ dependencies {
         exclude group: 'org.yaml', module: 'snakeyaml'
         exclude group: 'io.ona.rdt-capture', module: 'lib'
     }
+//    implementation('org.smartregister:opensrp-client-native-form:3.1.1-PREVIEW-SNAPSHOT@aar') {
+//        transitive = true
+//        exclude group: 'com.android.support', module: 'recyclerview-v7'
+//        exclude group: 'com.android.support', module: 'appcompat-v7'
+//        exclude group: 'com.android.support', module: 'cardview-v7'
+//        exclude group: 'com.android.support', module: 'support-media-compat'
+//        exclude group: 'com.android.support', module: 'support-v4'
+//        exclude group: 'com.android.support', module: 'design'
+//        exclude group: 'org.yaml', module: 'snakeyaml'
+//        exclude group: 'io.ona.rdt-capture', module: 'lib'
+//    }
+    implementation ('org.smartregister:opensrp-plan-evaluator:1.6.7-SNAPSHOT'){
+        transitive = true
+        exclude group: 'com.ibm.fhir', module: 'fhir-model'
+    }
 
-    implementation('org.smartregister:opensrp-client-core:6.0.0-SNAPSHOT@aar') {
+    implementation('rw.ths.corelibary:corelibary:1.5-local-debug') {
         transitive = true
         exclude group: 'com.github.bmelnychuk', module: 'atv'
         exclude group: 'com.google.guava', module: 'guava'
@@ -262,14 +280,38 @@ dependencies {
         exclude group: 'org.smartregister', module: 'android-p2p-sync'
     }
 
-    api("org.smartregister:android-p2p-sync:0.4.0-DEV-SNAPSHOT") {
+    //    implementation('org.smartregister:opensrp-client-core:6.0.0-SNAPSHOT@aar') {
+    //        transitive = true
+    //        exclude group: 'com.github.bmelnychuk', module: 'atv'
+    //        exclude group: 'com.google.guava', module: 'guava'
+    //        exclude group: 'com.android.support', module: 'appcompat-v7'
+    //        exclude group: 'net.zetetic', module: 'android-database-sqlcipher'
+    //        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    //        exclude group: 'com.android.support', module: 'support-media-compat'
+    //        exclude group: 'com.android.support', module: 'cardview-v7'
+    //        exclude group: 'com.android.support', module: 'support-v4'
+    //        exclude group: 'com.android.support', module: 'design'
+    //        exclude group: 'com.rengwuxian.materialedittext', module: 'library'
+    //        exclude group: 'com.ibm.fhir', module: 'fhir-model'
+    //        exclude group: 'org.smartregister', module: 'android-p2p-sync'
+    //    }
+    api("rw.ths:p2p-sync:1.0-local-release") {
         transitive = true
         exclude group: 'org.smartregister', module: 'opensrp-client-core'
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'org.smartregister', module: 'opensrp-client-native-form'
         exclude group: 'org.smartregister', module: 'opensrp-client-configurable-views'
         exclude group: 'com.rengwuxian.materialedittext', module: 'library'
+
     }
+//    api("org.smartregister:android-p2p-sync:0.4.0-DEV-SNAPSHOT") {
+//        transitive = true
+//        exclude group: 'org.smartregister', module: 'opensrp-client-core'
+//        exclude group: 'com.android.support', module: 'appcompat-v7'
+//        exclude group: 'org.smartregister', module: 'opensrp-client-native-form'
+//        exclude group: 'org.smartregister', module: 'opensrp-client-configurable-views'
+//        exclude group: 'com.rengwuxian.materialedittext', module: 'library'
+//    }
     jarJar 'com.ibm.fhir:fhir-model:4.8.3'
     implementation fileTree(dir: "./build/libs", include: ['*.jar'])
     implementation('org.smartregister:opensrp-client-configurable-views:1.1.5-SNAPSHOT@aar') {
