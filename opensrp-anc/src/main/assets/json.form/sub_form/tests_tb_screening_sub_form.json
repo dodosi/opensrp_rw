@@ -155,7 +155,7 @@
       "hint": "{{tests_tb_screening_sub_form.step1.tb_screening_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {

@@ -549,7 +549,7 @@
             "specify_info": "{{anc_profile.step2.lmp_known.options.yes.specify_info}}",
             "specify_widget": "date_picker",
             "max_date": "today-14d",
-            "min_date": "today-280d",
+
             "default": "today"
           },
           {
@@ -642,7 +642,7 @@
             "specify_info": "{{anc_profile.step2.ultrasound_done.options.yes.specify_info}}",
             "specify_widget": "date_picker",
             "max_date": "today",
-            "min_date": "today-9m",
+
             "default": "today"
           },
           {
@@ -780,7 +780,7 @@
         "openmrs_entity_id": "",
         "type": "date_picker",
         "expanded": "false",
-        "min_date": "today",
+
         "max_date": "today+10m",
         "hint": "{{anc_profile.step2.edd_from_ultrasound.hint}}",
         "relevance": {

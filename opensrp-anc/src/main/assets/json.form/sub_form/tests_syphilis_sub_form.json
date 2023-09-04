@@ -104,7 +104,7 @@
       "hint": "{{tests_syphilis_sub_form.step1.syph_test_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {

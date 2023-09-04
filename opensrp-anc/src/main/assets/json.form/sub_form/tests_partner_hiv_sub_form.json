@@ -113,7 +113,7 @@
       "hint": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {

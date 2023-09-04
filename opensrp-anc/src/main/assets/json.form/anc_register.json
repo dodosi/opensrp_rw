@@ -286,7 +286,7 @@
         "duration": {
           "label": "{{anc_register.step1.dob_entered.duration.label}}"
         },
-        "min_date": "today-49y",
+        "min_date": "today-60y",
         "max_date": "today-10y",
         "v_required": {
           "value": "true",

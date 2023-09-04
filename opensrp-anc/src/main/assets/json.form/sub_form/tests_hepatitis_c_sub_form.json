@@ -173,7 +173,7 @@
       "hint": "{{tests_hepatitis_c_sub_form.step1.hepc_test_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {
