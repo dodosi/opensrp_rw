@@ -198,7 +198,7 @@ actions:
 name: step3_last_born_status
 description: Last born status
 priority: 1
-condition: "(step3_children_live > 0)"
+condition: "(step3_children_live > 0 && step3_children_live < step3_live_births)"
 actions:
   - "isRelevant = true"
 ---
