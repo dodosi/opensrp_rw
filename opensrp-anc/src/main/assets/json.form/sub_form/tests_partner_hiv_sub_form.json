@@ -282,24 +282,7 @@
           }
         }
       }
-    },
-    {
-      "key": "hiv_risk_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_partner_hiv_sub_form.step1.hiv_risk_toaster.text}}",
-      "toaster_info_text": "{{tests_partner_hiv_sub_form.step1.hiv_risk_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_partner_hiv_sub_form.step1.hiv_risk_toaster.toaster_info_title}}",
-      "toaster_type": "problem",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      }
+
     }
   ],
   "count": 1,

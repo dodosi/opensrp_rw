@@ -1304,7 +1304,7 @@
         "text": "{{anc_physical_exam.step3.pulse_rate_label.text}}",
         "text_color": "#000000",
         "v_required": {
-          "value": true
+          "value": false
         }
       },
       {

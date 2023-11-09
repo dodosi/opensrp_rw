@@ -312,11 +312,11 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
         profileContactsLayout = fragmentView.findViewById(R.id.profile_contacts_layout);
 
         dueButton = ((ProfileActivity) getActivity()).getDueButton();
-        if (!ConstantsUtils.AlertStatusUtils.TODAY.equals(buttonAlertStatus.buttonAlertStatus)) {
+//        if (!ConstantsUtils.AlertStatusUtils.TODAY.equals(buttonAlertStatus.buttonAlertStatus)) {
             dueButton.setOnClickListener((ProfileActivity) getActivity());
-        } else {
-            dueButton.setEnabled(false);
-        }
+//        } else {
+            dueButton.setEnabled(true);
+//        }
 
         return fragmentView;
     }

@@ -6484,6 +6484,27 @@
           "err": "{{anc_counselling_treatment.step12.prevention_measures.v_required.err}}"
         }
       },
+
+      {
+        "key": "total_treatment_received",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "edit_text",
+        "hint": "{{anc_counselling_treatment.step12.total_treatment_received.hint}}",
+        "edit_type": "name",
+        "relevance": {
+          "step12:prevention_measures": {
+            "ex-checkbox": [
+              {
+                "or": [
+                  "iron_and_foric_acid"
+                ]
+              }
+            ]
+          }
+        }
+      },
       {
         "key": "prevention_measures_other",
         "openmrs_entity_parent": "",
@@ -6659,6 +6680,22 @@
         "v_required": {
           "value": true,
           "err": "{{anc_counselling_treatment.step12.next_visit_date.v_required.err}}"
+        }
+      },
+
+      {
+        "key": "lst_visit_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "Date of Contact",
+        "expanded": "false",
+        "max_date": "today",
+
+        "v_required": {
+          "value": true,
+          "err": "Date of contact required"
         }
       },
       {

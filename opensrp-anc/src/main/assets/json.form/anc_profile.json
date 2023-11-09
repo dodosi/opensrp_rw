@@ -56,6 +56,7 @@
   },
   "editable_fields": [
     "husband_name",
+    "covid_immun_status",
     "catchment_area",
     "newborn_dirths",
     "children_live",
@@ -154,6 +155,7 @@
     "lmp_ultrasound_gest_age_selection",
     "sfh_ultrasound_gest_age_selection",
     "husband_name",
+    "covid_immun_status",
     "catchment_area",
     "newborn_dirths",
     "children_live",
@@ -4211,7 +4213,7 @@
           }
         ],
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_profile.step6.medications.v_required.err}}"
         }
       },

@@ -279,31 +279,9 @@
       "openmrs_entity_id": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
       "type": "hidden",
       "label_text_style": "bold",
-      "text_color": "#000000",
-      "calculation": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
-          }
-        }
-      }
+      "text_color": "#000000"
     },
-    {
-      "key": "hiv_inconclusive_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_hiv_sub_form.step1.hiv_inconclusive_toaster.text}}",
-      "toaster_type": "warning",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      }
-    },
+
     {
       "key": "hiv_positive_toaster",
       "openmrs_entity_parent": "",
@@ -315,10 +293,9 @@
       "toaster_info_title": "{{tests_hiv_sub_form.step1.hiv_positive_toaster.toaster_info_title}}",
       "toaster_type": "problem",
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
+        "step1:hiv_test_result": {
+          "type": "string",
+          "ex": "equalTo(., \"positive\")"
         }
       }
     }

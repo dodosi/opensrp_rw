@@ -152,13 +152,7 @@
           }
         }
       },
-      "calculation": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
-          }
-        }
-      },
+
       "v_required": {
         "value": true,
         "err": "{{tests_hepatitis_c_sub_form.step1.hepc_test_date.v_required.err}}"
@@ -351,32 +345,8 @@
       "key": "hepc_positive",
       "type": "hidden",
       "label_text_style": "bold",
-      "text_color": "#000000",
-      "calculation": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
-          }
-        }
-      }
-    },
-    {
-      "key": "hepatitis_c_danger_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_hepatitis_c_sub_form.step1.hepatitis_c_danger_toaster.text}}",
-      "toaster_info_text": "{{tests_hepatitis_c_sub_form.step1.hepatitis_c_danger_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_hepatitis_c_sub_form.step1.hepatitis_c_danger_toaster.toaster_info_title}}",
-      "toaster_type": "problem",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      }
+      "text_color": "#000000"
+
     }
   ],
   "count": 1,

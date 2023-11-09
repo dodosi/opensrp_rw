@@ -184,40 +184,7 @@
         }
       }
     },
-    {
-      "key": "ultrasound_info_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_ultrasound_sub_form.step1.ultrasound_info_toaster.text}}",
-      "toaster_type": "info",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "ultrasound_sub_form_relevance_rules.yml"
-          }
-        }
-      }
-    },
-    {
-      "key": "ultrasound_done_early_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_ultrasound_sub_form.step1.ultrasound_done_early_toaster.text}}",
-      "toaster_info_text": "{{tests_ultrasound_sub_form.step1.ultrasound_done_early_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_ultrasound_sub_form.step1.ultrasound_done_early_toaster.toaster_info_title}}",
-      "toaster_type": "positive",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "ultrasound_sub_form_relevance_rules.yml"
-          }
-        }
-      }
-    },
+
     {
       "key": "spacer",
       "openmrs_entity_parent": "",
@@ -231,14 +198,8 @@
       "openmrs_entity": "",
       "openmrs_entity_id": "",
       "key": "no_of_fetuses_hidden",
-      "type": "hidden",
-      "calculation": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "ultrasound_sub_form_calculation_rules.yml"
-          }
-        }
-      }
+      "type": "hidden"
+
     },
     {
       "key": "no_of_fetuses_label",
@@ -279,14 +240,9 @@
             "rules-file": "ultrasound_sub_form_relevance_rules.yml"
           }
         }
-      },
-      "calculation": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "ultrasound_sub_form_calculation_rules.yml"
-          }
-        }
+
       }
+
     },
     {
       "openmrs_entity_parent": "",
@@ -315,24 +271,7 @@
       "type": "spacer",
       "spacer_height": "10dp"
     },
-    {
-      "key": "pre_eclampsia_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_ultrasound_sub_form.step1.pre_eclampsia_toaster.text}}",
-      "toaster_info_text": "{{tests_ultrasound_sub_form.step1.pre_eclampsia_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_ultrasound_sub_form.step1.pre_eclampsia_toaster.toaster_info_title}}",
-      "toaster_type": "warning",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "ultrasound_sub_form_relevance_rules.yml"
-          }
-        }
-      }
-    },
+
     {
       "key": "spacer",
       "openmrs_entity_parent": "",

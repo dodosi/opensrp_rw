@@ -588,7 +588,7 @@
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
         "openmrs_entity_id": "163164AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "type": "native_radio",
+        "type": "hidden",
         "label": "{{anc_register.step1.reminders.label}}",
         "label_info_text": "{{anc_register.step1.reminders.label_info_text}}",
         "label_text_style": "normal",

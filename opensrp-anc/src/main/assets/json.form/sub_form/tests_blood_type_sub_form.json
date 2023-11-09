@@ -286,24 +286,7 @@
           }
         }
       }
-    },
-    {
-      "key": "rh_factor_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_blood_type_sub_form.step1.rh_factor_toaster.text}}",
-      "toaster_info_text": "{{tests_blood_type_sub_form.step1.rh_factor_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_blood_type_sub_form.step1.rh_factor_toaster.toaster_info_title}}",
-      "toaster_type": "warning",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      }
+
     }
   ],
   "count": 1,

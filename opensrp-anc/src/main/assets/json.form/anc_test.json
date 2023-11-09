@@ -87,15 +87,10 @@
         "accordion_info_title": "{{anc_test.step1.accordion_ultrasound.accordion_info_title}}",
         "type": "expansion_panel",
         "content_form": "tests_ultrasound_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
+
       },
+
       {
         "key": "accordion_blood_type",
         "openmrs_entity_parent": "",
@@ -123,14 +118,8 @@
         "accordion_info_title": "{{anc_test.step1.accordion_hiv.accordion_info_title}}",
         "type": "expansion_panel",
         "content_form": "tests_hiv_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
+
       },
       {
         "key": "accordion_hepatitis_b",
@@ -142,14 +131,8 @@
         "accordion_info_title": "{{anc_test.step1.accordion_hepatitis_b.accordion_info_title}}",
         "type": "expansion_panel",
         "content_form": "tests_hepatitis_b_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
+
       },
       {
         "key": "accordion_hepatitis_c",
@@ -161,14 +144,8 @@
         "accordion_info_title": "{{anc_test.step1.accordion_hepatitis_c.accordion_info_title}}",
         "type": "expansion_panel",
         "content_form": "tests_hepatitis_c_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
+
       },
       {
         "key": "accordion_syphilis",
@@ -180,14 +157,8 @@
         "accordion_info_title": "{{anc_test.step1.accordion_syphilis.accordion_info_title}}",
         "type": "expansion_panel",
         "content_form": "tests_syphilis_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
+
       },
       {
         "key": "accordion_urine",
@@ -199,113 +170,18 @@
         "accordion_info_title": "{{anc_test.step1.accordion_urine.accordion_info_title}}",
         "type": "expansion_panel",
         "content_form": "tests_urine_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "accordion_blood_haemoglobin",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step1.accordion_blood_haemoglobin.text}}",
-        "accordion_info_text": "{{anc_test.step1.accordion_blood_haemoglobin.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step1.accordion_blood_haemoglobin.accordion_info_title}}",
-        "type": "expansion_panel",
-        "content_form": "tests_blood_haemoglobin_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "accordion_tb_screening",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step1.accordion_tb_screening.text}}",
-        "accordion_info_text": "{{anc_test.step1.accordion_tb_screening.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step1.accordion_tb_screening.accordion_info_title}}",
-        "type": "expansion_panel",
-        "content_form": "tests_tb_screening_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
+
       }
+
+
     ]
   },
   "step2": {
     "title": "{{anc_test.step2.title}}",
     "fields": [
-      {
-        "key": "accordion_ultrasound",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_ultrasound.text}}",
-        "accordion_info_text": "{{anc_test.step2.accordion_ultrasound.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step2.accordion_ultrasound.accordion_info_title}}",
-        "type": "expansion_panel",
-        "content_form": "tests_ultrasound_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "accordion_blood_type",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_blood_type.text}}",
-        "type": "expansion_panel",
-        "content_form": "tests_blood_type_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "accordion_hiv",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_hiv.text}}",
-        "accordion_info_text": "{{anc_test.step2.accordion_hiv.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step2.accordion_hiv.accordion_info_title}}",
-        "type": "expansion_panel",
-        "content_form": "tests_hiv_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
+
+
       {
         "key": "accordion_partner_hiv",
         "openmrs_entity_parent": "",
@@ -314,91 +190,12 @@
         "text": "{{anc_test.step2.accordion_partner_hiv.text}}",
         "type": "expansion_panel",
         "content_form": "tests_partner_hiv_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
       },
-      {
-        "key": "accordion_hepatitis_b",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_hepatitis_b.text}}",
-        "accordion_info_text": "{{anc_test.step2.accordion_hepatitis_b.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step2.accordion_hepatitis_b.accordion_info_title}}",
-        "type": "expansion_panel",
-        "content_form": "tests_hepatitis_b_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "accordion_hepatitis_c",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_hepatitis_c.text}}",
-        "accordion_info_text": "{{anc_test.step2.accordion_hepatitis_c.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step2.accordion_hepatitis_c.accordion_info_title}}",
-        "type": "expansion_panel",
-        "content_form": "tests_hepatitis_c_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "accordion_syphilis",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_syphilis.text}}",
-        "accordion_info_text": "{{anc_test.step2.accordion_syphilis.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step2.accordion_syphilis.accordion_info_title}}",
-        "type": "expansion_panel",
-        "content_form": "tests_syphilis_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
-      {
-        "key": "accordion_urine",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_urine.text}}",
-        "accordion_info_text": "{{anc_test.step2.accordion_urine.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step2.accordion_urine.accordion_info_title}}",
-        "type": "expansion_panel",
-        "content_form": "tests_urine_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
-      },
+
+
+
+
       {
         "key": "accordion_blood_glucose",
         "openmrs_entity_parent": "",
@@ -420,14 +217,8 @@
         "accordion_info_title": "{{anc_test.step2.accordion_blood_haemoglobin.accordion_info_title}}",
         "type": "expansion_panel",
         "content_form": "tests_blood_haemoglobin_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
+
       },
       {
         "key": "accordion_tb_screening",
@@ -439,27 +230,11 @@
         "accordion_info_title": "{{anc_test.step2.accordion_tb_screening.accordion_info_title}}",
         "type": "expansion_panel",
         "content_form": "tests_tb_screening_sub_form",
-        "container": "anc_test",
-        "relevance": {
-          "rules-engine": {
-            "ex-rules": {
-              "rules-file": "tests_expansion_panel_relevance_rules.yml"
-            }
-          }
-        }
+        "container": "anc_test"
+
       },
 
-      {
-        "key": "accordion_rubella_tests",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_rubella_tests.text}}",
-        "type": "hidden",
-        "display_bottom_section": true,
-        "content_form": "tests_rubella_tests_sub_form",
-        "container": "anc_test"
-      },
+
       {
         "key": "accordion_rpr_partener_tests",
         "openmrs_entity_parent": "",
@@ -471,30 +246,7 @@
         "content_form": "tests_partner_rpr_sub_form",
         "container": "anc_test"
       },
-      {
-        "key": "accordion_cmv_tests",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_cmv_tests.text}}",
-        "type": "hidden",
-        "accordion_info_text": "{{anc_test.step2.accordion_cmv_tests.accordion_info_text}}",
-        "accordion_info_title": "{{anc_test.step2.accordion_cmv_tests.accordion_info_title}}",
-        "display_bottom_section": true,
-        "content_form": "tests_cmv_sub_form",
-        "container": "anc_test"
-      },
-      {
-        "key": "accordion_herpes_tests",
-        "openmrs_entity_parent": "",
-        "openmrs_entity": "",
-        "openmrs_entity_id": "",
-        "text": "{{anc_test.step2.accordion_herpes_tests.text}}",
-        "type": "hidden",
-        "display_bottom_section": true,
-        "content_form": "tests_herps_sub_form",
-        "container": "anc_test"
-      },
+
       {
         "key": "accordion_other_tests",
         "openmrs_entity_parent": "",

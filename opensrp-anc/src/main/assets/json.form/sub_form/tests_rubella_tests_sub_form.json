@@ -153,15 +153,10 @@
       },
       "v_required": {
         "value": true,
-        "err": "{{tests_rubella_sub_form.step1.rubella_test_date.v_required.err}}"
-      },
-      "calculation": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
-          }
-        }
+        "err": "{{tests_rubella_sub_form.step1.rubella_test_date.v_required.err}}",
+
       }
+
     },
     {
       "key": "rubella_test_type",
