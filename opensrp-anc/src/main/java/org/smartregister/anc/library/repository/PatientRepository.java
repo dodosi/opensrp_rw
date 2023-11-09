@@ -192,5 +192,16 @@ public class PatientRepository extends BaseRepository {
         }
         updatePatient(baseEntityId, contentValues, getRegisterQueryProvider().getDetailsTable());
     }
+    public static void updateLastContactDate(String baseEntityId, String edd) {
 
+        ContentValues contentValues = new ContentValues();
+        if (edd != null) {
+            contentValues.put(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE, edd);
+//            contentValues.put(DBConstantsUtils.KeyUtils.CONTACT_STATUS, patientDetail.getPreviousContactStatus())
+        }
+//        else {
+//            contentValues.putNull(DBConstantsUtils.KeyUtils.EDD);
+//        }
+        updatePatient(baseEntityId, contentValues, getRegisterQueryProvider().getDetailsTable());
+    }
 }

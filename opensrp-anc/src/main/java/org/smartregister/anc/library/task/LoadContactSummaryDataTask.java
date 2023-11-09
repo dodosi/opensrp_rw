@@ -18,6 +18,9 @@ import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.DBConstantsUtils;
 import org.smartregister.anc.library.util.Utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import timber.log.Timber;
@@ -75,7 +78,21 @@ public class LoadContactSummaryDataTask extends AsyncTask<Void, Void, Void> {
         } else if (edd == null && contactNo.contains("-")) {
             ((ContactSummaryFinishActivity) context).saveFinishMenuItem.setEnabled(true);
         }
+        //hardcoing next visit
+        String lstVisitDate=facts.get("lst_visit_date");
+        SimpleDateFormat inputFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = null;
+        try {
+            date = inputFormat.parse(lstVisitDate);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        String formattedDate = Utils.DB_DF.format(date);
+        if (formattedDate != null && ((ContactSummaryFinishActivity) context).saveFinishMenuItem != null) {
+            PatientRepository.updateLastContactDate(baseEntityId, formattedDate);
+            ((ContactSummaryFinishActivity) context).saveFinishMenuItem.setEnabled(true);
 
+        }
         ContactSummaryFinishAdapter adapter =
                 new ContactSummaryFinishAdapter(context, ((ContactSummaryFinishActivity) context).getYamlConfigList(), facts);
         adapter.notifyDataSetChanged();
