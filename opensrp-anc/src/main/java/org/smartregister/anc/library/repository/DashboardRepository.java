@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -95,25 +96,29 @@ public class DashboardRepository extends BaseRepository {
         Cursor   cursor = db.rawQuery(query, null);
         int count=0;
         while (cursor.moveToNext()){
-            String next_contact_date=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE));
+          try{
+              String next_contact_date=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE));
 
 
-            DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
-            LocalDate  d1=null;
-            if(next_contact_date.charAt(0)=='-'){
-                d1 = LocalDate.parse(next_contact_date.substring(1), df);
-            }
-            else{
-                d1 = LocalDate.parse(next_contact_date, df);
-            }
+              DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
+              LocalDate  d1=null;
+              if(next_contact_date.charAt(0)=='-'){
+                  d1 = LocalDate.parse(next_contact_date.substring(1), df);
+              }
+              else{
+                  d1 = LocalDate.parse(next_contact_date, df);
+              }
 
-            if(datetoday.isAfter(d1)) {
+              if(datetoday.isAfter(d1)) {
 //            if(datetoday.isEqual(d1)) {
-                if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
-                    count++;}
-            }else{
+                  if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
+                      count++;}
+              }else{
 
-            }
+              }
+          } catch (DateTimeParseException e){
+              Timber.e(e);
+          }
 
 
         }
