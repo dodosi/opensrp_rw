@@ -49,33 +49,33 @@ public class DashboardRepository extends BaseRepository {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static int getDueContactDash(LocalDate datetoday) {
 
-            SQLiteDatabase db = getMasterRepository().getReadableDatabase();
+        SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
 //            String query = "SELECT COUNT(*) FROM " + getRegisterQueryProvider().getDetailsTable() + " WHERE " + DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE+ "= '"+datetoday+"'";
 //        SQLiteStatement statement = db.compileStatement(query);
 //        long count = statement.simpleQueryForLong();
 //        return count;
         String query = "SELECT * FROM " + getRegisterQueryProvider().getDetailsTable();
-        Cursor   cursor = db.rawQuery(query, null);
-        int count=0;
-        while (cursor.moveToNext()){
-            String next_contact_date=cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE));
+        Cursor cursor = db.rawQuery(query, null);
+        int count = 0;
+        while (cursor.moveToNext()) {
+            String next_contact_date = cursor.getString(cursor.getColumnIndex(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE));
 
 
             DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
-            LocalDate  d1=null;
-            if(next_contact_date.charAt(0)=='-'){
+            LocalDate d1 = null;
+            if (next_contact_date.charAt(0) == '-') {
                 d1 = LocalDate.parse(next_contact_date.substring(1), df);
-            }
-            else{
+            } else {
                 d1 = LocalDate.parse(next_contact_date, df);
             }
 
 //            if(datetoday.isEqual(d1) || datetoday.isAfter(d1)) {
-            if(datetoday.isEqual(d1)) {
-                if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))){
-                count++;}
-            }else{
+            if (datetoday.isEqual(d1)) {
+                if (!isAnc_Closed(cursor.getString(cursor.getColumnIndex("base_entity_id")))) {
+                    count++;
+                }
+            } else {
 
             }
 
@@ -228,9 +228,8 @@ public class DashboardRepository extends BaseRepository {
                     if (val.get(VALUE).toString().equals("done_today")) {
 
                         return true;
-                    }
-                    else {
-                        return  false;
+                    } else {
+                        return false;
                     }
                 }
             } catch (JSONException e) {
@@ -305,9 +304,8 @@ public class DashboardRepository extends BaseRepository {
                     if (val.get(VALUE).toString().equals("yes")) {
 
                         return true;
-                    }
-                    else {
-                        return  false;
+                    } else {
+                        return false;
                     }
                 }
             } catch (JSONException e) {
@@ -349,22 +347,21 @@ public class DashboardRepository extends BaseRepository {
     private static boolean isReferred(String woman_id) {
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE base_entity_id= '"+woman_id+"'";
-        Cursor   cursor = db.rawQuery(query, null);
-        while (cursor.moveToNext()){
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT + " WHERE base_entity_id= '" + woman_id + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        while (cursor.moveToNext()) {
             try {
                 if (cursor.getString(3).equals("referred_hosp")) {
 
 
-                JSONObject val = new JSONObject(cursor.getString(4));
+                    JSONObject val = new JSONObject(cursor.getString(4));
 
-                if (val.get(VALUE).toString().equals("yes")) {
+                    if (val.get(VALUE).toString().equals("yes")) {
 
-                    return true;
-                }
-                else {
-                    return  false;
-                }
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -383,17 +380,17 @@ public class DashboardRepository extends BaseRepository {
 //        Cursor   cursor = db.rawQuery(query, null);
 //        SQLiteStatement statement = db.compileStatement(query);
 //        long count = statement.simpleQueryForLong();
-        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
-        Cursor   cursor = db.rawQuery(query, null);
-        int count=0;
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = 0;
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
-        LocalDate  start= LocalDate.parse(dateStart, df);
-        LocalDate  end= LocalDate.parse(dateEnd, df);
-        while (cursor.moveToNext()){
-            if (cursor.getString(3).equals("contact_date")){
-                LocalDate d=LocalDate.parse(cursor.getString(4));
-                if(d.isAfter(start) && d.isBefore(end)) {
-                    if(!isAnc_Closed(cursor.getString(2))){
+        LocalDate start = LocalDate.parse(dateStart, df);
+        LocalDate end = LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()) {
+            if (cursor.getString(3).equals("contact_date")) {
+                LocalDate d = LocalDate.parse(cursor.getString(4));
+                if (d.isAfter(start) && d.isBefore(end)) {
+                    if (!isAnc_Closed(cursor.getString(2))) {
                         count++;
                     }
                 }
@@ -402,22 +399,23 @@ public class DashboardRepository extends BaseRepository {
         }
         return count;
     }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static int getWomanWithDangerSing(String dateStart, String dateEnd) {
 
         SQLiteDatabase db = getMasterRepository().getReadableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT ;
-        Cursor   cursor = db.rawQuery(query, null);
-        int count=0;
+        String query = "SELECT * FROM " + TABLE_PREVIOUS_CONTACT;
+        Cursor cursor = db.rawQuery(query, null);
+        int count = 0;
         DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-d");
-        LocalDate  start= LocalDate.parse(dateStart, df);
-        LocalDate  end= LocalDate.parse(dateEnd, df);
-        while (cursor.moveToNext()){
-            if (cursor.getString(3).equals("contact_date")){
-                LocalDate d=LocalDate.parse(cursor.getString(4));
-                if(d.isAfter(start) && d.isBefore(end)) {
-                    if(hasDangerSign(cursor.getString(2))&& !isAnc_Closed(cursor.getString(2))){
+        LocalDate start = LocalDate.parse(dateStart, df);
+        LocalDate end = LocalDate.parse(dateEnd, df);
+        while (cursor.moveToNext()) {
+            if (cursor.getString(3).equals("contact_date")) {
+                LocalDate d = LocalDate.parse(cursor.getString(4));
+                if (d.isAfter(start) && d.isBefore(end)) {
+                    if (hasDangerSign(cursor.getString(2)) && !isAnc_Closed(cursor.getString(2))) {
                         count++;
                     }
                 }
