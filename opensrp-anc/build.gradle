@@ -183,7 +183,7 @@ dependencies {
 
     implementation 'org.smartregister:opensrp-client-utils:0.0.6-SNAPSHOT'
     implementation 'org.smartregister:opensrp-client-materialedittext:2.1.6-SNAPSHOT'
-    implementation('rw.ths:opensrp-client-native-form:1.0-local-release') {
+    implementation('org.smartregister:opensrp-client-native-form:3.1.2-SNAPSHOT@aar') {
         transitive = true
         exclude group: 'com.android.support', module: 'recyclerview-v7'
         exclude group: 'com.android.support', module: 'appcompat-v7'
@@ -210,7 +210,7 @@ dependencies {
         exclude group: 'com.ibm.fhir', module: 'fhir-model'
     }
 
-    implementation('rw.ths.corelibary:corelibary:1.5-local-debug') {
+    implementation('org.smartregister:opensrp-client-core:6.1.2-SNAPSHOT@aar') {
         transitive = true
         exclude group: 'com.github.bmelnychuk', module: 'atv'
         exclude group: 'com.google.guava', module: 'guava'
@@ -243,7 +243,7 @@ dependencies {
 //        exclude group: 'org.smartregister', module: 'android-p2p-sync'
 //    }
 
-    api("rw.ths:p2p-sync:1.0-local-release") {
+    api("org.smartregister:android-p2p-sync:0.4.0-DEV-SNAPSHOT") {
         transitive = true
         exclude group: 'org.smartregister', module: 'opensrp-client-core'
         exclude group: 'com.android.support', module: 'appcompat-v7'
