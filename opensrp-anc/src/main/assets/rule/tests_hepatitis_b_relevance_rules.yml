@@ -1,0 +1,28 @@
+---
+name: step1_hepatitis_b_danger_toaster
+description: Hep B positive diagnosis!
+priority: 1
+condition: "step1_hepb_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hepatitis_b_danger_toaster
+description: Hep B positive diagnosis!
+priority: 1
+condition: "step2_hepb_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hepatitis_b_info_toaster
+description: Hep B vaccination required
+priority: 1
+condition: "step1_hepb_positive == 0"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hepatitis_b_info_toaster
+description: Hep B vaccination required
+priority: 1
+condition: "step2_hepb_positive == 0"
+actions:
+  - "isRelevant = true"

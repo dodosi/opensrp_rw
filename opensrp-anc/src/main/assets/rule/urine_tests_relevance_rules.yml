@@ -1,0 +1,155 @@
+---
+name: step1_urine_test_notdone
+description: Reason
+priority: 1
+condition: "step1_urine_test_status == 'not_done'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_test_notdone
+description: Reason
+priority: 1
+condition: "step2_urine_test_status == 'not_done'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_test_notdone_other
+description: Specify
+priority: 1
+condition: "step1_urine_test_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_test_notdone_other
+description: Specify
+priority: 1
+condition: "step2_urine_test_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_test_date
+description: Urine test date
+priority: 1
+condition: "step1_urine_test_status == 'done_earlier'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_test_date
+description: Urine test date
+priority: 1
+condition: "step2_urine_test_status == 'done_earlier'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_test_type
+description: Urine test type
+priority: 1
+condition: "step1_urine_test_status == 'done_today' || step1_urine_test_status == 'done_earlier' || step1_urine_test_status == 'ordered'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_test_type
+description: Urine test type
+priority: 1
+condition: "step2_urine_test_status == 'done_today' || step2_urine_test_status == 'done_earlier' || step2_urine_test_status == 'ordered'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_culture
+description: Midstream urine culture (recommended)
+priority: 1
+condition: "(step1_urine_test_status == 'done_today' || step1_urine_test_status == 'done_earlier') && step1_urine_test_type.contains('midstream_urine_culture')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_culture
+description: Midstream urine culture (recommended)
+priority: 1
+condition: "(step2_urine_test_status == 'done_today' || step2_urine_test_status == 'done_earlier') && step2_urine_test_type.contains('midstream_urine_culture')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_gram_stain
+description: Midstream urine Gram-staining
+priority: 1
+condition: "(step1_urine_test_status == 'done_today' || step1_urine_test_status == 'done_earlier') && step1_urine_test_type.contains('midstream_urine_gram')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_gram_stain
+description: Midstream urine Gram-staining
+priority: 1
+condition: "(step2_urine_test_status == 'done_today' || step2_urine_test_status == 'done_earlier') && step2_urine_test_type.contains('midstream_urine_gram')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_nitrites
+description: Urine dipstick result - nitrites
+priority: 1
+condition: "(step1_urine_test_status == 'done_today' || step1_urine_test_status == 'done_earlier') && step1_urine_test_type.contains('urine_dipstick')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_nitrites
+description: Urine dipstick result - nitrites
+priority: 1
+condition: "(step2_urine_test_status == 'done_today' || step2_urine_test_status == 'done_earlier') && step2_urine_test_type.contains('urine_dipstick')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_leukocytes
+description: Urine dipstick result - leukocytes
+priority: 1
+condition: "(step1_urine_test_status == 'done_today' || step1_urine_test_status == 'done_earlier') && step1_urine_test_type.contains('urine_dipstick')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_leukocytes
+description: Urine dipstick result - leukocytes
+priority: 1
+condition: "(step2_urine_test_status == 'done_today' || step2_urine_test_status == 'done_earlier') && step2_urine_test_type.contains('urine_dipstick')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_protein
+description: Urine dipstick result - protein
+priority: 1
+condition: "(step1_urine_test_status == 'done_today' || step1_urine_test_status == 'done_earlier') && step1_urine_test_type.contains('urine_dipstick')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_protein
+description: Urine dipstick result - protein
+priority: 1
+condition: "(step2_urine_test_status == 'done_today' || step2_urine_test_status == 'done_earlier') && step2_urine_test_type.contains('urine_dipstick')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_urine_glucose
+description: Urine dipstick result - glucose
+priority: 1
+condition: "(step1_urine_test_status == 'done_today' || step1_urine_test_status == 'done_earlier') && step1_urine_test_type.contains('urine_dipstick')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_urine_glucose
+description: Urine dipstick result - glucose
+priority: 1
+condition: "(step2_urine_test_status == 'done_today' || step2_urine_test_status == 'done_earlier') && step2_urine_test_type.contains('urine_dipstick')"
+actions:
+  - "isRelevant = true"
+
+---
+name: step1_gbs_agent_note
+description: gbs_agent_note
+priority: 1
+condition: "step1_urine_culture == 'positive_gbs'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_gbs_agent_note
+description: gbs_agent_note
+priority: 1
+condition: "step2_urine_culture == 'positive_gbs'"
+actions:
+  - "isRelevant = true"

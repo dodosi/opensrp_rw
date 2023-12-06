@@ -1,0 +1,36 @@
+
+---
+name: step2_rubella_test_date
+description: Rubella test date.
+priority: 1
+condition: "step2_rubella_test_status == 'done_earlier'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_rubella_test_notdone
+description: Rubella test not done
+priority: 1
+condition: "step2_rubella_test_status != '' && step2_rubella_test_status == 'not_done' "
+actions:
+  - "isRelevant = true"
+---
+name: step2_herps_test_notdone_other
+description: Reason
+priority: 1
+condition: "!step2_rubella_test_notdone.isEmpty() && step2_rubella_test_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_rubella_test_result
+description: Rubella test result
+priority: 1
+condition: "step2_rubella_test_status != '' && (step2_rubella_test_status == 'done_today' || step2_rubella_test_status == 'done_earlier') "
+actions:
+  - "isRelevant = true"
+---
+name: step2_rubella_test_type
+description: Rubellatest result
+priority: 1
+condition: "step2_rubella_test_status != '' && (step2_rubella_test_status == 'done_today' || step2_rubella_test_status == 'done_earlier') "
+actions:
+  - "isRelevant = true"
