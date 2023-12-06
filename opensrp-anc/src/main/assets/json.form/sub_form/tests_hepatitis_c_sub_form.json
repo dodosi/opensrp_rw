@@ -99,7 +99,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       }
@@ -115,7 +115,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       }
@@ -148,7 +148,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       },
@@ -177,7 +177,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       },
@@ -228,7 +228,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       }
@@ -265,7 +265,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       }
@@ -302,7 +302,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       }
@@ -339,7 +339,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       }
@@ -373,7 +373,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tests_hepatitis_c_relevance_rules.yml"
           }
         }
       }

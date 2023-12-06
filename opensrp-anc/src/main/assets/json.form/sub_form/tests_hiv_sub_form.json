@@ -102,7 +102,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "hiv_hiv_tests_relevance_rules.yml"
+            "rules-file": "hiv_tests_relevance_rules.yml"
           }
         }
       }
