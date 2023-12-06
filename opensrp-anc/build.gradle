@@ -12,7 +12,7 @@ buildscript {
     }
     configurations.all {
         resolutionStrategy {
-            eachDependency { details ->
+             eachDependency { details ->
                 if ('org.jacoco' == details.requested.group) {
                     details.useVersion jacocoVersion
                 }
@@ -31,6 +31,7 @@ allprojects {
                     }
                 }
             }
+            exclude group: 'junit', module: 'junit'
         }
     }
 }
@@ -323,6 +324,7 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:3.5.15'
     testImplementation 'org.apache.maven:maven-ant-tasks:2.1.3'
     testImplementation 'org.skyscreamer:jsonassert:1.5.0'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation('androidx.test.espresso:espresso-core:3.4.0') {
