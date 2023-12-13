@@ -110,7 +110,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "ultrasound_sub_form_relevance_rules.yml"
           }
         }
       },

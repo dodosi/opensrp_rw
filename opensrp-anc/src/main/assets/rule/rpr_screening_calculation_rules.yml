@@ -1,0 +1,14 @@
+---
+name: step2_partner_rpr_test_date_today_hidden
+description: partner_rpr_test_date
+priority: 1
+condition: "step2_partner_rpr_test_status == 'done_today'"
+actions:
+  - "calculation = helper.getDateToday()"
+---
+name: step2_cmv_test_date_today_hidden
+description: partner_rpr_test_date
+priority: 1
+condition: "step2_cmv_test_status == 'done_today'"
+actions:
+  - "calculation = helper.getDateToday()"

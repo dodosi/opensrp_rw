@@ -118,7 +118,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hiv_screening_relevance_rules.yml"
           }
         }
       }
@@ -134,7 +134,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hiv_screening_calculation_rules.yml"
           }
         }
       }
@@ -151,7 +151,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hiv_screening_relevance_rules.yml"
           }
         }
       },
@@ -162,7 +162,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hiv_screening_calculation_rules.yml"
           }
         }
       }
@@ -180,7 +180,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hiv_screening_relevance_rules.yml"
           }
         }
       },
@@ -230,7 +230,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hiv_screening_relevance_rules.yml"
           }
         }
       }
@@ -283,7 +283,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hiv_screening_calculation_rules.yml"
           }
         }
       }
@@ -299,7 +299,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hiv_screening_relevance_rules.yml"
           }
         }
       }
@@ -317,7 +317,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hiv_screening_relevance_rules.yml"
           }
         }
       }
