@@ -204,7 +204,7 @@
         "hint": "{{anc_profile.step1.husband_name.hint}}",
         "edit_type": "name",
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_profile.step1.husband_name.v_required.err}}"
         },
         "v_regex": {
