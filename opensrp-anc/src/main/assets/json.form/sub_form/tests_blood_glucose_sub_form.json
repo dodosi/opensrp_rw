@@ -139,7 +139,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "glucose_calculation_rules.yml"
           }
         }
       }
@@ -155,9 +155,10 @@
       "max_date": "today+10m",
 
       "relevance": {
-        "step2:glucose_test_status": {
-          "type": "string",
-          "ex": "equalTo(., \"ordered\")"
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "glucose_screening_relevance_rules.yml"
+          }
         }
       },
       "v_required": {
@@ -175,9 +176,17 @@
       "expanded": "false",
       "max_date": "today",
       "relevance": {
-        "step2:glucose_test_status": {
-          "type": "string",
-          "ex": "equalTo(., \"done_earlier\")"
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "glucose_screening_relevance_rules.yml"
+          }
+        }
+      },
+      "calculation": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "glucose_screening_calculation_rules.yml"
+          }
         }
       },
       "v_required": {
@@ -222,7 +231,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "glucose_screening_relevance_rules.yml"
           }
         }
       },
@@ -257,7 +266,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "glucose_screening_relevance_rules.yml"
           }
         }
       }
@@ -289,7 +298,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "glucose_screening_relevance_rules.yml"
           }
         }
       }
@@ -321,7 +330,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "glucose_screening_relevance_rules.yml"
           }
         }
       }
@@ -353,7 +362,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "glucose_screening_relevance_rules.yml"
           }
         }
       }
@@ -385,7 +394,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "glucose_screening_relevance_rules.yml"
           }
         }
       }
@@ -401,7 +410,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "glucose_screening_calculation_rules.yml"
           }
         }
       }
@@ -417,13 +426,64 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "glucose_screening_calculation_rules.yml"
           }
         }
       }
-
+    },
+    {
+      "key": "gestational_diabetes_danger_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_blood_glucose_sub_form.step1.gestational_diabetes_danger_toaster.text}}",
+      "toaster_info_text": "{{tests_blood_glucose_sub_form.step1.gestational_diabetes_danger_toaster.toaster_info_text}}",
+      "toaster_info_title": "{{tests_blood_glucose_sub_form.step1.gestational_diabetes_danger_toaster.toaster_info_title}}",
+      "toaster_type": "problem",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "glucose_screening_relevance_rules.yml"
+          }
+        }
+      }
+    },
+    {
+      "key": "diabetes_mellitus_danger_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_blood_glucose_sub_form.step1.diabetes_mellitus_danger_toaster.text}}",
+      "toaster_info_text": "{{tests_blood_glucose_sub_form.step1.diabetes_mellitus_danger_toaster.toaster_info_text}}",
+      "toaster_info_title": "{{tests_blood_glucose_sub_form.step1.diabetes_mellitus_danger_toaster.toaster_info_title}}",
+      "toaster_type": "problem",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "glucose_screening_relevance_rules.yml"
+          }
+        }
+      }
+    },
+    {
+      "key": "dietary_intervention_danger_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_blood_glucose_sub_form.step1.dietary_intervention_danger_toaster.text}}",
+      "toaster_info_text": "{{tests_blood_glucose_sub_form.step1.dietary_intervention_danger_toaster.toaster_info_text}}",
+      "toaster_type": "problem",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "glucose_screening_relevance_rules.yml"
+          }
+        }
+      }
     }
-
   ],
   "count": 1,
   "properties_file_name": "tests_blood_glucose_sub_form"

@@ -1,0 +1,77 @@
+---
+name: step2_tb_screening_notdone
+description: tb_screening_status
+priority: 1
+condition: "step2_tb_screening_status != ''  && step2_tb_screening_status == 'not_done'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_tb_screening_date
+description: tb date
+priority: 1
+condition: "step1_tb_screening_status != '' && step1_tb_screening_status == 'done_earlier'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_tb_screening_date
+description: tb date
+priority: 1
+condition: "step2_tb_screening_status != ''  && step2_tb_screening_status == 'done_earlier'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_tb_screening_danger_toaster
+description: tb toaster
+priority: 1
+condition: "step1_tb_screening_result != '' && step1_tb_screening_result == 'positive'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_tb_screening_danger_toaster
+description: tb toaster
+priority: 1
+condition: "step2_tb_screening_result!= ''  && step2_tb_screening_result == 'positive'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_tb_screening_notdone_other
+description: tb_screening_status
+priority: 1
+condition: "!step1_tb_screening_notdone.isEmpty() && step1_tb_screening_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_tb_screening_notdone_other
+description: tb_screening_status
+priority: 1
+condition: "!step2_tb_screening_notdone.isEmpty() && step2_tb_screening_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_tb_screening_result
+description: tb_screening_result
+priority: 1
+condition: "step1_tb_screening_status != '' && (step1_tb_screening_status == 'done_today' || step1_tb_screening_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_tb_screening_result
+description: tb_screening_result
+priority: 1
+condition: "step2_tb_screening_status != '' && (step2_tb_screening_status == 'done_today' || step2_tb_screening_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_tb_screening_scheduled_date
+description: tb_screening_scheduled_date
+priority: 1
+condition: "step1_tb_screening_status == 'ordered'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_tb_screening_scheduled_date
+description: tb_screening_scheduled_date
+priority: 1
+condition: "step2_tb_screening_status == 'ordered'"
+actions:
+  - "isRelevant = true"

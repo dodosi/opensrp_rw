@@ -89,7 +89,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       },
@@ -117,7 +117,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       }
@@ -135,7 +135,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       },
@@ -155,7 +155,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "urine_screening_calculation_rules.yml"
           }
         }
       }
@@ -172,14 +172,14 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       },
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "urine_screening_calculation_rules.yml"
           }
         }
       },
@@ -227,7 +227,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       },
@@ -285,7 +285,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       }
@@ -323,7 +323,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       }
@@ -385,7 +385,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       }
@@ -447,7 +447,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       }
@@ -509,7 +509,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       }
@@ -571,7 +571,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "urine_screening_relevance_rules.yml"
           }
         }
       }
@@ -585,12 +585,29 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "urine_screening_calculation_rules.yml"
           }
         }
       }
     },
-
+    {
+      "key": "gdm_risk_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_urine_sub_form.step1.gdm_risk_toaster.text}}",
+      "toaster_info_text": "{{tests_urine_sub_form.step1.gdm_risk_toaster.toaster_info_text}}",
+      "toaster_info_title": "{{tests_urine_sub_form.step1.gdm_risk_toaster.toaster_info_title}}",
+      "toaster_type": "warning",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "urine_screening_relevance_rules.yml"
+          }
+        }
+      }
+    },
     {
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
@@ -602,12 +619,46 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "urine_screening_calculation_rules.yml"
           }
         }
-
       }
-
+    },
+    {
+      "key": "asb_positive_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_urine_sub_form.step1.asb_positive_toaster.text}}",
+      "toaster_info_text": "{{tests_urine_sub_form.step1.asb_positive_toaster.toaster_info_text}}",
+      "toaster_info_title": "{{tests_urine_sub_form.step1.asb_positive_toaster.toaster_info_title}}",
+      "toaster_type": "warning",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "urine_screening_relevance_rules.yml"
+          }
+        }
+      }
+    },
+    {
+      "key": "gbs_agent_note",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_urine_sub_form.step1.gbs_agent_note.text}}",
+      "toaster_info_text": "{{tests_urine_sub_form.step1.gbs_agent_note.toaster_info_text}}",
+      "toaster_info_title": "{{tests_urine_sub_form.step1.gbs_agent_note.toaster_info_title}}",
+      "toaster_type": "warning",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "urine_screening_relevance_rules.yml"
+          }
+        }
+      }
     }
   ],
   "count": 1,
