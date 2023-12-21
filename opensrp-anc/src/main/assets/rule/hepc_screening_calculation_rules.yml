@@ -1,0 +1,14 @@
+---
+name: step1_hepc_positive
+description: hepc_positive
+priority: 1
+condition: "(step1_hcv_lab_ima != '' && step1_hcv_lab_ima == 'positive') || (step1_hcv_rdt != '' && step1_hcv_rdt == 'positive') || (step1_hcv_dbs != '' && step1_hcv_dbs == 'positive')"
+actions:
+  - "calculation = 1"
+---
+name: step2_hepc_positive
+description: hepc_positive
+priority: 1
+condition: "(step2_hcv_lab_ima != '' && step2_hcv_lab_ima == 'positive') || (step2_hcv_rdt != '' && step2_hcv_rdt == 'positive') || (step2_hcv_dbs != '' && step2_hcv_dbs == 'positive')"
+actions:
+  - "calculation = 1"

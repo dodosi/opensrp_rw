@@ -101,7 +101,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       }
@@ -119,7 +119,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       },
@@ -139,7 +139,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       }
@@ -155,7 +155,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       }
@@ -172,14 +172,14 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       },
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       },
@@ -225,7 +225,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       },
@@ -267,7 +267,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       }
@@ -305,7 +305,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       }
@@ -343,7 +343,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       }
@@ -359,13 +359,45 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hepb_screening_relevance_rules.yml"
           }
         }
       }
-
+    },
+    {
+      "key": "hepatitis_b_danger_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_hepatitis_b_sub_form.step1.hepatitis_b_danger_toaster.text}}",
+      "toaster_info_text": "{{tests_hepatitis_b_sub_form.step1.hepatitis_b_danger_toaster.toaster_info_text}}",
+      "toaster_info_title": "{{tests_hepatitis_b_sub_form.step1.hepatitis_b_danger_toaster.toaster_info_title}}",
+      "toaster_type": "problem",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "hepb_screening_relevance_rules.yml"
+          }
+        }
+      }
+    },
+    {
+      "key": "hepatitis_b_info_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_hepatitis_b_sub_form.step1.hepatitis_b_info_toaster.text}}",
+      "toaster_type": "info",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "hepb_screening_relevance_rules.yml"
+          }
+        }
+      }
     }
-
   ],
   "count": 1,
   "properties_file_name": "tests_hepatitis_b_sub_form"

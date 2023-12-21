@@ -195,7 +195,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "tb_screening_calculation_rules.yml"
           }
         }
       }
@@ -216,7 +216,13 @@
           }
         }
       },
-
+      "calculation": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "tb_screening_calculation_rules.yml"
+          }
+        }
+      },
       "v_required": {
         "value": true,
         "err": "{{tests_tb_screening_sub_form.step1.tb_screening_date.v_required.err}}"
@@ -275,7 +281,24 @@
         "value": true,
         "err": "{{tests_tb_screening_sub_form.step1.tb_screening_result.v_required.err}}"
       }
-
+    },
+    {
+      "key": "tb_screening_danger_toaster",
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "",
+      "openmrs_entity_id": "",
+      "type": "toaster_notes",
+      "text": "{{tests_tb_screening_sub_form.step1.tb_screening_danger_toaster.text}}",
+      "toaster_info_text": "{{tests_tb_screening_sub_form.step1.tb_screening_danger_toaster.toaster_info_text}}",
+      "toaster_info_title": "{{tests_tb_screening_sub_form.step1.tb_screening_danger_toaster.toaster_info_title}}",
+      "toaster_type": "problem",
+      "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "tests_relevance_rules.yml"
+          }
+        }
+      }
     }
   ],
   "count": 1,

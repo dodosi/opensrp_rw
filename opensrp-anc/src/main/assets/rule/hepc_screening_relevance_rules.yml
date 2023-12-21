@@ -1,0 +1,112 @@
+---
+name: step1_hepc_test_notdone
+description: Reason
+priority: 1
+condition: "step1_hepc_test_status == 'not_done'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hepc_test_notdone
+description: Reason
+priority: 1
+condition: "step2_hepc_test_status == 'not_done'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hepc_test_date
+description: Hep C test date
+priority: 1
+condition: "(step1_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hepc_test_date
+description: Hep C test date
+priority: 1
+condition: "(step2_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hepc_test_type
+description: Hep C test type
+priority: 1
+condition: "(step1_hepc_test_status == 'done_today' || step1_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hepc_test_type
+description: Hep C test type
+priority: 1
+condition: "(step2_hepc_test_status == 'done_today' || step2_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hcv_lab_ima
+description: Anti-HCV laboratory-based immunoassay (recommended)
+priority: 1
+condition: "(step1_hepc_test_type == 'anti_hcv_lab_based' && step1_hepc_test_status == 'done_today') || (step1_hepc_test_type == 'anti_hcv_lab_based' && step1_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hcv_lab_ima
+description: Anti-HCV laboratory-based immunoassay (recommended)
+priority: 1
+condition: "(step2_hepc_test_type == 'anti_hcv_lab_based' && step2_hepc_test_status == 'done_today') || (step2_hepc_test_type == 'anti_hcv_lab_based' && step2_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hcv_rdt
+description: Anti-HCV rapid diagnostic test (RDT)
+priority: 1
+condition: "(step1_hepc_test_type == 'anti_hcv_rdt' && step1_hepc_test_status == 'done_today')  || (step1_hepc_test_type == 'anti_hcv_rdt' && step1_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hcv_rdt
+description: Anti-HCV rapid diagnostic test (RDT)
+priority: 1
+condition: "(step2_hepc_test_type == 'anti_hcv_rdt' && step2_hepc_test_status == 'done_today')  || (step2_hepc_test_type == 'anti_hcv_rdt' && step2_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hcv_dbs
+description: Dried Blood Spot (DBS) anti-HCV test
+priority: 1
+condition: "(step1_hepc_test_type == 'anti_hcv_dbs' && step1_hepc_test_status == 'done_today') || (step1_hepc_test_type == 'anti_hcv_dbs' && step1_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hcv_dbs
+description: Dried Blood Spot (DBS) anti-HCV test
+priority: 1
+condition: "(step2_hepc_test_type == 'anti_hcv_dbs' && step2_hepc_test_status == 'done_today') || (step2_hepc_test_type == 'anti_hcv_dbs' && step2_hepc_test_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hepc_test_notdone_other
+description: Reason
+priority: 1
+condition: "!step1_hepc_test_notdone.isEmpty() && step1_hepc_test_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hepc_test_notdone_other
+description: Reason
+priority: 1
+condition: "!step1_hepc_test_notdone.isEmpty() && step1_hepc_test_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hepatitis_c_danger_toaster
+description: Counselling and referral required.
+priority: 1
+condition: "step1_hepc_positive == 1"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hepatitis_c_danger_toaster
+description: Counselling and referral required.
+priority: 1
+condition: "step2_hepc_positive == 1"
+actions:
+  - "isRelevant = true"
