@@ -106,7 +106,6 @@
       "hint": "{{tests_ultrasound_sub_form.step1.ultrasound_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-
       "relevance": {
         "rules-engine": {
           "ex-rules": {

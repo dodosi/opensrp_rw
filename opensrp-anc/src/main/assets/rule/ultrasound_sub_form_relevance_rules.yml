@@ -27,6 +27,13 @@ condition: "step2_ultrasound_notdone != '' && step2_ultrasound_notdone == 'other
 actions:
   - "isRelevant = true"
 ---
+name: step1_ultrasound_scheduled_date
+description: ultrasound_test_scheduled_date
+priority: 1
+condition: "step1_ultrasound == 'ordered'"
+actions:
+  - "isRelevant = true"
+---
 name: step1_ultrasound_date
 description: Date that the ultrasound was done.
 priority: 1
