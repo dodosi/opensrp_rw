@@ -408,7 +408,7 @@
           "4"
         ],
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "{{anc_register.step1.ubudehe_category.v_required.err}}"
         }
       },
@@ -575,7 +575,7 @@
           "err": "{{anc_register.step1.phone_number.v_numeric.err}}"
         },
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "{{anc_register.step1.phone_number.v_required.err}}"
         },
         "v_regex": {

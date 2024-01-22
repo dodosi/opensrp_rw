@@ -137,7 +137,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       },
@@ -159,7 +159,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       },
@@ -179,7 +179,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       }
@@ -212,7 +212,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       },
@@ -273,7 +273,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       },
@@ -295,7 +295,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       }

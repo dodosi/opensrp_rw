@@ -113,12 +113,10 @@
       "hint": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
+        "step2:hiv_test_partner_status": {
+          "type": "string",
+          "ex": "equalTo(., \"ordered\")"
         }
       },
       "v_required": {
@@ -161,7 +159,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "partner_hiv_screening_calculation_rules.yml"
           }
         }
       }
@@ -176,16 +174,15 @@
       "expanded": "false",
       "max_date": "today",
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
+        "step2:hiv_test_partner_status": {
+          "type": "string",
+          "ex": "equalTo(., \"done_earlier\")"
         }
       },
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "partner_hiv_screening_calculation_rules.yml"
           }
         }
       },
@@ -233,10 +230,9 @@
         "err": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_result.v_required.err}}"
       },
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
+        "step2:hiv_test_partner_status": {
+          "type": "string",
+          "ex": "equalTo(., \"done_today\")"
         }
       }
     },
@@ -249,7 +245,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "partner_hiv_screening_calculation_rules.yml"
           }
         }
       }
@@ -278,7 +274,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "partner_hiv_screening_calculation_rules.yml"
           }
         }
       }
@@ -296,7 +292,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "partner_hiv_screening_relevance_rules.yml"
           }
         }
       }

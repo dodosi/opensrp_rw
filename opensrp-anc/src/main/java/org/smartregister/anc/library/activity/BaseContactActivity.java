@@ -90,11 +90,20 @@ public abstract class BaseContactActivity extends SecuredActivity {
         recyclerView.setAdapter(contactAdapter);
     }
 
+//    protected void startFormActivity(JSONObject form, Contact contact) {
+//        Intent intent = new Intent(this, ContactJsonFormActivity.class);
+//        formStartActions(form, contact, intent);
+//    }
     protected void startFormActivity(JSONObject form, Contact contact) {
-        Intent intent = new Intent(this, ContactJsonFormActivity.class);
-        formStartActions(form, contact, intent);
-    }
+        if(form.optString("encounter_type").equals("Tests")){
+            Intent intent = new Intent(this, TestsActivity.class);
+            formStartActions(form, contact, intent);
 
+        }else{
+            Intent intent = new Intent(this, ContactJsonFormActivity.class);
+            formStartActions(form, contact, intent);
+        }
+    }
     private void formStartActions(JSONObject form, Contact contact, Intent intent) {
         try {
             intent.putExtra(ConstantsUtils.JsonFormExtraUtils.JSON, getUpdatedForm(form, contact, getPartialContact(contact)));

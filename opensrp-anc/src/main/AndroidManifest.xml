@@ -30,6 +30,9 @@
         <activity
             android:name=".activity.UkudoxActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.TestsActivity"
+            android:exported="false" />
         <activity android:name=".activity.AncP2pModeSelectActivity" />
         <service
             android:name="org.smartregister.sync.intent.P2pProcessRecordsService"
