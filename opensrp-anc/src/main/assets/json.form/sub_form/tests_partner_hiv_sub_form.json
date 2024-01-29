@@ -113,6 +113,7 @@
       "hint": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
+
       "relevance": {
         "step2:hiv_test_partner_status": {
           "type": "string",
@@ -230,9 +231,10 @@
         "err": "{{tests_partner_hiv_sub_form.step1.hiv_test_partner_result.v_required.err}}"
       },
       "relevance": {
-        "step2:hiv_test_partner_status": {
-          "type": "string",
-          "ex": "equalTo(., \"done_today\")"
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "partner_hiv_screening_relevance_rules.yml"
+          }
         }
       }
     },

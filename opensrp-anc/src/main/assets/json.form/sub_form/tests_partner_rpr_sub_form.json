@@ -59,8 +59,7 @@
       "openmrs_entity_id": "spacer",
       "type": "spacer",
       "spacer_height": "10dp"
-    },
-    {
+    },{
       "key": "partner_rpr_test_notdone",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
@@ -99,46 +98,31 @@
         "err": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_notdone.v_required.err}}"
       },
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "rpr_screening_relevance_rules.yml"
-          }
+        "step2:partner_rpr_test_status": {
+          "type": "string",
+          "ex": "equalTo(., \"not_done\")"
         }
       }
-    },
-    {
+    },{
       "key": "partner_rpr_test_notdone_other",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
       "openmrs_entity_id": "",
       "type": "edit_text",
-      "hint": "{{rpr_screening_partner_rpr_sub_form.step1.partner_rpr_test_notdone_other.hint}}",
+      "hint": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_notdone_other.hint}}",
       "edit_type": "name",
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "rpr_screening_relevance_rules.yml"
-          }
+        "step2:partner_rpr_test_notdone": {
+          "ex-checkbox": [
+            {
+              "or": [
+                "other"
+              ]
+            }
+          ]
         }
       }
-    },
-    {
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "key": "partner_rpr_test_date_today_hidden",
-      "type": "hidden",
-      "label_text_style": "bold",
-      "text_color": "#000000",
-      "calculation": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "rpr_screening_calculation_rules.yml"
-          }
-        }
-      }
-    },
-    {
+    },{
       "key": "partner_rpr_test_date",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
@@ -148,10 +132,9 @@
       "expanded": "false",
       "max_date": "today",
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "rpr_screening_relevance_rules.yml"
-          }
+        "step2:partner_rpr_test_status": {
+          "type": "string",
+          "ex": "equalTo(., \"done_earlier\")"
         }
       },
       "v_required": {
@@ -165,30 +148,26 @@
           }
         }
       }
-    },
-    {
+    },{
       "key": "partner_rpr_test_scheduled_date",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
       "openmrs_entity_id": "",
       "type": "date_picker",
-      "hint": "{{rpr_screening_partner_rpr_sub_form.step1.partner_rpr_test_scheduled_date.hint}}",
+      "hint": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "rpr_screening_relevance_rules.yml"
-          }
+        "step2:partner_rpr_test_status": {
+          "type": "string",
+          "ex": "equalTo(., \"ordered\")"
         }
       },
       "v_required": {
         "value": false,
         "err": ""
       }
-    },
-    {
+    },{
       "key": "partner_rpr_test_result",
       "openmrs_entity_parent": "",
       "openmrs_entity": "concept",
@@ -227,26 +206,9 @@
         "err": "{{tests_partner_rpr_sub_form.step1.partner_rpr_test_result.v_required.err}}"
       },
       "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "rpr_screening_relevance_rules.yml"
-          }
-        }
-      }
-    },
-    {
-      "key": "rpr_posotive_info_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_partner_rpr_sub_form.step1.rpr_positive_info_toaster.text}}",
-      "toaster_type": "problem",
-      "relevance": {
-        "step2:partner_rpr_test_result": {
+        "step2:partner_rpr_test_status": {
           "type": "string",
-          "ex": "equalTo(., \"positive\")"
-
+          "ex": "equalTo(., \"done_today\")"
         }
       }
     }

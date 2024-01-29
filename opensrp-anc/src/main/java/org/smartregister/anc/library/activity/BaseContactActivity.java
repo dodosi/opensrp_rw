@@ -109,7 +109,7 @@ public abstract class BaseContactActivity extends SecuredActivity {
             intent.putExtra(ConstantsUtils.JsonFormExtraUtils.JSON, getUpdatedForm(form, contact, getPartialContact(contact)));
             intent.putExtra(JsonFormConstants.JSON_FORM_KEY.FORM, contact);
             intent.putExtra(ConstantsUtils.IntentKeyUtils.BASE_ENTITY_ID,
-                    getIntent().getStringExtra(ConstantsUtils.IntentKeyUtils.BASE_ENTITY_ID));
+            getIntent().getStringExtra(ConstantsUtils.IntentKeyUtils.BASE_ENTITY_ID));
             intent.putExtra(ConstantsUtils.IntentKeyUtils.CLIENT_MAP, getIntent().getSerializableExtra(ConstantsUtils.IntentKeyUtils.CLIENT_MAP));
             intent.putExtra(ConstantsUtils.IntentKeyUtils.FORM_NAME, contact.getFormName());
             intent.putExtra(ConstantsUtils.IntentKeyUtils.CONTACT_NO, contactNo);

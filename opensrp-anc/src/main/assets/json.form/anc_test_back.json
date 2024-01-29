@@ -244,9 +244,7 @@
         "display_bottom_section": true,
         "content_form": "tests_partner_rpr_sub_form",
         "container": "anc_test"
-      },
-
-      {
+      }, {
         "key": "accordion_other_tests",
         "openmrs_entity_parent": "",
         "openmrs_entity": "",
