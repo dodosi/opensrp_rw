@@ -352,7 +352,7 @@ public class PreviousContactRepository extends BaseRepository {
                 previousContactFacts.put(CONTACT_NO, selectionArgs[1]);
                 return previousContactFacts;
             } else if (Integer.parseInt(contactNo) > 0) {
-                return getPreviousContactFacts(baseEntityId, contactNo, false);
+                return getPreviousContactFacts(baseEntityId, String.valueOf(Integer.valueOf(contactNo)-1), false);
             }
         } catch (Exception e) {
             Log.e(TAG, e.toString(), e);

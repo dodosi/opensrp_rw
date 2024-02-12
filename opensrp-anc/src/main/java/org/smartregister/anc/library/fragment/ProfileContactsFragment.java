@@ -33,6 +33,7 @@ import org.smartregister.anc.library.model.PreviousContact;
 import org.smartregister.anc.library.model.Task;
 import org.smartregister.anc.library.presenter.ProfileFragmentPresenter;
 import org.smartregister.anc.library.util.ANCJsonFormUtils;
+import org.smartregister.anc.library.util.AppExecutors;
 import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.DBConstantsUtils;
 import org.smartregister.anc.library.util.FilePathUtils;
@@ -40,6 +41,7 @@ import org.smartregister.anc.library.util.Utils;
 import org.smartregister.view.fragment.BaseProfileFragment;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -71,6 +73,8 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
     private ScrollView profileContactsLayout;
     private final Utils utils = new Utils();
 
+    private AppExecutors appExecutors;
+
     public static ProfileContactsFragment newInstance(Bundle bundle) {
         Bundle args = bundle;
         ProfileContactsFragment fragment = new ProfileContactsFragment();
@@ -84,6 +88,7 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        appExecutors = AncLibrary.getInstance().getAppExecutors();
         initializePresenter();
     }
 
@@ -136,17 +141,20 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
 
     private void populatePreviousContactMissingEssentials(HashMap<String, String> clientDetails) {
         try {
+
             if (clientDetails != null && clientDetails.containsKey("edd") && StringUtils.isNotBlank(clientDetails.get("edd"))) {
-                Facts entries = AncLibrary.getInstance().getPreviousContactRepository().getPreviousContactFacts(baseEntityId, contactNo, false);
-                if (entries != null && entries.get(ConstantsUtils.GEST_AGE_OPENMRS) != null)
-                    return;
-                int gestAgeOpenmrs = Utils.getGestationAgeFromEDDate(clientDetails.get("edd"));
-                PreviousContact previousContact = new PreviousContact();
-                previousContact.setBaseEntityId(baseEntityId);
-                previousContact.setContactNo(contactNo);
-                previousContact.setKey(ConstantsUtils.GEST_AGE_OPENMRS);
-                previousContact.setValue(String.valueOf(gestAgeOpenmrs));
-                AncLibrary.getInstance().getPreviousContactRepository().savePreviousContact(previousContact);
+                appExecutors.diskIO().execute(()->{
+                    Facts entries = AncLibrary.getInstance().getPreviousContactRepository().getPreviousContactFacts(baseEntityId, contactNo, false);
+                    if (entries != null && entries.get(ConstantsUtils.GEST_AGE_OPENMRS) != null)
+                        return;
+                    int gestAgeOpenmrs = Utils.getGestationAgeFromEDDate(clientDetails.get("edd"));
+                    PreviousContact previousContact = new PreviousContact();
+                    previousContact.setBaseEntityId(baseEntityId);
+                    previousContact.setContactNo(contactNo);
+                    previousContact.setKey(ConstantsUtils.GEST_AGE_OPENMRS);
+                    previousContact.setValue(String.valueOf(gestAgeOpenmrs));
+                    AncLibrary.getInstance().getPreviousContactRepository().savePreviousContact(previousContact);
+                });
             }
         } catch (Exception e) {
             Timber.e(e);
@@ -159,26 +167,34 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
 
     private void initializeLastContactDetails(HashMap<String, String> clientDetails) {
         if (clientDetails != null) {
-            try {
-                List<LastContactDetailsWrapper> lastContactDetailsWrapperList = new ArrayList<>();
-                List<LastContactDetailsWrapper> lastContactDetailsTestsWrapperList = new ArrayList<>();
 
-                Facts facts = presenter.getImmediatePreviousContact(clientDetails, baseEntityId, contactNo);
+        List<LastContactDetailsWrapper> lastContactDetailsWrapperList = new ArrayList<>();
+        List<LastContactDetailsWrapper> lastContactDetailsTestsWrapperList = new ArrayList<>();
+
+        appExecutors.diskIO().execute(()->{
+            Facts facts = presenter.getImmediatePreviousContact(clientDetails, baseEntityId, contactNo);
+            try {
                 addOtherRuleObjects(facts);
                 addAttentionFlagsRuleObjects(facts);
                 contactNo = (String) facts.asMap().get(ConstantsUtils.CONTACT_NO);
 
                 addTestsRuleObjects(facts);
-
-                String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            appExecutors.mainThread().execute(()->{
                 String displayContactDate = "";
+                String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
                 if (!TextUtils.isEmpty(contactDate)) {
-                    Date lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
+                    Date lastContactDate = null;
+                    try {
+                        lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
                     displayContactDate = new SimpleDateFormat("dd MMM " + "yyyy", Locale.getDefault())
                             .format(lastContactDate);
                 }
-
-
                 if (lastContactDetails.isEmpty()) {
                     lastContactLayout.setVisibility(View.GONE);
                 } else {
@@ -197,9 +213,8 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
                     setUpContactTestsDetails(lastContactDetailsTestsWrapperList);
                 }
 
-            } catch (Exception e) {
-                Timber.e(e, " --> initializeLastContactDetails");
-            }
+            });
+        });
         }
     }
 
