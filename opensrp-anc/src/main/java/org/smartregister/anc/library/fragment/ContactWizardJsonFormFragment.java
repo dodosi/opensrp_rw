@@ -163,7 +163,10 @@ public class ContactWizardJsonFormFragment extends JsonWizardFormFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_save && getActivity() != null) {
-            ((TestsActivity) getActivity()).proceedToMainContactPage();
+           if(getActivity() instanceof TestsActivity){
+               ((TestsActivity) getActivity()).proceedToMainContactPage();
+           }
+           else  ((ContactJsonFormActivity) getActivity()).proceedToMainContactPage();
         }
 
         if (item.getItemId() == MENU_NAVIGATION) {
