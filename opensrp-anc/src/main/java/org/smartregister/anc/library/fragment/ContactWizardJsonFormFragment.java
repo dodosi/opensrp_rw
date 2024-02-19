@@ -28,6 +28,7 @@ import com.vijay.jsonwizard.interactors.JsonFormInteractor;
 
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.ContactJsonFormActivity;
+import org.smartregister.anc.library.activity.TestsActivity;
 import org.smartregister.anc.library.domain.Contact;
 import org.smartregister.anc.library.presenter.ContactWizardJsonFormFragmentPresenter;
 import org.smartregister.anc.library.util.ANCFormUtils;
@@ -162,7 +163,7 @@ public class ContactWizardJsonFormFragment extends JsonWizardFormFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_save && getActivity() != null) {
-            ((ContactJsonFormActivity) getActivity()).proceedToMainContactPage();
+            ((TestsActivity) getActivity()).proceedToMainContactPage();
         }
 
         if (item.getItemId() == MENU_NAVIGATION) {
