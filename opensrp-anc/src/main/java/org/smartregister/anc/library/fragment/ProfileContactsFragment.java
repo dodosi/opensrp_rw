@@ -73,8 +73,6 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
     private ScrollView profileContactsLayout;
     private final Utils utils = new Utils();
 
-    private AppExecutors appExecutors;
-
     public static ProfileContactsFragment newInstance(Bundle bundle) {
         Bundle args = bundle;
         ProfileContactsFragment fragment = new ProfileContactsFragment();
@@ -88,7 +86,6 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        appExecutors = AncLibrary.getInstance().getAppExecutors();
         initializePresenter();
     }
 
@@ -140,61 +137,27 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
     }
 
     private void populatePreviousContactMissingEssentials(HashMap<String, String> clientDetails) {
-        try {
-
-            if (clientDetails != null && clientDetails.containsKey("edd") && StringUtils.isNotBlank(clientDetails.get("edd"))) {
-                appExecutors.diskIO().execute(()->{
-                    Facts entries = AncLibrary.getInstance().getPreviousContactRepository().getPreviousContactFacts(baseEntityId, contactNo, false);
-                    if (entries != null && entries.get(ConstantsUtils.GEST_AGE_OPENMRS) != null)
-                        return;
-                    int gestAgeOpenmrs = Utils.getGestationAgeFromEDDate(clientDetails.get("edd"));
-                    PreviousContact previousContact = new PreviousContact();
-                    previousContact.setBaseEntityId(baseEntityId);
-                    previousContact.setContactNo(contactNo);
-                    previousContact.setKey(ConstantsUtils.GEST_AGE_OPENMRS);
-                    previousContact.setValue(String.valueOf(gestAgeOpenmrs));
-                    AncLibrary.getInstance().getPreviousContactRepository().savePreviousContact(previousContact);
-                });
-            }
-        } catch (Exception e) {
-            Timber.e(e);
-        }
-    }
-
-    private void setUpAlertStatusButton() {
-        Utils.processButtonAlertStatus(getActivity(), dueButton, buttonAlertStatus);
-    }
-
-    private void initializeLastContactDetails(HashMap<String, String> clientDetails) {
         if (clientDetails != null) {
-
-        List<LastContactDetailsWrapper> lastContactDetailsWrapperList = new ArrayList<>();
-        List<LastContactDetailsWrapper> lastContactDetailsTestsWrapperList = new ArrayList<>();
-
-        appExecutors.diskIO().execute(()->{
-            Facts facts = presenter.getImmediatePreviousContact(clientDetails, baseEntityId, contactNo);
             try {
+                List<LastContactDetailsWrapper> lastContactDetailsWrapperList = new ArrayList<>();
+                List<LastContactDetailsWrapper> lastContactDetailsTestsWrapperList = new ArrayList<>();
+
+                Facts facts = presenter.getImmediatePreviousContact(clientDetails, baseEntityId, contactNo);
                 addOtherRuleObjects(facts);
                 addAttentionFlagsRuleObjects(facts);
                 contactNo = (String) facts.asMap().get(ConstantsUtils.CONTACT_NO);
 
                 addTestsRuleObjects(facts);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            appExecutors.mainThread().execute(()->{
-                String displayContactDate = "";
+
                 String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
+                String displayContactDate = "";
                 if (!TextUtils.isEmpty(contactDate)) {
-                    Date lastContactDate = null;
-                    try {
-                        lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
-                    } catch (ParseException e) {
-                        throw new RuntimeException(e);
-                    }
+                    Date lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
                     displayContactDate = new SimpleDateFormat("dd MMM " + "yyyy", Locale.getDefault())
                             .format(lastContactDate);
                 }
+
+
                 if (lastContactDetails.isEmpty()) {
                     lastContactLayout.setVisibility(View.GONE);
                 } else {
@@ -213,8 +176,60 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
                     setUpContactTestsDetails(lastContactDetailsTestsWrapperList);
                 }
 
-            });
-        });
+            } catch (Exception e) {
+                Timber.e(e, " --> initializeLastContactDetails");
+            }
+        }
+    }
+
+    private void setUpAlertStatusButton() {
+        Utils.processButtonAlertStatus(getActivity(), dueButton, buttonAlertStatus);
+    }
+
+    private void initializeLastContactDetails(HashMap<String, String> clientDetails) {
+        if (clientDetails != null) {
+
+        List<LastContactDetailsWrapper> lastContactDetailsWrapperList = new ArrayList<>();
+        List<LastContactDetailsWrapper> lastContactDetailsTestsWrapperList = new ArrayList<>();
+        Facts facts = presenter.getImmediatePreviousContact(clientDetails, baseEntityId, contactNo);
+        try {
+            addOtherRuleObjects(facts);
+            addAttentionFlagsRuleObjects(facts);
+            contactNo = (String) facts.asMap().get(ConstantsUtils.CONTACT_NO);
+
+            addTestsRuleObjects(facts);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+            String displayContactDate = "";
+            String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
+            if (!TextUtils.isEmpty(contactDate)) {
+                Date lastContactDate = null;
+                try {
+                    lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
+                displayContactDate = new SimpleDateFormat("dd MMM " + "yyyy", Locale.getDefault())
+                        .format(lastContactDate);
+            }
+            if (lastContactDetails.isEmpty()) {
+                lastContactLayout.setVisibility(View.GONE);
+            } else {
+                lastContactDetailsWrapperList
+                        .add(new LastContactDetailsWrapper(contactNo, displayContactDate, lastContactDetails, facts));
+                setUpContactDetailsRecycler(lastContactDetailsWrapperList);
+            }
+
+            if (lastContactTests.isEmpty()) {
+                testLayout.setVisibility(View.GONE);
+            } else {
+                lastContactDetailsTestsWrapperList
+                        .add(new LastContactDetailsWrapper(contactNo, displayContactDate, lastContactTests, facts));
+                testsHeader.setText(
+                        String.format(getActivity().getResources().getString(R.string.recent_test), displayContactDate));
+                setUpContactTestsDetails(lastContactDetailsTestsWrapperList);
+            }
         }
     }
 
