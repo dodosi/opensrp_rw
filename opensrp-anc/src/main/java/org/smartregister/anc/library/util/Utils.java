@@ -314,7 +314,6 @@ public class Utils extends org.smartregister.util.Utils {
      */
     public static void finalizeForm(Activity context, HashMap<String, String> womanDetails, boolean isRefferal) {
         try {
-            Log.d("TAG", "finalizeForm: "+womanDetails.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE));
 
             Intent contactSummaryFinishIntent = new Intent(context, ContactSummaryFinishActivity.class);
             contactSummaryFinishIntent
@@ -584,12 +583,9 @@ public class Utils extends org.smartregister.util.Utils {
                                     Utils.getTodayContact(String.valueOf(buttonAlertStatus.nextContact))));
                             contactTextView.setPadding(2, 2, 2, 2);
                         }
-//                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_disabled));
-//                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_disabled));
-
-                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_due));
-//                        dueButton.setTextColor(context.getResources().getColor(R.color.dark_grey));
-                        dueButton.setTextColor(context.getResources().getColor(R.color.vaccine_blue_bg_st));
+                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_disabled));
+                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_disabled));
+                        dueButton.setTextColor(context.getResources().getColor(R.color.dark_grey));
                         dueButton.setText(String.format(context.getString(R.string.contact_recorded_today_no_break),
                                 Utils.getTodayContact(String.valueOf(buttonAlertStatus.nextContact))));
                         break;
@@ -1186,5 +1182,37 @@ public class Utils extends org.smartregister.util.Utils {
             locationName = jsonFormView.getResources().getString(identifier);
         }
         return locationName;
+    }
+
+    public static boolean isWeekday(Calendar date) {
+        /**
+         * Checks if the given date is a weekday (Monday to Friday).
+         *
+         * @param date The date to be checked.
+         * @return True if the date is a weekday, False otherwise.
+         */
+        int dayOfWeek = date.get(Calendar.DAY_OF_WEEK);
+        return dayOfWeek >= Calendar.MONDAY && dayOfWeek <= Calendar.FRIDAY;
+    }
+
+    public static Calendar nextWeekday(Calendar date) {
+        /**
+         * Finds the next available weekday from the given date.
+         * If the given date is a weekday, it returns that date.
+         * If it's a weekend, it returns the next Monday.
+         *
+         * @param date The date to start from.
+         * @return The next available weekday.
+         */
+        if (isWeekday(date)) {
+            return date;
+        } else {
+            int daysToAdd = Calendar.MONDAY - date.get(Calendar.DAY_OF_WEEK);
+            if (daysToAdd <= 0) {
+                daysToAdd += 7;
+            }
+            date.add(Calendar.DAY_OF_MONTH, daysToAdd);
+            return date;
+        }
     }
 }

@@ -31,10 +31,15 @@ import org.smartregister.anc.library.util.Utils;
 import org.smartregister.clientandeventmodel.Event;
 import org.smartregister.repository.DetailsRepository;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 
 import timber.log.Timber;
 
@@ -110,10 +115,21 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
                 PartialContactRepository partialContactRepository = partialContacts.getPartialContactRepository();
                 List<PartialContact> partialContactList = partialContacts.getPartialContactList();
 
+
+                String nextAvailableVisitOnWeekday = findNextAvailableWeekday(nextContactVisitDate, "YYYY-MM-dd");
+                if(nextAvailableVisitOnWeekday!=null) nextContactVisitDate = nextAvailableVisitOnWeekday;
+
                 ContactVisit contactVisit =
                         new ContactVisit(details, referral, baseEntityId, nextContact, nextContactVisitDate,
                                 partialContactRepository, partialContactList).invoke();
                 Facts facts = contactVisit.getFacts();
+                String factsNextVisitDate = facts.get("next_visit_date");
+
+                String factsNextVisitDateOnWeekday = findNextAvailableWeekday(factsNextVisitDate, "dd-MM-yyyy");
+
+                if(factsNextVisitDate != null) facts.put("next_visit_date", factsNextVisitDateOnWeekday);
+
+
                 List<String> formSubmissionIDs = contactVisit.getFormSubmissionIDs();
                 WomanDetail womanDetail = contactVisit.getWomanDetail();
 
@@ -147,6 +163,20 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
             }
         }
         return (HashMap<String, String>) details;
+    }
+
+    private static String findNextAvailableWeekday(String strDate, String pattern) throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        assert strDate != null;
+        Date date = simpleDateFormat.parse(strDate);
+        Calendar calendar = Calendar.getInstance();
+        assert date != null;
+        calendar.setTime(date);
+        if(!Utils.isWeekday(calendar))
+        {
+            return simpleDateFormat.format(Utils.nextWeekday(calendar).getTime());
+        }
+        return strDate;
     }
 
     private void addThePreviousContactSchedule(String baseEntityId, Map<String, String> details, List<Integer> integerList) {
