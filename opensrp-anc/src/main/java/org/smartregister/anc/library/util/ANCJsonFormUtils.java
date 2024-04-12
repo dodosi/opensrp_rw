@@ -997,12 +997,21 @@ public class ANCJsonFormUtils extends org.smartregister.util.JsonFormUtils {
             LocalDate lmpDate = localDate.minusWeeks(ConstantsUtils.DELIVERY_DATE_WEEKS);
 
             for (String contactWeeks : contactSchedule) {
-                contactDates.add(new ContactSummaryModel(String.format(
-                        AncLibrary.getInstance().getContext().getStringResource(R.string.contact_number),
-                        contactSequence++),
-                        Utils.convertDateFormat(lmpDate.plusWeeks(Integer.valueOf(contactWeeks)).toDate(),
-                                Utils.CONTACT_SUMMARY_DF), lmpDate.plusWeeks(Integer.valueOf(contactWeeks)).toDate(),
-                        contactWeeks));
+                Date nextVisitDate = lmpDate.plusWeeks(Integer.valueOf(contactWeeks)).toDate();
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTime(nextVisitDate);
+                String nextVisitDateString =  Utils.convertDateFormat(lmpDate.plusWeeks(Integer.valueOf(contactWeeks)).toDate(), Utils.CONTACT_SUMMARY_DF);
+                if(!Utils.isWeekday(calendar))
+                {
+                    nextVisitDateString = Utils.CONTACT_SUMMARY_DF.format(Utils.nextWeekday(calendar).getTime());
+                }
+
+                contactDates.add(new ContactSummaryModel(
+                        String.format(AncLibrary.getInstance().getContext().getStringResource(R.string.contact_number), contactSequence++),
+                        nextVisitDateString,
+                        lmpDate.plusWeeks(Integer.valueOf(contactWeeks)).toDate(),
+                        contactWeeks)
+                );
             }
         }
         return contactDates;

@@ -19,7 +19,6 @@ import org.smartregister.anc.library.model.PartialContact;
 import org.smartregister.anc.library.model.PartialContacts;
 import org.smartregister.anc.library.model.PreviousContact;
 import org.smartregister.anc.library.model.Task;
-import org.smartregister.anc.library.repository.ContactTasksRepository;
 import org.smartregister.anc.library.repository.PartialContactRepository;
 import org.smartregister.anc.library.repository.PreviousContactRepository;
 import org.smartregister.anc.library.rule.ContactRule;
@@ -37,9 +36,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
-import java.util.Objects;
 
 import timber.log.Timber;
 
@@ -116,7 +113,7 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
                 List<PartialContact> partialContactList = partialContacts.getPartialContactList();
 
 
-                String nextAvailableVisitOnWeekday = findNextAvailableWeekday(nextContactVisitDate, "YYYY-MM-dd");
+                String nextAvailableVisitOnWeekday = findNextAvailableWeekday(nextContactVisitDate, "yyyy-MM-dd");
                 if(nextAvailableVisitOnWeekday!=null) nextContactVisitDate = nextAvailableVisitOnWeekday;
 
                 ContactVisit contactVisit =

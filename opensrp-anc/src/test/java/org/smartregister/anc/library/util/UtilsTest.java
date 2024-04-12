@@ -53,6 +53,7 @@ import org.smartregister.domain.LocationProperty;
 import org.smartregister.repository.AllSharedPreferences;
 import org.smartregister.repository.LocationRepository;
 import org.smartregister.sync.ClientProcessorForJava;
+import org.smartregister.util.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
