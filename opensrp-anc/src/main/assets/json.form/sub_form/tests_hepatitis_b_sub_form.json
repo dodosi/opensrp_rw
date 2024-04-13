@@ -240,7 +240,7 @@
       "openmrs_entity": "concept",
       "openmrs_entity_id": "159430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
       "type": "native_radio",
-      "label": "{{tests_hepatitis_b_sub_form.step1.hbsag_lab_ima.label}}",
+      "label": "{{tests_hepatitis_b_sub_form.step1.hepb_test_result.label}}",
       "label_text_style": "bold",
       "options": [
         {

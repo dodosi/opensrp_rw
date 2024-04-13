@@ -174,7 +174,7 @@ public class PreviousContactsDetailsActivity extends AppCompatActivity implement
                 addAttentionFlagsRuleObjects(factsToUpdate);
                 Date lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
                         .parse(String.valueOf(factsToUpdate.asMap().get(ConstantsUtils.CONTACT_DATE)));
-
+                 Log.d("LCD",lastContactDate.toString());
                 String displayContactDate = new SimpleDateFormat("dd MMM " + "yyyy", Locale.getDefault())
                         .format(lastContactDate);
 

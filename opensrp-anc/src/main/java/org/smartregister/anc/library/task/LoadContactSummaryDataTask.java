@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -82,6 +83,7 @@ public class LoadContactSummaryDataTask extends AsyncTask<Void, Void, Void> {
 
         String lstVisitDate=facts.get("lst_visit_date");
         Log.d("DATE",lstVisitDate);
+        Toast.makeText(context.getApplicationContext(), "DATE IS"+lstVisitDate,Toast.LENGTH_LONG).show();
         SimpleDateFormat inputFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = null;
         try {
