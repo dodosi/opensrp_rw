@@ -19,7 +19,6 @@ import org.smartregister.anc.library.model.PartialContact;
 import org.smartregister.anc.library.model.PartialContacts;
 import org.smartregister.anc.library.model.PreviousContact;
 import org.smartregister.anc.library.model.Task;
-import org.smartregister.anc.library.repository.ContactTasksRepository;
 import org.smartregister.anc.library.repository.PartialContactRepository;
 import org.smartregister.anc.library.repository.PreviousContactRepository;
 import org.smartregister.anc.library.rule.ContactRule;
@@ -31,7 +30,10 @@ import org.smartregister.anc.library.util.Utils;
 import org.smartregister.clientandeventmodel.Event;
 import org.smartregister.repository.DetailsRepository;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -110,10 +112,22 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
                 PartialContactRepository partialContactRepository = partialContacts.getPartialContactRepository();
                 List<PartialContact> partialContactList = partialContacts.getPartialContactList();
 
+
+                String nextAvailableVisitOnWeekday = findNextAvailableWeekday(nextContactVisitDate, "yyyy-MM-dd");
+                if(nextAvailableVisitOnWeekday!=null) nextContactVisitDate = nextAvailableVisitOnWeekday;
+
                 ContactVisit contactVisit =
                         new ContactVisit(details, referral, baseEntityId, nextContact, nextContactVisitDate,
                                 partialContactRepository, partialContactList).invoke();
                 Facts facts = contactVisit.getFacts();
+                String factsNextVisitDate = facts.get(DBConstantsUtils.KeyUtils.NEXT_VISIT_DATE);
+
+                String factsNextVisitDateOnWeekday = findNextAvailableWeekday(factsNextVisitDate, "dd-MM-yyyy");
+
+                if (factsNextVisitDate != null) facts.put(DBConstantsUtils.KeyUtils.NEXT_VISIT_DATE, factsNextVisitDateOnWeekday);
+                else facts.put(DBConstantsUtils.KeyUtils.NEXT_VISIT_DATE, nextAvailableVisitOnWeekday);
+
+
                 List<String> formSubmissionIDs = contactVisit.getFormSubmissionIDs();
                 WomanDetail womanDetail = contactVisit.getWomanDetail();
 
@@ -147,6 +161,20 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
             }
         }
         return (HashMap<String, String>) details;
+    }
+
+    private static String findNextAvailableWeekday(String strDate, String pattern) throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+        assert strDate != null;
+        Date date = simpleDateFormat.parse(strDate);
+        Calendar calendar = Calendar.getInstance();
+        assert date != null;
+        calendar.setTime(date);
+        if(!Utils.isWeekday(calendar))
+        {
+            return simpleDateFormat.format(Utils.nextWeekday(calendar).getTime());
+        }
+        return strDate;
     }
 
     private void addThePreviousContactSchedule(String baseEntityId, Map<String, String> details, List<Integer> integerList) {
