@@ -1187,4 +1187,36 @@ public class Utils extends org.smartregister.util.Utils {
         }
         return locationName;
     }
+
+    public static boolean isWeekday(Calendar date) {
+        /**
+         * Checks if the given date is a weekday (Monday to Friday).
+         *
+         * @param date The date to be checked.
+         * @return True if the date is a weekday, False otherwise.
+         */
+        int dayOfWeek = date.get(Calendar.DAY_OF_WEEK);
+        return dayOfWeek >= Calendar.MONDAY && dayOfWeek <= Calendar.FRIDAY;
+    }
+
+    public static Calendar nextWeekday(Calendar date) {
+        /**
+         * Finds the next available weekday from the given date.
+         * If the given date is a weekday, it returns that date.
+         * If it's a weekend, it returns the next Monday.
+         *
+         * @param date The date to start from.
+         * @return The next available weekday.
+         */
+        if (isWeekday(date)) {
+            return date;
+        } else {
+            int daysToAdd = Calendar.MONDAY - date.get(Calendar.DAY_OF_WEEK);
+            if (daysToAdd <= 0) {
+                daysToAdd += 7;
+            }
+            date.add(Calendar.DAY_OF_MONTH, daysToAdd);
+            return date;
+        }
+    }
 }

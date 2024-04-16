@@ -45,7 +45,9 @@ public class UkudoxActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ukudox);
-        setUpViews();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            setUpViews();
+        }
         go=(Button)findViewById(R.id.go);
         go.setOnClickListener(new View.OnClickListener() {
             @Override
