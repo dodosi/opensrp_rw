@@ -326,7 +326,7 @@ public class PreviousContactRepository extends BaseRepository {
 
             if (StringUtils.isNotBlank(baseEntityId) && StringUtils.isNotBlank(contactNo)) {
                 selection = BASE_ENTITY_ID + " = ? AND " + CONTACT_NO + " = ?";
-                selectionArgs = new String[]{baseEntityId, getContactNo(contactNo, checkNegative)};
+                selectionArgs = new String[]{baseEntityId, contactNo};
             }
 
             mCursor = db.query(TABLE_NAME, projectionArgs, selection, selectionArgs, KEY, null, orderBy, null);
@@ -352,7 +352,7 @@ public class PreviousContactRepository extends BaseRepository {
                 previousContactFacts.put(CONTACT_NO, selectionArgs[1]);
                 return previousContactFacts;
             } else if (Integer.parseInt(contactNo) > 0) {
-                return getPreviousContactFacts(baseEntityId, contactNo, false);
+                return getPreviousContactFacts(baseEntityId, String.valueOf(Integer.valueOf(contactNo)-1), false);
             }
         } catch (Exception e) {
             Log.e(TAG, e.toString(), e);

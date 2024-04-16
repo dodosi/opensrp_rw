@@ -314,6 +314,7 @@ public class Utils extends org.smartregister.util.Utils {
      */
     public static void finalizeForm(Activity context, HashMap<String, String> womanDetails, boolean isRefferal) {
         try {
+            Log.d("TAG", "finalizeForm: "+womanDetails.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE));
 
             Intent contactSummaryFinishIntent = new Intent(context, ContactSummaryFinishActivity.class);
             contactSummaryFinishIntent
@@ -583,9 +584,12 @@ public class Utils extends org.smartregister.util.Utils {
                                     Utils.getTodayContact(String.valueOf(buttonAlertStatus.nextContact))));
                             contactTextView.setPadding(2, 2, 2, 2);
                         }
-                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_disabled));
-                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_disabled));
-                        dueButton.setTextColor(context.getResources().getColor(R.color.dark_grey));
+//                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_disabled));
+//                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_disabled));
+
+                        dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_due));
+//                        dueButton.setTextColor(context.getResources().getColor(R.color.dark_grey));
+                        dueButton.setTextColor(context.getResources().getColor(R.color.vaccine_blue_bg_st));
                         dueButton.setText(String.format(context.getString(R.string.contact_recorded_today_no_break),
                                 Utils.getTodayContact(String.valueOf(buttonAlertStatus.nextContact))));
                         break;

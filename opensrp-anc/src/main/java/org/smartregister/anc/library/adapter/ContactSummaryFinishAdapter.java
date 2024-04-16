@@ -50,7 +50,7 @@ public class ContactSummaryFinishAdapter extends RecyclerView.Adapter<ContactSum
         this.mData = data;
         this.facts = facts;
 //        Log.i("MY_TEST", "onBindViewHolder: "+ yamlConfigItem.toString());
-        Log.i("MY_TEST2", "onBindViewHolder: "+facts.toString());
+//        Log.i("MY_TEST2", "onBindViewHolder: "+facts.toString());
     }
 
     // inflates the row layout from xml when needed
@@ -74,7 +74,7 @@ public class ContactSummaryFinishAdapter extends RecyclerView.Adapter<ContactSum
 //
 //                String translated_text="";
                String value = Utils.returnTranslatedStringJoinedValue(facts.get(key).toString());
-                Log.i("VALUE", "onBindViewHolder: "+value);
+//                Log.i("VALUE", "onBindViewHolder: "+value);
                 if (StringUtils.isNotBlank(value)) {
                     facts.put(key, value);
                 } else {

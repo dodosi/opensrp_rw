@@ -72,7 +72,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       }
@@ -90,7 +90,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       }
@@ -104,11 +104,11 @@
       "hint": "{{tests_syphilis_sub_form.step1.syph_test_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       },
@@ -154,7 +154,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       },
@@ -173,7 +173,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       }
@@ -189,7 +189,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "syphilis_test_screening_calculation_rules.yml"
           }
         }
       }
@@ -206,14 +206,14 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       },
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "syphilis_test_screening_calculation_rules.yml"
           }
         }
       },
@@ -259,7 +259,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       },
@@ -299,7 +299,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       }
@@ -336,7 +336,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       }
@@ -373,7 +373,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       }
@@ -389,7 +389,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "syphilis_test_screening_calculation_rules.yml"
           }
         }
       }
@@ -407,7 +407,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "syphilis_test_screening_relevance_rules.yml"
           }
         }
       }

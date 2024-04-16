@@ -106,11 +106,10 @@
       "hint": "{{tests_ultrasound_sub_form.step1.ultrasound_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "ultrasound_sub_form_relevance_rules.yml"
           }
         }
       },
@@ -164,7 +163,7 @@
       "hint": "{{tests_ultrasound_sub_form.step1.ultrasound_date.hint}}",
       "expanded": "false",
       "max_date": "today",
-      "min_date": "today-9m",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {

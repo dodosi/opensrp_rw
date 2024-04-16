@@ -1,0 +1,112 @@
+---
+name: step1_hiv_test_date
+description: Date that the ultrasound was done.
+priority: 1
+condition: "step1_hiv_test_status != '' && step1_hiv_test_status == 'done_earlier' "
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_test_date
+description: Date that the ultrasound was done.
+priority: 1
+condition: "step2_hiv_test_status != '' && step2_hiv_test_status == 'done_earlier' "
+actions:
+  - "isRelevant = true"
+---
+name: step1_hiv_test_notdone
+description: HIV not done
+priority: 1
+condition: "step1_hiv_test_status != '' && step1_hiv_test_status == 'not_done' "
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_test_notdone
+description: HIV not done.
+priority: 1
+condition: "step2_hiv_test_status != '' && step2_hiv_test_status == 'not_done' "
+actions:
+  - "isRelevant = true"
+---
+name: step1_hiv_test_notdone_other
+description: Reason
+priority: 1
+condition: "!step1_hiv_test_notdone.isEmpty() && step1_hiv_test_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hiv_test_scheduled_date
+description: blood_hiv_scheduled_date
+priority: 1
+condition: "step1_hiv_test_status == 'ordered'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_test_notdone_other
+description: Reason
+priority: 1
+condition: "!step2_hiv_test_notdone.isEmpty() && step2_hiv_test_notdone.contains('other')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hiv_inconclusive_toaster
+description: HIV test resupt
+priority: 1
+condition: "step1_hiv_test_result != '' && step1_hiv_test_result == 'inconclusive'"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_inconclusive_toaster
+description: HIV test resupt
+priority: 1
+condition: "step2_hiv_test_result != '' && step2_hiv_test_result == 'inconclusive'"
+actions:
+  - "isRelevant = true"
+---
+name: step1_hiv_test_result
+description: HIV test result
+priority: 1
+condition: "step1_hiv_test_status != '' && (step1_hiv_test_status == 'done_today' || step1_hiv_test_status == 'done_earlier') "
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_test_result
+description: HIV test result
+priority: 1
+condition: "step2_hiv_test_status != '' && (step2_hiv_test_status == 'done_today' || step2_hiv_test_status == 'done_earlier') "
+actions:
+  - "isRelevant = true"
+---
+name: step1_hiv_positive_toaster
+description: HIV positive counseling
+priority: 1
+condition: "(step1_hiv_positive == 1)"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_positive_toaster
+description: HIV positive counseling
+priority: 1
+condition: "(step2_hiv_positive == 1)"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_test_partner_date
+description: Partner HIV test date
+priority: 1
+condition: "(step2_hiv_test_partner_status != '' && step2_hiv_test_partner_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_test_partner_result
+description:  partner HIV result
+priority: 1
+condition: "step2_hiv_test_partner_status != '' && (step2_hiv_test_partner_status == 'done_today'  || step2_hiv_test_partner_status == 'done_earlier')"
+actions:
+  - "isRelevant = true"
+---
+name: step2_hiv_risk_toaster
+description: hiv_risk_toaster
+priority: 1
+condition: "step2_hiv_risk == 1"
+actions:
+  - "isRelevant = true"

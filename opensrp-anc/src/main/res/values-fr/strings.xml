@@ -96,7 +96,7 @@
     <string name="sync_data">Synchronisation de Données</string>
     <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
     <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
-    <string name="antenatal_care_module">Module \n de soins prénatals</string>
+    <string name="antenatal_care_module"> NAMAI Module \n de soins prénatals</string>
     <string name="anc_id_text">Identifiant: %1$s</string>
     <string name="new_registration_saved">Nouvel enregistrement sauvegardé &#x21;</string>
     <string name="registration_info_updated">Informations d\'enregistrement mises à jour &#x21;</string>

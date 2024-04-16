@@ -65,28 +65,28 @@ actions:
 name: step3_miscarriages_abortions_label
 description: Miscarrige abortions label
 priority: 1
-condition: "step3_previous_pregnancies > 0 "
+condition: "(step3_gravida - 1) > 0 "
 actions:
   - "isRelevant = true"
 ---
 name: step3_miscarriages_abortions
 description: Miscarrige abortions
 priority: 1
-condition: "step3_previous_pregnancies > 0 "
+condition: "(step3_gravida - 1) > 0 "
 actions:
   - "isRelevant = true"
 ---
 name: step3_live_births_label
 description: Live births label
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "(((step3_gravida - 1) - step3_miscarriages_abortions) > 0)"
 actions:
   - "isRelevant = true"
 ---
 name: step3_live_births
 description: Live births
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "(((step3_gravida - 1) - step3_miscarriages_abortions) > 0)"
 actions:
   - "isRelevant = true"
 ---
@@ -100,7 +100,7 @@ actions:
 name: step3_stillbirths_label
 description: Still births label
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions - step3_live_births) > 0)"
+condition: "(((step3_gravida - 1 ) - step3_miscarriages_abortions - step3_live_births) > 0)"
 actions:
   - "isRelevant = true"
 ---
@@ -114,28 +114,28 @@ actions:
 name: step3_stillbirths
 description: Slill births
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions - step3_live_births) > 0) "
+condition: "(((step3_gravida - 1 ) - step3_miscarriages_abortions - step3_live_births) > 0) "
 actions:
   - "isRelevant = true"
 ---
 name: step3_prev_preg_comps
 description: Previous pregnancy complications
 priority: 1
-condition: "step3_previous_pregnancies > 0  "
+condition: "(step3_gravida - 1 ) > 0  "
 actions:
   - "isRelevant = true"
 ---
 name: step3_c_sections_label
 description: C-sections label
 priority: 1
-condition: "step3_parity > 0  "
+condition: "(step3_live_births + ((step3_gravida - 1) - step3_miscarriages_abortions- step3_live_births ) ) > 0  "
 actions:
   - "isRelevant = true"
 ---
 name: step3_c_sections
 description: C-sections label
 priority: 1
-condition: "step3_parity > 0  "
+condition: "(step3_live_births + ((step3_gravida - 1) - step3_miscarriages_abortions- step3_live_births ) ) > 0  "
 actions:
   - "isRelevant = true"
 ---
@@ -191,14 +191,14 @@ actions:
 name: step3_date_last_born
 description: Date of Birth for last born
 priority: 1
-condition: "((step3_previous_pregnancies - step3_miscarriages_abortions) > 0)"
+condition: "(((step3_gravida - 1 ) - step3_miscarriages_abortions) > 0)"
 actions:
   - "isRelevant = true"
 ---
 name: step3_last_born_status
 description: Last born status
 priority: 1
-condition: "(step3_children_live > 0)"
+condition: "(step3_children_live > 0 && step3_children_live < step3_live_births)"
 actions:
   - "isRelevant = true"
 ---
@@ -366,7 +366,7 @@ actions:
 name: step3_multiple_pregnancy
 description: multiple_pregnancy
 priority: 1
-condition: "step3_previous_pregnancies > 0 "
+condition: "(step3_gravida - 1 ) > 0 "
 actions:
   - "isRelevant = true"
 ---

@@ -137,7 +137,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       },
@@ -155,11 +155,11 @@
       "hint": "{{tests_tb_screening_sub_form.step1.tb_screening_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       },
@@ -179,7 +179,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       }
@@ -195,7 +195,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "tb_screening_calculation_rules.yml"
           }
         }
       }
@@ -212,14 +212,14 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       },
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "tb_screening_calculation_rules.yml"
           }
         }
       },
@@ -273,7 +273,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       },
@@ -295,7 +295,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "tb_screening_relevance_rules.yml"
           }
         }
       }

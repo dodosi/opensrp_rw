@@ -1,0 +1,26 @@
+How we fixed performence issues
+1. Create NewActivity which have same contents as ContactJSonFormActivity and add it in manifest.
+Modify this function to add the activity that was created
+ public void finishInitialQuickCheck() {
+        NewActivity.this.finish();
+    }
+
+1. OPen BaseContactActitivity
+Modify the function as follows
+//    protected void startFormActivity(JSONObject form, Contact contact) {
+//        Intent intent = new Intent(this, ContactJsonFormActivity.class);
+//        formStartActions(form, contact, intent);
+//    }
+    protected void startFormActivity(JSONObject form, Contact contact) {
+        if(form.optString("encounter_type").equals("Tests")){
+            Intent intent = new Intent(this, TestsActivity.class);
+            formStartActions(form, contact, intent);
+     }else{
+            Intent intent = new Intent(this, ContactJsonFormActivity.class);
+            formStartActions(form, contact, intent);
+        }
+    }
+    the word Tests is found in anc_test.json
+
+
+    The list of Containers is found in MainContactActivity. on private final String[] contactForms

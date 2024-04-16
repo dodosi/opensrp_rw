@@ -99,7 +99,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       }
@@ -115,7 +115,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       }
@@ -131,7 +131,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hepc_calculation_rules.yml"
           }
         }
       }
@@ -148,14 +148,14 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       },
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hepc_calculation_rules.yml"
           }
         }
       },
@@ -173,11 +173,11 @@
       "hint": "{{tests_hepatitis_c_sub_form.step1.hepc_test_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       },
@@ -228,7 +228,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       }
@@ -265,7 +265,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       }
@@ -302,7 +302,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       }
@@ -339,7 +339,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       }
@@ -355,7 +355,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "hepc_calculation_rules.yml"
           }
         }
       }
@@ -373,7 +373,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "hepc_relevance_rules.yml"
           }
         }
       }

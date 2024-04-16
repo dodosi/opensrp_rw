@@ -56,6 +56,7 @@
   },
   "editable_fields": [
     "husband_name",
+    "covid_immun_status",
     "catchment_area",
     "newborn_dirths",
     "children_live",
@@ -154,6 +155,7 @@
     "lmp_ultrasound_gest_age_selection",
     "sfh_ultrasound_gest_age_selection",
     "husband_name",
+    "covid_immun_status",
     "catchment_area",
     "newborn_dirths",
     "children_live",
@@ -202,7 +204,7 @@
         "hint": "{{anc_profile.step1.husband_name.hint}}",
         "edit_type": "name",
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_profile.step1.husband_name.v_required.err}}"
         },
         "v_regex": {
@@ -549,7 +551,7 @@
             "specify_info": "{{anc_profile.step2.lmp_known.options.yes.specify_info}}",
             "specify_widget": "date_picker",
             "max_date": "today-14d",
-            "min_date": "today-280d",
+
             "default": "today"
           },
           {
@@ -642,7 +644,7 @@
             "specify_info": "{{anc_profile.step2.ultrasound_done.options.yes.specify_info}}",
             "specify_widget": "date_picker",
             "max_date": "today",
-            "min_date": "today-9m",
+
             "default": "today"
           },
           {
@@ -780,7 +782,7 @@
         "openmrs_entity_id": "",
         "type": "date_picker",
         "expanded": "false",
-        "min_date": "today",
+
         "max_date": "today+10m",
         "hint": "{{anc_profile.step2.edd_from_ultrasound.hint}}",
         "relevance": {
@@ -1995,7 +1997,7 @@
         },
         "max_date": "today-1y",
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_profile.step3.date_last_born.v_required.err}}"
         }
       },
@@ -4211,7 +4213,7 @@
           }
         ],
         "v_required": {
-          "value": true,
+          "value": false,
           "err": "{{anc_profile.step6.medications.v_required.err}}"
         }
       },

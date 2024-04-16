@@ -100,7 +100,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
@@ -120,7 +120,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
@@ -136,7 +136,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_calculation_rules.yml"
           }
         }
       }
@@ -150,11 +150,11 @@
       "hint": "{{tests_blood_haemoglobin_sub_form.step1.hb_test_scheduled_date.hint}}",
       "expanded": "false",
       "max_date": "today+10m",
-      "min_date": "today",
+
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       },
@@ -175,14 +175,14 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       },
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_calculation_rules.yml"
           }
         }
       },
@@ -234,7 +234,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
@@ -247,14 +247,7 @@
       "type": "edit_text",
       "hint": "{{tests_blood_haemoglobin_sub_form.step1.cbc.hint}}",
       "edit_type": "number",
-      "v_min": {
-        "value": "0",
-        "err": "{{tests_blood_haemoglobin_sub_form.step1.cbc.v_min.err}}"
-      },
-      "v_max": {
-        "value": "25",
-        "err": "{{tests_blood_haemoglobin_sub_form.step1.cbc.v_max.err}}"
-      },
+
       "v_numeric": {
         "value": "true",
         "err": "{{tests_blood_haemoglobin_sub_form.step1.cbc.v_numeric.err}}"
@@ -266,7 +259,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
@@ -283,14 +276,7 @@
         "value": "0",
         "err": "{{tests_blood_haemoglobin_sub_form.step1.hb_gmeter.v_min.err}}"
       },
-      "v_max": {
-        "value": "25",
-        "err": "{{tests_blood_haemoglobin_sub_form.step1.hb_gmeter.v_max.err}}"
-      },
-      "v_numeric": {
-        "value": "true",
-        "err": "{{tests_blood_haemoglobin_sub_form.step1.hb_gmeter.v_numeric.err}}"
-      },
+
       "v_required": {
         "value": true,
         "err": "{{tests_blood_haemoglobin_sub_form.step1.hb_gmeter.v_required.err}}"
@@ -298,7 +284,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
@@ -311,14 +297,7 @@
       "type": "edit_text",
       "hint": "{{tests_blood_haemoglobin_sub_form.step1.hb_colour.hint}}",
       "edit_type": "number",
-      "v_min": {
-        "value": "0",
-        "err": "{{tests_blood_haemoglobin_sub_form.step1.hb_colour.v_min.err}}"
-      },
-      "v_max": {
-        "value": "25",
-        "err": "{{tests_blood_haemoglobin_sub_form.step1.hb_colour.v_max.err}}"
-      },
+
       "v_numeric": {
         "value": "true",
         "err": "{{tests_blood_haemoglobin_sub_form.step1.hb_colour.v_numeric.err}}"
@@ -330,7 +309,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
@@ -345,7 +324,7 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_calculation_rules.yml"
           }
         }
       }
@@ -359,29 +338,12 @@
       "calculation": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_calculation_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_calculation_rules.yml"
           }
         }
       }
     },
-    {
-      "key": "anaemia_diagnosis_danger_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_blood_haemoglobin_sub_form.step1.anaemia_diagnosis_danger_toaster.text}}",
-      "toaster_info_text": "{{tests_blood_haemoglobin_sub_form.step1.anaemia_diagnosis_danger_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_blood_haemoglobin_sub_form.step1.anaemia_diagnosis_danger_toaster.toaster_info_title}}",
-      "toaster_type": "problem",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      }
-    },
+
     {
       "key": "ht",
       "openmrs_entity_parent": "",
@@ -401,29 +363,12 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
     },
-    {
-      "key": "hematocrit_danger_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_blood_haemoglobin_sub_form.step1.hematocrit_danger_toaster.text}}",
-      "toaster_info_text": "{{tests_blood_haemoglobin_sub_form.step1.hematocrit_danger_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_blood_haemoglobin_sub_form.step1.hematocrit_danger_toaster.toaster_info_title}}",
-      "toaster_type": "problem",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      }
-    },
+
     {
       "key": "wbc",
       "openmrs_entity_parent": "",
@@ -444,25 +389,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      }
-    },
-    {
-      "key": "wbc_danger_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_blood_haemoglobin_sub_form.step1.wbc_danger_toaster.text}}",
-      "toaster_info_text": "{{tests_blood_haemoglobin_sub_form.step1.wbc_danger_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_blood_haemoglobin_sub_form.step1.wbc_danger_toaster.toaster_info_title}}",
-      "toaster_type": "problem",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
@@ -487,25 +414,7 @@
       "relevance": {
         "rules-engine": {
           "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
-          }
-        }
-      }
-    },
-    {
-      "key": "paltelets_danger_toaster",
-      "openmrs_entity_parent": "",
-      "openmrs_entity": "",
-      "openmrs_entity_id": "",
-      "type": "toaster_notes",
-      "text": "{{tests_blood_haemoglobin_sub_form.step1.paltelets_danger_toaster.text}}",
-      "toaster_info_text": "{{tests_blood_haemoglobin_sub_form.step1.paltelets_danger_toaster.toaster_info_text}}",
-      "toaster_info_title": "{{tests_blood_haemoglobin_sub_form.step1.paltelets_danger_toaster.toaster_info_title}}",
-      "toaster_type": "problem",
-      "relevance": {
-        "rules-engine": {
-          "ex-rules": {
-            "rules-file": "tests_relevance_rules.yml"
+            "rules-file": "blood_haemoglobin_screening_relevance_rules.yml"
           }
         }
       }
