@@ -40,6 +40,8 @@ public class DBConstantsUtils {
         public static final String PREVIOUS_CONTACT_STATUS = "previous_contact_status";
         public static final String NEXT_CONTACT = "next_contact";
         public static final String NEXT_CONTACT_DATE = "next_contact_date";
+        public static final String NEXT_VISIT_DATE = "next_visit_date";
+
         public static final String LAST_CONTACT_RECORD_DATE = "last_contact_record_date";
         public static final String RELATIONAL_ID = "relationalid";
         public static final String VISIT_START_DATE = "visit_start_date";

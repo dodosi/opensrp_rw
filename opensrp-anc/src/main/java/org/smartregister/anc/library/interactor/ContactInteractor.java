@@ -120,11 +120,12 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
                         new ContactVisit(details, referral, baseEntityId, nextContact, nextContactVisitDate,
                                 partialContactRepository, partialContactList).invoke();
                 Facts facts = contactVisit.getFacts();
-                String factsNextVisitDate = facts.get("next_visit_date");
+                String factsNextVisitDate = facts.get(DBConstantsUtils.KeyUtils.NEXT_VISIT_DATE);
 
                 String factsNextVisitDateOnWeekday = findNextAvailableWeekday(factsNextVisitDate, "dd-MM-yyyy");
 
-                if(factsNextVisitDate != null) facts.put("next_visit_date", factsNextVisitDateOnWeekday);
+                if (factsNextVisitDate != null) facts.put(DBConstantsUtils.KeyUtils.NEXT_VISIT_DATE, factsNextVisitDateOnWeekday);
+                else facts.put(DBConstantsUtils.KeyUtils.NEXT_VISIT_DATE, nextAvailableVisitOnWeekday);
 
 
                 List<String> formSubmissionIDs = contactVisit.getFormSubmissionIDs();
