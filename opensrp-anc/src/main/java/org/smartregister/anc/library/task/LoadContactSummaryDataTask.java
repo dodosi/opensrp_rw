@@ -81,9 +81,9 @@ public class LoadContactSummaryDataTask extends AsyncTask<Void, Void, Void> {
             ((ContactSummaryFinishActivity) context).saveFinishMenuItem.setEnabled(true);
         }
 
-        String lstVisitDate=facts.get("lst_visit_date");
-        Log.d("DATE",lstVisitDate);
-        Toast.makeText(context.getApplicationContext(), "DATE IS"+lstVisitDate,Toast.LENGTH_LONG).show();
+        String lstVisitDate=facts.get("visit_date");
+//        Log.d("DATE",lstVisitDate);
+//        Toast.makeText(context.getApplicationContext(), "DATE IS"+lstVisitDate,Toast.LENGTH_LONG).show();
         SimpleDateFormat inputFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = null;
         try {
