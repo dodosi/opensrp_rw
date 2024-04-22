@@ -8,6 +8,7 @@ import com.vijay.jsonwizard.constants.JsonFormConstants;
 import com.vijay.jsonwizard.utils.NativeFormLangUtils;
 
 import net.sqlcipher.Cursor;
+import net.sqlcipher.database.SQLiteCursor;
 import net.sqlcipher.database.SQLiteDatabase;
 
 import org.apache.commons.lang3.StringUtils;
@@ -317,19 +318,22 @@ public class PreviousContactRepository extends BaseRepository {
      */
     public Facts getPreviousContactFacts(String baseEntityId, String contactNo, boolean checkNegative) {
         Cursor mCursor = null;
+        // Set the CursorWindow size (e.g., 4 MB)
+
+
         String selection = "";
         String orderBy = "MAX("+ ID + ") DESC";
         String[] selectionArgs = null;
         Facts previousContactFacts = new Facts();
         try {
             SQLiteDatabase db = getReadableDatabase();
-
             if (StringUtils.isNotBlank(baseEntityId) && StringUtils.isNotBlank(contactNo)) {
                 selection = BASE_ENTITY_ID + " = ? AND " + CONTACT_NO + " = ?";
                 selectionArgs = new String[]{baseEntityId, contactNo};
             }
 
-            mCursor = db.query(TABLE_NAME, projectionArgs, selection, selectionArgs, KEY, null, orderBy, null);
+           mCursor = db.query(TABLE_NAME, projectionArgs, selection, selectionArgs, KEY, null, orderBy, null);
+           // mCursor = db.query(TABLE_NAME, projectionArgs, selection, selectionArgs, KEY, null, orderBy, "1");
 
             if (mCursor != null && mCursor.getCount() > 0) {
                 while (mCursor.moveToNext()) {
@@ -397,7 +401,7 @@ public class PreviousContactRepository extends BaseRepository {
         Facts schedule = new Facts();
         try {
             SQLiteDatabase db = getWritableDatabase();
-
+            db.setMaximumSize(4 * 1024 * 1024);
             if (StringUtils.isNotBlank(baseEntityId) && StringUtils.isNotBlank(contactNo)) {
                 selection =
                         BASE_ENTITY_ID + " = ? AND " + CONTACT_NO + " = ? AND " + KEY + " = " + "'" + ConstantsUtils.CONTACT_SCHEDULE + "'";

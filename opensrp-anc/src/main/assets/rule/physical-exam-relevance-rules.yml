@@ -299,3 +299,11 @@ priority: 1
 condition: " !step3_muac_value.isEmpty() && step3_muac_value < 21"
 actions:
   - "isRelevant = true"
+---
+name: step4_fetus_position_2
+description: Foetus Position 2
+priority: 1
+condition: "  step4_no_of_fetuses == 2"
+actions:
+  - "isRelevant = true"
+

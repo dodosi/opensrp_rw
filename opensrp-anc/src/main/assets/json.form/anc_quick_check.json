@@ -97,6 +97,21 @@
         }
       },
       {
+        "key": "visit_date",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "date_picker",
+        "hint": "Date of Contact",
+        "expanded": "false",
+        "min_date": "today-1m",
+        "max_date": "today",
+        "v_required": {
+          "value": true,
+          "err": "Date of contact required"
+        }
+      },
+      {
         "key": "pregnancy_test",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",

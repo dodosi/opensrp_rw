@@ -125,6 +125,7 @@ public class RegisterProvider implements RecyclerViewProvider<RegisterProvider.R
     private void populatePatientColumn(CommonPersonObjectClient pc, SmartRegisterClient client,
                                        RegisterViewHolder viewHolder) {
 
+        String visitDate = Utils.getClientLastVisitDate(client.entityId());
         String firstName = Utils.getValue(pc.getColumnmaps(), DBConstantsUtils.KeyUtils.FIRST_NAME, true);
         String lastName = Utils.getValue(pc.getColumnmaps(), DBConstantsUtils.KeyUtils.LAST_NAME, true);
         String patientName = Utils.getName(firstName, lastName);
@@ -137,6 +138,16 @@ public class RegisterProvider implements RecyclerViewProvider<RegisterProvider.R
 
 
         String edd = Utils.getValue(pc.getColumnmaps(), DBConstantsUtils.KeyUtils.EDD, false);
+        //New Codes
+        Integer ga = 0;
+        if (visitDate != null) {
+            String recordDate = Utils.getValue(pc.getColumnmaps(), DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE, false);
+            String actualEdd = Utils.getActualEDD(edd, recordDate, visitDate);
+            ga = Utils.getLastContactGA(edd, visitDate);
+            if (actualEdd != null) edd = actualEdd;
+        }
+        int gaValue = StringUtils.isNotBlank(edd) && ga != 0 ? ga : 0;
+        String gaText = gaValue > 0 ? String.format(context.getString(R.string.ga_weeks), String.valueOf(gaValue)) : "-";
 
         if (StringUtils.isNotBlank(edd)) {
             if(Utils.getGestationAgeFromEDDate(edd) > 40)

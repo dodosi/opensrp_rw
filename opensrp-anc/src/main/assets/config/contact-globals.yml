@@ -1,6 +1,7 @@
 ---
 form: anc_counselling_treatment
 fields:
+  - "visit_date"
   - "hepc_positive"
   - "danger_signs"
   - "danger_signs_value"
@@ -238,3 +239,7 @@ fields:
   - "hepb_positive"
   - "lmp_known"
   - "ultrasound_done"
+---
+form: anc_profile
+fields:
+  - "visit_date"
