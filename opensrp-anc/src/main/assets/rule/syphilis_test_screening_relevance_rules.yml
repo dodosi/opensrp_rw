@@ -104,6 +104,13 @@ condition: "((step1_syph_test_status == 'done_today' || step1_syph_test_status =
 actions:
   - "isRelevant = true"
 ---
+name: step1_rapid_syphilis_test
+description: Rapid plasma reagin (RPR) test
+priority: 1
+condition: "((step1_syph_test_status == 'done_today' || step1_syph_test_status == 'done_earlier') || step1_syph_test_type == 'rapid_plasma')"
+actions:
+  - "isRelevant = true"
+---
 name: step2_rpr_syphilis_test
 description: Rapid plasma reagin (RPR) test
 priority: 1

@@ -1550,7 +1550,7 @@
         "edit_text_style": "bordered",
         "edit_type": "number",
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "Please enter pulse rate"
         },
         "v_numeric": {
@@ -1623,7 +1623,7 @@
         "edit_text_style": "bordered",
         "edit_type": "number",
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "Please enter repeated pulse rate"
         },
         "relevance": {

@@ -1316,7 +1316,7 @@
         "edit_text_style": "bordered",
         "edit_type": "number",
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "{{anc_physical_exam.step3.pulse_rate.v_required.err}}"
         },
         "v_numeric": {
@@ -1365,7 +1365,7 @@
         "label_info_text": "{{anc_physical_exam.step3.pulse_rate_repeat_label.label_info_text }}",
         "text_color": "#000000",
         "v_required": {
-          "value": true
+          "value": false
         },
         "relevance": {
           "rules-engine": {
@@ -1396,7 +1396,7 @@
           "err": "{{anc_physical_exam.step3.pulse_rate_repeat.v_max.err}}"
         },
         "v_required": {
-          "value": "true",
+          "value": "false",
           "err": "{{anc_physical_exam.step3.pulse_rate_repeat.v_required.err}}"
         },
         "relevance": {
@@ -3241,6 +3241,47 @@
           "value": "false",
           "err": ""
         }
+      },
+      {
+        "key": "fetus_position_2",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "label": "{{anc_physical_exam.step4.fetus_position.label2}}",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "options": [
+          {
+            "key": "abnormal",
+            "text": "{{anc_physical_exam.step4.fetus_position.options.abnormal.text}}",
+            "translation_text": "anc_physical_exam.step4.fetus_position.options.abnormal.text",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "normal",
+            "text": "{{anc_physical_exam.step4.fetus_position.options.normal.text}}",
+            "translation_text": "anc_physical_exam.step4.fetus_position.options.normal.text",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "",
+            "openmrs_entity_parent": ""
+          }
+        ],
+        "v_required": {
+          "value": "false",
+          "err": ""
+        },
+        "relevance": {
+        "rules-engine": {
+          "ex-rules": {
+            "rules-file": "physical-exam-relevance-rules.yml"
+          }
+        }
+      }
       },
       {
         "key": "baby_moving",

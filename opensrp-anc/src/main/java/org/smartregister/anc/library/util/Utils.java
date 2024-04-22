@@ -40,7 +40,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.greenrobot.eventbus.EventBus;
 import org.jeasy.rules.api.Facts;
 import org.jetbrains.annotations.NotNull;
+import org.joda.time.Days;
 import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 import org.joda.time.Weeks;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -682,6 +684,70 @@ public class Utils extends org.smartregister.util.Utils {
 
     public static Boolean enableLanguageSwitching() {
         return AncLibrary.getInstance().getProperties().getPropertyBoolean(AncAppPropertyConstants.KeyUtils.LANGUAGE_SWITCHING_ENABLED);
+    }
+
+    public static int getLastContactGA(String edd, String lastVisit) {
+        try {
+            if (!"0".equals(edd) && edd.length() > 0) {
+                LocalDate date = SQLITE_DATE_DF.withOffsetParsed().parseLocalDate(edd);
+                LocalDate lmpDate = date.minusWeeks(ConstantsUtils.DELIVERY_DATE_WEEKS);
+                LocalDate visitDate = SQLITE_DATE_DF.withOffsetParsed().parseLocalDate(lastVisit);
+                Weeks weeks = Weeks.weeksBetween(lmpDate, visitDate);
+                return weeks.getWeeks();
+            } else {
+                return 0;
+            }
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
+    public static String getClientLastVisitDate(String entityId) {
+        try {
+            JSONObject client = AncLibrary.getInstance().getEventClientRepository().getEventsByBaseEntityId(entityId);
+            JSONArray events = client.getJSONArray("events");
+            ArrayList<String> visitDates = new ArrayList<String>();
+            for (int i = 0; i < events.length(); i++) {
+                JSONObject event = events.getJSONObject(i);
+                String eventType = event.getString("eventType");
+                if (eventType.equals("anc_quick_check")) {
+                    JSONArray obs = event.getJSONArray("obs");
+                    for (int j = 0; j < obs.length(); j++) {
+                        JSONObject field = obs.getJSONObject(j);
+                        String fieldCode = field.getString("fieldCode");
+                        if (fieldCode.equals("enc_date")) {
+                            JSONArray values = field.getJSONArray("values");
+                            String visitDate = values.getString(0);
+                            if (visitDate != null) {
+                                visitDates.add(visitDate);
+                            }
+                        }
+                    }
+                }
+            }
+            if (visitDates.size() == 0) return null;
+            String visitDate = visitDates.get(visitDates.size()-1);
+            String day = visitDate.substring(0,2);
+            String month = visitDate.substring(3,5);
+            String year = visitDate.substring(6,10);
+            return year + "-" + month + "-" + day;
+        } catch (JSONException e) {
+            return null;
+        }
+    }
+
+    public static String getActualEDD(String edd, String recordDate, String visitDate) {
+        try {
+            LocalDateTime date_edd = LocalDateTime.parse(edd);
+            LocalDateTime date_record = LocalDateTime.parse(recordDate);
+            LocalDateTime date_visit = LocalDateTime.parse(visitDate);
+            Days interval = Days.daysBetween(date_visit, date_record);
+            LocalDateTime date_actual = date_edd.minusDays(interval.getDays());
+            DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
+            return formatter.print(date_actual);
+        } catch (Exception e) {
+            return null;
+        }
     }
     /**
      * Loads yaml files that contain rules for the profile displays
