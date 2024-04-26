@@ -111,6 +111,7 @@ public class Utils extends org.smartregister.util.Utils {
     public static final String HOME_ADDRESS = "Home Address";
     private static final DateTimeFormatter SQLITE_DATE_DF = DateTimeFormat.forPattern(ConstantsUtils.SQLITE_DATE_TIME_FORMAT);
     private static final String OTHER_SUFFIX = ", other]";
+    private static String visitDate;
 
     static {
         ALLOWED_LEVELS = new ArrayList<>();
@@ -472,7 +473,11 @@ public class Utils extends org.smartregister.util.Utils {
             if (!"0".equals(expectedDeliveryDate) && expectedDeliveryDate.length() > 0) {
                 LocalDate date = SQLITE_DATE_DF.withOffsetParsed().parseLocalDate(expectedDeliveryDate);
                 LocalDate lmpDate = date.minusWeeks(ConstantsUtils.DELIVERY_DATE_WEEKS);
-                Weeks weeks = Weeks.weeksBetween(lmpDate, LocalDate.now());
+                Weeks weeks;
+                if(visitDate != null){
+                    weeks = Weeks.weeksBetween(lmpDate, DateTimeFormat.forPattern("dd-MM-yyyy").withOffsetParsed()
+                            .parseLocalDate(visitDate));
+                } else weeks = Weeks.weeksBetween(lmpDate, LocalDate.now());
                 return weeks.getWeeks();
             } else {
                 return 0;
@@ -1063,7 +1068,7 @@ public class Utils extends org.smartregister.util.Utils {
     }
 
     public void createSavePdf(Context context, List<YamlConfig> yamlConfigList, Facts facts,String womanName) throws FileNotFoundException {
-
+        setVisitDate(facts);
         String FILENAME = womanName+"_"+context.getResources().getString(R.string.contact_summary_data_file);
         String filePath = getAppPath(context) + FILENAME;
 
@@ -1284,5 +1289,9 @@ public class Utils extends org.smartregister.util.Utils {
             date.add(Calendar.DAY_OF_MONTH, daysToAdd);
             return date;
         }
+    }
+
+    public static void setVisitDate(Facts facts){
+        visitDate = facts.get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
     }
 }
