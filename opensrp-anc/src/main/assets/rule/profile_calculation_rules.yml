@@ -61,7 +61,7 @@ description: SFH edd
 priority: 1
 condition: "step2_sfh_gest_age > 0"
 actions:
-  - "calculation = helper.addDuration((280 - (step2_sfh_gest_age * 7)) + 'd')"
+  - "calculation = helper.addDuration(helper.getSecondaryValue(global_visit_date),(280 - (step2_sfh_gest_age * 7)) + 'd')"
 ---
 name: step2_sfh_ga_hidden
 description: SFH edd
