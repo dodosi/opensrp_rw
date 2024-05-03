@@ -202,17 +202,34 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
             throw new RuntimeException(e);
         }
             String displayContactDate = "";
-            String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
-            if (!TextUtils.isEmpty(contactDate)) {
-                Date lastContactDate = null;
+
+            // Extract visit date from facts
+            String manualEncounterDate = (String) facts.asMap().get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
+
+            if (!TextUtils.isEmpty(manualEncounterDate)) {
+                // If there's a visit date, parse it and format for display
                 try {
-                    lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
+                    Date lastContactDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(manualEncounterDate);
+                    displayContactDate = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(lastContactDate);
                 } catch (ParseException e) {
+                    // Handle parsing exceptions
                     throw new RuntimeException(e);
                 }
-                displayContactDate = new SimpleDateFormat("dd MMM " + "yyyy", Locale.getDefault())
-                        .format(lastContactDate);
+            } else {
+                // If no visit date, try to get contact date
+                String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
+                if (!TextUtils.isEmpty(contactDate)) {
+                    // If contact date exists, parse and format for display
+                    try {
+                        Date lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
+                        displayContactDate = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(lastContactDate);
+                    } catch (ParseException e) {
+                        // Handle parsing exceptions
+                        throw new RuntimeException(e);
+                    }
+                }
             }
+
             if (lastContactDetails.isEmpty()) {
                 lastContactLayout.setVisibility(View.GONE);
             } else {
