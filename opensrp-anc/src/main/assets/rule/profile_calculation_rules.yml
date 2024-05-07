@@ -10,7 +10,7 @@ actions:
 name: step2_lmp_known_date
 description: step2_lmp_known_date
 priority: 1
-condition: "step2_lmp_known == 'yes'"
+condition: "step2_lmp_known == 'yes' && helper.getSecondaryValue(step2_lmp_known_date) <= global_visit_date"
 actions:
   - "calculation = helper.getSecondaryValue(step2_lmp_known_date)"
 ---

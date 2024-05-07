@@ -571,6 +571,22 @@
       {
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
+        "key": "lmp_known_date_too_recent",
+        "text": "The LMP cannot be a date in the future! It must be 14 days before the manual encounter date or earlier.",
+        "openmrs_entity_id": "toaster_notes",
+        "type": "toaster_notes",
+        "toaster_type": "warning",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
         "openmrs_entity_id": "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         "key": "lmp_known_date",
         "type": "hidden",
@@ -707,6 +723,22 @@
         "toaster_info_text": "{{anc_profile.step2.facility_in_us_toaster.toaster_info_text}}",
         "toaster_info_title": "{{anc_profile.step2.facility_in_us_toaster.toaster_info_title}}",
         "toaster_type": "info",
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "profile_relevance_rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "key": "ultrasound_done_date_too_recent",
+        "text": "The Ultrasound date cannot be a date in the future! It should be the manual encounter date or earlier.",
+        "openmrs_entity_id": "toaster_notes",
+        "type": "toaster_notes",
+        "toaster_type": "warning",
         "relevance": {
           "rules-engine": {
             "ex-rules": {
