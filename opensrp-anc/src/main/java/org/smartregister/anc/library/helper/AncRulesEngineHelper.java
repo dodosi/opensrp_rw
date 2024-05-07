@@ -18,7 +18,11 @@ import org.jeasy.rules.core.RulesEngineParameters;
 import org.jeasy.rules.mvel.MVELRule;
 import org.jeasy.rules.mvel.MVELRuleFactory;
 import org.jeasy.rules.support.YamlRuleDefinitionReader;
+import org.joda.time.DateTime;
+import org.joda.time.Days;
 import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -253,4 +257,17 @@ public class AncRulesEngineHelper extends RulesEngineHelper {
     public int compareDateAgainstToday(String theDate) {
         return compareTwoDates(theDate, (new LocalDate()).toString(FormUtils.NATIIVE_FORM_DATE_FORMAT_PATTERN));
     }
+
+    public boolean getDaysDifferenceMinusSomeDays(String dateString, String dateString2, String days) {
+
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd-MM-yyyy");
+        // Convert the provided date string to a DateTime object
+        DateTime firstDateObject = DateTime.parse(dateString, formatter);
+        // Get the current date
+        DateTime secondDateObject = DateTime.parse(dateString2, formatter);
+        // Calculate the date difference in days
+        int d = Integer.parseInt(days)-1;
+        return firstDateObject.minusDays(d).getMillis() <= secondDateObject.getMillis();
+    }
+
 }
