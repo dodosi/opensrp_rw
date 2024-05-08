@@ -376,3 +376,17 @@ priority: 1
 condition: "step3_multiple_pregnancy.contains('yes')"
 actions:
   - "isRelevant = true"
+---
+name: step2_lmp_known_date_too_recent
+description: step2_lmp_known_date_too_recent
+priority: 1
+condition: "(step2_lmp_known == 'yes') &&  helper.getDaysDifferenceMinusSomeDays(global_visit_date,step2_lmp_known_date, 14)"
+actions:
+  - "isRelevant = true"
+---
+name: step2_ultrasound_done_date_too_recent
+description: step2_ultrasound_done_date_too_recent
+priority: 1
+condition: "(step2_ultrasound_done == 'yes') &&  helper.getDaysDifferenceMinusSomeDays(global_visit_date,step2_ultrasound_done_date, 0)"
+actions:
+  - "isRelevant = true"
