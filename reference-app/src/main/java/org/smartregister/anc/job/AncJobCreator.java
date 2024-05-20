@@ -48,6 +48,8 @@ public class AncJobCreator implements JobCreator {
                 return new DocumentConfigurationServiceJob(DocumentConfigurationIntentService.class);
             case SyncAllLocationsServiceJob.TAG:
                 return new SyncAllLocationsServiceJob();
+            case ManualEncounterMigrationJob.TAG:
+                return new ManualEncounterMigrationJob();
             default:
                 Timber.d("Looks like you tried to create a job " + tag + " that is not declared in the Anc Job Creator");
                 return null;

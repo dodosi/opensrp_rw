@@ -1,6 +1,7 @@
 package org.smartregister.anc.interactor;
 
 import org.smartregister.anc.BuildConfig;
+import org.smartregister.anc.job.ManualEncounterMigrationJob;
 import org.smartregister.anc.library.AncLibrary;
 import org.smartregister.domain.LoginResponse;
 import org.smartregister.job.DocumentConfigurationServiceJob;
@@ -50,6 +51,8 @@ public class LoginInteractor extends BaseLoginInteractor implements BaseLoginCon
         super.scheduleJobsImmediately();
         DocumentConfigurationServiceJob.scheduleJobImmediately(DocumentConfigurationServiceJob.TAG);
         SyncAllLocationsServiceJob.scheduleJobImmediately(SyncAllLocationsServiceJob.TAG);
+        ManualEncounterMigrationJob
+                .scheduleJobImmediately(ManualEncounterMigrationJob.TAG);
     }
 
     @Override
