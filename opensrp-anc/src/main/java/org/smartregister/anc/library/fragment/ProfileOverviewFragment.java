@@ -203,4 +203,5 @@ public class ProfileOverviewFragment extends BaseProfileFragment implements Prof
     public void refreshTasksList(boolean refresh) {
         // Implement here
     }
+
 }

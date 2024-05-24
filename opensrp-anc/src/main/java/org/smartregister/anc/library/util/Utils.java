@@ -318,7 +318,7 @@ public class Utils extends org.smartregister.util.Utils {
      */
     public static void finalizeForm(Activity context, HashMap<String, String> womanDetails, boolean isRefferal) {
         try {
-            Log.d("TAG", "finalizeForm: "+womanDetails.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE));
+            Log.d("TAG", "finalizeForm: " + womanDetails.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE));
 
             Intent contactSummaryFinishIntent = new Intent(context, ContactSummaryFinishActivity.class);
             contactSummaryFinishIntent
@@ -475,7 +475,7 @@ public class Utils extends org.smartregister.util.Utils {
                 LocalDate date = SQLITE_DATE_DF.withOffsetParsed().parseLocalDate(expectedDeliveryDate);
                 LocalDate lmpDate = date.minusWeeks(ConstantsUtils.DELIVERY_DATE_WEEKS);
                 Weeks weeks;
-                if(visitDate != null){
+                if (visitDate != null) {
                     weeks = Weeks.weeksBetween(lmpDate, DateTimeFormat.forPattern("dd-MM-yyyy").withOffsetParsed()
                             .parseLocalDate(visitDate));
                 } else weeks = Weeks.weeksBetween(lmpDate, LocalDate.now());
@@ -736,10 +736,10 @@ public class Utils extends org.smartregister.util.Utils {
                 }
             }
             if (visitDates.size() == 0) return null;
-            String visitDate = visitDates.get(visitDates.size()-1);
-            String day = visitDate.substring(0,2);
-            String month = visitDate.substring(3,5);
-            String year = visitDate.substring(6,10);
+            String visitDate = visitDates.get(visitDates.size() - 1);
+            String day = visitDate.substring(0, 2);
+            String month = visitDate.substring(3, 5);
+            String year = visitDate.substring(6, 10);
             return year + "-" + month + "-" + day;
         } catch (JSONException e) {
             return null;
@@ -759,6 +759,7 @@ public class Utils extends org.smartregister.util.Utils {
             return null;
         }
     }
+
     /**
      * Loads yaml files that contain rules for the profile displays
      *
@@ -814,6 +815,7 @@ public class Utils extends org.smartregister.util.Utils {
 
         ANCFormUtils.persistPartial(baseEntityId, contact);
     }
+
     /**
      * Returns the Contact Tasks Repository {@link ContactTasksRepository}
      *
@@ -1057,8 +1059,6 @@ public class Utils extends org.smartregister.util.Utils {
     }
 
 
-
-
     @Nullable
     public String getManifestVersion(Context context) {
         if (StringUtils.isNotBlank(CoreLibrary.getInstance().context().allSharedPreferences().fetchManifestVersion())) {
@@ -1068,9 +1068,9 @@ public class Utils extends org.smartregister.util.Utils {
         }
     }
 
-    public void createSavePdf(Context context, List<YamlConfig> yamlConfigList, Facts facts,String womanName) throws FileNotFoundException {
+    public void createSavePdf(Context context, List<YamlConfig> yamlConfigList, Facts facts, String womanName) throws FileNotFoundException {
         setVisitDate(facts);
-        String FILENAME = womanName+"_"+context.getResources().getString(R.string.contact_summary_data_file);
+        String FILENAME = womanName + "_" + context.getResources().getString(R.string.contact_summary_data_file);
         String filePath = getAppPath(context) + FILENAME;
 
         if ((new File(filePath)).exists()) {
@@ -1082,7 +1082,7 @@ public class Utils extends org.smartregister.util.Utils {
         Document layoutDocument = new Document(pdfDocument);
 
 
-        addTitle(layoutDocument, context.getResources().getString(R.string.contact_summary_data, getTodaysDate(),womanName));
+        addTitle(layoutDocument, context.getResources().getString(R.string.contact_summary_data, getTodaysDate(), womanName));
 
 
         for (YamlConfig yamlConfig : yamlConfigList) {
@@ -1092,13 +1092,14 @@ public class Utils extends org.smartregister.util.Utils {
             List<YamlConfigItem> fields = yamlConfig.getFields();
             StringBuilder outputBuilder = new StringBuilder();
             for (YamlConfigItem yamlConfigItem : fields) {
-                for (String key :facts.asMap().keySet()) {
+                for (String key : facts.asMap().keySet()) {
                     String value = Utils.returnTranslatedStringJoinedValue(facts.get(key).toString());
                     if (StringUtils.isNotBlank(value)) {
                         facts.put(key, value);
                     } else {
                         facts.put(key, "");
-                    }}
+                    }
+                }
                 if (yamlConfigItem.isMultiWidget() != null && yamlConfigItem.isMultiWidget()) {
                     prefillInjectableFacts(facts, yamlConfigItem.getTemplate());
                 }
@@ -1138,7 +1139,7 @@ public class Utils extends org.smartregister.util.Utils {
     }
 
     private final String getAppPath(Context context) {
-        File dir = new File(Environment.getExternalStorageDirectory()+ File.separator + context.getResources().getString(R.string.app_name) + File.separator);
+        File dir = new File(Environment.getExternalStorageDirectory() + File.separator + context.getResources().getString(R.string.app_name) + File.separator);
         if (!dir.exists()) {
             dir.mkdir();
         }
@@ -1168,12 +1169,11 @@ public class Utils extends org.smartregister.util.Utils {
     }
 
     public static List<Location> getLocationsByParentId(String parentId) {
-        try{
+        try {
             JSONObject valueObject = new JSONObject(parentId);
             parentId = valueObject.getString(VALUE);
 
-        }
-        catch (JSONException e){
+        } catch (JSONException e) {
             e.printStackTrace();
 
         }
