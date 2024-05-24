@@ -82,6 +82,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -1291,7 +1292,22 @@ public class Utils extends org.smartregister.util.Utils {
         }
     }
 
-    public static void setVisitDate(Facts facts){
+    public static void setVisitDate(Facts facts) {
         visitDate = facts.get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
+    }
+
+    public static String calculateGaBasedOnUltrasoundEdd(String ultrasoundDateEddDateString, String manualEncounterDateString) {
+        if (ultrasoundDateEddDateString != null && manualEncounterDateString != null) {
+            DateTimeFormatter formatter = DateTimeFormat.forPattern(ConstantsUtils.OPENSRP_DATE_TIME_FORMAT);
+           LocalDate ultrasoundDateEddDate = LocalDate.parse(ultrasoundDateEddDateString, formatter);
+           LocalDate manualEncounterDate = LocalDate.parse(manualEncounterDateString, formatter);
+            Days interval = Days.daysBetween(manualEncounterDate, ultrasoundDateEddDate);
+
+            long daysBetween = 280 - Math.abs(interval.getDays());
+            long weeks = daysBetween / 7;
+            long days = daysBetween % 7;
+            return weeks + " weeks " + days + " days";
+        }
+        return "0";
     }
 }

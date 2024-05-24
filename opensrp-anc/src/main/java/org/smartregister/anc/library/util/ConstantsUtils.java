@@ -6,6 +6,8 @@ package org.smartregister.anc.library.util;
 
 public abstract class ConstantsUtils {
     public static final String SQLITE_DATE_TIME_FORMAT = "yyyy-MM-dd";
+
+    public static final String OPENSRP_DATE_TIME_FORMAT = "dd-MM-yyyy";
     public static final String CONTACT_DATE_FORMAT = "dd/MM/yyyy";
     public static final String CONTACT_SUMMARY_DATE_FORMAT = "dd MMMM yyyy";
     public static final String VIEW_CONFIGURATION_PREFIX = "ViewConfiguration_";
