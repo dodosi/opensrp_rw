@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jeasy.rules.api.Facts;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.smartregister.anc.library.AncLibrary;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.ProfileActivity;
@@ -97,6 +100,25 @@ public class ProfileOverviewFragment extends BaseProfileFragment implements Prof
             fetchContactAndAlertStatus();
             yamlConfigListGlobal = new ArrayList<>(); //This makes sure no data duplication happens
             Facts facts = presenter.getImmediatePreviousContact(clientDetails, baseEntityId, contactNo);
+            String usgEdd = facts.get("ultrasound_edd") != null ? facts.get("ultrasound_edd"): "0"; ;
+            String lmpEdd = facts.get("lmp_edd") != null ? facts.get("lmp_edd"): "0";
+            String sfhEdd = facts.get("sfh_edd") != null ?  facts.get("sfh_edd"): "0";
+            String eddDate = !usgEdd.equals("0")? usgEdd: !lmpEdd.equals("0")? lmpEdd: sfhEdd;
+
+            // Define the date format pattern from ConstantsUtils
+            String pattern = ConstantsUtils.OPENSRP_DATE_TIME_FORMAT;
+
+            // Create a DateTimeFormatter with the pattern
+            DateTimeFormatter formatter = DateTimeFormat.forPattern(pattern);
+
+            // Get the current date and time
+            DateTime now = new DateTime();
+
+            // Format the current date and time as a string
+            String todaysDateString = now.toString(formatter);
+            String currentGestAge = Utils.calculateGaBasedOnUltrasoundEdd(eddDate, todaysDateString);
+
+            facts.put("current_gest_age", currentGestAge);
             Iterable<Object> ruleObjects = utils.loadRulesFiles(FilePathUtils.FileUtils.PROFILE_OVERVIEW);
 
             for (Object ruleObject : ruleObjects) {

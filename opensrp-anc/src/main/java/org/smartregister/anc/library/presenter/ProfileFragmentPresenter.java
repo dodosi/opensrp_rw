@@ -4,6 +4,9 @@ import android.text.TextUtils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.jeasy.rules.api.Facts;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.anc.library.AncLibrary;
@@ -82,6 +85,8 @@ public class ProfileFragmentPresenter implements ProfileFragmentContract.Present
                     }
                 }
             }
+
+
         } catch (JSONException e) {
             Timber.e(e);
         }
