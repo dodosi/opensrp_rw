@@ -476,5 +476,6 @@
     <string name="rprpositive">RPR positive</string>
     <string name="expected_deliveries">Expected deliveries</string>
     <string name="late_visits">Late visits</string>
+    <string name="regenerate_contact_schedule">Regenerate Contact Schedule</string>
 
 </resources>

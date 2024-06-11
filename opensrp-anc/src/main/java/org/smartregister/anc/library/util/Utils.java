@@ -601,6 +601,8 @@ public class Utils extends org.smartregister.util.Utils {
                         dueButton.setText(String.format(context.getString(R.string.contact_recorded_today_no_break),
                                 Utils.getTodayContact(String.valueOf(buttonAlertStatus.nextContact))));
                         break;
+                    case ConstantsUtils.AlertStatusUtils.REGENERATE:
+                       dueButton.setText(R.string.regenerate_contact_schedule);
                     default:
                         dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_due));
                         dueButton.setTextColor(context.getResources().getColor(R.color.vaccine_blue_bg_st));

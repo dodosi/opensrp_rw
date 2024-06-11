@@ -118,8 +118,10 @@ public class ProfileActivity extends BaseProfileActivity implements ProfileContr
         detailMap = (HashMap<String, String>) getIntent().getSerializableExtra(ConstantsUtils.IntentKeyUtils.CLIENT_MAP);
         contactNo = String.valueOf(Utils.getTodayContact(detailMap.get(DBConstantsUtils.KeyUtils.NEXT_CONTACT)));
         buttonAlertStatus = Utils.processContactDoneToday(detailMap.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE),
-                ConstantsUtils.AlertStatusUtils.ACTIVE.equals(detailMap.get(DBConstantsUtils.KeyUtils.CONTACT_STATUS)) ?
-                        ConstantsUtils.AlertStatusUtils.IN_PROGRESS : "");
+                   ConstantsUtils.AlertStatusUtils.ACTIVE.equals(detailMap.get(DBConstantsUtils.KeyUtils.CONTACT_STATUS)) ?
+                           ConstantsUtils.AlertStatusUtils.IN_PROGRESS : "");
+
+
     }
 
     protected void updateTasksTabTitle() {

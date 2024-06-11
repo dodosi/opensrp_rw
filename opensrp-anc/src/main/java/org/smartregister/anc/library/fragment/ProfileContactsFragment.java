@@ -1,6 +1,9 @@
 package org.smartregister.anc.library.fragment;
 
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -17,6 +20,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.apache.commons.lang3.StringUtils;
 import org.jeasy.rules.api.Facts;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.smartregister.anc.library.AncLibrary;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.PreviousContactsDetailsActivity;
@@ -32,22 +37,28 @@ import org.smartregister.anc.library.domain.YamlConfigWrapper;
 import org.smartregister.anc.library.model.PreviousContact;
 import org.smartregister.anc.library.model.Task;
 import org.smartregister.anc.library.presenter.ProfileFragmentPresenter;
+import org.smartregister.anc.library.repository.PatientRepository;
+import org.smartregister.anc.library.repository.RegisterQueryProvider;
+import org.smartregister.anc.library.rule.ContactRule;
 import org.smartregister.anc.library.util.ANCJsonFormUtils;
 import org.smartregister.anc.library.util.AppExecutors;
 import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.DBConstantsUtils;
 import org.smartregister.anc.library.util.FilePathUtils;
 import org.smartregister.anc.library.util.Utils;
+import org.smartregister.p2p.exceptions.AsyncTaskCancelledException;
 import org.smartregister.view.fragment.BaseProfileFragment;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import timber.log.Timber;
 
@@ -108,7 +119,11 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
                 clientDetails =
                         (HashMap<String, String>) getActivity().getIntent().getSerializableExtra(ConstantsUtils.IntentKeyUtils.CLIENT_MAP);
             }
+
             buttonAlertStatus = Utils.getButtonAlertStatus(clientDetails, getActivity(), true);
+            if(clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY) != null && clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY).equals("1")){
+                buttonAlertStatus.buttonAlertStatus = ConstantsUtils.AlertStatusUtils.REGENERATE;
+            }
         }
     }
 
@@ -184,6 +199,9 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
 
     private void setUpAlertStatusButton() {
         Utils.processButtonAlertStatus(getActivity(), dueButton, buttonAlertStatus);
+        if(buttonAlertStatus.buttonAlertStatus.equals(ConstantsUtils.AlertStatusUtils.REGENERATE)){
+            dueButton.setOnClickListener(view -> new RegenerateContactSchedulesTask(clientDetails).execute());
+        }
     }
 
     private void initializeLastContactDetails(HashMap<String, String> clientDetails) {
@@ -203,31 +221,18 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
         }
             String displayContactDate = "";
 
-            // Extract visit date from facts
-            String manualEncounterDate = (String) facts.asMap().get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
-
-            if (!TextUtils.isEmpty(manualEncounterDate)) {
-                // If there's a visit date, parse it and format for display
+            // If no visit date, try to get contact date
+            String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
+            if (!TextUtils.isEmpty(contactDate)) {
+                // If contact date exists, parse and format for display
                 try {
-                    Date lastContactDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(manualEncounterDate);
+                    Date lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
                     displayContactDate = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(lastContactDate);
                 } catch (ParseException e) {
                     // Handle parsing exceptions
                     throw new RuntimeException(e);
                 }
-            } else {
-                // If no visit date, try to get contact date
-                String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
-                if (!TextUtils.isEmpty(contactDate)) {
-                    // If contact date exists, parse and format for display
-                    try {
-                        Date lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
-                        displayContactDate = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(lastContactDate);
-                    } catch (ParseException e) {
-                        // Handle parsing exceptions
-                        throw new RuntimeException(e);
-                    }
-                }
+
             }
 
             if (lastContactDetails.isEmpty()) {
@@ -419,6 +424,51 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
                 goToPreviousContactsTests();
             }
         }
+
+    }
+
+    public class RegenerateContactSchedulesTask extends AsyncTask<Void, Void, String> {
+        HashMap<String, String> details;
+
+        RegenerateContactSchedulesTask(HashMap<String, String> details){
+            this.details = details;
+        }
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            boolean isFirst = TextUtils.equals("1", details.get(DBConstantsUtils.KeyUtils.NEXT_CONTACT));
+            int gestationAge = details.containsKey(DBConstantsUtils.KeyUtils.EDD) && details.get(DBConstantsUtils.KeyUtils.EDD) != null ? Utils
+                    .getGestationAgeFromEDDate(details.get(DBConstantsUtils.KeyUtils.EDD)) : 4;
+            ContactRule contactRule = new ContactRule(gestationAge, isFirst, baseEntityId);
+
+            List<Integer> integerList = AncLibrary.getInstance().getAncRulesEngineHelper()
+                    .getContactVisitSchedule(contactRule, ConstantsUtils.RulesFileUtils.CONTACT_RULES);
+
+//            int nextContactVisitWeeks = integerList.get(0);
+
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put(ConstantsUtils.DetailsKeyUtils.CONTACT_SCHEDULE, integerList);
+                AncLibrary.getInstance().getDetailsRepository().add(baseEntityId, ConstantsUtils.DetailsKeyUtils.CONTACT_SCHEDULE, jsonObject.toString(),
+                        Calendar.getInstance().getTimeInMillis());
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(ConstantsUtils.DATA_MIGRATION_IS_DIRTY, "0");
+                PatientRepository.updatePatient(baseEntityId, contentValues, DBConstantsUtils.RegisterTable.DEMOGRAPHIC);
+                return "success";
+            } catch (JSONException e) {
+                Timber.e(e);
+            }
+
+            return "failure";
+        }
+
+        @Override
+        protected void onPostExecute(String message){
+            if(message.equals("success")){
+
+            }
+        }
+
 
     }
 }
