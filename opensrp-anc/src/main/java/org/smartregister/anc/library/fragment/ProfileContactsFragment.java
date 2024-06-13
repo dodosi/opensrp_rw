@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.apache.commons.lang3.StringUtils;
 import org.jeasy.rules.api.Facts;
+import org.joda.time.LocalDate;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.smartregister.anc.library.AncLibrary;
@@ -444,16 +445,26 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
             List<Integer> integerList = AncLibrary.getInstance().getAncRulesEngineHelper()
                     .getContactVisitSchedule(contactRule, ConstantsUtils.RulesFileUtils.CONTACT_RULES);
 
-//            int nextContactVisitWeeks = integerList.get(0);
+            int nextContactVisitWeeks = integerList.get(0);
 
             JSONObject jsonObject = new JSONObject();
             try {
                 jsonObject.put(ConstantsUtils.DetailsKeyUtils.CONTACT_SCHEDULE, integerList);
                 AncLibrary.getInstance().getDetailsRepository().add(baseEntityId, ConstantsUtils.DetailsKeyUtils.CONTACT_SCHEDULE, jsonObject.toString(),
                         Calendar.getInstance().getTimeInMillis());
-                ContentValues contentValues = new ContentValues();
-                contentValues.put(ConstantsUtils.DATA_MIGRATION_IS_DIRTY, "0");
-                PatientRepository.updatePatient(baseEntityId, contentValues, DBConstantsUtils.RegisterTable.DEMOGRAPHIC);
+
+                ContentValues ecClientsCv = new ContentValues();
+                ContentValues ecMotherDetailsCv = new ContentValues();
+                ecClientsCv.put(ConstantsUtils.DATA_MIGRATION_IS_DIRTY, "0");
+                PatientRepository.updatePatient(baseEntityId, ecClientsCv, DBConstantsUtils.RegisterTable.DEMOGRAPHIC);
+
+                LocalDate localDate = new LocalDate(details.get(DBConstantsUtils.KeyUtils.EDD));
+                String nextContactVisitDate =
+                        localDate.minusWeeks(ConstantsUtils.DELIVERY_DATE_WEEKS).plusWeeks(nextContactVisitWeeks).toString();
+                ecMotherDetailsCv.put(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE, nextContactVisitDate);
+
+                PatientRepository.updatePatient(baseEntityId, ecMotherDetailsCv, DBConstantsUtils.RegisterTable.DETAILS);
+
                 return "success";
             } catch (JSONException e) {
                 Timber.e(e);
