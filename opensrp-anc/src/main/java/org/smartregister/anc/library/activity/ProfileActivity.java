@@ -17,6 +17,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -49,6 +50,7 @@ import org.smartregister.view.activity.BaseProfileActivity;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Objects;
 
 import timber.log.Timber;
 
