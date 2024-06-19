@@ -527,6 +527,8 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
                         processVisitMethod.setAccessible(true);
 
                         processVisitMethod.invoke(baseAncClientProcessorForJava, visitEvent);
+                        // mark event as UnSynced and Invalid so that it can be uploaded in the next sync cycle
+                        AncLibrary.getInstance().getEventClientRepository().markEventValidationStatus(visitEvent.getFormSubmissionId(), false);
                         break;
                     }
                 }
