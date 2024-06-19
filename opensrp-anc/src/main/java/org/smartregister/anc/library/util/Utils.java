@@ -112,7 +112,7 @@ public class Utils extends org.smartregister.util.Utils {
     public static final String HOME_ADDRESS = "Home Address";
     private static final DateTimeFormatter SQLITE_DATE_DF = DateTimeFormat.forPattern(ConstantsUtils.SQLITE_DATE_TIME_FORMAT);
     private static final String OTHER_SUFFIX = ", other]";
-    private static String visitDate;
+    private static String mVisitDate;
 
     static {
         ALLOWED_LEVELS = new ArrayList<>();
@@ -475,9 +475,9 @@ public class Utils extends org.smartregister.util.Utils {
                 LocalDate date = SQLITE_DATE_DF.withOffsetParsed().parseLocalDate(expectedDeliveryDate);
                 LocalDate lmpDate = date.minusWeeks(ConstantsUtils.DELIVERY_DATE_WEEKS);
                 Weeks weeks;
-                if (visitDate != null) {
+                if (mVisitDate != null) {
                     weeks = Weeks.weeksBetween(lmpDate, DateTimeFormat.forPattern("dd-MM-yyyy").withOffsetParsed()
-                            .parseLocalDate(visitDate));
+                            .parseLocalDate(mVisitDate));
                 } else weeks = Weeks.weeksBetween(lmpDate, LocalDate.now());
                 return weeks.getWeeks();
             } else {
@@ -1071,7 +1071,7 @@ public class Utils extends org.smartregister.util.Utils {
     }
 
     public void createSavePdf(Context context, List<YamlConfig> yamlConfigList, Facts facts, String womanName) throws FileNotFoundException {
-        setVisitDate(facts);
+//        setmVisitDate(facts);
         String FILENAME = womanName + "_" + context.getResources().getString(R.string.contact_summary_data_file);
         String filePath = getAppPath(context) + FILENAME;
 
@@ -1294,8 +1294,8 @@ public class Utils extends org.smartregister.util.Utils {
         }
     }
 
-    public static void setVisitDate(Facts facts) {
-        visitDate = facts.get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
+    public static void setmVisithstDate(Facts facts) {
+        mVisitDate = facts.get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
     }
 
     public static String calculateGaBasedOnUltrasoundEdd(String ultrasoundDateEddDateString, String manualEncounterDateString) {

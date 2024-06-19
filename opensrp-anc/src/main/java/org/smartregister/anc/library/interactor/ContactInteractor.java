@@ -198,10 +198,10 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
                 details.put(DBConstantsUtils.KeyUtils.CONTACT_STATUS, womanDetail.getContactStatus());
             } else {
                 details.put(DBConstantsUtils.KeyUtils.CONTACT_STATUS, womanDetail.getContactStatus());
-                details.put(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE, Utils.getDBDateToday());
                 details.put(DBConstantsUtils.KeyUtils.YELLOW_FLAG_COUNT, womanDetail.getYellowFlagCount().toString());
                 details.put(DBConstantsUtils.KeyUtils.RED_FLAG_COUNT, womanDetail.getRedFlagCount().toString());
 
+                details.put(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE, Utils.getDBDateToday());
             }
             details.put(DBConstantsUtils.KeyUtils.NEXT_CONTACT, womanDetail.getNextContact().toString());
             details.put(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE, womanDetail.getNextContactDate());

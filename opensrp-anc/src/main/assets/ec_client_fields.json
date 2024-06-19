@@ -209,8 +209,7 @@
             "field": "attributes.sector"
           }
 
-        }
-        ,
+        },
         {
           "column_name": "cell",
           "type": "Client",
@@ -230,6 +229,13 @@
           "type": "Client",
           "json_mapping": {
             "field": "attributes.visit_start_date"
+          }
+        },
+        {
+          "column_name": "visit_date",
+          "type": "Client",
+          "json_mapping": {
+            "field": "attributes.visit_date"
           }
         }
       ]

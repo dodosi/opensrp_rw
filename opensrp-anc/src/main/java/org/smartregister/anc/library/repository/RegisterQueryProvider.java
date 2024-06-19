@@ -84,6 +84,7 @@ public class RegisterQueryProvider {
                 getDetailsTable() + "." + ConstantsUtils.SpinnerKeyConstants.VILLAGE ,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.INSURANCE,
                 getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.VILLAGE,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.UBUDEHE_CATEGORY,
                 getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.NATIONAL_ID,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.DOCUMENT_TYPE,
+                getDetailsTable() + "." + ConstantsUtils.JsonFormKeyUtils.VISIT_DATE,
                 getDemographicTable()+ "." + ConstantsUtils.DATA_MIGRATION_IS_DIRTY,
                 getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.PASSPORT_ID,getDetailsTable()+ "." + DBConstantsUtils.KeyUtils.OTHER_ID };
 
