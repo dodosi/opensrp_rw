@@ -177,8 +177,8 @@ public class ProfileActivity extends BaseProfileActivity implements ProfileContr
     public void onClick(View view) {
         if (view.getId() == R.id.profile_overview_due_button) {
             String baseEntityId = getIntent().getStringExtra(ConstantsUtils.IntentKeyUtils.BASE_ENTITY_ID);
-
-            if ((view.getTag(R.string.regenerate_contact_schedule)).equals(ConstantsUtils.AlertStatusUtils.REGENERATE)) {
+            Object viewTag = view.getTag(R.string.regenerate_contact_schedule);
+            if (viewTag!= null && (viewTag).equals(ConstantsUtils.AlertStatusUtils.REGENERATE)) {
                 new RegenerateContactSchedulesTask(getActivity(), baseEntityId).execute();
             } else {
                 if (StringUtils.isNotBlank(baseEntityId)) {

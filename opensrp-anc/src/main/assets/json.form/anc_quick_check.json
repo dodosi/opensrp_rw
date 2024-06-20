@@ -104,7 +104,7 @@
         "type": "date_picker",
         "hint": "Date of Contact",
         "expanded": "false",
-        "min_date": "today-1m",
+        "min_date": "today-6m",
         "max_date": "today",
         "v_required": {
           "value": true,
