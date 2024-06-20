@@ -476,5 +476,8 @@
     <string name="rprpositive">RPR positive</string>
     <string name="expected_deliveries">Expected deliveries</string>
     <string name="late_visits">Late visits</string>
+    <string name="regenerate_contact_schedule">Regenerate Contact Schedule</string>
+    <string name="successfully_updated_contact_schedule">Successfully updated contact schedule</string>
+    <string name="an_error_occurred_while_regenerating_contact_schedule">An error occurred while regenerating contact schedule</string>
 
 </resources>

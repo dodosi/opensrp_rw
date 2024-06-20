@@ -81,22 +81,26 @@ public class LoadContactSummaryDataTask extends AsyncTask<Void, Void, Void> {
             ((ContactSummaryFinishActivity) context).saveFinishMenuItem.setEnabled(true);
         }
 
-        String lstVisitDate=facts.get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
+       try {
+           String lstVisitDate = facts.get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
 //        Log.d("DATE",lstVisitDate);
 //        Toast.makeText(context.getApplicationContext(), "DATE IS"+lstVisitDate,Toast.LENGTH_LONG).show();
-        SimpleDateFormat inputFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = null;
-        try {
-            date = inputFormat.parse(lstVisitDate);
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-        String formattedDate = Utils.DB_DF.format(date);
-        if (formattedDate != null && ((ContactSummaryFinishActivity) context).saveFinishMenuItem != null) {
-            PatientRepository.updateLastContactDate(baseEntityId, formattedDate);
-            ((ContactSummaryFinishActivity) context).saveFinishMenuItem.setEnabled(true);
+           SimpleDateFormat inputFormat = new SimpleDateFormat("dd-MM-yyyy");
+           Date date = null;
+           try {
+               date = inputFormat.parse(lstVisitDate);
+           } catch (ParseException e) {
+               throw new RuntimeException(e);
+           }
+           String formattedDate = Utils.DB_DF.format(date);
+           if (formattedDate != null && ((ContactSummaryFinishActivity) context).saveFinishMenuItem != null) {
+               PatientRepository.updateLastContactDate(baseEntityId, formattedDate);
+               ((ContactSummaryFinishActivity) context).saveFinishMenuItem.setEnabled(true);
 
-        }
+           }
+       } catch (Exception e){
+           Timber.e(e);
+       }
         ContactSummaryFinishAdapter adapter =
                 new ContactSummaryFinishAdapter(context, ((ContactSummaryFinishActivity) context).getYamlConfigList(), facts);
         adapter.notifyDataSetChanged();

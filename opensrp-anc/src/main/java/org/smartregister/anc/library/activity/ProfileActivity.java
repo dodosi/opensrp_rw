@@ -3,11 +3,13 @@ package org.smartregister.anc.library.activity;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,16 +19,25 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
+
 import org.apache.commons.lang3.StringUtils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.joda.time.LocalDate;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.smartregister.anc.library.AncLibrary;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.adapter.ProfileViewPagerAdapter;
@@ -37,18 +48,31 @@ import org.smartregister.anc.library.fragment.ProfileContactsFragment;
 import org.smartregister.anc.library.fragment.ProfileOverviewFragment;
 import org.smartregister.anc.library.fragment.ProfileTasksFragment;
 import org.smartregister.anc.library.presenter.ProfilePresenter;
+import org.smartregister.anc.library.repository.PatientRepository;
+import org.smartregister.anc.library.rule.ContactRule;
+import org.smartregister.anc.library.sync.BaseAncClientProcessorForJava;
+import org.smartregister.anc.library.task.RegenerateContactSchedulesTask;
 import org.smartregister.anc.library.util.ANCJsonFormUtils;
 import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.DBConstantsUtils;
 import org.smartregister.anc.library.util.Utils;
 import org.smartregister.anc.library.view.CopyToClipboardDialog;
+import org.smartregister.domain.Event;
 import org.smartregister.repository.AllSharedPreferences;
 import org.smartregister.util.PermissionUtils;
 import org.smartregister.util.StringUtil;
 import org.smartregister.view.activity.BaseProfileActivity;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 import timber.log.Timber;
 
@@ -118,8 +142,10 @@ public class ProfileActivity extends BaseProfileActivity implements ProfileContr
         detailMap = (HashMap<String, String>) getIntent().getSerializableExtra(ConstantsUtils.IntentKeyUtils.CLIENT_MAP);
         contactNo = String.valueOf(Utils.getTodayContact(detailMap.get(DBConstantsUtils.KeyUtils.NEXT_CONTACT)));
         buttonAlertStatus = Utils.processContactDoneToday(detailMap.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE),
-                ConstantsUtils.AlertStatusUtils.ACTIVE.equals(detailMap.get(DBConstantsUtils.KeyUtils.CONTACT_STATUS)) ?
-                        ConstantsUtils.AlertStatusUtils.IN_PROGRESS : "");
+                   ConstantsUtils.AlertStatusUtils.ACTIVE.equals(detailMap.get(DBConstantsUtils.KeyUtils.CONTACT_STATUS)) ?
+                           ConstantsUtils.AlertStatusUtils.IN_PROGRESS : "");
+
+
     }
 
     protected void updateTasksTabTitle() {
@@ -151,11 +177,17 @@ public class ProfileActivity extends BaseProfileActivity implements ProfileContr
     public void onClick(View view) {
         if (view.getId() == R.id.profile_overview_due_button) {
             String baseEntityId = getIntent().getStringExtra(ConstantsUtils.IntentKeyUtils.BASE_ENTITY_ID);
-
-            if (StringUtils.isNotBlank(baseEntityId)) {
-                Utils.proceedToContact(baseEntityId, detailMap, getActivity());
-                finish();
+            Object viewTag = view.getTag(R.string.regenerate_contact_schedule);
+            if (viewTag!= null && (viewTag).equals(ConstantsUtils.AlertStatusUtils.REGENERATE)) {
+                new RegenerateContactSchedulesTask(getActivity(), baseEntityId).execute();
+            } else {
+                if (StringUtils.isNotBlank(baseEntityId)) {
+                    Utils.proceedToContact(baseEntityId, detailMap, getActivity());
+                    finish();
+                }
             }
+
+
 
         } else {
             super.onClick(view);
@@ -394,4 +426,5 @@ public class ProfileActivity extends BaseProfileActivity implements ProfileContr
     public ProfilePresenter getProfilePresenter() {
         return (ProfilePresenter) presenter;
     }
+
 }

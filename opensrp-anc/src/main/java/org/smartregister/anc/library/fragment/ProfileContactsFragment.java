@@ -1,6 +1,9 @@
 package org.smartregister.anc.library.fragment;
 
+import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,13 +13,21 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import org.apache.commons.lang3.StringUtils;
+import android.widget.Toast;
+
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
+
 import org.jeasy.rules.api.Facts;
+import org.joda.time.LocalDate;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.smartregister.anc.library.AncLibrary;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.PreviousContactsDetailsActivity;
@@ -29,25 +40,33 @@ import org.smartregister.anc.library.domain.LastContactDetailsWrapper;
 import org.smartregister.anc.library.domain.YamlConfig;
 import org.smartregister.anc.library.domain.YamlConfigItem;
 import org.smartregister.anc.library.domain.YamlConfigWrapper;
-import org.smartregister.anc.library.model.PreviousContact;
 import org.smartregister.anc.library.model.Task;
 import org.smartregister.anc.library.presenter.ProfileFragmentPresenter;
+import org.smartregister.anc.library.repository.PatientRepository;
+import org.smartregister.anc.library.rule.ContactRule;
+import org.smartregister.anc.library.sync.BaseAncClientProcessorForJava;
 import org.smartregister.anc.library.util.ANCJsonFormUtils;
-import org.smartregister.anc.library.util.AppExecutors;
 import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.DBConstantsUtils;
 import org.smartregister.anc.library.util.FilePathUtils;
 import org.smartregister.anc.library.util.Utils;
+import org.smartregister.domain.Event;
 import org.smartregister.view.fragment.BaseProfileFragment;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
 
 import timber.log.Timber;
 
@@ -108,7 +127,9 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
                 clientDetails =
                         (HashMap<String, String>) getActivity().getIntent().getSerializableExtra(ConstantsUtils.IntentKeyUtils.CLIENT_MAP);
             }
+
             buttonAlertStatus = Utils.getButtonAlertStatus(clientDetails, getActivity(), true);
+
         }
     }
 
@@ -183,51 +204,52 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
     }
 
     private void setUpAlertStatusButton() {
+//        if (clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY) != null && clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY).equals("1")) {
+//            buttonAlertStatus.buttonAlertStatus = ConstantsUtils.AlertStatusUtils.REGENERATE;
+//        }
         Utils.processButtonAlertStatus(getActivity(), dueButton, buttonAlertStatus);
+
     }
 
     private void initializeLastContactDetails(HashMap<String, String> clientDetails) {
         if (clientDetails != null) {
 
-        List<LastContactDetailsWrapper> lastContactDetailsWrapperList = new ArrayList<>();
-        List<LastContactDetailsWrapper> lastContactDetailsTestsWrapperList = new ArrayList<>();
-        Facts facts = presenter.getImmediatePreviousContact(clientDetails, baseEntityId, contactNo);
-        try {
-            addOtherRuleObjects(facts);
-            addAttentionFlagsRuleObjects(facts);
-            contactNo = (String) facts.asMap().get(ConstantsUtils.CONTACT_NO);
+            List<LastContactDetailsWrapper> lastContactDetailsWrapperList = new ArrayList<>();
+            List<LastContactDetailsWrapper> lastContactDetailsTestsWrapperList = new ArrayList<>();
+            Facts facts = presenter.getImmediatePreviousContact(clientDetails, baseEntityId, contactNo);
+            try {
+                addOtherRuleObjects(facts);
+                addAttentionFlagsRuleObjects(facts);
+                contactNo = (String) facts.asMap().get(ConstantsUtils.CONTACT_NO);
 
-            addTestsRuleObjects(facts);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+                addTestsRuleObjects(facts);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             String displayContactDate = "";
 
-            // Extract visit date from facts
-            String manualEncounterDate = (String) facts.asMap().get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
+            // If no visit date, try to get contact date
+            String contactDate = (String) facts.asMap().get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
+            if (contactDate != null) {
+                contactDate = Utils.reverseHyphenSeperatedValues(contactDate, "-");
+            } else {
+                contactDate =
+                        clientDetails.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE) != null ?
+                                clientDetails.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE) :
+                                (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
+            }
 
-            if (!TextUtils.isEmpty(manualEncounterDate)) {
-                // If there's a visit date, parse it and format for display
+
+            if (!TextUtils.isEmpty(contactDate)) {
+                // If contact date exists, parse and format for display
                 try {
-                    Date lastContactDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(manualEncounterDate);
+                    Date lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
                     displayContactDate = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(lastContactDate);
                 } catch (ParseException e) {
                     // Handle parsing exceptions
                     throw new RuntimeException(e);
                 }
-            } else {
-                // If no visit date, try to get contact date
-                String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
-                if (!TextUtils.isEmpty(contactDate)) {
-                    // If contact date exists, parse and format for display
-                    try {
-                        Date lastContactDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).parse(contactDate);
-                        displayContactDate = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(lastContactDate);
-                    } catch (ParseException e) {
-                        // Handle parsing exceptions
-                        throw new RuntimeException(e);
-                    }
-                }
+
             }
 
             if (lastContactDetails.isEmpty()) {
@@ -360,9 +382,9 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
 
         dueButton = ((ProfileActivity) getActivity()).getDueButton();
 //        if (!ConstantsUtils.AlertStatusUtils.TODAY.equals(buttonAlertStatus.buttonAlertStatus)) {
-            dueButton.setOnClickListener((ProfileActivity) getActivity());
+        dueButton.setOnClickListener((ProfileActivity) getActivity());
 //        } else {
-            dueButton.setEnabled(true);
+        dueButton.setEnabled(true);
 //        }
 
         return fragmentView;
@@ -421,4 +443,6 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
         }
 
     }
+
+
 }

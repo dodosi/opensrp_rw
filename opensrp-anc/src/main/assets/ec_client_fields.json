@@ -209,8 +209,7 @@
             "field": "attributes.sector"
           }
 
-        }
-        ,
+        },
         {
           "column_name": "cell",
           "type": "Client",
@@ -230,6 +229,13 @@
           "type": "Client",
           "json_mapping": {
             "field": "attributes.visit_start_date"
+          }
+        },
+        {
+          "column_name": "visit_date",
+          "type": "Client",
+          "json_mapping": {
+            "field": "attributes.visit_date"
           }
         }
       ]
@@ -298,6 +304,13 @@
           "type": "Client",
           "json_mapping": {
             "field": "addresses.address2"
+          }
+        },
+        {
+          "column_name": "data_migration_is_dirty",
+          "type": "Client",
+          "json_mapping": {
+            "field": "attributes.data_migration_is_dirty"
           }
         }
       ]

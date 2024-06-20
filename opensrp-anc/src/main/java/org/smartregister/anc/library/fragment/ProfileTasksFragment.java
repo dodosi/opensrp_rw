@@ -93,6 +93,9 @@ public class ProfileTasksFragment extends BaseProfileFragment implements Profile
 
     @Override
     protected void onResumption() {
+//        if (clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY) != null && clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY).equals("1")) {
+//            buttonAlertStatus.buttonAlertStatus = ConstantsUtils.AlertStatusUtils.REGENERATE;
+//        }
         Utils.processButtonAlertStatus(getActivity(), dueButton, buttonAlertStatus);
         if (getActivity() != null && getActivity().getIntent() != null) {
             baseEntityId = getActivity().getIntent().getStringExtra(ConstantsUtils.IntentKeyUtils.BASE_ENTITY_ID);

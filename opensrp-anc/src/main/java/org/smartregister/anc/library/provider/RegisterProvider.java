@@ -1,5 +1,6 @@
 package org.smartregister.anc.library.provider;
 
+import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.text.TextUtils;
@@ -18,6 +19,8 @@ import org.apache.commons.text.WordUtils;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.domain.ButtonAlertStatus;
 import org.smartregister.anc.library.fragment.HomeRegisterFragment;
+import org.smartregister.anc.library.task.RegenerateContactSchedulesTask;
+import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.DBConstantsUtils;
 import org.smartregister.anc.library.util.Utils;
 import org.smartregister.commonregistry.CommonPersonObject;
@@ -207,6 +210,12 @@ public class RegisterProvider implements RecyclerViewProvider<RegisterProvider.R
                         Utils.getButtonAlertStatus(pc.getColumnmaps(), context, false);
                 Utils.processButtonAlertStatus(context, viewHolder.dueButton, viewHolder.contactDoneTodayButton,
                         buttonAlertStatus);
+                if (buttonAlertStatus.buttonAlertStatus.equals(ConstantsUtils.AlertStatusUtils.REGENERATE)) {
+
+                    viewHolder.dueButton.setOnClickListener(view -> {
+                        new RegenerateContactSchedulesTask((Activity) view.getContext(), pc.entityId());
+                    });
+                }
 
             } else {
                 viewHolder.dueButton.setVisibility(View.GONE);
