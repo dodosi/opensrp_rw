@@ -200,8 +200,7 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
                 details.put(DBConstantsUtils.KeyUtils.CONTACT_STATUS, womanDetail.getContactStatus());
                 details.put(DBConstantsUtils.KeyUtils.YELLOW_FLAG_COUNT, womanDetail.getYellowFlagCount().toString());
                 details.put(DBConstantsUtils.KeyUtils.RED_FLAG_COUNT, womanDetail.getRedFlagCount().toString());
-
-                details.put(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE, Utils.getDBDateToday());
+                details.put(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE,  details.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE));
             }
             details.put(DBConstantsUtils.KeyUtils.NEXT_CONTACT, womanDetail.getNextContact().toString());
             details.put(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE, womanDetail.getNextContactDate());
@@ -262,8 +261,12 @@ public class ContactInteractor extends BaseContactInteractor implements ContactC
     }
 
     public int getGestationAge(Map<String, String> details) {
-        return details.containsKey(DBConstantsUtils.KeyUtils.EDD) && details.get(DBConstantsUtils.KeyUtils.EDD) != null ? Utils
-                .getGestationAgeFromEDDate(details.get(DBConstantsUtils.KeyUtils.EDD)) : 4;
+        if (!details.containsKey(DBConstantsUtils.KeyUtils.EDD) || details.get(DBConstantsUtils.KeyUtils.EDD) == null) return 4;
+        String edd = details.get(DBConstantsUtils.KeyUtils.EDD);
+        String visitDate = details.get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
+
+        if (visitDate == null) return Utils.getGestationAgeFromEDDate(edd);
+        return Utils.getGAFromEDDateOnVisitDate(edd, visitDate);
     }
 
 

@@ -150,9 +150,10 @@ public class ProfileOverviewFragment extends BaseProfileFragment implements Prof
                     yamlConfigListGlobal.addAll(yamlConfigList);
                 }
             }
-
+//            if (clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY) != null && clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY).equals("1")) {
+//                buttonAlertStatus.buttonAlertStatus = ConstantsUtils.AlertStatusUtils.REGENERATE;
+//            }
             Utils.processButtonAlertStatus(getActivity(), dueButton, buttonAlertStatus);
-
             attachRecyclerView(facts);
 
             if (yamlConfigListGlobal.isEmpty()) {

@@ -129,9 +129,6 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
             }
 
             buttonAlertStatus = Utils.getButtonAlertStatus(clientDetails, getActivity(), true);
-            if (clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY) != null && clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY).equals("1")) {
-                buttonAlertStatus.buttonAlertStatus = ConstantsUtils.AlertStatusUtils.REGENERATE;
-            }
 
         }
     }
@@ -207,14 +204,11 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
     }
 
     private void setUpAlertStatusButton() {
+//        if (clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY) != null && clientDetails.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY).equals("1")) {
+//            buttonAlertStatus.buttonAlertStatus = ConstantsUtils.AlertStatusUtils.REGENERATE;
+//        }
         Utils.processButtonAlertStatus(getActivity(), dueButton, buttonAlertStatus);
-        if (buttonAlertStatus.buttonAlertStatus.equals(ConstantsUtils.AlertStatusUtils.REGENERATE)) {
-            dueButton.setOnClickListener(view -> {
-                Toast.makeText(getActivity(), "Regenerating Contact Schedule", Toast.LENGTH_SHORT).show();
-                new RegenerateContactSchedulesTask(clientDetails, getActivity()).execute();
-            });
-        }
-//        buttonAlertStatus.buttonAlertStatus = ConstantsUtils.AlertStatusUtils.REGENERATE;
+
     }
 
     private void initializeLastContactDetails(HashMap<String, String> clientDetails) {
@@ -235,7 +229,17 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
             String displayContactDate = "";
 
             // If no visit date, try to get contact date
-            String contactDate = (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
+            String contactDate = (String) facts.asMap().get(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE);
+            if (contactDate != null) {
+                contactDate = Utils.reverseHyphenSeperatedValues(contactDate, "-");
+            } else {
+                contactDate =
+                        clientDetails.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE) != null ?
+                                clientDetails.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE) :
+                                (String) facts.asMap().get(ConstantsUtils.CONTACT_DATE);
+            }
+
+
             if (!TextUtils.isEmpty(contactDate)) {
                 // If contact date exists, parse and format for display
                 try {
@@ -440,117 +444,5 @@ public class ProfileContactsFragment extends BaseProfileFragment implements Prof
 
     }
 
-    public class RegenerateContactSchedulesTask extends AsyncTask<Void, Void, String> {
-        HashMap<String, String> details;
-        Activity activity;
 
-        RegenerateContactSchedulesTask(HashMap<String, String> details, Activity context) {
-            this.details = details;
-            this.activity = context;
-        }
-
-        @Override
-        protected String doInBackground(Void... voids) {
-
-
-            try {
-                int contactNo = 1;
-                if (details.get(DBConstantsUtils.KeyUtils.NEXT_CONTACT) != null) {
-                    contactNo = Integer.parseInt(Objects.requireNonNull(details.get(DBConstantsUtils.KeyUtils.NEXT_CONTACT))) - 1;
-                }
-
-                boolean isFirst = contactNo == 1;
-                int gestationAge = Utils.getLastContactGA(details.get(DBConstantsUtils.KeyUtils.EDD), details.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE));
-                ContactRule contactRule = new ContactRule(gestationAge, isFirst, baseEntityId);
-
-
-                List<Integer> integerList = AncLibrary.getInstance().getAncRulesEngineHelper()
-                        .getContactVisitSchedule(contactRule, ConstantsUtils.RulesFileUtils.CONTACT_RULES);
-
-                int nextContactVisitWeeks = integerList.get(0);
-
-                JSONObject contactScheduleObject = new JSONObject();
-                contactScheduleObject.put(ConstantsUtils.DetailsKeyUtils.CONTACT_SCHEDULE, integerList);
-                AncLibrary.getInstance().getDetailsRepository().add(baseEntityId, ConstantsUtils.DetailsKeyUtils.CONTACT_SCHEDULE, contactScheduleObject.toString(),
-                        Calendar.getInstance().getTimeInMillis());
-
-                ContentValues ecClientsCv = new ContentValues();
-                ContentValues ecMotherDetailsCv = new ContentValues();
-                ecClientsCv.put(ConstantsUtils.DATA_MIGRATION_IS_DIRTY, "0");
-                PatientRepository.updatePatient(baseEntityId, ecClientsCv, DBConstantsUtils.RegisterTable.DEMOGRAPHIC);
-
-                LocalDate localDate = new LocalDate(details.get(DBConstantsUtils.KeyUtils.EDD));
-                String nextContactVisitDate =
-                        localDate.minusWeeks(ConstantsUtils.DELIVERY_DATE_WEEKS).plusWeeks(nextContactVisitWeeks).toString();
-                ecMotherDetailsCv.put(DBConstantsUtils.KeyUtils.NEXT_CONTACT_DATE, nextContactVisitDate);
-
-                PatientRepository.updatePatient(baseEntityId, ecMotherDetailsCv, DBConstantsUtils.RegisterTable.DETAILS);
-                JSONObject eventsForBaseEntityId = AncLibrary.getInstance().getEventClientRepository().getEventsByBaseEntityId(baseEntityId);
-
-
-                JSONArray jsonArray = eventsForBaseEntityId.getJSONArray("events");
-                int bound = eventsForBaseEntityId.getJSONArray("events").length();
-                List<JSONObject> visits = new ArrayList<>();
-                for (int i = 0; i < bound; i++) {
-                    JSONObject eventObject = jsonArray.getJSONObject(i);
-                    if ("Contact Visit".equals(eventObject.optString("eventType"))) {
-                        visits.add(eventObject);
-                    }
-                }
-
-                String contactKey = "Contact " + details.get(DBConstantsUtils.KeyUtils.NEXT_CONTACT);
-
-                for (int j = 0; j < visits.size(); j++) {
-                    JSONObject details = visits.get(j).getJSONObject("details");
-                    if (details.get("Contact").equals(contactKey)) {
-                        JSONObject visitToUpdate = visits.get(j);
-                        // remove details since it is causing errors during deserialization
-                        visitToUpdate.remove("details");
-                        ObjectMapper objectMapper = new ObjectMapper();
-                        // Register JodaModule
-                        objectMapper.registerModule(new JodaModule());
-                        Event visitEvent = objectMapper.readValue(visitToUpdate.toString(), Event.class);
-                        JSONObject previousContact = new JSONObject(details.get("previous_contacts").toString());
-                        previousContact.put("contact_schedule", contactScheduleObject.toString());
-                        details.put("previous_contacts", previousContact.toString());
-
-                        Map<String, String> eventDetails = new HashMap<>();
-                        Iterator<?> keys = details.keys();
-                        while (keys.hasNext()) {
-                            String key = (String) keys.next();
-                            eventDetails.put(key, (String) details.get(key));
-                        }
-                        visitEvent.setDetails(eventDetails);
-
-                        BaseAncClientProcessorForJava baseAncClientProcessorForJava = BaseAncClientProcessorForJava.getInstance(getActivity());
-                        Method processVisitMethod = baseAncClientProcessorForJava.getClass().getDeclaredMethod("processVisit", Event.class);
-                        processVisitMethod.setAccessible(true);
-
-                        processVisitMethod.invoke(baseAncClientProcessorForJava, visitEvent);
-                        // mark event as UnSynced and Invalid so that it can be uploaded in the next sync cycle
-                        AncLibrary.getInstance().getEventClientRepository().markEventValidationStatus(visitEvent.getFormSubmissionId(), false);
-                        break;
-                    }
-                }
-
-                return "success";
-            } catch (JSONException | NoSuchMethodException | JsonProcessingException |
-                     InvocationTargetException | IllegalAccessException e) {
-                Timber.e(e);
-                return "failure";
-            }
-
-
-        }
-
-        @Override
-        protected void onPostExecute(String message) {
-            if (message.equals("success")) {
-                    Toast.makeText(activity, R.string.successfully_updated_contact_schedule,    Toast.LENGTH_LONG ).show();
-            } else Toast.makeText(activity, R.string.an_error_occurred_while_regenerating_contact_schedule, Toast.LENGTH_LONG ).show();
-            activity.finish();
-        }
-
-
-    }
 }

@@ -181,11 +181,12 @@ public class PatientRepository extends BaseRepository {
         }
         updatePatient(baseEntityId, contentValues, getRegisterQueryProvider().getDetailsTable());
     }
-    public static void updateLastContactDate(String baseEntityId, String edd) {
+    public static void updateLastContactDate(String baseEntityId, String lstVisitDate) {
 
         ContentValues contentValues = new ContentValues();
-        if (edd != null) {
-            contentValues.put(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE, edd);
+        if (lstVisitDate != null) {
+            contentValues.put(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE, lstVisitDate);
+            contentValues.put(ConstantsUtils.JsonFormKeyUtils.VISIT_DATE, lstVisitDate);
 //            contentValues.put(DBConstantsUtils.KeyUtils.CONTACT_STATUS, patientDetail.getPreviousContactStatus())
         }
 //        else {

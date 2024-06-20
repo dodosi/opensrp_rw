@@ -24,7 +24,6 @@ import androidx.annotation.Nullable;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.IBlockElement;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.HorizontalAlignment;
 import com.itextpdf.layout.property.TextAlignment;
@@ -79,10 +78,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -455,11 +452,16 @@ public class Utils extends org.smartregister.util.Utils {
         nextContactDate =
                 StringUtils.isNotBlank(nextContactDate) ? Utils.reverseHyphenSeperatedValues(nextContactDate, "/") : null;
 
-        buttonAlertStatus.buttonText = String.format(getDisplayTemplate(context, alertStatus, isProfile), nextContact, (nextContactDate != null ? nextContactDate :
-                Utils.convertDateFormat(Calendar.getInstance().getTime(), Utils.CONTACT_DF)));
+        if(details.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY)!= null && details.get(ConstantsUtils.DATA_MIGRATION_IS_DIRTY).equals("1")){
+            alertStatus = ConstantsUtils.AlertStatusUtils.REGENERATE;
+            buttonAlertStatus.buttonText = context.getResources().getString(R.string.regenerate_contact_schedule);
+        } else {
+            alertStatus =
+                    Utils.processContactDoneToday(details.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE), alertStatus);
+            buttonAlertStatus.buttonText = String.format(getDisplayTemplate(context, alertStatus, isProfile), nextContact, (nextContactDate != null ? nextContactDate :
+                    Utils.convertDateFormat(Calendar.getInstance().getTime(), Utils.CONTACT_DF)));
+        }
 
-        alertStatus =
-                Utils.processContactDoneToday(details.get(DBConstantsUtils.KeyUtils.LAST_CONTACT_RECORD_DATE), alertStatus);
 
         buttonAlertStatus.buttonAlertStatus = alertStatus;
         buttonAlertStatus.gestationAge = gestationAge;
@@ -484,6 +486,23 @@ public class Utils extends org.smartregister.util.Utils {
                 return 0;
             }
         } catch (IllegalArgumentException e) {
+            Timber.e(e, " --> getGestationAgeFromEDDate");
+            return 0;
+        }
+    }
+
+    public static int getGAFromEDDateOnVisitDate(String expectedDeliveryDate, String visitDate) {
+        try {
+            if (visitDate != null && !"0".equals(expectedDeliveryDate) && expectedDeliveryDate.length() > 0) {
+                LocalDate date = SQLITE_DATE_DF.withOffsetParsed().parseLocalDate(expectedDeliveryDate);
+                LocalDate visitDateLocal = SQLITE_DATE_DF.withOffsetParsed().parseLocalDate(visitDate);
+                LocalDate lmpDate = date.minusWeeks(ConstantsUtils.DELIVERY_DATE_WEEKS);
+                Weeks weeks = Weeks.weeksBetween(lmpDate, visitDateLocal);
+                return weeks.getWeeks();
+            } else {
+                return 0;
+            }
+        } catch (Exception e) {
             Timber.e(e, " --> getGestationAgeFromEDDate");
             return 0;
         }
@@ -602,7 +621,9 @@ public class Utils extends org.smartregister.util.Utils {
                                 Utils.getTodayContact(String.valueOf(buttonAlertStatus.nextContact))));
                         break;
                     case ConstantsUtils.AlertStatusUtils.REGENERATE:
-                       dueButton.setText(R.string.regenerate_contact_schedule);
+                        dueButton.setText(R.string.regenerate_contact_schedule);
+                        dueButton.setTag(R.string.regenerate_contact_schedule, ConstantsUtils.AlertStatusUtils.REGENERATE);
+                        break;
                     default:
                         dueButton.setBackground(context.getResources().getDrawable(R.drawable.contact_due));
                         dueButton.setTextColor(context.getResources().getColor(R.color.vaccine_blue_bg_st));
@@ -1301,8 +1322,8 @@ public class Utils extends org.smartregister.util.Utils {
     public static String calculateGaBasedOnUltrasoundEdd(String ultrasoundDateEddDateString, String manualEncounterDateString) {
         if (ultrasoundDateEddDateString != null && manualEncounterDateString != null) {
             DateTimeFormatter formatter = DateTimeFormat.forPattern(ConstantsUtils.OPENSRP_DATE_TIME_FORMAT);
-           LocalDate ultrasoundDateEddDate = LocalDate.parse(ultrasoundDateEddDateString, formatter);
-           LocalDate manualEncounterDate = LocalDate.parse(manualEncounterDateString, formatter);
+            LocalDate ultrasoundDateEddDate = LocalDate.parse(ultrasoundDateEddDateString, formatter);
+            LocalDate manualEncounterDate = LocalDate.parse(manualEncounterDateString, formatter);
             Days interval = Days.daysBetween(manualEncounterDate, ultrasoundDateEddDate);
 
             long daysBetween = 280 - Math.abs(interval.getDays());
