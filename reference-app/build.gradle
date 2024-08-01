@@ -349,7 +349,7 @@ dependencies {
     testImplementation 'org.apache.maven:maven-ant-tasks:2.1.3'
     testImplementation 'org.skyscreamer:jsonassert:1.5.0'
 
-    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.14'
 }
 
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
