@@ -11,7 +11,6 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.BaseHomeRegisterActivity;
 import org.smartregister.anc.library.activity.SiteCharacteristicsEnterActivity;
-import org.smartregister.anc.library.activity.UkudoxActivity;
 import org.smartregister.anc.library.event.ViewConfigurationSyncCompleteEvent;
 import org.smartregister.anc.library.util.ConstantsUtils;
 import org.smartregister.anc.library.util.Utils;
@@ -34,6 +33,7 @@ public class LoginActivity extends BaseLoginActivity implements BaseLoginContrac
         if (!mLoginPresenter.isUserLoggedOut()) {
             goToHome(false);
         }
+
     }
 
     @Override

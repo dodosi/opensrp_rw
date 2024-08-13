@@ -10,7 +10,9 @@ import org.smartregister.job.PullUniqueIdsServiceJob;
 import org.smartregister.job.SyncAllLocationsServiceJob;
 import org.smartregister.job.SyncServiceJob;
 import org.smartregister.job.SyncSettingsServiceJob;
+import org.smartregister.job.SyncSettingsServiceWorker;
 import org.smartregister.login.interactor.BaseLoginInteractor;
+import org.smartregister.sync.intent.SettingsSyncIntentService;
 import org.smartregister.view.contract.BaseLoginContract;
 
 import java.util.concurrent.TimeUnit;
@@ -37,12 +39,12 @@ public class LoginInteractor extends BaseLoginInteractor implements BaseLoginCon
         ImageUploadServiceJob
                 .scheduleJob(ImageUploadServiceJob.TAG, TimeUnit.MINUTES.toMillis(BuildConfig.IMAGE_UPLOAD_MINUTES),
                         getFlexValue(BuildConfig.IMAGE_UPLOAD_MINUTES));
-        SyncSettingsServiceJob
-                .scheduleJob(SyncSettingsServiceJob.TAG, TimeUnit.MINUTES.toMillis(BuildConfig.CLIENT_SETTINGS_SYNC_MINUTES),
-                        getFlexValue(BuildConfig.CLIENT_SETTINGS_SYNC_MINUTES));
+
         DocumentConfigurationServiceJob
                 .scheduleJob(DocumentConfigurationServiceJob.TAG, TimeUnit.MINUTES.toMillis(BuildConfig.CLIENT_SETTINGS_SYNC_MINUTES),
                         getFlexValue(BuildConfig.CLIENT_SETTINGS_SYNC_MINUTES));
+
+        SyncSettingsServiceWorker.enqueuePeriodicSettingsSyncIntentService(getApplicationContext());
     }
 
     @Override

@@ -14,9 +14,9 @@ fields:
 ---
 sub_group: current_pregnancy
 fields:
-  - template: "{{profile_overview.overview_of_pregnancy.current_pregnancy.ga}}: {gest_age}"
-    relevance: "gest_age != ''"
-    isRedFont: "gest_age > 40"
+  - template: "{{profile_overview.overview_of_pregnancy.current_pregnancy.ga}}: {current_gest_age}"
+    relevance: "current_gest_age != ''"
+    isRedFont: "current_gest_age > 40"
 
   - template: "{{profile_overview.overview_of_pregnancy.current_pregnancy.edd}}: {edd}"
     relevance: "edd != ''"

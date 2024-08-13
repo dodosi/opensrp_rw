@@ -26,7 +26,7 @@ jacoco {
 // This variables are used by the version code & name generators
 ext.versionMajor = 1
 ext.versionMinor = 6
-ext.versionPatch = 19
+ext.versionPatch = 21
 ext.versionClassifier = null
 ext.isSnapshot = false
 ext.minimumSdkVersion = androidMinSdkVersion
@@ -153,7 +153,7 @@ android {
             buildConfigField "int", "OPENMRS_UNIQUE_ID_INITIAL_BATCH_SIZE", '250'
             buildConfigField "int", "OPENMRS_UNIQUE_ID_BATCH_SIZE", '100'
             buildConfigField "int", "OPENMRS_UNIQUE_ID_SOURCE", '1'
-            buildConfigField "int", "DATABASE_VERSION", '3'
+            buildConfigField "int", "DATABASE_VERSION", '5'
             buildConfigField "long", "MAX_SERVER_TIME_DIFFERENCE", "1800000l"
             buildConfigField "boolean", "TIME_CHECK", "false"
             buildConfigField "int", "DATA_SYNC_DURATION_MINUTES", '15'
@@ -168,11 +168,11 @@ android {
            //resValue "string", 'opensrp_url', '"https://opensrp.ths.rw/opensrp/"'
            // resValue "string", 'opensrp_url', '"https://anc-opensrp.ths.rw/opensrp/"'
             resValue "string", 'opensrp_url', '"https://ancopensrp-stage.ths.rw/"'
-            //resValue "string", 'opensrp_url', '"https://anc.labs.smartregister.org/opensrp/"'
+//            resValue "string", 'opensrp_url', '"https://anc.labs.smartregister.org/opensrp/"'
             buildConfigField "int", "OPENMRS_UNIQUE_ID_INITIAL_BATCH_SIZE", '250'
             buildConfigField "int", "OPENMRS_UNIQUE_ID_BATCH_SIZE", '100'
             buildConfigField "int", "OPENMRS_UNIQUE_ID_SOURCE", '1'
-            buildConfigField "int", "DATABASE_VERSION", '3'
+            buildConfigField "int", "DATABASE_VERSION", '5'
             buildConfigField "long", "MAX_SERVER_TIME_DIFFERENCE", "1800000l"
             buildConfigField "boolean", "TIME_CHECK", "false"
             buildConfigField "int", "DATA_SYNC_DURATION_MINUTES", '15'
@@ -311,7 +311,6 @@ dependencies {
     implementation 'org.jeasy:easy-rules-core:3.3.0'
     implementation 'org.jeasy:easy-rules-mvel:3.3.0'
     implementation 'com.flurry.android:analytics:11.6.0@aar'
-    implementation 'com.flurry.android:analytics:11.6.0@aar'
     implementation 'androidx.multidex:multidex:2.0.1'
 // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:28.3.1')
@@ -328,6 +327,7 @@ dependencies {
     }
     implementation 'com.google.firebase:firebase-perf'
     implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-joda'
 
     testImplementation 'junit:junit:4.13.1'
     testImplementation 'org.apache.maven:maven-ant-tasks:2.1.3'
@@ -347,6 +347,8 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:3.5.15'
     testImplementation 'org.apache.maven:maven-ant-tasks:2.1.3'
     testImplementation 'org.skyscreamer:jsonassert:1.5.0'
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.14'
 }
 
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
