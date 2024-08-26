@@ -156,7 +156,7 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
     }
 
     public Map<String, String> getPreviousContactMap(String previousContactsRaw) {
-        return AncLibrary.getInstance().getGsonInstance().fromJson(previousContactsRaw, new TypeToken<Map<String, String>>() {
+        return AncLibrary.getInstance().getGsonInstance().fromJson(previousContactsRaw, new TypeToken<Map<String, Object>>() {
         }.getType());
     }
 

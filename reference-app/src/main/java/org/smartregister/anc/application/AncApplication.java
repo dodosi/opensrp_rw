@@ -103,6 +103,16 @@ public class AncApplication extends DrishtiApplication implements TimeChangedBro
         }
     }
 
+    // override the super version because BuildConfig.DEBUG is always false
+    @Override
+    public void initializeCrashLyticsTree() {
+        if (org.smartregister.anc.BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        } else {
+            Timber.plant(new CrashLyticsTree());
+        }
+    }
+
     public static CommonFtsObject createCommonFtsObject() {
         if (commonFtsObject == null) {
             commonFtsObject = new CommonFtsObject(getFtsTables());

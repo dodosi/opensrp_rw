@@ -15,11 +15,11 @@ public class RegisterQueryProvider {
         String strFilters = getFilter(filters);
 
         if (StringUtils.isNotBlank(strFilters) && StringUtils.isBlank(strMainCondition)) {
-            strFilters = String.format(" where " + getDemographicTable() + "." + CommonFtsObject.phraseColumn + " MATCH '*%s*'", filters);
+            strFilters = String.format(" WHERE (" + getDemographicTable() + ".first_name LIKE '%%%s%%' OR "+getDemographicTable()+ ".last_name LIKE '%%%s%%')", filters, filters);
         }
 
-        return "select " + getDemographicTable() + "." + CommonFtsObject.idColumn + " from " + CommonFtsObject.searchTableName(getDemographicTable()) + " " + getDemographicTable() + "  " +
-                "join " + getDetailsTable() + " on " + getDemographicTable() + "." + CommonFtsObject.idColumn + " =  " + getDetailsTable() + "." + "id " + strMainCondition + strFilters;
+        return "select " + getDemographicTable() + ".id"  + " from " + getDemographicTable() + " " + getDemographicTable() + "  " +
+                "join " + getDetailsTable() + " on " + getDemographicTable() + ".id" + " =  " + getDetailsTable() + "." + "id " + strMainCondition + strFilters;
     }
 
     private String getMainCondition(String mainCondition) {
@@ -32,7 +32,7 @@ public class RegisterQueryProvider {
     private String getFilter(String filters) {
 
         if (StringUtils.isNotBlank(filters)) {
-            return String.format(" AND " + getDemographicTable() + "." + CommonFtsObject.phraseColumn + " MATCH '*%s*'", filters);
+            return String.format(" AND (" + getDemographicTable() + ".first_name LIKE '%%%s%%' OR "+getDemographicTable()+ ".last_name LIKE '%%%s%%')", filters, filters);
         }
         return "";
     }
@@ -51,13 +51,13 @@ public class RegisterQueryProvider {
         String strFilters = getFilter(filters);
 
         if (StringUtils.isNotBlank(filters) && StringUtils.isBlank(mainCondition)) {
-            strFilters = String.format(" where " + CommonFtsObject.searchTableName(getDemographicTable()) + "." + CommonFtsObject.phraseColumn + " MATCH '*%s*'", filters);
+            strFilters = String.format(" WHERE (" + getDemographicTable() + ".first_name LIKE '%%%s%%' OR "+getDemographicTable()+ ".last_name LIKE '%%%s%%')", filters, filters);
         }
 
         String strMainCondition = getMainCondition(mainCondition);
 
-        return "select count(" + getDemographicTable() + "." + CommonFtsObject.idColumn + ") from " + CommonFtsObject.searchTableName(getDemographicTable()) + " " + getDemographicTable() + "  " +
-                "join " + getDetailsTable() + " on " + getDemographicTable() + "." + CommonFtsObject.idColumn + " =  " + getDetailsTable() + "." + "id " + strMainCondition + strFilters;
+        return "select count(" + getDemographicTable() + ".id) from " + getDemographicTable() + " " + getDemographicTable() + "  " +
+                "join " + getDetailsTable() + " on " + getDemographicTable() + ".id =  " + getDetailsTable() + "." + "id " + strMainCondition + strFilters;
     }
 
     public String mainRegisterQuery() {
