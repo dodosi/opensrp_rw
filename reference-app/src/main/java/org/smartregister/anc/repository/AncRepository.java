@@ -78,6 +78,9 @@ public class AncRepository extends Repository {
                 case 5:
                     upgradeToVersion5(db);
                     break;
+                case 6:
+                    upgradeToVersion6(db);
+                    break;
                 default:
                     break;
             }
@@ -165,6 +168,20 @@ public class AncRepository extends Repository {
             db.execSQL("ALTER TABLE " + DBConstantsUtils.WOMAN_DETAILS_TABLE_NAME + " ADD COLUMN " + ConstantsUtils.JsonFormKeyUtils.VISIT_DATE + " VARCHAR");
         } catch (Exception e) {
             Timber.e("upgradeToVersion5 %s", e.getMessage());
+        }
+    }
+
+    private void upgradeToVersion6(SQLiteDatabase db) {
+        try {
+            db.execSQL("CREATE INDEX ec_client_first_name_index ON ec_client(first_name COLLATE NOCASE)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.first_name %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_client_last_name_index ON ec_client(last_name COLLATE NOCASE)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.last_name %s", e.getMessage());
         }
     }
 
