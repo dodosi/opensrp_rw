@@ -135,14 +135,19 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
     private void processPreviousContacts(Event event) {
         //Previous contact state
         String previousContactsRaw = event.getDetails().get(ConstantsUtils.DetailsKeyUtils.PREVIOUS_CONTACTS);
+        long startGetMap = System.currentTimeMillis();
         Map<String, String> previousContactMap = getPreviousContactMap(previousContactsRaw);
+        Timber.w("Get previousContactMap took %s", System.currentTimeMillis() - startGetMap);
 
         if (previousContactMap != null) {
             String contactNo = getContact(event);
+            long startLoopingThroughMap = System.currentTimeMillis();
+            List<PreviousContact> previousContactList = new ArrayList<>();
             for (Map.Entry<String, String> entry : previousContactMap.entrySet()) {
-                AncLibrary.getInstance().getPreviousContactRepository().savePreviousContact(
-                        new PreviousContact(event.getBaseEntityId(), entry.getKey(), entry.getValue(), contactNo));
+                previousContactList.add(new PreviousContact(event.getBaseEntityId(), entry.getKey(), entry.getValue(), contactNo));
             }
+            AncLibrary.getInstance().getPreviousContactRepository().insertBatchPreviousContacts(previousContactList);
+            Timber.w("looping through and saving contact map took %s ", System.currentTimeMillis() - startLoopingThroughMap);
         }
     }
 

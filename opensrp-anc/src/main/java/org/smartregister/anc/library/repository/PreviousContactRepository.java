@@ -79,10 +79,34 @@ public class PreviousContactRepository extends BaseRepository {
         values.put(ID, PreviousContact.getId());
         values.put(CONTACT_NO, PreviousContact.getContactNo());
         values.put(BASE_ENTITY_ID, PreviousContact.getBaseEntityId());
-        values.put(VALUE, PreviousContact.getValue());
         values.put(KEY, PreviousContact.getKey());
+        values.put(VALUE, PreviousContact.getValue());
         values.put(CREATED_AT, PreviousContact.getVisitDate());
         return values;
+    }
+
+
+    public void insertBatchPreviousContacts(List<PreviousContact> previousContacts) {
+        SQLiteDatabase db = null;
+        try {
+            db = getWritableDatabase();
+            db.beginTransaction();
+
+            for (PreviousContact contact : previousContacts) {
+                if (contact == null) return;
+                contact.setVisitDate(Utils.getDBDateToday());
+                getWritableDatabase().insert(TABLE_NAME, null, createValuesFor(contact));
+            }
+
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
+            // Handle exception
+        } finally {
+            if (db != null) {
+                db.endTransaction();
+                db.close();
+            }
+        }
     }
 
     /**
