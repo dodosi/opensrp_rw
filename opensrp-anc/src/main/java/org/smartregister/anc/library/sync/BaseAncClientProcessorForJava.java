@@ -73,6 +73,7 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
         if (!eventClients.isEmpty()) {
             List<Event> unsyncEvents = new ArrayList<>();
             long processEventClientListStart = System.currentTimeMillis();
+            Timber.w("$$$$$$$$$ start processing %s event eventClients $$$$$$$$$$", eventClients.size());
             for (EventClient eventClient : eventClients) {
                 processEventClient(eventClient, unsyncEvents, clientClassification);
             }
@@ -249,9 +250,11 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
                 //iterate through the events
                 if (client != null) {
                     long eventStart = System.currentTimeMillis();
+                    Timber.w("begin***update registration*************************");
                     processEvent(event, client, clientClassification);
                     long eventProcessingTime = System.currentTimeMillis() - eventStart;
                     Timber.w("Update Registration Event took, %s", eventProcessingTime);
+                    Timber.w("====================================================");
 
                 }
                 break;

@@ -43,6 +43,7 @@ import java.io.FileNotFoundException;
 
 //import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
+import timber.log.Timber.DebugTree;
 
 import static org.smartregister.util.Log.logError;
 import static org.smartregister.util.Log.logInfo;
