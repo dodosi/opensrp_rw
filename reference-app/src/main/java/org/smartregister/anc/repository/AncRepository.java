@@ -81,6 +81,11 @@ public class AncRepository extends Repository {
                 case 6:
                     upgradeToVersion6(db);
                     break;
+                case 7:
+                    upgradeToVersion7(db);
+                case 8:
+                    upgradeToVersion8(db);
+                    break;
                 default:
                     break;
             }
