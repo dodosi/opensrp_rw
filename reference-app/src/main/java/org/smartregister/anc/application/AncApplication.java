@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 //import com.crashlytics.android.core.CrashlyticsCore;
 import org.smartregister.anc.library.util.ANCFailSafeRecalledID;
 import com.evernote.android.job.JobManager;
-import com.flurry.android.FlurryAgent;
 import com.vijay.jsonwizard.NativeFormLibrary;
 
 import org.smartregister.Context;
@@ -83,14 +82,6 @@ public class AncApplication extends DrishtiApplication implements TimeChangedBro
         JobManager.create(this).addJobCreator(new AncJobCreator());
 
         //Only integrate Flurry Analytics for  production. Remove negation to test in debug
-        if (!BuildConfig.DEBUG) {
-            new FlurryAgent.Builder()
-                    .withLogEnabled(true)
-                    .withCaptureUncaughtExceptions(true)
-                    .withContinueSessionMillis(10000)
-                    .withLogLevel(Log.VERBOSE)
-                    .build(this, BuildConfig.FLURRY_API_KEY);
-        }
         NativeFormLibrary
                 .getInstance()
                 .setClientFormDao(CoreLibrary.getInstance().context().getClientFormRepository());
