@@ -15,7 +15,10 @@ public class RegisterQueryProvider {
         String strFilters = getFilter(filters);
 
         if (StringUtils.isNotBlank(strFilters) && StringUtils.isBlank(strMainCondition)) {
-            strFilters = String.format(" WHERE (" + getDemographicTable() + ".first_name LIKE '%%%s%%' OR "+getDemographicTable()+ ".last_name LIKE '%%%s%%')", filters, filters);
+            strFilters = String.format(" WHERE (" + getDemographicTable() +
+                    ".first_name LIKE '%%%s%%' OR "+
+                    getDemographicTable()+ ".last_name LIKE '%%%s%%' OR "+ getDemographicTable()+
+                    ".register_id LIKE '%%%s%%')", filters, filters, filters);
         }
 
         return "select " + getDemographicTable() + ".id"  + " from " + getDemographicTable() + " " + getDemographicTable() + "  " +
@@ -32,7 +35,9 @@ public class RegisterQueryProvider {
     private String getFilter(String filters) {
 
         if (StringUtils.isNotBlank(filters)) {
-            return String.format(" AND (" + getDemographicTable() + ".first_name LIKE '%%%s%%' OR "+getDemographicTable()+ ".last_name LIKE '%%%s%%')", filters, filters);
+            return String.format(" AND (" + getDemographicTable() + ".first_name LIKE '%%%s%%' OR "+
+                    getDemographicTable()+ ".last_name LIKE '%%%s%%' OR "+getDemographicTable()+
+                    ".register_id LIKE '%%%s%%')", filters, filters, filters);
         }
         return "";
     }
@@ -51,7 +56,9 @@ public class RegisterQueryProvider {
         String strFilters = getFilter(filters);
 
         if (StringUtils.isNotBlank(filters) && StringUtils.isBlank(mainCondition)) {
-            strFilters = String.format(" WHERE (" + getDemographicTable() + ".first_name LIKE '%%%s%%' OR "+getDemographicTable()+ ".last_name LIKE '%%%s%%')", filters, filters);
+            strFilters = String.format(" WHERE (" + getDemographicTable() + ".first_name LIKE '%%%s%%' " +
+                    "OR "+getDemographicTable()+ ".last_name LIKE '%%%s%%' OR "+getDemographicTable()+
+                    ".register_id LIKE '%%%s%%')", filters, filters, filters);
         }
 
         String strMainCondition = getMainCondition(mainCondition);
