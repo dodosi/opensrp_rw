@@ -180,7 +180,7 @@ tasks.withType(Test) {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation files('../libs/circleprogressbar-1.0.7.aar')
+    implementation files('../libs/circleprogressbar-1.0.11.aar')
     implementation('org.smartregister:opensrp-client-native-form:3.1.2-SNAPSHOT@aar') {
         transitive = true
         exclude group: 'com.android.support', module: 'recyclerview-v7'
@@ -193,7 +193,7 @@ dependencies {
         exclude group: 'io.ona.rdt-capture', module: 'lib'
         exclude group: 'io.ona.CircleProgressbar', module: 'lib'
     }
-    implementation('org.smartregister:opensrp-client-core:6.1.2-SNAPSHOT@aar') {
+    implementation('org.smartregister:opensrp-client-core:6.1.5-ALPHA48-SNAPSHOT@aar') {
         transitive = true
         exclude group: 'com.github.bmelnychuk', module: 'atv'
         exclude group: 'com.google.guava', module: 'guava'
