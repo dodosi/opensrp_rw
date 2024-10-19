@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+
 import org.apache.commons.lang3.StringUtils;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.smartregister.anc.BuildConfig;
 import org.smartregister.anc.library.R;
 import org.smartregister.anc.library.activity.BaseHomeRegisterActivity;
 import org.smartregister.anc.library.activity.SiteCharacteristicsEnterActivity;
@@ -34,6 +36,7 @@ public class LoginActivity extends BaseLoginActivity implements BaseLoginContrac
         if (!mLoginPresenter.isUserLoggedOut()) {
             goToHome(false);
         }
+
     }
 
     @Override

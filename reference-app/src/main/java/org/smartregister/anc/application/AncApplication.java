@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 //import com.crashlytics.android.core.CrashlyticsCore;
 import org.smartregister.anc.library.util.ANCFailSafeRecalledID;
 import com.evernote.android.job.JobManager;
-import com.flurry.android.FlurryAgent;
 import com.vijay.jsonwizard.NativeFormLibrary;
 
 import org.smartregister.Context;
@@ -35,6 +34,7 @@ import org.smartregister.receiver.SyncStatusBroadcastReceiver;
 import org.smartregister.repository.Repository;
 import org.smartregister.sync.ClientProcessorForJava;
 import org.smartregister.sync.DrishtiSyncScheduler;
+import org.smartregister.util.CrashLyticsTree;
 import org.smartregister.view.activity.DrishtiApplication;
 import org.smartregister.view.receiver.TimeChangedBroadcastReceiver;
 
@@ -42,6 +42,7 @@ import java.io.FileNotFoundException;
 
 //import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
+import timber.log.Timber.DebugTree;
 
 import static org.smartregister.util.Log.logError;
 import static org.smartregister.util.Log.logInfo;
@@ -81,14 +82,6 @@ public class AncApplication extends DrishtiApplication implements TimeChangedBro
         JobManager.create(this).addJobCreator(new AncJobCreator());
 
         //Only integrate Flurry Analytics for  production. Remove negation to test in debug
-        if (!BuildConfig.DEBUG) {
-            new FlurryAgent.Builder()
-                    .withLogEnabled(true)
-                    .withCaptureUncaughtExceptions(true)
-                    .withContinueSessionMillis(10000)
-                    .withLogLevel(Log.VERBOSE)
-                    .build(this, BuildConfig.FLURRY_API_KEY);
-        }
         NativeFormLibrary
                 .getInstance()
                 .setClientFormDao(CoreLibrary.getInstance().context().getClientFormRepository());
@@ -100,6 +93,16 @@ public class AncApplication extends DrishtiApplication implements TimeChangedBro
             Utils.saveLanguage("en");
         } catch (Exception e) {
             Timber.e(e, " --> saveLanguage");
+        }
+    }
+
+    // override the super version because BuildConfig.DEBUG is always false
+    @Override
+    public void initializeCrashLyticsTree() {
+        if (org.smartregister.anc.BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        } else {
+            Timber.plant(new CrashLyticsTree());
         }
     }
 

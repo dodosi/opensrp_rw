@@ -72,9 +72,13 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
 
         if (!eventClients.isEmpty()) {
             List<Event> unsyncEvents = new ArrayList<>();
+            long processEventClientListStart = System.currentTimeMillis();
+            Timber.w("$$$$$$$$$ start processing %s event eventClients $$$$$$$$$$", eventClients.size());
             for (EventClient eventClient : eventClients) {
                 processEventClient(eventClient, unsyncEvents, clientClassification);
             }
+            long processEventClientListTime = System.currentTimeMillis() - processEventClientListStart;
+            Timber.w("it took %s to process %s events", processEventClientListTime, eventClients.size());
 
             // Unsync events that are should not be in this device
             if (!unsyncEvents.isEmpty()) {
@@ -85,12 +89,19 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
 
     private void processVisit(Event event) {
         //Attention flags
+        long start = System.currentTimeMillis();
         getDetailsRepository()
                 .add(event.getBaseEntityId(), ConstantsUtils.DetailsKeyUtils.ATTENTION_FLAG_FACTS,
                         event.getDetails().get(ConstantsUtils.DetailsKeyUtils.ATTENTION_FLAG_FACTS),
                         Calendar.getInstance().getTimeInMillis());
+        long processPreviousContactsStart = System.currentTimeMillis();
+        Timber.i("Add Attention Flags to details Repository took, %s", processPreviousContactsStart-start);
         processPreviousContacts(event);
+        long startProcessTask = System.currentTimeMillis();
+        Timber.i("Previous contact took %s,  ",startProcessTask - processPreviousContactsStart);
         processContactTasks(event);
+        long end = System.currentTimeMillis();
+        Timber.i("process task took %s, ", end-startProcessTask);
 
     }
 
@@ -125,14 +136,19 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
     private void processPreviousContacts(Event event) {
         //Previous contact state
         String previousContactsRaw = event.getDetails().get(ConstantsUtils.DetailsKeyUtils.PREVIOUS_CONTACTS);
+        long startGetMap = System.currentTimeMillis();
         Map<String, String> previousContactMap = getPreviousContactMap(previousContactsRaw);
+        Timber.w("Get previousContactMap took %s", System.currentTimeMillis() - startGetMap);
 
         if (previousContactMap != null) {
             String contactNo = getContact(event);
+            long startLoopingThroughMap = System.currentTimeMillis();
+            List<PreviousContact> previousContactList = new ArrayList<>();
             for (Map.Entry<String, String> entry : previousContactMap.entrySet()) {
-                AncLibrary.getInstance().getPreviousContactRepository().savePreviousContact(
-                        new PreviousContact(event.getBaseEntityId(), entry.getKey(), entry.getValue(), contactNo));
+                previousContactList.add(new PreviousContact(event.getBaseEntityId(), entry.getKey(), entry.getValue(), contactNo));
             }
+            AncLibrary.getInstance().getPreviousContactRepository().insertBatchPreviousContacts(previousContactList);
+            Timber.w("looping through and saving contact map took %s ", System.currentTimeMillis() - startLoopingThroughMap);
         }
     }
 
@@ -156,7 +172,7 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
     }
 
     public Map<String, String> getPreviousContactMap(String previousContactsRaw) {
-        return AncLibrary.getInstance().getGsonInstance().fromJson(previousContactsRaw, new TypeToken<Map<String, String>>() {
+        return AncLibrary.getInstance().getGsonInstance().fromJson(previousContactsRaw, new TypeToken<Map<String, Object>>() {
         }.getType());
     }
 
@@ -233,11 +249,25 @@ public class BaseAncClientProcessorForJava extends ClientProcessorForJava implem
                 }
                 //iterate through the events
                 if (client != null) {
+                    long eventStart = System.currentTimeMillis();
+                    Timber.w("begin***update registration*************************");
                     processEvent(event, client, clientClassification);
+                    long eventProcessingTime = System.currentTimeMillis() - eventStart;
+                    Timber.w("Update Registration Event took, %s", eventProcessingTime);
+                    Timber.w("====================================================");
+
                 }
                 break;
             case ConstantsUtils.EventTypeUtils.CONTACT_VISIT:
+                long eventStart = System.currentTimeMillis();
+                processEvent(event, client, clientClassification);
+                long eventProcessingTime = System.currentTimeMillis() - eventStart;
+                Timber.w("Contact Visit Event took, %s", eventProcessingTime);
+                long visitEventStartTime = System.currentTimeMillis();
                 processVisit(event);
+                long visitEventProcessingTime = System.currentTimeMillis() - visitEventStartTime;
+                Timber.w("Process Visit Event took, %s", visitEventProcessingTime);
+
                 break;
             default:
                 break;

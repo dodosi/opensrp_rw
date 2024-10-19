@@ -79,10 +79,34 @@ public class PreviousContactRepository extends BaseRepository {
         values.put(ID, PreviousContact.getId());
         values.put(CONTACT_NO, PreviousContact.getContactNo());
         values.put(BASE_ENTITY_ID, PreviousContact.getBaseEntityId());
-        values.put(VALUE, PreviousContact.getValue());
         values.put(KEY, PreviousContact.getKey());
+        values.put(VALUE, PreviousContact.getValue());
         values.put(CREATED_AT, PreviousContact.getVisitDate());
         return values;
+    }
+
+
+    public void insertBatchPreviousContacts(List<PreviousContact> previousContacts) {
+        SQLiteDatabase db = null;
+        try {
+            db = getWritableDatabase();
+            db.beginTransaction();
+
+            for (PreviousContact contact : previousContacts) {
+                if (contact == null) return;
+                contact.setVisitDate(Utils.getDBDateToday());
+                getWritableDatabase().insert(TABLE_NAME, null, createValuesFor(contact));
+            }
+
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
+            // Handle exception
+        } finally {
+            if (db != null) {
+                db.endTransaction();
+                db.close();
+            }
+        }
     }
 
     /**
@@ -327,10 +351,16 @@ public class PreviousContactRepository extends BaseRepository {
         Facts previousContactFacts = new Facts();
         try {
             SQLiteDatabase db = getReadableDatabase();
-            if (StringUtils.isNotBlank(baseEntityId) && StringUtils.isNotBlank(contactNo)) {
-                selection = BASE_ENTITY_ID + " = ? AND " + CONTACT_NO + " = ?";
+            if (StringUtils.isBlank(baseEntityId))
+                throw new IllegalStateException("No Base Entity Id provided to PreviousContactRepository.getPreviousContactFacts(");
+            selection = BASE_ENTITY_ID + " = ? ";
+            selectionArgs = new String[]{baseEntityId, null};
+
+            if (StringUtils.isNotBlank(contactNo)) {
+                selection += "AND " + CONTACT_NO + " = ?";
                 selectionArgs = new String[]{baseEntityId, contactNo};
             }
+
 
            mCursor = db.query(TABLE_NAME, projectionArgs, selection, selectionArgs, KEY, null, orderBy, null);
            // mCursor = db.query(TABLE_NAME, projectionArgs, selection, selectionArgs, KEY, null, orderBy, "1");
@@ -402,6 +432,9 @@ public class PreviousContactRepository extends BaseRepository {
         try {
             SQLiteDatabase db = getWritableDatabase();
             db.setMaximumSize(4 * 1024 * 1024);
+            if(StringUtils.isBlank(contactNo))
+                throw new IllegalStateException("contactNo. not provided for " +
+                        "PreviousContactRepository.getImmediatePreviousSchedule()");
             if (StringUtils.isNotBlank(baseEntityId) && StringUtils.isNotBlank(contactNo)) {
                 selection =
                         BASE_ENTITY_ID + " = ? AND " + CONTACT_NO + " = ? AND " + KEY + " = " + "'" + ConstantsUtils.CONTACT_SCHEDULE + "'";

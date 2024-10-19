@@ -72,6 +72,20 @@ public class AncRepository extends Repository {
                 case 3:
                     upgradeToVersion3(db);
                     break;
+                case 4:
+                    upgradeToVersion4(db);
+                    break;
+                case 5:
+                    upgradeToVersion5(db);
+                    break;
+                case 6:
+                    upgradeToVersion6(db);
+                    break;
+                case 7:
+                    upgradeToVersion7(db);
+                case 8:
+                    upgradeToVersion8(db);
+                    break;
                 default:
                     break;
             }
@@ -144,6 +158,105 @@ public class AncRepository extends Repository {
             db.execSQL("ALTER TABLE " + DBConstantsUtils.WOMAN_DETAILS_TABLE_NAME + " ADD COLUMN " + ConstantsUtils.SpinnerKeyConstants.VILLAGE + " VARCHAR");
         } catch (Exception e) {
             Timber.e("upgradeToVersion3 %s", e.getMessage());
+        }
+    }
+
+    private void upgradeToVersion4(SQLiteDatabase db) {
+        try {
+            db.execSQL("ALTER TABLE " + DBConstantsUtils.DEMOGRAPHIC_TABLE_NAME + " ADD COLUMN " + ConstantsUtils.DATA_MIGRATION_IS_DIRTY + " VARCHAR");
+        } catch (Exception e) {
+            Timber.e("upgradeToVersion4 %s", e.getMessage());
+        }
+    }
+    private void upgradeToVersion5(SQLiteDatabase db) {
+        try {
+            db.execSQL("ALTER TABLE " + DBConstantsUtils.WOMAN_DETAILS_TABLE_NAME + " ADD COLUMN " + ConstantsUtils.JsonFormKeyUtils.VISIT_DATE + " VARCHAR");
+        } catch (Exception e) {
+            Timber.e("upgradeToVersion5 %s", e.getMessage());
+        }
+    }
+
+    private void upgradeToVersion6(SQLiteDatabase db) {
+        try {
+            db.execSQL("CREATE INDEX ec_client_first_name_index ON ec_client(first_name COLLATE NOCASE)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.first_name %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_client_last_name_index ON ec_client(last_name COLLATE NOCASE)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.last_name %s", e.getMessage());
+        }
+    }
+
+    private void upgradeToVersion7(SQLiteDatabase db) {
+        try {
+            db.execSQL("CREATE INDEX ec_client_relationalid_index ON ec_client(relationalid)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.relationalid %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_client_is_closed_index ON ec_client(is_closed)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.is_closed %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_client_register_id_index ON ec_client(register_id)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.register_id %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_client_last_interacted_with_index ON ec_client(last_interacted_with)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.last_interacted_with %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_client_dob_index ON ec_client(dob)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.dob %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_client_home_address_index ON ec_client(home_address)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.home_address %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_client_data_migration_is_dirty_index ON ec_client(data_migration_is_dirty)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_client.data_migration_is_dirty %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX previous_contact_value_index ON previous_contact(value)");
+        } catch (Exception e) {
+            Timber.e("on adding index to previous_contact.value %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX previous_contact_value_index ON previous_contact(value)");
+        } catch (Exception e) {
+            Timber.e("on adding index to previous_contact.value %s", e.getMessage());
+        }
+    }
+
+    private void upgradeToVersion8(SQLiteDatabase db) {
+        try {
+            db.execSQL("CREATE INDEX ec_details_base_entity_id_index ON ec_details(base_entity_id COLLATE NOCASE)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_details.base_entity_id %s", e.getMessage());
+        }
+
+        try {
+            db.execSQL("CREATE INDEX ec_details_key_index ON ec_details(key COLLATE NOCASE)");
+        } catch (Exception e) {
+            Timber.e("on adding index to ec_details.key %s", e.getMessage());
         }
     }
 

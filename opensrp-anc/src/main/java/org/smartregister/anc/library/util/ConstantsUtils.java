@@ -6,10 +6,14 @@ package org.smartregister.anc.library.util;
 
 public abstract class ConstantsUtils {
     public static final String SQLITE_DATE_TIME_FORMAT = "yyyy-MM-dd";
+
+    public static final String OPENSRP_DATE_TIME_FORMAT = "dd-MM-yyyy";
     public static final String CONTACT_DATE_FORMAT = "dd/MM/yyyy";
     public static final String CONTACT_SUMMARY_DATE_FORMAT = "dd MMMM yyyy";
     public static final String VIEW_CONFIGURATION_PREFIX = "ViewConfiguration_";
     public static final String FORM = "form";
+
+    public static final String DATA_MIGRATION_IS_DIRTY = "data_migration_is_dirty";
     public static final String ACCORDION_INFO_TEXT = "accordion_info_text";
     public static final String ACCORDION_INFO_TITLE = "accordion_info_title";
     public static final String DISPLAY_BOTTOM_SECTION = "display_bottom_section";
@@ -215,6 +219,7 @@ public abstract class ConstantsUtils {
         public static final String EXPIRED = "expired";
         public static final String TODAY = "today";
         public static final String ACTIVE = "active";
+        public static final String REGENERATE = "regenerate";
     }
 
     public static final class PrescriptionUtils{
