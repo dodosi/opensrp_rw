@@ -4,11 +4,11 @@ buildscript {
         google()
     }
     dependencies {
-        //classpath 'com.android.tools.build:gradle:4.1.3'
+//        classpath 'com.android.tools.build:gradle:4.1.3'
         classpath 'com.android.tools.build:gradle:7.0.0'
         classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.3'
-        classpath 'com.google.gms:google-services:4.3.9'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
+        classpath 'com.google.gms:google-services:4.3.14'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:3.0.2'
         classpath 'org.smartregister:gradle-jarjar-plugin:1.0.0-SNAPSHOT'
     }
 }
@@ -240,7 +240,7 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
     def powerMockVersion = '2.0.7'
     implementation project(":opensrp-anc")
-    implementation files('../libs/circleprogressbar-1.0.11.aar')
+    implementation 'org.smartregister:circleprogressbar:1.0.16-SNAPSHOT'
     implementation('org.smartregister:opensrp-client-native-form:3.1.2-SNAPSHOT@aar') {
         transitive = true
         exclude group: 'com.android.support', module: 'recyclerview-v7'
@@ -253,7 +253,7 @@ dependencies {
         exclude group: 'io.ona.rdt-capture', module: 'lib'
         exclude group: 'io.ona.CircleProgressbar', module: 'lib'
     }
-    implementation('org.smartregister:opensrp-client-core:6.1.5-ALPHA48-SNAPSHOT@aar') {
+    implementation('org.smartregister:opensrp-client-core:6.1.5-SNAPSHOT@aar') {
         transitive = true
         exclude group: 'com.github.bmelnychuk', module: 'atv'
         exclude group: 'com.google.guava', module: 'guava'
@@ -290,31 +290,31 @@ dependencies {
     }
     implementation group: 'org.apache.commons', name: 'commons-text', version: '1.9'
     annotationProcessor 'com.jakewharton:butterknife:10.2.3'
-    implementation 'net.zetetic:android-database-sqlcipher:4.4.0@aar'
+    implementation 'net.zetetic:android-database-sqlcipher:4.5.0@aar'
     implementation 'commons-validator:commons-validator:1.7'
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.code.gson:gson:2.9.0'
     implementation 'org.greenrobot:eventbus:3.2.0'
     annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.2.0'
     implementation 'com.google.guava:guava:30.0-jre'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.20'
-    implementation 'com.evernote:android-job:1.4.2'
+    implementation 'com.evernote:android-job:1.4.3'
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
     implementation 'id.zelory:compressor:2.1.1'
-    implementation('com.google.android.material:material:1.4.0') {
+    implementation('com.google.android.material:material:1.12.0') {
         exclude group: 'com.android.support', module: 'recyclerview-v7'
         exclude group: 'com.android.support', module: 'cardview-v7'
     }
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    implementation group: 'org.yaml', name: 'snakeyaml', version: '1.27'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation group: 'org.yaml', name: 'snakeyaml', version: '1.30'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'org.jeasy:easy-rules-core:3.3.0'
-    implementation 'org.jeasy:easy-rules-mvel:3.3.0'
+    implementation 'org.jeasy:easy-rules-core:3.4.0'
+    implementation 'org.jeasy:easy-rules-mvel:3.4.0'
     implementation 'androidx.multidex:multidex:2.0.1'
 // Import the BoM for the Firebase platform
-    implementation platform('com.google.firebase:firebase-bom:28.3.1')
+    implementation platform('com.google.firebase:firebase-bom:33.4.0')
 
 // Declare the dependencies for the Crashlytics and Analytics libraries
 // When using the BoM, you don't specify versions in Firebase library dependencies
@@ -330,7 +330,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.2.1'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-joda'
 
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.apache.maven:maven-ant-tasks:2.1.3'
     testImplementation('com.squareup:fest-android:1.0.8') {
         exclude module: 'support-v4'
